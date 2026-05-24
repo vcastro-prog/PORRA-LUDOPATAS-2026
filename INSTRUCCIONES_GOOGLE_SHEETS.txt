@@ -1,0 +1,56 @@
+# Cambios incluidos
+
+## Google Sheets por nombre de pestaña
+
+La app ahora lee una única Google Sheet con dos pestañas:
+
+- APUESTAS
+- RESULTADOS
+
+En Streamlit Cloud > App > Settings > Secrets añade:
+
+```toml
+GOOGLE_SHEET_ID = "ID_DE_TU_GOOGLE_SHEET"
+```
+
+Ejemplo:
+
+```toml
+GOOGLE_SHEET_ID = "1hCBx0GfFvO5IwXYtrGbKioNQY-f8LTs-"
+```
+
+No hace falta poner `gid`.
+
+## Resultado de puntos
+
+La columna `Puntos` ya no aparece como porcentaje. Ahora aparece como:
+
+```text
+46 pts
+44 pts
+41 pts
+```
+
+## Subir a GitHub
+
+Copia estos archivos en la raíz de tu repo y ejecuta:
+
+```bash
+git add .
+git commit -m "Leer Google Sheets por pestañas y corregir puntos"
+git push
+```
+
+## Estructura esperada de la Google Sheet
+
+Pestaña `APUESTAS`:
+```text
+participante | partido_id | goles_local | goles_visitante
+```
+
+Pestaña `RESULTADOS`:
+```text
+partido_id | goles_local | goles_visitante
+```
+
+La app también admite algunos alias de columnas, pero esos nombres son los recomendados.
