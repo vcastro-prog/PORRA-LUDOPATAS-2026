@@ -1,22 +1,10 @@
-Copia estos archivos/carpetas en la raíz del repositorio:
+Copia estos archivos en tu repositorio:
 
 - app.py
-- assets/worldcup_2026_clean.png
-- assets/worldcup_2026.jpg
+- carpeta assets
 
-Después ejecuta:
+Después:
 
 git add .
-git commit -m "Ajustar cabecera e imagen World Cup"
+git commit -m "Reducir logo cabecera"
 git push
-
-Cambios aplicados:
-- elimina logo izquierdo de la cabecera
-- elimina copa SVG antigua
-- coloca la imagen en la parte superior derecha
-- reduce el tamaño de la imagen
-- elimina el fondo blanco de la imagen
-- convierte el texto oscuro inferior de la imagen a blanco
-- fuerza 'PORRA LUDÓPATAS 2026' a una sola línea en escritorio
-- fuerza las insignias a una sola línea si hay espacio
-- elimina mensajes técnicos de demo/Google Sheets

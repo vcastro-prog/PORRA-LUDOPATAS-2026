@@ -57,7 +57,7 @@ st.markdown(
 h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em;}
 .hero {
   position: relative;
-  padding: 34px 34px 30px 34px;
+  padding: 34px 34px 38px 34px;
   border-radius: 34px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.18);
@@ -71,7 +71,7 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-right: 300px;
+  padding-right: 260px;
 }
 .hero-title {
   white-space: nowrap;
@@ -96,8 +96,8 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   right: 42px;
   top: 50%;
   transform: translateY(-50%);
-  width: 245px;
-  max-width: 25%;
+  width: 185px;
+  max-width: 20%;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -119,8 +119,8 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     font-size: clamp(48px, 6.2vw, 82px);
   }
   .hero-right-logo {
-    width: 205px;
-    max-width: 24%;
+    width: 170px;
+    max-width: 22%;
   }
   .hero-badges {
     flex-wrap:wrap;
@@ -139,8 +139,8 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     right: auto;
     top: auto;
     transform: none;
-    width: 190px;
-    max-width: 70%;
+    width: 165px;
+    max-width: 65%;
     margin: 24px auto 0 auto;
   }
   .hero-badges {
