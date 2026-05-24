@@ -1,0 +1,6 @@
+hero-right-logo: True
+cup-art: False
+logo-top: False
+ProgressColumn: False
+NumberColumn puntos: True
+Google tabs: True

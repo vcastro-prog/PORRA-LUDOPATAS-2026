@@ -56,12 +56,9 @@ st.markdown(
   border-right: 1px solid var(--line);
 }
 h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em;}
-.logo-top {display:flex; align-items:center; gap:14px; margin: 0 0 12px 0;}
-.logo-top img {width: 92px; height: 52px; object-fit: cover; border-radius: 16px; border:1px solid rgba(255,255,255,.22); box-shadow: 0 10px 30px rgba(0,0,0,.28);}
-.logo-text {font-weight:900; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:.75rem;}
 .hero {
   position: relative;
-  padding: 34px 34px 30px 34px;
+  padding: 34px 34px 38px 34px;
   border-radius: 34px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.18);
@@ -70,17 +67,88 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     radial-gradient(circle at 75% 30%, rgba(255,209,102,.28), transparent 30%);
   box-shadow: 0 25px 80px rgba(0,0,0,.38);
 }
-.cup-art {
-  position: absolute;
-  right: 26px;
-  top: 18px;
-  width: 165px;
-  height: 165px;
-  opacity: .23;
-  filter: drop-shadow(0 0 28px rgba(255,209,102,.28));
+@media (max-width: 900px) {}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-right: 245px;
 }
-.cup-art svg {width:100%; height:100%;}
-@media (max-width: 900px) {.cup-art {width: 92px; height: 92px; right: 18px; top: 18px; opacity:.18;}}
+.hero-title {
+  white-space: nowrap;
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(56px, 7.2vw, 104px);
+  line-height: .90;
+  margin: 8px 0 12px 0;
+  letter-spacing: .02em;
+}
+.hero-badges {
+  display:flex;
+  gap:10px;
+  flex-wrap:nowrap;
+  margin-top:18px;
+  align-items:center;
+}
+.hero-badges .badge {
+  white-space:nowrap;
+}
+.hero-right-logo {
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 165px;
+  max-width: 18%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-right-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.16))
+    drop-shadow(0 0 34px rgba(255,209,102,.25));
+}
+@media (max-width: 1100px) {
+  .hero-content {
+    padding-right: 240px;
+  }
+  .hero-title {
+    font-size: clamp(48px, 6.2vw, 82px);
+  }
+  .hero-right-logo {
+    width: 170px;
+    max-width: 22%;
+  }
+  .hero-badges {
+    flex-wrap:wrap;
+  }
+}
+@media (max-width: 900px) {
+  .hero-content {
+    padding-right: 0;
+  }
+  .hero-title {
+    white-space: normal;
+    font-size: 56px;
+  }
+  .hero-right-logo {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 165px;
+    max-width: 65%;
+    margin: 24px auto 0 auto;
+  }
+  .hero-badges {
+    flex-wrap:wrap;
+  }
+}
+
 .kicker {color: var(--cyan); text-transform: uppercase; font-weight: 900; letter-spacing: .18em; font-size: .86rem;}
 .hero-title {font-family: 'Bebas Neue', 'Inter', sans-serif; font-size: clamp(58px, 8vw, 116px); line-height: .85; margin: 8px 0 12px 0; letter-spacing: .02em;}
 .hero-title span {background: linear-gradient(90deg, var(--gold), #fff, var(--cyan)); -webkit-background-clip: text; color: transparent;}
@@ -113,6 +181,197 @@ button[kind="primary"] {border-radius: 999px;}
 .ribbon {display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(71,245,155,.13); border:1px solid rgba(71,245,155,.28); color:#74ffb4; font-weight:900;}
 .big-cta {padding:22px 26px; border-radius:28px; background:linear-gradient(90deg, rgba(255,209,102,.22), rgba(255,78,205,.18), rgba(31,228,255,.16)); border:1px solid rgba(255,255,255,.20);}
 @media (max-width: 900px) {.metric-strip {grid-template-columns: repeat(2, 1fr);} .hero-title {font-size: 56px;}}
+
+/* ===== AJUSTES FINALES PARA ENVIAR AL PROPIETARIO ===== */
+.hero {
+  min-height: 285px;
+}
+
+.hero-title {
+  white-space: nowrap;
+}
+
+.hero-right-logo {
+  overflow: visible;
+}
+
+.hero-right-logo img {
+  max-height: 230px;
+}
+
+/* Métricas superiores más consistentes */
+.metric-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Versión tablet */
+@media (max-width: 1100px) {
+  .block-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero {
+    padding: 28px 28px 32px 28px;
+  }
+
+  .hero-content {
+    padding-right: 210px;
+  }
+
+  .hero-title {
+    font-size: clamp(46px, 6.2vw, 76px);
+  }
+
+  .hero-sub {
+    max-width: 620px;
+  }
+
+  .hero-right-logo {
+    width: 145px;
+    max-width: 18%;
+  }
+
+  .hero-right-logo img {
+    max-height: 210px;
+  }
+
+  .hero-badges {
+    flex-wrap: wrap;
+  }
+
+  .metric-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Versión móvil: mobile first para compartir por WhatsApp */
+@media (max-width: 760px) {
+  .block-container {
+    padding-top: .7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+
+  .hero {
+    padding: 22px 20px 24px 20px;
+    border-radius: 26px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
+  .kicker {
+    font-size: .70rem;
+    letter-spacing: .14em;
+  }
+
+  .hero-title {
+    white-space: normal;
+    font-size: clamp(44px, 17vw, 64px);
+    line-height: .88;
+    margin-top: 10px;
+  }
+
+  .hero-sub {
+    font-size: .98rem;
+    line-height: 1.35;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-badges,
+  .badge-row {
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge,
+  .hero-badges .badge {
+    font-size: .84rem;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .hero-right-logo {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 138px;
+    max-width: 58%;
+    margin: 18px auto 0 auto;
+  }
+
+  .hero-right-logo img {
+    max-height: 170px;
+  }
+
+  .metric-strip {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    border-radius: 22px;
+    padding: 18px 18px;
+  }
+
+  .stat-value {
+    font-size: 1.85rem;
+  }
+
+  .podium {
+    grid-template-columns: 1fr;
+  }
+
+  .podium-card.first {
+    padding-top: 18px;
+  }
+
+  .match-card {
+    padding: 13px 14px;
+  }
+
+  h2 {
+    font-size: 1.55rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  div[data-testid="stHorizontalBlock"] {
+    gap: .75rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .hero-right-logo {
+    width: 125px;
+  }
+
+  .badge,
+  .hero-badges .badge {
+    font-size: .78rem;
+    padding: 7px 9px;
+  }
+
+  .hero-sub {
+    font-size: .92rem;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -153,13 +412,11 @@ def leer_secret(nombre: str, default: str = "") -> str:
 def obtener_google_sheet_id() -> str:
     """Lee el ID de Google Sheet desde secrets.
 
-    Preferido:
+    Recomendado:
       GOOGLE_SHEET_ID = "xxxxx"
 
-    También acepta, por compatibilidad:
-      APUESTAS_SHEET_URL
-      RESULTADOS_SHEET_URL
-      GOOGLE_SHEET_URL
+    Compatibilidad:
+      APUESTAS_SHEET_URL, RESULTADOS_SHEET_URL o GOOGLE_SHEET_URL.
     """
     sheet_id = leer_secret("GOOGLE_SHEET_ID")
     if sheet_id:
@@ -176,11 +433,7 @@ def obtener_google_sheet_id() -> str:
 
 @st.cache_data(ttl=300, show_spinner=False)
 def obtener_gid_por_nombre_pestana(sheet_id: str, nombre_pestana: str) -> str:
-    """Obtiene el gid de una pestaña usando el nombre visible de la pestaña.
-
-    Esto permite usar pestañas llamadas APUESTAS y RESULTADOS sin tener que
-    copiar manualmente gid=xxxx.
-    """
+    """Obtiene el gid de la pestaña por su nombre visible."""
     if not sheet_id:
         return ""
 
@@ -192,20 +445,17 @@ def obtener_gid_por_nombre_pestana(sheet_id: str, nombre_pestana: str) -> str:
     for entry in data.get("feed", {}).get("entry", []):
         title = entry.get("title", {}).get("$t", "").strip()
         if title.lower() == nombre_pestana.strip().lower():
-            worksheet_url = entry.get("link", [{}])[-1].get("href", "")
-            match = re.search(r"gid=([0-9]+)", worksheet_url)
-            if match:
-                return match.group(1)
+            for link in entry.get("link", []):
+                href = link.get("href", "")
+                match = re.search(r"gid=([0-9]+)", href)
+                if match:
+                    return match.group(1)
 
     raise ValueError(f"No encuentro la pestaña '{nombre_pestana}' en la Google Sheet.")
 
 
 def construir_csv_url_por_pestana(nombre_pestana: str) -> str:
-    """Construye una URL CSV para una pestaña por nombre.
-
-    Requiere que la Google Sheet esté publicada/compartida de forma que Streamlit
-    pueda leerla como CSV.
-    """
+    """Construye URL CSV usando GOOGLE_SHEET_ID y una pestaña llamada APUESTAS o RESULTADOS."""
     sheet_id = obtener_google_sheet_id()
     if not sheet_id:
         return ""
@@ -282,14 +532,9 @@ def normalizar_resultados(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def cargar_apuestas_desde_fuente() -> pd.DataFrame:
-    """Carga apuestas.
-
-    Prioridad:
-    1. Google Sheet configurada con GOOGLE_SHEET_ID y pestaña APUESTAS.
-    2. CSV local data/apuestas.csv.
-    3. DataFrame vacío para activar modo demo.
-    """
+    """Carga apuestas desde Google Sheets, CSV local o modo demo."""
     sheet_id = obtener_google_sheet_id()
+
     if sheet_id:
         try:
             csv_url = construir_csv_url_por_pestana("APUESTAS")
@@ -305,13 +550,7 @@ def cargar_apuestas_desde_fuente() -> pd.DataFrame:
 
 
 def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
-    """Carga resultados.
-
-    Prioridad:
-    1. Google Sheet configurada con GOOGLE_SHEET_ID y pestaña RESULTADOS.
-    2. CSV local data/resultados.csv.
-    3. Base vacía con todos los partido_id.
-    """
+    """Carga resultados desde Google Sheets, CSV local o base vacía."""
     base = partidos[["partido_id"]].copy()
     base["goles_local"] = pd.NA
     base["goles_visitante"] = pd.NA
@@ -339,6 +578,13 @@ def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
 
 def logo_base64() -> str:
     p = ASSETS_DIR / "logo_ludopatas.png"
+    if not p.exists():
+        return ""
+    return base64.b64encode(p.read_bytes()).decode("utf-8")
+
+
+def imagen_asset_base64(nombre_archivo: str) -> str:
+    p = ASSETS_DIR / nombre_archivo
     if not p.exists():
         return ""
     return base64.b64encode(p.read_bytes()).decode("utf-8")
@@ -450,34 +696,28 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 # Portada
 # -----------------------------
-logo_b64 = logo_base64()
-st.markdown(
-    f"""
-<div class='hero'>
-  <div class='logo-top'><img src='data:image/png;base64,{logo_b64}' alt='Ludópatas'><div class='logo-text'>Porra Ludópatas · Mundial 2026</div></div>
-  <div class='cup-art'>
-    <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFD166"/><stop offset=".55" stop-color="#FFF3B0"/><stop offset="1" stop-color="#F59E0B"/></linearGradient></defs>
-      <path d="M58 31h64v20c0 34-14 56-32 56S58 85 58 51V31Z" fill="url(#g)"/>
-      <path d="M58 45H32c0 23 10 39 30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
-      <path d="M122 45h26c0 23-10 39-30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
-      <path d="M82 107h16v29H82zM61 140h58v13H61zM49 155h82v12H49z" fill="url(#g)"/>
-      <circle cx="90" cy="62" r="15" fill="none" stroke="#07101f" stroke-width="7" opacity=".45"/>
-    </svg>
-  </div>
-  <div class='kicker'>Canada · México · USA 2026</div>
-  <div class='hero-title'>PORRA <span>LUDÓPATAS</span> 2026</div>
-  <div class='hero-sub'>Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>
-  <div class='badge-row'>
-    <div class='badge'>🌎 48 selecciones</div>
-    <div class='badge'>🏟️ 16 sedes</div>
-    <div class='badge'>📅 11 junio – 19 julio</div>
-    <div class='badge'>⚡ 104 partidos</div>
-  </div>
-</div>
-""",
-    unsafe_allow_html=True,
+worldcup_b64 = imagen_asset_base64("worldcup_2026_clean.png")
+
+hero_html = (
+    f'<div class="hero">'
+    f'<div class="hero-content">'
+    f'<div class="kicker">Canada · México · USA 2026</div>'
+    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
+    f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
+    f'<div class="hero-badges">'
+    f'<div class="badge">🌎 48 selecciones</div>'
+    f'<div class="badge">🏟️ 16 sedes</div>'
+    f'<div class="badge">📅 11 junio – 19 julio</div>'
+    f'<div class="badge">⚡ 104 partidos</div>'
+    f'</div>'
+    f'</div>'
+    f'<div class="hero-right-logo">'
+    f'<img src="data:image/png;base64,{worldcup_b64}" alt="World Cup 2026">'
+    f'</div>'
+    f'</div>'
 )
+
+st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)

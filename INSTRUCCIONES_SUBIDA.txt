@@ -1,24 +1,20 @@
-VERSIÓN PARA ENVIAR AL PROPIETARIO
+VERSIÓN CORREGIDA PARA SUBIR
 
-Copia estos archivos en la raíz del repositorio GitHub:
+Mantiene:
+- cabecera buena con logo real a la derecha
+- responsive móvil
 
-- app.py
-- requirements.txt
-- carpeta assets
+Añade/corrige:
+- Google Sheets por pestañas APUESTAS y RESULTADOS
+- Streamlit Secrets con GOOGLE_SHEET_ID
+- puntos como '46 pts', no como porcentaje
 
-Después ejecuta:
+En Streamlit Cloud > App > Settings > Secrets:
+
+GOOGLE_SHEET_ID = "ID_DE_TU_GOOGLE_SHEET"
+
+Subir:
 
 git add .
-git commit -m "Version responsive para propietario"
+git commit -m "Corregir Google Sheets puntos y mantener cabecera"
 git push
-
-Cambios incluidos:
-- cabecera optimizada para PC y móvil
-- logo más pequeño para que no se corte
-- cards y podio adaptados a móvil
-- badges adaptables
-- sin mensajes técnicos de demo/Google Sheets
-
-Nota:
-La barra negra superior con Share / estrella / editar / tres puntos pertenece al modo preview/gestión de Streamlit Cloud. 
-Cuando el propietario entre por la URL pública de la app, no debería verla como tú la ves desde la consola.
