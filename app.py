@@ -1,18 +1,19 @@
 from __future__ import annotations
 
-from io import BytesIO
 from pathlib import Path
-from datetime import datetime, date
+import base64
 import random
+import re
 
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-from excel_parser import leer_apuesta_excel
 from scoring import calcular_puntos, clasificacion, estadisticas_participantes, resumen_partido
 
-DATA_DIR = Path(__file__).parent / "data"
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
+ASSETS_DIR = BASE_DIR / "assets"
 
 st.set_page_config(
     page_title="Porra Ludópatas 2026",
@@ -54,6 +55,9 @@ st.markdown(
   border-right: 1px solid var(--line);
 }
 h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em;}
+.logo-top {display:flex; align-items:center; gap:14px; margin: 0 0 12px 0;}
+.logo-top img {width: 92px; height: 52px; object-fit: cover; border-radius: 16px; border:1px solid rgba(255,255,255,.22); box-shadow: 0 10px 30px rgba(0,0,0,.28);}
+.logo-text {font-weight:900; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:.75rem;}
 .hero {
   position: relative;
   padding: 34px 34px 30px 34px;
@@ -135,6 +139,139 @@ def cargar_partidos() -> pd.DataFrame:
     return df
 
 
+
+
+def leer_secret(nombre: str, default: str = "") -> str:
+    try:
+        return str(st.secrets.get(nombre, default)).strip()
+    except Exception:
+        return default
+
+
+def convertir_google_sheet_a_csv(url_o_id: str, gid: str = "0") -> str:
+    """Acepta un ID, una URL normal de Google Sheets o una URL CSV ya preparada."""
+    valor = (url_o_id or "").strip()
+    if not valor:
+        return ""
+    if "export?format=csv" in valor or "output=csv" in valor:
+        return valor
+    if "docs.google.com/spreadsheets" in valor:
+        m_id = re.search(r"/d/([a-zA-Z0-9-_]+)", valor)
+        m_gid = re.search(r"gid=([0-9]+)", valor)
+        sheet_id = m_id.group(1) if m_id else valor
+        gid_final = m_gid.group(1) if m_gid else gid
+        return f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid_final}"
+    return f"https://docs.google.com/spreadsheets/d/{valor}/export?format=csv&gid={gid}"
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def leer_csv_externo(csv_url: str) -> pd.DataFrame:
+    return pd.read_csv(csv_url)
+
+
+def normalizar_apuestas(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty:
+        return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+    cols = {c.strip().lower(): c for c in df.columns}
+    aliases = {
+        "participante": ["participante", "jugador", "nombre", "usuario"],
+        "partido_id": ["partido_id", "id_partido", "partido", "match_id"],
+        "goles_local": ["goles_local", "local_goles", "gl", "pronostico_local", "apuesta_local"],
+        "goles_visitante": ["goles_visitante", "visitante_goles", "gv", "pronostico_visitante", "apuesta_visitante"],
+    }
+    ren = {}
+    for target, posibles in aliases.items():
+        for p in posibles:
+            if p in cols:
+                ren[cols[p]] = target
+                break
+    out = df.rename(columns=ren)
+    required = ["participante", "partido_id", "goles_local", "goles_visitante"]
+    missing = [c for c in required if c not in out.columns]
+    if missing:
+        st.warning(f"La hoja APUESTAS no tiene las columnas esperadas: {', '.join(missing)}")
+        return pd.DataFrame(columns=required)
+    out = out[required].copy()
+    out["participante"] = out["participante"].astype(str).str.strip()
+    for c in ["partido_id", "goles_local", "goles_visitante"]:
+        out[c] = pd.to_numeric(out[c], errors="coerce")
+    out = out.dropna(subset=["participante", "partido_id", "goles_local", "goles_visitante"])
+    out["partido_id"] = out["partido_id"].astype(int)
+    out["goles_local"] = out["goles_local"].astype(int)
+    out["goles_visitante"] = out["goles_visitante"].astype(int)
+    return out
+
+
+def normalizar_resultados(df: pd.DataFrame) -> pd.DataFrame:
+    required = ["partido_id", "goles_local", "goles_visitante"]
+    if df.empty:
+        return pd.DataFrame(columns=required)
+    cols = {c.strip().lower(): c for c in df.columns}
+    aliases = {
+        "partido_id": ["partido_id", "id_partido", "partido", "match_id"],
+        "goles_local": ["goles_local", "local_goles", "gl", "resultado_local"],
+        "goles_visitante": ["goles_visitante", "visitante_goles", "gv", "resultado_visitante"],
+    }
+    ren = {}
+    for target, posibles in aliases.items():
+        for p in posibles:
+            if p in cols:
+                ren[cols[p]] = target
+                break
+    out = df.rename(columns=ren)
+    missing = [c for c in required if c not in out.columns]
+    if missing:
+        st.warning(f"La hoja RESULTADOS no tiene las columnas esperadas: {', '.join(missing)}")
+        return pd.DataFrame(columns=required)
+    out = out[required].copy()
+    for c in required:
+        out[c] = pd.to_numeric(out[c], errors="coerce")
+    out = out.dropna(subset=["partido_id"])
+    out["partido_id"] = out["partido_id"].astype(int)
+    return out
+
+
+def cargar_apuestas_desde_fuente() -> pd.DataFrame:
+    url = leer_secret("APUESTAS_SHEET_URL") or leer_secret("GOOGLE_SHEET_URL")
+    gid = leer_secret("APUESTAS_GID", "0")
+    if url:
+        try:
+            return normalizar_apuestas(leer_csv_externo(convertir_google_sheet_a_csv(url, gid)))
+        except Exception as e:
+            st.warning(f"No pude leer APUESTAS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+    apuestas_csv = DATA_DIR / "apuestas.csv"
+    if apuestas_csv.exists():
+        return normalizar_apuestas(pd.read_csv(apuestas_csv))
+    return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+
+
+def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
+    base = partidos[["partido_id"]].copy()
+    base["goles_local"] = pd.NA
+    base["goles_visitante"] = pd.NA
+    url = leer_secret("RESULTADOS_SHEET_URL") or leer_secret("GOOGLE_SHEET_URL")
+    gid = leer_secret("RESULTADOS_GID", "0")
+    loaded = pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"])
+    if url:
+        try:
+            loaded = normalizar_resultados(leer_csv_externo(convertir_google_sheet_a_csv(url, gid)))
+        except Exception as e:
+            st.warning(f"No pude leer RESULTADOS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+    if loaded.empty:
+        resultados_csv = DATA_DIR / "resultados.csv"
+        if resultados_csv.exists():
+            loaded = normalizar_resultados(pd.read_csv(resultados_csv))
+    if not loaded.empty:
+        base = base.drop(columns=["goles_local", "goles_visitante"]).merge(loaded, on="partido_id", how="left")
+    return base
+
+
+def logo_base64() -> str:
+    p = ASSETS_DIR / "logo_ludopatas.png"
+    if not p.exists():
+        return ""
+    return base64.b64encode(p.read_bytes()).decode("utf-8")
+
 def demo_apuestas(partidos: pd.DataFrame, n: int = 24) -> pd.DataFrame:
     nombres = ["Vi", "Carlos", "Marta", "Ana", "Javi", "Laura", "Sergio", "Elena", "David", "Nuria", "Pablo", "Bea", "Rafa", "Cris", "Gonzalo", "Silvia", "Mario", "Alba", "Dani", "Irene", "Óscar", "Patri", "Nacho", "Lola"][:n]
     rows = []
@@ -212,147 +349,22 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
 partidos = cargar_partidos()
 
 # -----------------------------
-# Acceso administrador y carga de datos
+# Carga de datos: Google Sheets / CSV local / demo
 # -----------------------------
+# La web es pública y limpia. Los datos se gestionan fuera: Google Sheets para apuestas/resultados
+# y, más adelante, SportMonks para resultados automáticos. Streamlit solo lee y calcula.
 
-def get_admin_password() -> str:
-    try:
-        return st.secrets.get("ADMIN_PASSWORD", "")
-    except Exception:
-        return ""
+apuestas_df = cargar_apuestas_desde_fuente()
+resultados_df = cargar_resultados_desde_fuente(partidos)
 
-if "admin" not in st.session_state:
-    st.session_state["admin"] = False
-if "show_admin_login" not in st.session_state:
-    st.session_state["show_admin_login"] = False
-
-admin_query = st.query_params.get("admin", "") in ["1", "true", "si", "sí"]
-
-# Botón discreto: los participantes no necesitan login; solo abre la zona de administrador.
-admin_col, _ = st.columns([0.16, 0.84])
-with admin_col:
-    if st.button("🔐 Admin", help="Acceso exclusivo para gestionar datos"):
-        st.session_state["show_admin_login"] = True
-
-if admin_query or st.session_state["show_admin_login"] or st.session_state["admin"]:
-    with st.expander("🔐 Acceso administrador", expanded=not st.session_state["admin"]):
-        if st.session_state["admin"]:
-            st.success("Modo administrador activo")
-            if st.button("Cerrar sesión admin"):
-                st.session_state["admin"] = False
-                st.session_state["show_admin_login"] = False
-                st.rerun()
-        else:
-            pwd = st.text_input("Contraseña", type="password", placeholder="Introduce la contraseña de administrador")
-            admin_password = get_admin_password()
-            if st.button("Entrar"):
-                if admin_password and pwd == admin_password:
-                    st.session_state["admin"] = True
-                    st.success("Acceso concedido")
-                    st.rerun()
-                elif not admin_password:
-                    st.error("Falta configurar ADMIN_PASSWORD en Streamlit Secrets.")
-                else:
-                    st.error("Contraseña incorrecta")
-
-is_admin = st.session_state.get("admin", False)
-
-# Por defecto la web es pública, limpia y sin panel lateral.
-demo_mode = True
-uploaded = []
-resultados_upload = None
-
-if is_admin:
-    st.sidebar.title("⚙️ Centro de mando")
-    st.sidebar.caption("Zona privada para cargar apuestas y resultados.")
-    demo_mode = st.sidebar.toggle("Modo demo", value=True, help="Muestra participantes ficticios si aún no hay datos reales.")
-    uploaded = st.sidebar.file_uploader("1) Subir Excel de apuestas", type=["xlsx"], accept_multiple_files=True)
-    st.sidebar.markdown("---")
-    st.sidebar.subheader("2) Resultados")
-    resultados_upload = st.sidebar.file_uploader("Subir resultados CSV", type=["csv"])
-else:
-    # Los participantes ven una app limpia. No se muestran cargas ni edición.
-    demo_mode = True
-
-apuestas = []
-for f in uploaded:
-    try:
-        df = leer_apuesta_excel(BytesIO(f.getvalue()), partidos)
-        if len(df) < len(partidos):
-            st.sidebar.warning(f"{f.name}: leídos {len(df)} de {len(partidos)} partidos.")
-        apuestas.append(df)
-    except Exception as e:
-        st.sidebar.error(f"No pude leer {f.name}: {e}")
-
-# Si existe un CSV de apuestas real en /data, se usa automáticamente en la parte pública.
-apuestas_csv = DATA_DIR / "apuestas.csv"
-if apuestas:
-    apuestas_df = pd.concat(apuestas, ignore_index=True)
-elif apuestas_csv.exists():
-    apuestas_df = pd.read_csv(apuestas_csv)
-else:
-    apuestas_df = pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
-
-if apuestas_df.empty and demo_mode:
+demo_mode = apuestas_df.empty
+if demo_mode:
     apuestas_df = demo_apuestas(partidos)
-    if is_admin:
-        st.sidebar.info("Estás viendo datos ficticios. Desactiva el modo demo cuando tengas apuestas reales.")
-
-resultados_base = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].copy()
-resultados_base["goles_local"] = pd.NA
-resultados_base["goles_visitante"] = pd.NA
-
-resultados_csv = DATA_DIR / "resultados.csv"
-if resultados_csv.exists():
-    try:
-        prev_repo = pd.read_csv(resultados_csv)
-        if {"partido_id", "goles_local", "goles_visitante"}.issubset(prev_repo.columns):
-            resultados_base = resultados_base.drop(columns=["goles_local", "goles_visitante"]).merge(
-                prev_repo[["partido_id", "goles_local", "goles_visitante"]], on="partido_id", how="left"
-            )
-    except Exception:
-        pass
-
-if resultados_upload is not None:
-    try:
-        prev = pd.read_csv(resultados_upload)
-        resultados_base = resultados_base.drop(columns=["goles_local", "goles_visitante"]).merge(prev, on="partido_id", how="left")
-    except Exception as e:
-        st.sidebar.error(f"No pude leer el CSV de resultados: {e}")
-
-if is_admin:
-    with st.sidebar.expander("Editar resultados", expanded=True):
-        resultados_editados = st.data_editor(
-            resultados_base,
-            hide_index=True,
-            use_container_width=True,
-            num_rows="fixed",
-            column_config={
-                "partido_id": st.column_config.NumberColumn("#", disabled=True),
-                "grupo": st.column_config.TextColumn("Grupo", disabled=True),
-                "fecha": st.column_config.TextColumn("Fecha", disabled=True),
-                "local": st.column_config.TextColumn("Local", disabled=True),
-                "visitante": st.column_config.TextColumn("Visitante", disabled=True),
-                "goles_local": st.column_config.NumberColumn("GL", min_value=0, step=1),
-                "goles_visitante": st.column_config.NumberColumn("GV", min_value=0, step=1),
-            },
-        )
-else:
-    resultados_editados = resultados_base
-
-resultados_df = resultados_editados[["partido_id", "goles_local", "goles_visitante"]]
-if demo_mode and resultados_df.dropna(subset=["goles_local", "goles_visitante"]).empty:
     demo_res = partidos.head(10)[["partido_id"]].copy()
     rnd = random.Random(101)
     demo_res["goles_local"] = [rnd.choice([0,1,1,2,2,3]) for _ in range(len(demo_res))]
     demo_res["goles_visitante"] = [rnd.choice([0,0,1,1,2]) for _ in range(len(demo_res))]
-    resultados_df = resultados_df.drop(columns=["goles_local", "goles_visitante"]).merge(demo_res, on="partido_id", how="left")
-
-if is_admin:
-    csv_resultados = resultados_df.to_csv(index=False).encode("utf-8")
-    st.sidebar.download_button("Descargar resultados CSV", csv_resultados, "resultados_porra_2026.csv", "text/csv")
-    if not apuestas_df.empty:
-        st.sidebar.download_button("Descargar apuestas CSV", apuestas_df.to_csv(index=False).encode("utf-8"), "apuestas_porra_2026.csv", "text/csv")
+    resultados_df = partidos[["partido_id"]].merge(demo_res, on="partido_id", how="left")
 
 # -----------------------------
 # Cálculo
@@ -367,9 +379,11 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 # Portada
 # -----------------------------
+logo_b64 = logo_base64()
 st.markdown(
     f"""
 <div class='hero'>
+  <div class='logo-top'><img src='data:image/png;base64,{logo_b64}' alt='Ludópatas'><div class='logo-text'>Porra Ludópatas · Mundial 2026</div></div>
   <div class='cup-art'>
     <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFD166"/><stop offset=".55" stop-color="#FFF3B0"/><stop offset="1" stop-color="#F59E0B"/></linearGradient></defs>
@@ -396,6 +410,10 @@ st.markdown(
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
+if demo_mode:
+    st.info("Vista demo: configura APUESTAS_SHEET_URL y RESULTADOS_SHEET_URL en Streamlit Secrets para leer datos reales desde Google Sheets.")
+else:
+    st.success("Datos cargados desde la fuente configurada. La app solo lee datos externos; no guarda tablas en Streamlit Cloud.")
 
 st.write("")
 left, right = st.columns([1.7, 1])
@@ -415,7 +433,7 @@ with a:
         if not jornada.empty:
             best = jornada.sort_values(["puntos", "plenos"], ascending=False).iloc[0]
             worst = jornada.sort_values(["puntos", "plenos"], ascending=True).iloc[0]
-            st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Esto es gasolina para el grupo de WhatsApp.</p></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Cada partido puede mover el ranking.</p></div>", unsafe_allow_html=True)
     else:
         st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
 with b:
