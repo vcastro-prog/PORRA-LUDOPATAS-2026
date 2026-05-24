@@ -16,7 +16,7 @@ DATA_DIR = BASE_DIR / "data"
 ASSETS_DIR = BASE_DIR / "assets"
 
 st.set_page_config(
-    page_title="Porra Ludópatas 2026",
+    page_title="Porra Ludópatas · Eurocopa 2024",
     page_icon="🏆",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -498,15 +498,9 @@ def cargar_apuestas_desde_fuente() -> pd.DataFrame:
             return normalizar_apuestas(leer_csv_externo(convertir_google_sheet_a_csv(url, gid)))
         except Exception as e:
             st.warning(f"No pude leer APUESTAS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
-    # Fallback local: apuestas ya normalizadas desde el Excel real
-    apuestas_reales_csv = DATA_DIR / "apuestas_reales.csv"
-    if apuestas_reales_csv.exists():
-        return normalizar_apuestas(pd.read_csv(apuestas_reales_csv))
-
     apuestas_csv = DATA_DIR / "apuestas.csv"
     if apuestas_csv.exists():
         return normalizar_apuestas(pd.read_csv(apuestas_csv))
-
     return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
 
 
@@ -593,7 +587,7 @@ def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
     jugados = set(resultados_df.dropna(subset=["goles_local", "goles_visitante"])["partido_id"].astype(int))
     pendientes = partidos[~partidos["partido_id"].astype(int).isin(jugados)].head(3)
     if pendientes.empty:
-        st.success("Todos los partidos de la fase de grupos están cerrados. ¡A revisar el campeón de la porra!")
+        st.success("Todos los partidos de la fase de grupos están cerrados. ¡A revisar el ganador de la porra!")
         return
     for _, p in pendientes.iterrows():
         st.markdown(
@@ -657,13 +651,13 @@ hero_html = (
     f'<div class="hero">'
     f'<div class="hero-content">'
     f'<div class="kicker">Canada · México · USA 2026</div>'
-    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
-    f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
+    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span></div>'
+    f'<div class="hero-sub">Simulación con apuestas reales y resultados oficiales de la fase de grupos de la Eurocopa 2024.</div>'
     f'<div class="hero-badges">'
-    f'<div class="badge">🌎 48 selecciones</div>'
-    f'<div class="badge">🏟️ 16 sedes</div>'
-    f'<div class="badge">📅 11 junio – 19 julio</div>'
-    f'<div class="badge">⚡ 104 partidos</div>'
+    f'<div class="badge">🇪🇺 24 selecciones</div>'
+    f'<div class="badge">🏟️ 10 sedes</div>'
+    f'<div class="badge">📅 14 junio – 14 julio</div>'
+    f'<div class="badge">⚡ 36 partidos</div>'
     f'</div>'
     f'</div>'
     f'<div class="hero-right-logo">'
@@ -676,6 +670,7 @@ st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
+st.success(f"🏆 Simulación cerrada: {lider} gana la porra con {lider_pts} puntos. España ganó la Eurocopa 2024 tras vencer 2-1 a Inglaterra en la final.")
 
 st.write("")
 left, right = st.columns([1.7, 1])
@@ -767,8 +762,8 @@ with tab5:
     st.markdown(
         """
 <div class='callout'>
-<strong>Participa en la Porra Ludópatas 2026</strong><br>
-Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durante todo el Mundial.
+<strong>Simulación Porra Ludópatas · Eurocopa 2024</strong><br>
+Datos cargados desde el Excel real de apuestas y resultados reales de la fase de grupos.
 </div>
 """,
         unsafe_allow_html=True,
@@ -781,7 +776,7 @@ Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durant
 - Si fallas el signo: 0 puntos, aunque aciertes algún gol.
 
 ### Frase para compartir
-**Rellena tu Excel y entra en la Porra Ludópatas 2026. Cada resultado actualizará la clasificación.**
+**Simulación calculada con las reglas reales de la porra.**
 """)
 
-st.caption("Diseño inspirado en el ambiente del Mundial 2026. No usa logos oficiales ni material protegido de FIFA.")
+st.caption("Simulación basada en la fase de grupos de la Eurocopa 2024.")

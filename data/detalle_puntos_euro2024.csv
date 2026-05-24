@@ -1,0 +1,4428 @@
+participante,partido_id,goles_local,goles_visitante,real_local,real_visitante,signo_apuesta,signo_real,acierta_1x2,puntos
+Agustín Padilla F.,1,3,0,5,1,1,1,True,1
+Agustín Padilla F.,13,2,0,2,0,1,1,True,3
+Agustín Padilla F.,25,1,1,0,1,X,2,False,0
+Agustín Padilla F.,2,1,2,1,3,2,2,True,2
+Agustín Padilla F.,14,0,2,1,1,2,X,False,0
+Agustín Padilla F.,26,1,4,1,1,2,X,False,0
+Agustín Padilla F.,3,2,1,3,0,1,1,True,1
+Agustín Padilla F.,15,2,0,2,2,1,X,False,0
+Agustín Padilla F.,27,0,1,1,1,2,X,False,0
+Agustín Padilla F.,4,3,0,2,1,1,1,True,1
+Agustín Padilla F.,16,2,0,1,0,1,1,True,2
+Agustín Padilla F.,28,0,5,0,1,2,2,True,2
+Agustín Padilla F.,5,0,2,1,1,2,X,False,0
+Agustín Padilla F.,17,1,1,1,1,X,X,True,3
+Agustín Padilla F.,29,3,0,0,0,1,X,False,0
+Agustín Padilla F.,6,1,2,0,1,2,2,True,1
+Agustín Padilla F.,18,1,3,1,1,2,X,False,0
+Agustín Padilla F.,30,2,0,0,0,1,X,False,0
+Agustín Padilla F.,7,0,1,1,2,2,2,True,1
+Agustín Padilla F.,19,1,0,1,3,1,2,False,0
+Agustín Padilla F.,31,2,0,2,3,1,2,False,0
+Agustín Padilla F.,8,0,3,0,1,2,2,True,2
+Agustín Padilla F.,20,2,2,0,0,X,X,True,1
+Agustín Padilla F.,32,3,0,1,1,1,X,False,0
+Agustín Padilla F.,9,0,0,3,0,X,1,False,0
+Agustín Padilla F.,21,0,1,1,2,2,2,True,1
+Agustín Padilla F.,33,0,1,0,0,2,X,False,0
+Agustín Padilla F.,10,2,0,0,1,1,2,False,0
+Agustín Padilla F.,22,2,0,2,0,1,1,True,3
+Agustín Padilla F.,34,1,1,1,1,X,X,True,3
+Agustín Padilla F.,11,2,0,3,1,1,1,True,1
+Agustín Padilla F.,23,1,2,1,1,2,X,False,0
+Agustín Padilla F.,35,0,3,2,0,2,1,False,0
+Agustín Padilla F.,12,1,2,2,1,2,1,False,0
+Agustín Padilla F.,24,1,1,0,3,X,2,False,0
+Agustín Padilla F.,36,2,2,1,2,X,2,False,0
+Agustín Padilla H.,1,2,1,5,1,1,1,True,2
+Agustín Padilla H.,13,2,1,2,0,1,1,True,2
+Agustín Padilla H.,25,0,1,0,1,2,2,True,3
+Agustín Padilla H.,2,2,4,1,3,2,2,True,1
+Agustín Padilla H.,14,1,3,1,1,2,X,False,0
+Agustín Padilla H.,26,0,1,1,1,2,X,False,0
+Agustín Padilla H.,3,1,1,3,0,X,1,False,0
+Agustín Padilla H.,15,2,0,2,2,1,X,False,0
+Agustín Padilla H.,27,2,1,1,1,1,X,False,0
+Agustín Padilla H.,4,2,0,2,1,1,1,True,2
+Agustín Padilla H.,16,3,1,1,0,1,1,True,1
+Agustín Padilla H.,28,0,4,0,1,2,2,True,2
+Agustín Padilla H.,5,1,3,1,1,2,X,False,0
+Agustín Padilla H.,17,1,2,1,1,2,X,False,0
+Agustín Padilla H.,29,3,0,0,0,1,X,False,0
+Agustín Padilla H.,6,0,2,0,1,2,2,True,2
+Agustín Padilla H.,18,2,2,1,1,X,X,True,1
+Agustín Padilla H.,30,2,0,0,0,1,X,False,0
+Agustín Padilla H.,7,1,2,1,2,2,2,True,3
+Agustín Padilla H.,19,0,1,1,3,2,2,True,1
+Agustín Padilla H.,31,1,0,2,3,1,2,False,0
+Agustín Padilla H.,8,0,3,0,1,2,2,True,2
+Agustín Padilla H.,20,1,2,0,0,2,X,False,0
+Agustín Padilla H.,32,3,1,1,1,1,X,False,0
+Agustín Padilla H.,9,2,3,3,0,2,1,False,0
+Agustín Padilla H.,21,1,1,1,2,X,2,False,0
+Agustín Padilla H.,33,1,1,0,0,X,X,True,1
+Agustín Padilla H.,10,2,1,0,1,1,2,False,0
+Agustín Padilla H.,22,2,1,2,0,1,1,True,2
+Agustín Padilla H.,34,1,0,1,1,1,X,False,0
+Agustín Padilla H.,11,2,1,3,1,1,1,True,2
+Agustín Padilla H.,23,0,1,1,1,2,X,False,0
+Agustín Padilla H.,35,0,2,2,0,2,1,False,0
+Agustín Padilla H.,12,1,0,2,1,1,1,True,1
+Agustín Padilla H.,24,1,3,0,3,2,2,True,2
+Agustín Padilla H.,36,1,2,1,2,2,2,True,3
+Alberto,1,2,0,5,1,1,1,True,1
+Alberto,13,3,0,2,0,1,1,True,2
+Alberto,25,1,2,0,1,2,2,True,1
+Alberto,2,0,1,1,3,2,2,True,1
+Alberto,14,1,1,1,1,X,X,True,3
+Alberto,26,1,2,1,1,2,X,False,0
+Alberto,3,1,1,3,0,X,1,False,0
+Alberto,15,2,0,2,2,1,X,False,0
+Alberto,27,1,1,1,1,X,X,True,3
+Alberto,4,1,0,2,1,1,1,True,1
+Alberto,16,1,1,1,0,X,1,False,0
+Alberto,28,0,1,0,1,2,2,True,3
+Alberto,5,0,0,1,1,X,X,True,1
+Alberto,17,0,1,1,1,2,X,False,0
+Alberto,29,2,0,0,0,1,X,False,0
+Alberto,6,1,3,0,1,2,2,True,1
+Alberto,18,1,2,1,1,2,X,False,0
+Alberto,30,1,0,0,0,1,X,False,0
+Alberto,7,0,2,1,2,2,2,True,2
+Alberto,19,1,0,1,3,1,2,False,0
+Alberto,31,2,0,2,3,1,2,False,0
+Alberto,8,0,3,0,1,2,2,True,2
+Alberto,20,2,2,0,0,X,X,True,1
+Alberto,32,2,0,1,1,1,X,False,0
+Alberto,9,0,1,3,0,2,1,False,0
+Alberto,21,0,0,1,2,X,2,False,0
+Alberto,33,1,3,0,0,2,X,False,0
+Alberto,10,2,0,0,1,1,2,False,0
+Alberto,22,2,1,2,0,1,1,True,2
+Alberto,34,0,1,1,1,2,X,False,0
+Alberto,11,2,1,3,1,1,1,True,2
+Alberto,23,1,0,1,1,1,X,False,0
+Alberto,35,0,2,2,0,2,1,False,0
+Alberto,12,1,0,2,1,1,1,True,1
+Alberto,24,1,2,0,3,2,2,True,1
+Alberto,36,1,1,1,2,X,2,False,0
+Alejandro&Daniela,1,2,0,5,1,1,1,True,1
+Alejandro&Daniela,13,3,0,2,0,1,1,True,2
+Alejandro&Daniela,25,1,1,0,1,X,2,False,0
+Alejandro&Daniela,2,1,1,1,3,X,2,False,0
+Alejandro&Daniela,14,0,1,1,1,2,X,False,0
+Alejandro&Daniela,26,1,2,1,1,2,X,False,0
+Alejandro&Daniela,3,2,1,3,0,1,1,True,1
+Alejandro&Daniela,15,3,0,2,2,1,X,False,0
+Alejandro&Daniela,27,1,1,1,1,X,X,True,3
+Alejandro&Daniela,4,3,0,2,1,1,1,True,1
+Alejandro&Daniela,16,2,2,1,0,X,1,False,0
+Alejandro&Daniela,28,0,4,0,1,2,2,True,2
+Alejandro&Daniela,5,0,1,1,1,2,X,False,0
+Alejandro&Daniela,17,0,1,1,1,2,X,False,0
+Alejandro&Daniela,29,4,1,0,0,1,X,False,0
+Alejandro&Daniela,6,0,2,0,1,2,2,True,2
+Alejandro&Daniela,18,1,1,1,1,X,X,True,3
+Alejandro&Daniela,30,1,1,0,0,X,X,True,1
+Alejandro&Daniela,7,0,1,1,2,2,2,True,1
+Alejandro&Daniela,19,0,0,1,3,X,2,False,0
+Alejandro&Daniela,31,4,2,2,3,1,2,False,0
+Alejandro&Daniela,8,0,3,0,1,2,2,True,2
+Alejandro&Daniela,20,2,2,0,0,X,X,True,1
+Alejandro&Daniela,32,3,1,1,1,1,X,False,0
+Alejandro&Daniela,9,0,1,3,0,2,1,False,0
+Alejandro&Daniela,21,0,0,1,2,X,2,False,0
+Alejandro&Daniela,33,0,2,0,0,2,X,False,0
+Alejandro&Daniela,10,3,1,0,1,1,2,False,0
+Alejandro&Daniela,22,2,0,2,0,1,1,True,3
+Alejandro&Daniela,34,0,0,1,1,X,X,True,1
+Alejandro&Daniela,11,2,0,3,1,1,1,True,1
+Alejandro&Daniela,23,0,1,1,1,2,X,False,0
+Alejandro&Daniela,35,0,4,2,0,2,1,False,0
+Alejandro&Daniela,12,2,1,2,1,1,1,True,3
+Alejandro&Daniela,24,0,1,0,3,2,2,True,2
+Alejandro&Daniela,36,1,1,1,2,X,2,False,0
+Los Extraditables,1,2,0,5,1,1,1,True,1
+Los Extraditables,13,3,1,2,0,1,1,True,1
+Los Extraditables,25,1,1,0,1,X,2,False,0
+Los Extraditables,2,1,2,1,3,2,2,True,2
+Los Extraditables,14,1,1,1,1,X,X,True,3
+Los Extraditables,26,1,2,1,1,2,X,False,0
+Los Extraditables,3,1,1,3,0,X,1,False,0
+Los Extraditables,15,2,0,2,2,1,X,False,0
+Los Extraditables,27,1,1,1,1,X,X,True,3
+Los Extraditables,4,2,1,2,1,1,1,True,3
+Los Extraditables,16,1,1,1,0,X,1,False,0
+Los Extraditables,28,0,2,0,1,2,2,True,2
+Los Extraditables,5,0,2,1,1,2,X,False,0
+Los Extraditables,17,1,1,1,1,X,X,True,3
+Los Extraditables,29,3,1,0,0,1,X,False,0
+Los Extraditables,6,1,3,0,1,2,2,True,1
+Los Extraditables,18,2,2,1,1,X,X,True,1
+Los Extraditables,30,2,1,0,0,1,X,False,0
+Los Extraditables,7,1,1,1,2,X,2,False,0
+Los Extraditables,19,1,1,1,3,X,2,False,0
+Los Extraditables,31,2,0,2,3,1,2,False,0
+Los Extraditables,8,0,2,0,1,2,2,True,2
+Los Extraditables,20,1,2,0,0,2,X,False,0
+Los Extraditables,32,2,0,1,1,1,X,False,0
+Los Extraditables,9,1,2,3,0,2,1,False,0
+Los Extraditables,21,1,2,1,2,2,2,True,3
+Los Extraditables,33,1,2,0,0,2,X,False,0
+Los Extraditables,10,2,0,0,1,1,2,False,0
+Los Extraditables,22,2,1,2,0,1,1,True,2
+Los Extraditables,34,1,1,1,1,X,X,True,3
+Los Extraditables,11,1,0,3,1,1,1,True,1
+Los Extraditables,23,1,2,1,1,2,X,False,0
+Los Extraditables,35,0,3,2,0,2,1,False,0
+Los Extraditables,12,3,0,2,1,1,1,True,1
+Los Extraditables,24,1,3,0,3,2,2,True,2
+Los Extraditables,36,2,2,1,2,X,2,False,0
+Alexis,1,2,0,5,1,1,1,True,1
+Alexis,13,3,1,2,0,1,1,True,1
+Alexis,25,1,0,0,1,1,2,False,0
+Alexis,2,1,1,1,3,X,2,False,0
+Alexis,14,1,1,1,1,X,X,True,3
+Alexis,26,0,3,1,1,2,X,False,0
+Alexis,3,2,1,3,0,1,1,True,1
+Alexis,15,2,0,2,2,1,X,False,0
+Alexis,27,1,1,1,1,X,X,True,3
+Alexis,4,3,1,2,1,1,1,True,2
+Alexis,16,1,1,1,0,X,1,False,0
+Alexis,28,0,3,0,1,2,2,True,2
+Alexis,5,0,1,1,1,2,X,False,0
+Alexis,17,1,2,1,1,2,X,False,0
+Alexis,29,2,0,0,0,1,X,False,0
+Alexis,6,1,2,0,1,2,2,True,1
+Alexis,18,1,2,1,1,2,X,False,0
+Alexis,30,1,2,0,0,2,X,False,0
+Alexis,7,1,2,1,2,2,2,True,3
+Alexis,19,0,0,1,3,X,2,False,0
+Alexis,31,2,1,2,3,1,2,False,0
+Alexis,8,0,3,0,1,2,2,True,2
+Alexis,20,0,2,0,0,2,X,False,0
+Alexis,32,2,1,1,1,1,X,False,0
+Alexis,9,0,0,3,0,X,1,False,0
+Alexis,21,2,0,1,2,1,2,False,0
+Alexis,33,1,2,0,0,2,X,False,0
+Alexis,10,2,0,0,1,1,2,False,0
+Alexis,22,2,0,2,0,1,1,True,3
+Alexis,34,0,0,1,1,X,X,True,1
+Alexis,11,1,1,3,1,X,1,False,0
+Alexis,23,0,1,1,1,2,X,False,0
+Alexis,35,0,3,2,0,2,1,False,0
+Alexis,12,2,0,2,1,1,1,True,2
+Alexis,24,0,1,0,3,2,2,True,2
+Alexis,36,1,1,1,2,X,2,False,0
+Alfonso,1,3,1,5,1,1,1,True,2
+Alfonso,13,1,0,2,0,1,1,True,2
+Alfonso,25,1,2,0,1,2,2,True,1
+Alfonso,2,1,2,1,3,2,2,True,2
+Alfonso,14,0,2,1,1,2,X,False,0
+Alfonso,26,3,2,1,1,1,X,False,0
+Alfonso,3,1,0,3,0,1,1,True,2
+Alfonso,15,2,0,2,2,1,X,False,0
+Alfonso,27,0,1,1,1,2,X,False,0
+Alfonso,4,5,2,2,1,1,1,True,1
+Alfonso,16,2,2,1,0,X,1,False,0
+Alfonso,28,0,3,0,1,2,2,True,2
+Alfonso,5,0,2,1,1,2,X,False,0
+Alfonso,17,1,1,1,1,X,X,True,3
+Alfonso,29,3,1,0,0,1,X,False,0
+Alfonso,6,1,5,0,1,2,2,True,1
+Alfonso,18,1,2,1,1,2,X,False,0
+Alfonso,30,1,0,0,0,1,X,False,0
+Alfonso,7,1,2,1,2,2,2,True,3
+Alfonso,19,1,0,1,3,1,2,False,0
+Alfonso,31,2,1,2,3,1,2,False,0
+Alfonso,8,0,6,0,1,2,2,True,2
+Alfonso,20,2,3,0,0,2,X,False,0
+Alfonso,32,2,2,1,1,X,X,True,1
+Alfonso,9,1,1,3,0,X,1,False,0
+Alfonso,21,2,1,1,2,1,2,False,0
+Alfonso,33,0,4,0,0,2,X,False,0
+Alfonso,10,2,0,0,1,1,2,False,0
+Alfonso,22,2,1,2,0,1,1,True,2
+Alfonso,34,5,4,1,1,1,X,False,0
+Alfonso,11,1,1,3,1,X,1,False,0
+Alfonso,23,0,0,1,1,X,X,True,1
+Alfonso,35,1,3,2,0,2,1,False,0
+Alfonso,12,2,1,2,1,1,1,True,3
+Alfonso,24,1,2,0,3,2,2,True,1
+Alfonso,36,1,2,1,2,2,2,True,3
+Álvaro Muriel,1,3,0,5,1,1,1,True,1
+Álvaro Muriel,13,2,0,2,0,1,1,True,3
+Álvaro Muriel,25,1,0,0,1,1,2,False,0
+Álvaro Muriel,2,1,1,1,3,X,2,False,0
+Álvaro Muriel,14,0,1,1,1,2,X,False,0
+Álvaro Muriel,26,1,2,1,1,2,X,False,0
+Álvaro Muriel,3,1,0,3,0,1,1,True,2
+Álvaro Muriel,15,2,0,2,2,1,X,False,0
+Álvaro Muriel,27,1,2,1,1,2,X,False,0
+Álvaro Muriel,4,2,0,2,1,1,1,True,2
+Álvaro Muriel,16,1,1,1,0,X,1,False,0
+Álvaro Muriel,28,0,2,0,1,2,2,True,2
+Álvaro Muriel,5,0,2,1,1,2,X,False,0
+Álvaro Muriel,17,1,2,1,1,2,X,False,0
+Álvaro Muriel,29,1,0,0,0,1,X,False,0
+Álvaro Muriel,6,1,3,0,1,2,2,True,1
+Álvaro Muriel,18,1,2,1,1,2,X,False,0
+Álvaro Muriel,30,1,0,0,0,1,X,False,0
+Álvaro Muriel,7,0,2,1,2,2,2,True,2
+Álvaro Muriel,19,1,0,1,3,1,2,False,0
+Álvaro Muriel,31,2,0,2,3,1,2,False,0
+Álvaro Muriel,8,0,2,0,1,2,2,True,2
+Álvaro Muriel,20,1,2,0,0,2,X,False,0
+Álvaro Muriel,32,3,2,1,1,1,X,False,0
+Álvaro Muriel,9,0,0,3,0,X,1,False,0
+Álvaro Muriel,21,1,0,1,2,1,2,False,0
+Álvaro Muriel,33,1,2,0,0,2,X,False,0
+Álvaro Muriel,10,1,0,0,1,1,2,False,0
+Álvaro Muriel,22,1,0,2,0,1,1,True,2
+Álvaro Muriel,34,2,2,1,1,X,X,True,1
+Álvaro Muriel,11,2,0,3,1,1,1,True,1
+Álvaro Muriel,23,0,0,1,1,X,X,True,1
+Álvaro Muriel,35,0,0,2,0,X,1,False,0
+Álvaro Muriel,12,1,0,2,1,1,1,True,1
+Álvaro Muriel,24,1,1,0,3,X,2,False,0
+Álvaro Muriel,36,1,2,1,2,2,2,True,3
+Ana Mª Pérez,1,3,1,5,1,1,1,True,2
+Ana Mª Pérez,13,3,1,2,0,1,1,True,1
+Ana Mª Pérez,25,0,1,0,1,2,2,True,3
+Ana Mª Pérez,2,0,2,1,3,2,2,True,1
+Ana Mª Pérez,14,2,3,1,1,2,X,False,0
+Ana Mª Pérez,26,1,3,1,1,2,X,False,0
+Ana Mª Pérez,3,2,1,3,0,1,1,True,1
+Ana Mª Pérez,15,1,0,2,2,1,X,False,0
+Ana Mª Pérez,27,2,3,1,1,2,X,False,0
+Ana Mª Pérez,4,2,1,2,1,1,1,True,3
+Ana Mª Pérez,16,3,2,1,0,1,1,True,1
+Ana Mª Pérez,28,0,3,0,1,2,2,True,2
+Ana Mª Pérez,5,0,0,1,1,X,X,True,1
+Ana Mª Pérez,17,1,1,1,1,X,X,True,3
+Ana Mª Pérez,29,2,1,0,0,1,X,False,0
+Ana Mª Pérez,6,0,3,0,1,2,2,True,2
+Ana Mª Pérez,18,0,2,1,1,2,X,False,0
+Ana Mª Pérez,30,1,2,0,0,2,X,False,0
+Ana Mª Pérez,7,2,3,1,2,2,2,True,1
+Ana Mª Pérez,19,0,1,1,3,2,2,True,1
+Ana Mª Pérez,31,2,1,2,3,1,2,False,0
+Ana Mª Pérez,8,1,3,0,1,2,2,True,1
+Ana Mª Pérez,20,1,3,0,0,2,X,False,0
+Ana Mª Pérez,32,3,2,1,1,1,X,False,0
+Ana Mª Pérez,9,2,2,3,0,X,1,False,0
+Ana Mª Pérez,21,1,2,1,2,2,2,True,3
+Ana Mª Pérez,33,0,2,0,0,2,X,False,0
+Ana Mª Pérez,10,1,0,0,1,1,2,False,0
+Ana Mª Pérez,22,0,1,2,0,2,1,False,0
+Ana Mª Pérez,34,1,1,1,1,X,X,True,3
+Ana Mª Pérez,11,2,1,3,1,1,1,True,2
+Ana Mª Pérez,23,1,3,1,1,2,X,False,0
+Ana Mª Pérez,35,0,2,2,0,2,1,False,0
+Ana Mª Pérez,12,3,2,2,1,1,1,True,1
+Ana Mª Pérez,24,1,2,0,3,2,2,True,1
+Ana Mª Pérez,36,2,1,1,2,1,2,False,0
+Ángel,1,3,1,5,1,1,1,True,2
+Ángel,13,2,0,2,0,1,1,True,3
+Ángel,25,0,0,0,1,X,2,False,0
+Ángel,2,0,2,1,3,2,2,True,1
+Ángel,14,1,1,1,1,X,X,True,3
+Ángel,26,1,2,1,1,2,X,False,0
+Ángel,3,3,1,3,0,1,1,True,2
+Ángel,15,1,0,2,2,1,X,False,0
+Ángel,27,1,1,1,1,X,X,True,3
+Ángel,4,2,1,2,1,1,1,True,3
+Ángel,16,2,0,1,0,1,1,True,2
+Ángel,28,0,3,0,1,2,2,True,2
+Ángel,5,1,1,1,1,X,X,True,3
+Ángel,17,1,1,1,1,X,X,True,3
+Ángel,29,4,1,0,0,1,X,False,0
+Ángel,6,1,4,0,1,2,2,True,1
+Ángel,18,1,2,1,1,2,X,False,0
+Ángel,30,3,2,0,0,1,X,False,0
+Ángel,7,0,2,1,2,2,2,True,2
+Ángel,19,0,1,1,3,2,2,True,1
+Ángel,31,2,2,2,3,X,2,False,0
+Ángel,8,1,3,0,1,2,2,True,1
+Ángel,20,1,2,0,0,2,X,False,0
+Ángel,32,3,0,1,1,1,X,False,0
+Ángel,9,0,1,3,0,2,1,False,0
+Ángel,21,0,1,1,2,2,2,True,1
+Ángel,33,1,1,0,0,X,X,True,1
+Ángel,10,2,1,0,1,1,2,False,0
+Ángel,22,2,0,2,0,1,1,True,3
+Ángel,34,1,0,1,1,1,X,False,0
+Ángel,11,3,1,3,1,1,1,True,3
+Ángel,23,0,0,1,1,X,X,True,1
+Ángel,35,0,4,2,0,2,1,False,0
+Ángel,12,2,2,2,1,X,1,False,0
+Ángel,24,0,3,0,3,2,2,True,3
+Ángel,36,1,1,1,2,X,2,False,0
+Annet,1,2,1,5,1,1,1,True,2
+Annet,13,2,0,2,0,1,1,True,3
+Annet,25,1,1,0,1,X,2,False,0
+Annet,2,0,1,1,3,2,2,True,1
+Annet,14,2,1,1,1,1,X,False,0
+Annet,26,0,3,1,1,2,X,False,0
+Annet,3,2,0,3,0,1,1,True,2
+Annet,15,2,0,2,2,1,X,False,0
+Annet,27,1,1,1,1,X,X,True,3
+Annet,4,2,0,2,1,1,1,True,2
+Annet,16,2,1,1,0,1,1,True,1
+Annet,28,0,3,0,1,2,2,True,2
+Annet,5,0,2,1,1,2,X,False,0
+Annet,17,0,1,1,1,2,X,False,0
+Annet,29,2,1,0,0,1,X,False,0
+Annet,6,0,2,0,1,2,2,True,2
+Annet,18,2,2,1,1,X,X,True,1
+Annet,30,3,1,0,0,1,X,False,0
+Annet,7,1,2,1,2,2,2,True,3
+Annet,19,2,0,1,3,1,2,False,0
+Annet,31,2,1,2,3,1,2,False,0
+Annet,8,1,2,0,1,2,2,True,1
+Annet,20,1,1,0,0,X,X,True,1
+Annet,32,2,0,1,1,1,X,False,0
+Annet,9,1,2,3,0,2,1,False,0
+Annet,21,0,1,1,2,2,2,True,1
+Annet,33,2,1,0,0,1,X,False,0
+Annet,10,1,0,0,1,1,2,False,0
+Annet,22,2,1,2,0,1,1,True,2
+Annet,34,1,1,1,1,X,X,True,3
+Annet,11,2,0,3,1,1,1,True,1
+Annet,23,1,1,1,1,X,X,True,3
+Annet,35,0,4,2,0,2,1,False,0
+Annet,12,2,0,2,1,1,1,True,2
+Annet,24,1,2,0,3,2,2,True,1
+Annet,36,1,2,1,2,2,2,True,3
+Antonio Guedes,1,3,1,5,1,1,1,True,2
+Antonio Guedes,13,3,0,2,0,1,1,True,2
+Antonio Guedes,25,0,0,0,1,X,2,False,0
+Antonio Guedes,2,1,1,1,3,X,2,False,0
+Antonio Guedes,14,1,1,1,1,X,X,True,3
+Antonio Guedes,26,1,5,1,1,2,X,False,0
+Antonio Guedes,3,2,1,3,0,1,1,True,1
+Antonio Guedes,15,4,1,2,2,1,X,False,0
+Antonio Guedes,27,1,1,1,1,X,X,True,3
+Antonio Guedes,4,3,0,2,1,1,1,True,1
+Antonio Guedes,16,2,1,1,0,1,1,True,1
+Antonio Guedes,28,0,7,0,1,2,2,True,2
+Antonio Guedes,5,1,2,1,1,2,X,False,0
+Antonio Guedes,17,0,3,1,1,2,X,False,0
+Antonio Guedes,29,3,0,0,0,1,X,False,0
+Antonio Guedes,6,1,3,0,1,2,2,True,1
+Antonio Guedes,18,1,3,1,1,2,X,False,0
+Antonio Guedes,30,3,2,0,0,1,X,False,0
+Antonio Guedes,7,0,4,1,2,2,2,True,1
+Antonio Guedes,19,2,2,1,3,X,2,False,0
+Antonio Guedes,31,3,1,2,3,1,2,False,0
+Antonio Guedes,8,0,3,0,1,2,2,True,2
+Antonio Guedes,20,1,3,0,0,2,X,False,0
+Antonio Guedes,32,4,2,1,1,1,X,False,0
+Antonio Guedes,9,2,2,3,0,X,1,False,0
+Antonio Guedes,21,1,0,1,2,1,2,False,0
+Antonio Guedes,33,0,4,0,0,2,X,False,0
+Antonio Guedes,10,3,1,0,1,1,2,False,0
+Antonio Guedes,22,3,2,2,0,1,1,True,1
+Antonio Guedes,34,2,2,1,1,X,X,True,1
+Antonio Guedes,11,2,0,3,1,1,1,True,1
+Antonio Guedes,23,0,5,1,1,2,X,False,0
+Antonio Guedes,35,0,5,2,0,2,1,False,0
+Antonio Guedes,12,2,2,2,1,X,1,False,0
+Antonio Guedes,24,1,4,0,3,2,2,True,1
+Antonio Guedes,36,2,1,1,2,1,2,False,0
+Ayoze Padilla,1,2,0,5,1,1,1,True,1
+Ayoze Padilla,13,2,0,2,0,1,1,True,3
+Ayoze Padilla,25,1,0,0,1,1,2,False,0
+Ayoze Padilla,2,0,0,1,3,X,2,False,0
+Ayoze Padilla,14,0,0,1,1,X,X,True,1
+Ayoze Padilla,26,0,1,1,1,2,X,False,0
+Ayoze Padilla,3,2,1,3,0,1,1,True,1
+Ayoze Padilla,15,3,0,2,2,1,X,False,0
+Ayoze Padilla,27,1,1,1,1,X,X,True,3
+Ayoze Padilla,4,3,0,2,1,1,1,True,1
+Ayoze Padilla,16,2,1,1,0,1,1,True,1
+Ayoze Padilla,28,0,4,0,1,2,2,True,2
+Ayoze Padilla,5,1,1,1,1,X,X,True,3
+Ayoze Padilla,17,0,1,1,1,2,X,False,0
+Ayoze Padilla,29,2,0,0,0,1,X,False,0
+Ayoze Padilla,6,0,1,0,1,2,2,True,3
+Ayoze Padilla,18,1,2,1,1,2,X,False,0
+Ayoze Padilla,30,1,1,0,0,X,X,True,1
+Ayoze Padilla,7,1,2,1,2,2,2,True,3
+Ayoze Padilla,19,1,0,1,3,1,2,False,0
+Ayoze Padilla,31,1,0,2,3,1,2,False,0
+Ayoze Padilla,8,0,2,0,1,2,2,True,2
+Ayoze Padilla,20,1,3,0,0,2,X,False,0
+Ayoze Padilla,32,3,1,1,1,1,X,False,0
+Ayoze Padilla,9,1,1,3,0,X,1,False,0
+Ayoze Padilla,21,0,1,1,2,2,2,True,1
+Ayoze Padilla,33,1,2,0,0,2,X,False,0
+Ayoze Padilla,10,1,0,0,1,1,2,False,0
+Ayoze Padilla,22,2,1,2,0,1,1,True,2
+Ayoze Padilla,34,1,1,1,1,X,X,True,3
+Ayoze Padilla,11,2,0,3,1,1,1,True,1
+Ayoze Padilla,23,0,2,1,1,2,X,False,0
+Ayoze Padilla,35,0,3,2,0,2,1,False,0
+Ayoze Padilla,12,1,1,2,1,X,1,False,0
+Ayoze Padilla,24,2,2,0,3,X,2,False,0
+Ayoze Padilla,36,1,2,1,2,2,2,True,3
+Aythami Artiles,1,2,0,5,1,1,1,True,1
+Aythami Artiles,13,2,0,2,0,1,1,True,3
+Aythami Artiles,25,1,1,0,1,X,2,False,0
+Aythami Artiles,2,1,1,1,3,X,2,False,0
+Aythami Artiles,14,1,1,1,1,X,X,True,3
+Aythami Artiles,26,1,3,1,1,2,X,False,0
+Aythami Artiles,3,2,1,3,0,1,1,True,1
+Aythami Artiles,15,2,0,2,2,1,X,False,0
+Aythami Artiles,27,1,2,1,1,2,X,False,0
+Aythami Artiles,4,2,0,2,1,1,1,True,2
+Aythami Artiles,16,2,2,1,0,X,1,False,0
+Aythami Artiles,28,0,2,0,1,2,2,True,2
+Aythami Artiles,5,0,1,1,1,2,X,False,0
+Aythami Artiles,17,0,0,1,1,X,X,True,1
+Aythami Artiles,29,1,0,0,0,1,X,False,0
+Aythami Artiles,6,1,1,0,1,X,2,False,0
+Aythami Artiles,18,1,1,1,1,X,X,True,3
+Aythami Artiles,30,1,1,0,0,X,X,True,1
+Aythami Artiles,7,1,3,1,2,2,2,True,2
+Aythami Artiles,19,2,1,1,3,1,2,False,0
+Aythami Artiles,31,3,1,2,3,1,2,False,0
+Aythami Artiles,8,0,3,0,1,2,2,True,2
+Aythami Artiles,20,1,2,0,0,2,X,False,0
+Aythami Artiles,32,2,0,1,1,1,X,False,0
+Aythami Artiles,9,0,0,3,0,X,1,False,0
+Aythami Artiles,21,1,1,1,2,X,2,False,0
+Aythami Artiles,33,1,2,0,0,2,X,False,0
+Aythami Artiles,10,2,2,0,1,X,2,False,0
+Aythami Artiles,22,0,0,2,0,X,1,False,0
+Aythami Artiles,34,1,1,1,1,X,X,True,3
+Aythami Artiles,11,1,0,3,1,1,1,True,1
+Aythami Artiles,23,1,3,1,1,2,X,False,0
+Aythami Artiles,35,0,3,2,0,2,1,False,0
+Aythami Artiles,12,1,1,2,1,X,1,False,0
+Aythami Artiles,24,0,1,0,3,2,2,True,2
+Aythami Artiles,36,2,1,1,2,1,2,False,0
+Carlos Bolín,1,3,1,5,1,1,1,True,2
+Carlos Bolín,13,2,0,2,0,1,1,True,3
+Carlos Bolín,25,2,1,0,1,1,2,False,0
+Carlos Bolín,2,1,2,1,3,2,2,True,2
+Carlos Bolín,14,1,1,1,1,X,X,True,3
+Carlos Bolín,26,1,2,1,1,2,X,False,0
+Carlos Bolín,3,2,1,3,0,1,1,True,1
+Carlos Bolín,15,2,0,2,2,1,X,False,0
+Carlos Bolín,27,1,2,1,1,2,X,False,0
+Carlos Bolín,4,2,0,2,1,1,1,True,2
+Carlos Bolín,16,3,2,1,0,1,1,True,1
+Carlos Bolín,28,0,3,0,1,2,2,True,2
+Carlos Bolín,5,1,1,1,1,X,X,True,3
+Carlos Bolín,17,1,1,1,1,X,X,True,3
+Carlos Bolín,29,3,0,0,0,1,X,False,0
+Carlos Bolín,6,0,4,0,1,2,2,True,2
+Carlos Bolín,18,1,3,1,1,2,X,False,0
+Carlos Bolín,30,2,1,0,0,1,X,False,0
+Carlos Bolín,7,0,1,1,2,2,2,True,1
+Carlos Bolín,19,0,0,1,3,X,2,False,0
+Carlos Bolín,31,2,1,2,3,1,2,False,0
+Carlos Bolín,8,1,3,0,1,2,2,True,1
+Carlos Bolín,20,1,2,0,0,2,X,False,0
+Carlos Bolín,32,3,0,1,1,1,X,False,0
+Carlos Bolín,9,0,1,3,0,2,1,False,0
+Carlos Bolín,21,1,1,1,2,X,2,False,0
+Carlos Bolín,33,1,2,0,0,2,X,False,0
+Carlos Bolín,10,2,1,0,1,1,2,False,0
+Carlos Bolín,22,2,0,2,0,1,1,True,3
+Carlos Bolín,34,2,1,1,1,1,X,False,0
+Carlos Bolín,11,1,0,3,1,1,1,True,1
+Carlos Bolín,23,1,1,1,1,X,X,True,3
+Carlos Bolín,35,1,4,2,0,2,1,False,0
+Carlos Bolín,12,2,0,2,1,1,1,True,2
+Carlos Bolín,24,1,3,0,3,2,2,True,2
+Carlos Bolín,36,1,2,1,2,2,2,True,3
+Carlos Villena,1,3,0,5,1,1,1,True,1
+Carlos Villena,13,2,0,2,0,1,1,True,3
+Carlos Villena,25,1,1,0,1,X,2,False,0
+Carlos Villena,2,1,1,1,3,X,2,False,0
+Carlos Villena,14,0,1,1,1,2,X,False,0
+Carlos Villena,26,1,2,1,1,2,X,False,0
+Carlos Villena,3,3,1,3,0,1,1,True,2
+Carlos Villena,15,2,0,2,2,1,X,False,0
+Carlos Villena,27,0,1,1,1,2,X,False,0
+Carlos Villena,4,2,0,2,1,1,1,True,2
+Carlos Villena,16,2,1,1,0,1,1,True,1
+Carlos Villena,28,0,3,0,1,2,2,True,2
+Carlos Villena,5,0,1,1,1,2,X,False,0
+Carlos Villena,17,1,1,1,1,X,X,True,3
+Carlos Villena,29,4,0,0,0,1,X,False,0
+Carlos Villena,6,1,4,0,1,2,2,True,1
+Carlos Villena,18,1,3,1,1,2,X,False,0
+Carlos Villena,30,1,1,0,0,X,X,True,1
+Carlos Villena,7,0,2,1,2,2,2,True,2
+Carlos Villena,19,0,0,1,3,X,2,False,0
+Carlos Villena,31,3,1,2,3,1,2,False,0
+Carlos Villena,8,0,3,0,1,2,2,True,2
+Carlos Villena,20,2,3,0,0,2,X,False,0
+Carlos Villena,32,2,0,1,1,1,X,False,0
+Carlos Villena,9,1,1,3,0,X,1,False,0
+Carlos Villena,21,1,1,1,2,X,2,False,0
+Carlos Villena,33,1,2,0,0,2,X,False,0
+Carlos Villena,10,2,0,0,1,1,2,False,0
+Carlos Villena,22,2,0,2,0,1,1,True,3
+Carlos Villena,34,1,1,1,1,X,X,True,3
+Carlos Villena,11,2,0,3,1,1,1,True,1
+Carlos Villena,23,1,1,1,1,X,X,True,3
+Carlos Villena,35,0,4,2,0,2,1,False,0
+Carlos Villena,12,4,0,2,1,1,1,True,1
+Carlos Villena,24,1,3,0,3,2,2,True,2
+Carlos Villena,36,1,2,1,2,2,2,True,3
+Carlos Yanez,1,2,0,5,1,1,1,True,1
+Carlos Yanez,13,3,1,2,0,1,1,True,1
+Carlos Yanez,25,2,0,0,1,1,2,False,0
+Carlos Yanez,2,1,2,1,3,2,2,True,2
+Carlos Yanez,14,1,1,1,1,X,X,True,3
+Carlos Yanez,26,1,2,1,1,2,X,False,0
+Carlos Yanez,3,1,1,3,0,X,1,False,0
+Carlos Yanez,15,1,0,2,2,1,X,False,0
+Carlos Yanez,27,1,2,1,1,2,X,False,0
+Carlos Yanez,4,0,1,2,1,2,1,False,0
+Carlos Yanez,16,0,1,1,0,2,1,False,0
+Carlos Yanez,28,0,2,0,1,2,2,True,2
+Carlos Yanez,5,1,1,1,1,X,X,True,3
+Carlos Yanez,17,1,4,1,1,2,X,False,0
+Carlos Yanez,29,2,1,0,0,1,X,False,0
+Carlos Yanez,6,1,3,0,1,2,2,True,1
+Carlos Yanez,18,1,1,1,1,X,X,True,3
+Carlos Yanez,30,0,1,0,0,2,X,False,0
+Carlos Yanez,7,2,3,1,2,2,2,True,1
+Carlos Yanez,19,1,2,1,3,2,2,True,2
+Carlos Yanez,31,0,1,2,3,2,2,True,1
+Carlos Yanez,8,0,2,0,1,2,2,True,2
+Carlos Yanez,20,2,2,0,0,X,X,True,1
+Carlos Yanez,32,1,1,1,1,X,X,True,3
+Carlos Yanez,9,0,1,3,0,2,1,False,0
+Carlos Yanez,21,1,0,1,2,1,2,False,0
+Carlos Yanez,33,1,3,0,0,2,X,False,0
+Carlos Yanez,10,0,1,0,1,2,2,True,3
+Carlos Yanez,22,2,1,2,0,1,1,True,2
+Carlos Yanez,34,2,2,1,1,X,X,True,1
+Carlos Yanez,11,2,0,3,1,1,1,True,1
+Carlos Yanez,23,0,0,1,1,X,X,True,1
+Carlos Yanez,35,1,2,2,0,2,1,False,0
+Carlos Yanez,12,2,1,2,1,1,1,True,3
+Carlos Yanez,24,0,3,0,3,2,2,True,3
+Carlos Yanez,36,2,1,1,2,1,2,False,0
+Carlota Calandria,1,2,0,5,1,1,1,True,1
+Carlota Calandria,13,2,0,2,0,1,1,True,3
+Carlota Calandria,25,0,0,0,1,X,2,False,0
+Carlota Calandria,2,1,2,1,3,2,2,True,2
+Carlota Calandria,14,1,1,1,1,X,X,True,3
+Carlota Calandria,26,1,2,1,1,2,X,False,0
+Carlota Calandria,3,2,1,3,0,1,1,True,1
+Carlota Calandria,15,2,0,2,2,1,X,False,0
+Carlota Calandria,27,2,2,1,1,X,X,True,1
+Carlota Calandria,4,3,0,2,1,1,1,True,1
+Carlota Calandria,16,2,0,1,0,1,1,True,2
+Carlota Calandria,28,0,2,0,1,2,2,True,2
+Carlota Calandria,5,1,1,1,1,X,X,True,3
+Carlota Calandria,17,1,1,1,1,X,X,True,3
+Carlota Calandria,29,2,0,0,0,1,X,False,0
+Carlota Calandria,6,1,3,0,1,2,2,True,1
+Carlota Calandria,18,1,2,1,1,2,X,False,0
+Carlota Calandria,30,1,0,0,0,1,X,False,0
+Carlota Calandria,7,1,2,1,2,2,2,True,3
+Carlota Calandria,19,2,1,1,3,1,2,False,0
+Carlota Calandria,31,1,1,2,3,X,2,False,0
+Carlota Calandria,8,1,3,0,1,2,2,True,1
+Carlota Calandria,20,1,3,0,0,2,X,False,0
+Carlota Calandria,32,2,0,1,1,1,X,False,0
+Carlota Calandria,9,0,1,3,0,2,1,False,0
+Carlota Calandria,21,1,1,1,2,X,2,False,0
+Carlota Calandria,33,1,1,0,0,X,X,True,1
+Carlota Calandria,10,2,0,0,1,1,2,False,0
+Carlota Calandria,22,2,1,2,0,1,1,True,2
+Carlota Calandria,34,0,0,1,1,X,X,True,1
+Carlota Calandria,11,1,0,3,1,1,1,True,1
+Carlota Calandria,23,0,1,1,1,2,X,False,0
+Carlota Calandria,35,1,2,2,0,2,1,False,0
+Carlota Calandria,12,3,0,2,1,1,1,True,1
+Carlota Calandria,24,0,1,0,3,2,2,True,2
+Carlota Calandria,36,0,1,1,2,2,2,True,1
+Carpo,1,2,0,5,1,1,1,True,1
+Carpo,13,2,0,2,0,1,1,True,3
+Carpo,25,0,0,0,1,X,2,False,0
+Carpo,2,1,1,1,3,X,2,False,0
+Carpo,14,1,1,1,1,X,X,True,3
+Carpo,26,1,1,1,1,X,X,True,3
+Carpo,3,2,1,3,0,1,1,True,1
+Carpo,15,1,0,2,2,1,X,False,0
+Carpo,27,0,2,1,1,2,X,False,0
+Carpo,4,2,0,2,1,1,1,True,2
+Carpo,16,1,1,1,0,X,1,False,0
+Carpo,28,0,2,0,1,2,2,True,2
+Carpo,5,0,1,1,1,2,X,False,0
+Carpo,17,0,0,1,1,X,X,True,1
+Carpo,29,3,0,0,0,1,X,False,0
+Carpo,6,0,3,0,1,2,2,True,2
+Carpo,18,1,2,1,1,2,X,False,0
+Carpo,30,1,1,0,0,X,X,True,1
+Carpo,7,2,2,1,2,X,2,False,0
+Carpo,19,2,0,1,3,1,2,False,0
+Carpo,31,2,0,2,3,1,2,False,0
+Carpo,8,0,3,0,1,2,2,True,2
+Carpo,20,1,2,0,0,2,X,False,0
+Carpo,32,2,1,1,1,1,X,False,0
+Carpo,9,0,0,3,0,X,1,False,0
+Carpo,21,1,1,1,2,X,2,False,0
+Carpo,33,0,1,0,0,2,X,False,0
+Carpo,10,2,0,0,1,1,2,False,0
+Carpo,22,2,0,2,0,1,1,True,3
+Carpo,34,0,0,1,1,X,X,True,1
+Carpo,11,1,1,3,1,X,1,False,0
+Carpo,23,1,1,1,1,X,X,True,3
+Carpo,35,0,2,2,0,2,1,False,0
+Carpo,12,3,1,2,1,1,1,True,2
+Carpo,24,1,2,0,3,2,2,True,1
+Carpo,36,1,1,1,2,X,2,False,0
+Chano de la Nuez,1,2,0,5,1,1,1,True,1
+Chano de la Nuez,13,2,0,2,0,1,1,True,3
+Chano de la Nuez,25,1,0,0,1,1,2,False,0
+Chano de la Nuez,2,0,1,1,3,2,2,True,1
+Chano de la Nuez,14,1,1,1,1,X,X,True,3
+Chano de la Nuez,26,1,2,1,1,2,X,False,0
+Chano de la Nuez,3,2,1,3,0,1,1,True,1
+Chano de la Nuez,15,3,0,2,2,1,X,False,0
+Chano de la Nuez,27,1,1,1,1,X,X,True,3
+Chano de la Nuez,4,2,0,2,1,1,1,True,2
+Chano de la Nuez,16,1,1,1,0,X,1,False,0
+Chano de la Nuez,28,0,4,0,1,2,2,True,2
+Chano de la Nuez,5,1,2,1,1,2,X,False,0
+Chano de la Nuez,17,1,1,1,1,X,X,True,3
+Chano de la Nuez,29,2,0,0,0,1,X,False,0
+Chano de la Nuez,6,1,2,0,1,2,2,True,1
+Chano de la Nuez,18,1,2,1,1,2,X,False,0
+Chano de la Nuez,30,1,1,0,0,X,X,True,1
+Chano de la Nuez,7,0,2,1,2,2,2,True,2
+Chano de la Nuez,19,1,1,1,3,X,2,False,0
+Chano de la Nuez,31,2,0,2,3,1,2,False,0
+Chano de la Nuez,8,0,3,0,1,2,2,True,2
+Chano de la Nuez,20,1,2,0,0,2,X,False,0
+Chano de la Nuez,32,3,0,1,1,1,X,False,0
+Chano de la Nuez,9,1,2,3,0,2,1,False,0
+Chano de la Nuez,21,0,1,1,2,2,2,True,1
+Chano de la Nuez,33,0,1,0,0,2,X,False,0
+Chano de la Nuez,10,2,0,0,1,1,2,False,0
+Chano de la Nuez,22,2,0,2,0,1,1,True,3
+Chano de la Nuez,34,1,1,1,1,X,X,True,3
+Chano de la Nuez,11,2,0,3,1,1,1,True,1
+Chano de la Nuez,23,0,1,1,1,2,X,False,0
+Chano de la Nuez,35,0,3,2,0,2,1,False,0
+Chano de la Nuez,12,2,0,2,1,1,1,True,2
+Chano de la Nuez,24,0,2,0,3,2,2,True,2
+Chano de la Nuez,36,1,1,1,2,X,2,False,0
+Claudia&Diego,1,2,0,5,1,1,1,True,1
+Claudia&Diego,13,2,0,2,0,1,1,True,3
+Claudia&Diego,25,2,0,0,1,1,2,False,0
+Claudia&Diego,2,1,2,1,3,2,2,True,2
+Claudia&Diego,14,2,2,1,1,X,X,True,1
+Claudia&Diego,26,1,2,1,1,2,X,False,0
+Claudia&Diego,3,2,1,3,0,1,1,True,1
+Claudia&Diego,15,2,0,2,2,1,X,False,0
+Claudia&Diego,27,2,1,1,1,1,X,False,0
+Claudia&Diego,4,1,0,2,1,1,1,True,1
+Claudia&Diego,16,1,1,1,0,X,1,False,0
+Claudia&Diego,28,0,2,0,1,2,2,True,2
+Claudia&Diego,5,0,2,1,1,2,X,False,0
+Claudia&Diego,17,0,2,1,1,2,X,False,0
+Claudia&Diego,29,3,0,0,0,1,X,False,0
+Claudia&Diego,6,0,3,0,1,2,2,True,2
+Claudia&Diego,18,1,2,1,1,2,X,False,0
+Claudia&Diego,30,2,1,0,0,1,X,False,0
+Claudia&Diego,7,1,1,1,2,X,2,False,0
+Claudia&Diego,19,1,0,1,3,1,2,False,0
+Claudia&Diego,31,1,2,2,3,2,2,True,1
+Claudia&Diego,8,0,2,0,1,2,2,True,2
+Claudia&Diego,20,1,3,0,0,2,X,False,0
+Claudia&Diego,32,2,0,1,1,1,X,False,0
+Claudia&Diego,9,0,2,3,0,2,1,False,0
+Claudia&Diego,21,0,1,1,2,2,2,True,1
+Claudia&Diego,33,2,2,0,0,X,X,True,1
+Claudia&Diego,10,1,0,0,1,1,2,False,0
+Claudia&Diego,22,1,1,2,0,X,1,False,0
+Claudia&Diego,34,1,2,1,1,2,X,False,0
+Claudia&Diego,11,1,0,3,1,1,1,True,1
+Claudia&Diego,23,0,2,1,1,2,X,False,0
+Claudia&Diego,35,0,2,2,0,2,1,False,0
+Claudia&Diego,12,2,0,2,1,1,1,True,2
+Claudia&Diego,24,2,2,0,3,X,2,False,0
+Claudia&Diego,36,2,2,1,2,X,2,False,0
+Cristi Gómez,1,2,1,5,1,1,1,True,2
+Cristi Gómez,13,3,0,2,0,1,1,True,2
+Cristi Gómez,25,1,1,0,1,X,2,False,0
+Cristi Gómez,2,1,2,1,3,2,2,True,2
+Cristi Gómez,14,1,0,1,1,1,X,False,0
+Cristi Gómez,26,1,2,1,1,2,X,False,0
+Cristi Gómez,3,1,1,3,0,X,1,False,0
+Cristi Gómez,15,3,1,2,2,1,X,False,0
+Cristi Gómez,27,2,1,1,1,1,X,False,0
+Cristi Gómez,4,2,0,2,1,1,1,True,2
+Cristi Gómez,16,2,1,1,0,1,1,True,1
+Cristi Gómez,28,1,3,0,1,2,2,True,1
+Cristi Gómez,5,1,1,1,1,X,X,True,3
+Cristi Gómez,17,2,1,1,1,1,X,False,0
+Cristi Gómez,29,2,1,0,0,1,X,False,0
+Cristi Gómez,6,1,3,0,1,2,2,True,1
+Cristi Gómez,18,1,2,1,1,2,X,False,0
+Cristi Gómez,30,1,1,0,0,X,X,True,1
+Cristi Gómez,7,0,2,1,2,2,2,True,2
+Cristi Gómez,19,1,1,1,3,X,2,False,0
+Cristi Gómez,31,2,0,2,3,1,2,False,0
+Cristi Gómez,8,0,3,0,1,2,2,True,2
+Cristi Gómez,20,1,2,0,0,2,X,False,0
+Cristi Gómez,32,2,1,1,1,1,X,False,0
+Cristi Gómez,9,1,1,3,0,X,1,False,0
+Cristi Gómez,21,1,2,1,2,2,2,True,3
+Cristi Gómez,33,1,2,0,0,2,X,False,0
+Cristi Gómez,10,2,0,0,1,1,2,False,0
+Cristi Gómez,22,1,0,2,0,1,1,True,2
+Cristi Gómez,34,2,2,1,1,X,X,True,1
+Cristi Gómez,11,3,1,3,1,1,1,True,3
+Cristi Gómez,23,1,3,1,1,2,X,False,0
+Cristi Gómez,35,0,5,2,0,2,1,False,0
+Cristi Gómez,12,2,1,2,1,1,1,True,3
+Cristi Gómez,24,0,2,0,3,2,2,True,2
+Cristi Gómez,36,1,2,1,2,2,2,True,3
+Cristian Benítez,1,2,0,5,1,1,1,True,1
+Cristian Benítez,13,2,0,2,0,1,1,True,3
+Cristian Benítez,25,0,0,0,1,X,2,False,0
+Cristian Benítez,2,0,1,1,3,2,2,True,1
+Cristian Benítez,14,0,1,1,1,2,X,False,0
+Cristian Benítez,26,1,3,1,1,2,X,False,0
+Cristian Benítez,3,0,0,3,0,X,1,False,0
+Cristian Benítez,15,3,0,2,2,1,X,False,0
+Cristian Benítez,27,2,2,1,1,X,X,True,1
+Cristian Benítez,4,3,0,2,1,1,1,True,1
+Cristian Benítez,16,2,2,1,0,X,1,False,0
+Cristian Benítez,28,0,4,0,1,2,2,True,2
+Cristian Benítez,5,1,1,1,1,X,X,True,3
+Cristian Benítez,17,2,0,1,1,1,X,False,0
+Cristian Benítez,29,3,1,0,0,1,X,False,0
+Cristian Benítez,6,0,2,0,1,2,2,True,2
+Cristian Benítez,18,0,2,1,1,2,X,False,0
+Cristian Benítez,30,2,2,0,0,X,X,True,1
+Cristian Benítez,7,2,2,1,2,X,2,False,0
+Cristian Benítez,19,1,0,1,3,1,2,False,0
+Cristian Benítez,31,2,0,2,3,1,2,False,0
+Cristian Benítez,8,0,3,0,1,2,2,True,2
+Cristian Benítez,20,0,3,0,0,2,X,False,0
+Cristian Benítez,32,2,0,1,1,1,X,False,0
+Cristian Benítez,9,0,2,3,0,2,1,False,0
+Cristian Benítez,21,1,2,1,2,2,2,True,3
+Cristian Benítez,33,1,3,0,0,2,X,False,0
+Cristian Benítez,10,2,0,0,1,1,2,False,0
+Cristian Benítez,22,3,0,2,0,1,1,True,2
+Cristian Benítez,34,0,0,1,1,X,X,True,1
+Cristian Benítez,11,1,0,3,1,1,1,True,1
+Cristian Benítez,23,2,2,1,1,X,X,True,1
+Cristian Benítez,35,0,2,2,0,2,1,False,0
+Cristian Benítez,12,2,1,2,1,1,1,True,3
+Cristian Benítez,24,0,3,0,3,2,2,True,3
+Cristian Benítez,36,2,1,1,2,1,2,False,0
+Cristo Santana,1,3,0,5,1,1,1,True,1
+Cristo Santana,13,3,1,2,0,1,1,True,1
+Cristo Santana,25,1,0,0,1,1,2,False,0
+Cristo Santana,2,1,2,1,3,2,2,True,2
+Cristo Santana,14,1,1,1,1,X,X,True,3
+Cristo Santana,26,1,2,1,1,2,X,False,0
+Cristo Santana,3,2,1,3,0,1,1,True,1
+Cristo Santana,15,2,0,2,2,1,X,False,0
+Cristo Santana,27,1,1,1,1,X,X,True,3
+Cristo Santana,4,3,0,2,1,1,1,True,1
+Cristo Santana,16,2,1,1,0,1,1,True,1
+Cristo Santana,28,0,4,0,1,2,2,True,2
+Cristo Santana,5,0,2,1,1,2,X,False,0
+Cristo Santana,17,0,1,1,1,2,X,False,0
+Cristo Santana,29,3,0,0,0,1,X,False,0
+Cristo Santana,6,1,3,0,1,2,2,True,1
+Cristo Santana,18,1,2,1,1,2,X,False,0
+Cristo Santana,30,2,2,0,0,X,X,True,1
+Cristo Santana,7,1,1,1,2,X,2,False,0
+Cristo Santana,19,2,0,1,3,1,2,False,0
+Cristo Santana,31,3,1,2,3,1,2,False,0
+Cristo Santana,8,0,3,0,1,2,2,True,2
+Cristo Santana,20,0,2,0,0,2,X,False,0
+Cristo Santana,32,2,0,1,1,1,X,False,0
+Cristo Santana,9,1,1,3,0,X,1,False,0
+Cristo Santana,21,0,1,1,2,2,2,True,1
+Cristo Santana,33,0,2,0,0,2,X,False,0
+Cristo Santana,10,2,0,0,1,1,2,False,0
+Cristo Santana,22,3,0,2,0,1,1,True,2
+Cristo Santana,34,0,0,1,1,X,X,True,1
+Cristo Santana,11,3,1,3,1,1,1,True,3
+Cristo Santana,23,0,0,1,1,X,X,True,1
+Cristo Santana,35,0,2,2,0,2,1,False,0
+Cristo Santana,12,2,0,2,1,1,1,True,2
+Cristo Santana,24,1,1,0,3,X,2,False,0
+Cristo Santana,36,1,3,1,2,2,2,True,2
+Cynthia,1,2,1,5,1,1,1,True,2
+Cynthia,13,1,0,2,0,1,1,True,2
+Cynthia,25,1,1,0,1,X,2,False,0
+Cynthia,2,0,2,1,3,2,2,True,1
+Cynthia,14,0,0,1,1,X,X,True,1
+Cynthia,26,2,3,1,1,2,X,False,0
+Cynthia,3,2,1,3,0,1,1,True,1
+Cynthia,15,2,0,2,2,1,X,False,0
+Cynthia,27,1,2,1,1,2,X,False,0
+Cynthia,4,3,0,2,1,1,1,True,1
+Cynthia,16,2,1,1,0,1,1,True,1
+Cynthia,28,0,4,0,1,2,2,True,2
+Cynthia,5,1,1,1,1,X,X,True,3
+Cynthia,17,0,1,1,1,2,X,False,0
+Cynthia,29,1,0,0,0,1,X,False,0
+Cynthia,6,1,3,0,1,2,2,True,1
+Cynthia,18,0,3,1,1,2,X,False,0
+Cynthia,30,1,1,0,0,X,X,True,1
+Cynthia,7,0,2,1,2,2,2,True,2
+Cynthia,19,1,1,1,3,X,2,False,0
+Cynthia,31,2,0,2,3,1,2,False,0
+Cynthia,8,1,3,0,1,2,2,True,1
+Cynthia,20,2,3,0,0,2,X,False,0
+Cynthia,32,1,0,1,1,1,X,False,0
+Cynthia,9,0,0,3,0,X,1,False,0
+Cynthia,21,1,2,1,2,2,2,True,3
+Cynthia,33,1,1,0,0,X,X,True,1
+Cynthia,10,1,1,0,1,X,2,False,0
+Cynthia,22,2,0,2,0,1,1,True,3
+Cynthia,34,0,1,1,1,2,X,False,0
+Cynthia,11,1,0,3,1,1,1,True,1
+Cynthia,23,0,1,1,1,2,X,False,0
+Cynthia,35,0,2,2,0,2,1,False,0
+Cynthia,12,2,1,2,1,1,1,True,3
+Cynthia,24,2,3,0,3,2,2,True,2
+Cynthia,36,0,1,1,2,2,2,True,1
+Dani Hamad,1,2,0,5,1,1,1,True,1
+Dani Hamad,13,0,0,2,0,X,1,False,0
+Dani Hamad,25,0,0,0,1,X,2,False,0
+Dani Hamad,2,1,1,1,3,X,2,False,0
+Dani Hamad,14,1,0,1,1,1,X,False,0
+Dani Hamad,26,1,0,1,1,1,X,False,0
+Dani Hamad,3,1,0,3,0,1,1,True,2
+Dani Hamad,15,3,0,2,2,1,X,False,0
+Dani Hamad,27,2,2,1,1,X,X,True,1
+Dani Hamad,4,2,1,2,1,1,1,True,3
+Dani Hamad,16,0,1,1,0,2,1,False,0
+Dani Hamad,28,1,2,0,1,2,2,True,1
+Dani Hamad,5,0,2,1,1,2,X,False,0
+Dani Hamad,17,1,1,1,1,X,X,True,3
+Dani Hamad,29,1,0,0,0,1,X,False,0
+Dani Hamad,6,2,2,0,1,X,2,False,0
+Dani Hamad,18,1,2,1,1,2,X,False,0
+Dani Hamad,30,2,1,0,0,1,X,False,0
+Dani Hamad,7,0,1,1,2,2,2,True,1
+Dani Hamad,19,0,1,1,3,2,2,True,1
+Dani Hamad,31,2,2,2,3,X,2,False,0
+Dani Hamad,8,1,3,0,1,2,2,True,1
+Dani Hamad,20,2,3,0,0,2,X,False,0
+Dani Hamad,32,3,0,1,1,1,X,False,0
+Dani Hamad,9,2,2,3,0,X,1,False,0
+Dani Hamad,21,0,1,1,2,2,2,True,1
+Dani Hamad,33,1,0,0,0,1,X,False,0
+Dani Hamad,10,3,2,0,1,1,2,False,0
+Dani Hamad,22,2,2,2,0,X,1,False,0
+Dani Hamad,34,1,0,1,1,1,X,False,0
+Dani Hamad,11,4,1,3,1,1,1,True,2
+Dani Hamad,23,1,1,1,1,X,X,True,3
+Dani Hamad,35,1,1,2,0,X,1,False,0
+Dani Hamad,12,2,1,2,1,1,1,True,3
+Dani Hamad,24,2,1,0,3,1,2,False,0
+Dani Hamad,36,2,3,1,2,2,2,True,1
+Dany Boleca,1,2,1,5,1,1,1,True,2
+Dany Boleca,13,1,0,2,0,1,1,True,2
+Dany Boleca,25,1,1,0,1,X,2,False,0
+Dany Boleca,2,0,1,1,3,2,2,True,1
+Dany Boleca,14,1,1,1,1,X,X,True,3
+Dany Boleca,26,1,1,1,1,X,X,True,3
+Dany Boleca,3,2,2,3,0,X,1,False,0
+Dany Boleca,15,2,0,2,2,1,X,False,0
+Dany Boleca,27,1,2,1,1,2,X,False,0
+Dany Boleca,4,2,1,2,1,1,1,True,3
+Dany Boleca,16,1,1,1,0,X,1,False,0
+Dany Boleca,28,0,2,0,1,2,2,True,2
+Dany Boleca,5,1,2,1,1,2,X,False,0
+Dany Boleca,17,1,2,1,1,2,X,False,0
+Dany Boleca,29,3,0,0,0,1,X,False,0
+Dany Boleca,6,0,1,0,1,2,2,True,3
+Dany Boleca,18,2,2,1,1,X,X,True,1
+Dany Boleca,30,2,1,0,0,1,X,False,0
+Dany Boleca,7,1,2,1,2,2,2,True,3
+Dany Boleca,19,1,2,1,3,2,2,True,2
+Dany Boleca,31,1,1,2,3,X,2,False,0
+Dany Boleca,8,0,2,0,1,2,2,True,2
+Dany Boleca,20,2,3,0,0,2,X,False,0
+Dany Boleca,32,2,1,1,1,1,X,False,0
+Dany Boleca,9,1,1,3,0,X,1,False,0
+Dany Boleca,21,1,1,1,2,X,2,False,0
+Dany Boleca,33,1,1,0,0,X,X,True,1
+Dany Boleca,10,2,1,0,1,1,2,False,0
+Dany Boleca,22,3,1,2,0,1,1,True,1
+Dany Boleca,34,2,1,1,1,1,X,False,0
+Dany Boleca,11,1,0,3,1,1,1,True,1
+Dany Boleca,23,0,0,1,1,X,X,True,1
+Dany Boleca,35,1,1,2,0,X,1,False,0
+Dany Boleca,12,3,1,2,1,1,1,True,2
+Dany Boleca,24,1,2,0,3,2,2,True,1
+Dany Boleca,36,1,2,1,2,2,2,True,3
+David Crespo,1,2,1,5,1,1,1,True,2
+David Crespo,13,1,1,2,0,X,1,False,0
+David Crespo,25,1,1,0,1,X,2,False,0
+David Crespo,2,3,0,1,3,1,2,False,0
+David Crespo,14,0,0,1,1,X,X,True,1
+David Crespo,26,0,2,1,1,2,X,False,0
+David Crespo,3,1,1,3,0,X,1,False,0
+David Crespo,15,1,0,2,2,1,X,False,0
+David Crespo,27,0,1,1,1,2,X,False,0
+David Crespo,4,2,0,2,1,1,1,True,2
+David Crespo,16,1,1,1,0,X,1,False,0
+David Crespo,28,0,3,0,1,2,2,True,2
+David Crespo,5,1,2,1,1,2,X,False,0
+David Crespo,17,0,1,1,1,2,X,False,0
+David Crespo,29,1,0,0,0,1,X,False,0
+David Crespo,6,0,3,0,1,2,2,True,2
+David Crespo,18,0,2,1,1,2,X,False,0
+David Crespo,30,1,1,0,0,X,X,True,1
+David Crespo,7,0,1,1,2,2,2,True,1
+David Crespo,19,1,0,1,3,1,2,False,0
+David Crespo,31,2,0,2,3,1,2,False,0
+David Crespo,8,0,5,0,1,2,2,True,2
+David Crespo,20,2,3,0,0,2,X,False,0
+David Crespo,32,2,1,1,1,1,X,False,0
+David Crespo,9,0,0,3,0,X,1,False,0
+David Crespo,21,0,2,1,2,2,2,True,2
+David Crespo,33,2,1,0,0,1,X,False,0
+David Crespo,10,1,0,0,1,1,2,False,0
+David Crespo,22,1,0,2,0,1,1,True,2
+David Crespo,34,0,1,1,1,2,X,False,0
+David Crespo,11,1,1,3,1,X,1,False,0
+David Crespo,23,1,3,1,1,2,X,False,0
+David Crespo,35,0,3,2,0,2,1,False,0
+David Crespo,12,2,0,2,1,1,1,True,2
+David Crespo,24,1,2,0,3,2,2,True,1
+David Crespo,36,2,2,1,2,X,2,False,0
+David Yanez,1,2,2,5,1,X,1,False,0
+David Yanez,13,1,1,2,0,X,1,False,0
+David Yanez,25,2,1,0,1,1,2,False,0
+David Yanez,2,3,1,1,3,1,2,False,0
+David Yanez,14,3,2,1,1,1,X,False,0
+David Yanez,26,3,0,1,1,1,X,False,0
+David Yanez,3,2,0,3,0,1,1,True,2
+David Yanez,15,2,1,2,2,1,X,False,0
+David Yanez,27,2,2,1,1,X,X,True,1
+David Yanez,4,1,2,2,1,2,1,False,0
+David Yanez,16,1,3,1,0,2,1,False,0
+David Yanez,28,1,2,0,1,2,2,True,1
+David Yanez,5,2,1,1,1,1,X,False,0
+David Yanez,17,2,2,1,1,X,X,True,1
+David Yanez,29,2,0,0,0,1,X,False,0
+David Yanez,6,2,2,0,1,X,2,False,0
+David Yanez,18,2,3,1,1,2,X,False,0
+David Yanez,30,2,1,0,0,1,X,False,0
+David Yanez,7,2,1,1,2,1,2,False,0
+David Yanez,19,1,1,1,3,X,2,False,0
+David Yanez,31,2,1,2,3,1,2,False,0
+David Yanez,8,3,2,0,1,1,2,False,0
+David Yanez,20,3,2,0,0,1,X,False,0
+David Yanez,32,1,1,1,1,X,X,True,3
+David Yanez,9,4,1,3,0,1,1,True,1
+David Yanez,21,2,1,1,2,1,2,False,0
+David Yanez,33,2,0,0,0,1,X,False,0
+David Yanez,10,2,2,0,1,X,2,False,0
+David Yanez,22,2,2,2,0,X,1,False,0
+David Yanez,34,4,2,1,1,1,X,False,0
+David Yanez,11,2,0,3,1,1,1,True,1
+David Yanez,23,1,2,1,1,2,X,False,0
+David Yanez,35,4,1,2,0,1,1,True,1
+David Yanez,12,3,2,2,1,1,1,True,1
+David Yanez,24,2,1,0,3,1,2,False,0
+David Yanez,36,1,1,1,2,X,2,False,0
+Eduardo Matías,1,2,0,5,1,1,1,True,1
+Eduardo Matías,13,2,0,2,0,1,1,True,3
+Eduardo Matías,25,1,0,0,1,1,2,False,0
+Eduardo Matías,2,1,1,1,3,X,2,False,0
+Eduardo Matías,14,1,1,1,1,X,X,True,3
+Eduardo Matías,26,1,2,1,1,2,X,False,0
+Eduardo Matías,3,2,1,3,0,1,1,True,1
+Eduardo Matías,15,2,0,2,2,1,X,False,0
+Eduardo Matías,27,1,1,1,1,X,X,True,3
+Eduardo Matías,4,2,0,2,1,1,1,True,2
+Eduardo Matías,16,2,1,1,0,1,1,True,1
+Eduardo Matías,28,0,3,0,1,2,2,True,2
+Eduardo Matías,5,1,1,1,1,X,X,True,3
+Eduardo Matías,17,1,1,1,1,X,X,True,3
+Eduardo Matías,29,3,0,0,0,1,X,False,0
+Eduardo Matías,6,0,3,0,1,2,2,True,2
+Eduardo Matías,18,1,2,1,1,2,X,False,0
+Eduardo Matías,30,1,1,0,0,X,X,True,1
+Eduardo Matías,7,1,2,1,2,2,2,True,3
+Eduardo Matías,19,1,0,1,3,1,2,False,0
+Eduardo Matías,31,2,0,2,3,1,2,False,0
+Eduardo Matías,8,1,2,0,1,2,2,True,1
+Eduardo Matías,20,1,2,0,0,2,X,False,0
+Eduardo Matías,32,2,0,1,1,1,X,False,0
+Eduardo Matías,9,1,1,3,0,X,1,False,0
+Eduardo Matías,21,0,1,1,2,2,2,True,1
+Eduardo Matías,33,1,2,0,0,2,X,False,0
+Eduardo Matías,10,2,0,0,1,1,2,False,0
+Eduardo Matías,22,2,0,2,0,1,1,True,3
+Eduardo Matías,34,1,1,1,1,X,X,True,3
+Eduardo Matías,11,2,0,3,1,1,1,True,1
+Eduardo Matías,23,0,1,1,1,2,X,False,0
+Eduardo Matías,35,0,2,2,0,2,1,False,0
+Eduardo Matías,12,2,0,2,1,1,1,True,2
+Eduardo Matías,24,1,2,0,3,2,2,True,1
+Eduardo Matías,36,1,1,1,2,X,2,False,0
+Echedey Evora,1,3,0,5,1,1,1,True,1
+Echedey Evora,13,2,0,2,0,1,1,True,3
+Echedey Evora,25,1,0,0,1,1,2,False,0
+Echedey Evora,2,1,1,1,3,X,2,False,0
+Echedey Evora,14,0,0,1,1,X,X,True,1
+Echedey Evora,26,1,1,1,1,X,X,True,3
+Echedey Evora,3,2,0,3,0,1,1,True,2
+Echedey Evora,15,1,0,2,2,1,X,False,0
+Echedey Evora,27,1,3,1,1,2,X,False,0
+Echedey Evora,4,2,0,2,1,1,1,True,2
+Echedey Evora,16,3,1,1,0,1,1,True,1
+Echedey Evora,28,0,5,0,1,2,2,True,2
+Echedey Evora,5,0,0,1,1,X,X,True,1
+Echedey Evora,17,0,0,1,1,X,X,True,1
+Echedey Evora,29,3,1,0,0,1,X,False,0
+Echedey Evora,6,1,3,0,1,2,2,True,1
+Echedey Evora,18,0,4,1,1,2,X,False,0
+Echedey Evora,30,1,1,0,0,X,X,True,1
+Echedey Evora,7,1,1,1,2,X,2,False,0
+Echedey Evora,19,1,0,1,3,1,2,False,0
+Echedey Evora,31,3,0,2,3,1,2,False,0
+Echedey Evora,8,0,3,0,1,2,2,True,2
+Echedey Evora,20,2,3,0,0,2,X,False,0
+Echedey Evora,32,3,1,1,1,1,X,False,0
+Echedey Evora,9,0,2,3,0,2,1,False,0
+Echedey Evora,21,0,2,1,2,2,2,True,2
+Echedey Evora,33,3,1,0,0,1,X,False,0
+Echedey Evora,10,1,1,0,1,X,2,False,0
+Echedey Evora,22,1,0,2,0,1,1,True,2
+Echedey Evora,34,1,1,1,1,X,X,True,3
+Echedey Evora,11,2,0,3,1,1,1,True,1
+Echedey Evora,23,0,0,1,1,X,X,True,1
+Echedey Evora,35,0,2,2,0,2,1,False,0
+Echedey Evora,12,1,0,2,1,1,1,True,1
+Echedey Evora,24,2,2,0,3,X,2,False,0
+Echedey Evora,36,2,2,1,2,X,2,False,0
+Elena Quintanilla,1,3,1,5,1,1,1,True,2
+Elena Quintanilla,13,2,0,2,0,1,1,True,3
+Elena Quintanilla,25,1,1,0,1,X,2,False,0
+Elena Quintanilla,2,1,2,1,3,2,2,True,2
+Elena Quintanilla,14,1,1,1,1,X,X,True,3
+Elena Quintanilla,26,1,2,1,1,2,X,False,0
+Elena Quintanilla,3,2,2,3,0,X,1,False,0
+Elena Quintanilla,15,3,0,2,2,1,X,False,0
+Elena Quintanilla,27,1,1,1,1,X,X,True,3
+Elena Quintanilla,4,3,0,2,1,1,1,True,1
+Elena Quintanilla,16,1,2,1,0,2,1,False,0
+Elena Quintanilla,28,0,4,0,1,2,2,True,2
+Elena Quintanilla,5,0,2,1,1,2,X,False,0
+Elena Quintanilla,17,0,1,1,1,2,X,False,0
+Elena Quintanilla,29,3,0,0,0,1,X,False,0
+Elena Quintanilla,6,1,3,0,1,2,2,True,1
+Elena Quintanilla,18,0,2,1,1,2,X,False,0
+Elena Quintanilla,30,2,1,0,0,1,X,False,0
+Elena Quintanilla,7,1,2,1,2,2,2,True,3
+Elena Quintanilla,19,2,1,1,3,1,2,False,0
+Elena Quintanilla,31,3,1,2,3,1,2,False,0
+Elena Quintanilla,8,0,2,0,1,2,2,True,2
+Elena Quintanilla,20,1,2,0,0,2,X,False,0
+Elena Quintanilla,32,2,0,1,1,1,X,False,0
+Elena Quintanilla,9,1,1,3,0,X,1,False,0
+Elena Quintanilla,21,0,1,1,2,2,2,True,1
+Elena Quintanilla,33,1,2,0,0,2,X,False,0
+Elena Quintanilla,10,2,0,0,1,1,2,False,0
+Elena Quintanilla,22,2,1,2,0,1,1,True,2
+Elena Quintanilla,34,0,1,1,1,2,X,False,0
+Elena Quintanilla,11,2,0,3,1,1,1,True,1
+Elena Quintanilla,23,0,1,1,1,2,X,False,0
+Elena Quintanilla,35,1,2,2,0,2,1,False,0
+Elena Quintanilla,12,2,1,2,1,1,1,True,3
+Elena Quintanilla,24,1,1,0,3,X,2,False,0
+Elena Quintanilla,36,1,1,1,2,X,2,False,0
+Elena Rguez,1,2,1,5,1,1,1,True,2
+Elena Rguez,13,2,0,2,0,1,1,True,3
+Elena Rguez,25,2,0,0,1,1,2,False,0
+Elena Rguez,2,0,1,1,3,2,2,True,1
+Elena Rguez,14,1,0,1,1,1,X,False,0
+Elena Rguez,26,0,2,1,1,2,X,False,0
+Elena Rguez,3,2,2,3,0,X,1,False,0
+Elena Rguez,15,1,0,2,2,1,X,False,0
+Elena Rguez,27,1,2,1,1,2,X,False,0
+Elena Rguez,4,2,0,2,1,1,1,True,2
+Elena Rguez,16,2,2,1,0,X,1,False,0
+Elena Rguez,28,0,3,0,1,2,2,True,2
+Elena Rguez,5,1,1,1,1,X,X,True,3
+Elena Rguez,17,0,0,1,1,X,X,True,1
+Elena Rguez,29,3,1,0,0,1,X,False,0
+Elena Rguez,6,0,2,0,1,2,2,True,2
+Elena Rguez,18,1,3,1,1,2,X,False,0
+Elena Rguez,30,1,2,0,0,2,X,False,0
+Elena Rguez,7,1,2,1,2,2,2,True,3
+Elena Rguez,19,2,0,1,3,1,2,False,0
+Elena Rguez,31,2,0,2,3,1,2,False,0
+Elena Rguez,8,0,2,0,1,2,2,True,2
+Elena Rguez,20,2,3,0,0,2,X,False,0
+Elena Rguez,32,2,1,1,1,1,X,False,0
+Elena Rguez,9,1,1,3,0,X,1,False,0
+Elena Rguez,21,0,0,1,2,X,2,False,0
+Elena Rguez,33,1,1,0,0,X,X,True,1
+Elena Rguez,10,2,0,0,1,1,2,False,0
+Elena Rguez,22,1,0,2,0,1,1,True,2
+Elena Rguez,34,0,0,1,1,X,X,True,1
+Elena Rguez,11,0,0,3,1,X,1,False,0
+Elena Rguez,23,0,1,1,1,2,X,False,0
+Elena Rguez,35,0,2,2,0,2,1,False,0
+Elena Rguez,12,1,2,2,1,2,1,False,0
+Elena Rguez,24,1,2,0,3,2,2,True,1
+Elena Rguez,36,1,1,1,2,X,2,False,0
+Eli Cano,1,2,1,5,1,1,1,True,2
+Eli Cano,13,2,2,2,0,X,1,False,0
+Eli Cano,25,1,2,0,1,2,2,True,1
+Eli Cano,2,0,2,1,3,2,2,True,1
+Eli Cano,14,1,2,1,1,2,X,False,0
+Eli Cano,26,3,3,1,1,X,X,True,1
+Eli Cano,3,3,2,3,0,1,1,True,2
+Eli Cano,15,3,0,2,2,1,X,False,0
+Eli Cano,27,2,1,1,1,1,X,False,0
+Eli Cano,4,2,0,2,1,1,1,True,2
+Eli Cano,16,2,1,1,0,1,1,True,1
+Eli Cano,28,1,4,0,1,2,2,True,1
+Eli Cano,5,0,1,1,1,2,X,False,0
+Eli Cano,17,0,1,1,1,2,X,False,0
+Eli Cano,29,3,1,0,0,1,X,False,0
+Eli Cano,6,1,2,0,1,2,2,True,1
+Eli Cano,18,1,3,1,1,2,X,False,0
+Eli Cano,30,2,3,0,0,2,X,False,0
+Eli Cano,7,2,1,1,2,1,2,False,0
+Eli Cano,19,2,2,1,3,X,2,False,0
+Eli Cano,31,2,1,2,3,1,2,False,0
+Eli Cano,8,1,3,0,1,2,2,True,1
+Eli Cano,20,1,3,0,0,2,X,False,0
+Eli Cano,32,2,2,1,1,X,X,True,1
+Eli Cano,9,1,1,3,0,X,1,False,0
+Eli Cano,21,2,1,1,2,1,2,False,0
+Eli Cano,33,1,2,0,0,2,X,False,0
+Eli Cano,10,2,1,0,1,1,2,False,0
+Eli Cano,22,1,0,2,0,1,1,True,2
+Eli Cano,34,2,1,1,1,1,X,False,0
+Eli Cano,11,1,1,3,1,X,1,False,0
+Eli Cano,23,2,1,1,1,1,X,False,0
+Eli Cano,35,0,4,2,0,2,1,False,0
+Eli Cano,12,2,1,2,1,1,1,True,3
+Eli Cano,24,0,3,0,3,2,2,True,3
+Eli Cano,36,1,0,1,2,1,2,False,0
+Elías Glez.,1,1,0,5,1,1,1,True,1
+Elías Glez.,13,1,2,2,0,2,1,False,0
+Elías Glez.,25,0,1,0,1,2,2,True,3
+Elías Glez.,2,1,2,1,3,2,2,True,2
+Elías Glez.,14,1,1,1,1,X,X,True,3
+Elías Glez.,26,1,2,1,1,2,X,False,0
+Elías Glez.,3,2,1,3,0,1,1,True,1
+Elías Glez.,15,1,2,2,2,2,X,False,0
+Elías Glez.,27,1,2,1,1,2,X,False,0
+Elías Glez.,4,2,2,2,1,X,1,False,0
+Elías Glez.,16,2,1,1,0,1,1,True,1
+Elías Glez.,28,0,2,0,1,2,2,True,2
+Elías Glez.,5,1,1,1,1,X,X,True,3
+Elías Glez.,17,1,1,1,1,X,X,True,3
+Elías Glez.,29,1,1,0,0,X,X,True,1
+Elías Glez.,6,0,1,0,1,2,2,True,3
+Elías Glez.,18,2,2,1,1,X,X,True,1
+Elías Glez.,30,2,2,0,0,X,X,True,1
+Elías Glez.,7,1,1,1,2,X,2,False,0
+Elías Glez.,19,1,1,1,3,X,2,False,0
+Elías Glez.,31,1,1,2,3,X,2,False,0
+Elías Glez.,8,1,1,0,1,X,2,False,0
+Elías Glez.,20,1,2,0,0,2,X,False,0
+Elías Glez.,32,1,1,1,1,X,X,True,3
+Elías Glez.,9,2,3,3,0,2,1,False,0
+Elías Glez.,21,1,1,1,2,X,2,False,0
+Elías Glez.,33,2,1,0,0,1,X,False,0
+Elías Glez.,10,1,2,0,1,2,2,True,1
+Elías Glez.,22,2,3,2,0,2,1,False,0
+Elías Glez.,34,1,2,1,1,2,X,False,0
+Elías Glez.,11,1,2,3,1,2,1,False,0
+Elías Glez.,23,1,2,1,1,2,X,False,0
+Elías Glez.,35,2,2,2,0,X,1,False,0
+Elías Glez.,12,2,1,2,1,1,1,True,3
+Elías Glez.,24,1,1,0,3,X,2,False,0
+Elías Glez.,36,1,1,1,2,X,2,False,0
+Eliecer Glez.,1,2,0,5,1,1,1,True,1
+Eliecer Glez.,13,3,0,2,0,1,1,True,2
+Eliecer Glez.,25,2,1,0,1,1,2,False,0
+Eliecer Glez.,2,1,1,1,3,X,2,False,0
+Eliecer Glez.,14,2,1,1,1,1,X,False,0
+Eliecer Glez.,26,1,2,1,1,2,X,False,0
+Eliecer Glez.,3,1,1,3,0,X,1,False,0
+Eliecer Glez.,15,2,1,2,2,1,X,False,0
+Eliecer Glez.,27,1,1,1,1,X,X,True,3
+Eliecer Glez.,4,2,0,2,1,1,1,True,2
+Eliecer Glez.,16,2,0,1,0,1,1,True,2
+Eliecer Glez.,28,0,1,0,1,2,2,True,3
+Eliecer Glez.,5,1,1,1,1,X,X,True,3
+Eliecer Glez.,17,1,1,1,1,X,X,True,3
+Eliecer Glez.,29,1,0,0,0,1,X,False,0
+Eliecer Glez.,6,0,2,0,1,2,2,True,2
+Eliecer Glez.,18,1,2,1,1,2,X,False,0
+Eliecer Glez.,30,1,1,0,0,X,X,True,1
+Eliecer Glez.,7,1,2,1,2,2,2,True,3
+Eliecer Glez.,19,1,2,1,3,2,2,True,2
+Eliecer Glez.,31,2,2,2,3,X,2,False,0
+Eliecer Glez.,8,0,2,0,1,2,2,True,2
+Eliecer Glez.,20,2,3,0,0,2,X,False,0
+Eliecer Glez.,32,2,0,1,1,1,X,False,0
+Eliecer Glez.,9,1,3,3,0,2,1,False,0
+Eliecer Glez.,21,1,2,1,2,2,2,True,3
+Eliecer Glez.,33,1,1,0,0,X,X,True,1
+Eliecer Glez.,10,2,1,0,1,1,2,False,0
+Eliecer Glez.,22,3,0,2,0,1,1,True,2
+Eliecer Glez.,34,2,0,1,1,1,X,False,0
+Eliecer Glez.,11,2,1,3,1,1,1,True,2
+Eliecer Glez.,23,2,1,1,1,1,X,False,0
+Eliecer Glez.,35,1,2,2,0,2,1,False,0
+Eliecer Glez.,12,2,0,2,1,1,1,True,2
+Eliecer Glez.,24,1,1,0,3,X,2,False,0
+Eliecer Glez.,36,0,1,1,2,2,2,True,1
+Eloísa,1,1,1,5,1,X,1,False,0
+Eloísa,13,4,1,2,0,1,1,True,1
+Eloísa,25,1,1,0,1,X,2,False,0
+Eloísa,2,1,2,1,3,2,2,True,2
+Eloísa,14,1,1,1,1,X,X,True,3
+Eloísa,26,1,1,1,1,X,X,True,3
+Eloísa,3,3,1,3,0,1,1,True,2
+Eloísa,15,1,1,2,2,X,X,True,1
+Eloísa,27,1,3,1,1,2,X,False,0
+Eloísa,4,2,1,2,1,1,1,True,3
+Eloísa,16,3,2,1,0,1,1,True,1
+Eloísa,28,1,3,0,1,2,2,True,1
+Eloísa,5,1,0,1,1,1,X,False,0
+Eloísa,17,1,1,1,1,X,X,True,3
+Eloísa,29,1,1,0,0,X,X,True,1
+Eloísa,6,1,3,0,1,2,2,True,1
+Eloísa,18,2,2,1,1,X,X,True,1
+Eloísa,30,0,2,0,0,2,X,False,0
+Eloísa,7,1,2,1,2,2,2,True,3
+Eloísa,19,1,2,1,3,2,2,True,2
+Eloísa,31,2,2,2,3,X,2,False,0
+Eloísa,8,2,2,0,1,X,2,False,0
+Eloísa,20,2,3,0,0,2,X,False,0
+Eloísa,32,3,1,1,1,1,X,False,0
+Eloísa,9,1,1,3,0,X,1,False,0
+Eloísa,21,0,2,1,2,2,2,True,2
+Eloísa,33,1,2,0,0,2,X,False,0
+Eloísa,10,1,1,0,1,X,2,False,0
+Eloísa,22,2,2,2,0,X,1,False,0
+Eloísa,34,2,2,1,1,X,X,True,1
+Eloísa,11,0,2,3,1,2,1,False,0
+Eloísa,23,1,1,1,1,X,X,True,3
+Eloísa,35,1,3,2,0,2,1,False,0
+Eloísa,12,2,0,2,1,1,1,True,2
+Eloísa,24,1,3,0,3,2,2,True,2
+Eloísa,36,1,1,1,2,X,2,False,0
+Fefa Fugón,1,3,0,5,1,1,1,True,1
+Fefa Fugón,13,4,1,2,0,1,1,True,1
+Fefa Fugón,25,1,0,0,1,1,2,False,0
+Fefa Fugón,2,0,3,1,3,2,2,True,2
+Fefa Fugón,14,0,0,1,1,X,X,True,1
+Fefa Fugón,26,0,2,1,1,2,X,False,0
+Fefa Fugón,3,2,1,3,0,1,1,True,1
+Fefa Fugón,15,3,0,2,2,1,X,False,0
+Fefa Fugón,27,0,0,1,1,X,X,True,1
+Fefa Fugón,4,3,1,2,1,1,1,True,2
+Fefa Fugón,16,1,1,1,0,X,1,False,0
+Fefa Fugón,28,0,2,0,1,2,2,True,2
+Fefa Fugón,5,3,1,1,1,1,X,False,0
+Fefa Fugón,17,0,0,1,1,X,X,True,1
+Fefa Fugón,29,2,0,0,0,1,X,False,0
+Fefa Fugón,6,0,2,0,1,2,2,True,2
+Fefa Fugón,18,1,2,1,1,2,X,False,0
+Fefa Fugón,30,2,2,0,0,X,X,True,1
+Fefa Fugón,7,1,2,1,2,2,2,True,3
+Fefa Fugón,19,0,2,1,3,2,2,True,1
+Fefa Fugón,31,1,1,2,3,X,2,False,0
+Fefa Fugón,8,1,2,0,1,2,2,True,1
+Fefa Fugón,20,0,1,0,0,2,X,False,0
+Fefa Fugón,32,1,0,1,1,1,X,False,0
+Fefa Fugón,9,4,2,3,0,1,1,True,1
+Fefa Fugón,21,1,1,1,2,X,2,False,0
+Fefa Fugón,33,0,3,0,0,2,X,False,0
+Fefa Fugón,10,2,0,0,1,1,2,False,0
+Fefa Fugón,22,2,1,2,0,1,1,True,2
+Fefa Fugón,34,1,1,1,1,X,X,True,3
+Fefa Fugón,11,2,0,3,1,1,1,True,1
+Fefa Fugón,23,0,1,1,1,2,X,False,0
+Fefa Fugón,35,0,6,2,0,2,1,False,0
+Fefa Fugón,12,1,0,2,1,1,1,True,1
+Fefa Fugón,24,1,1,0,3,X,2,False,0
+Fefa Fugón,36,1,1,1,2,X,2,False,0
+Fer,1,3,1,5,1,1,1,True,2
+Fer,13,3,2,2,0,1,1,True,1
+Fer,25,0,0,0,1,X,2,False,0
+Fer,2,1,1,1,3,X,2,False,0
+Fer,14,2,1,1,1,1,X,False,0
+Fer,26,1,2,1,1,2,X,False,0
+Fer,3,3,2,3,0,1,1,True,2
+Fer,15,3,0,2,2,1,X,False,0
+Fer,27,1,1,1,1,X,X,True,3
+Fer,4,2,0,2,1,1,1,True,2
+Fer,16,2,1,1,0,1,1,True,1
+Fer,28,1,4,0,1,2,2,True,1
+Fer,5,1,1,1,1,X,X,True,3
+Fer,17,1,2,1,1,2,X,False,0
+Fer,29,4,1,0,0,1,X,False,0
+Fer,6,1,3,0,1,2,2,True,1
+Fer,18,0,2,1,1,2,X,False,0
+Fer,30,1,1,0,0,X,X,True,1
+Fer,7,2,2,1,2,X,2,False,0
+Fer,19,2,2,1,3,X,2,False,0
+Fer,31,2,1,2,3,1,2,False,0
+Fer,8,1,2,0,1,2,2,True,1
+Fer,20,1,2,0,0,2,X,False,0
+Fer,32,3,0,1,1,1,X,False,0
+Fer,9,0,2,3,0,2,1,False,0
+Fer,21,0,0,1,2,X,2,False,0
+Fer,33,2,3,0,0,2,X,False,0
+Fer,10,3,0,0,1,1,2,False,0
+Fer,22,2,0,2,0,1,1,True,3
+Fer,34,2,2,1,1,X,X,True,1
+Fer,11,2,0,3,1,1,1,True,1
+Fer,23,0,0,1,1,X,X,True,1
+Fer,35,1,3,2,0,2,1,False,0
+Fer,12,1,1,2,1,X,1,False,0
+Fer,24,1,1,0,3,X,2,False,0
+Fer,36,1,1,1,2,X,2,False,0
+Fran Torres,1,5,1,5,1,1,1,True,3
+Fran Torres,13,2,0,2,0,1,1,True,3
+Fran Torres,25,1,1,0,1,X,2,False,0
+Fran Torres,2,2,1,1,3,1,2,False,0
+Fran Torres,14,0,2,1,1,2,X,False,0
+Fran Torres,26,1,2,1,1,2,X,False,0
+Fran Torres,3,0,1,3,0,2,1,False,0
+Fran Torres,15,2,0,2,2,1,X,False,0
+Fran Torres,27,1,1,1,1,X,X,True,3
+Fran Torres,4,3,0,2,1,1,1,True,1
+Fran Torres,16,2,1,1,0,1,1,True,1
+Fran Torres,28,0,3,0,1,2,2,True,2
+Fran Torres,5,1,2,1,1,2,X,False,0
+Fran Torres,17,1,1,1,1,X,X,True,3
+Fran Torres,29,2,0,0,0,1,X,False,0
+Fran Torres,6,1,3,0,1,2,2,True,1
+Fran Torres,18,2,2,1,1,X,X,True,1
+Fran Torres,30,1,0,0,0,1,X,False,0
+Fran Torres,7,0,2,1,2,2,2,True,2
+Fran Torres,19,1,1,1,3,X,2,False,0
+Fran Torres,31,1,0,2,3,1,2,False,0
+Fran Torres,8,0,3,0,1,2,2,True,2
+Fran Torres,20,1,2,0,0,2,X,False,0
+Fran Torres,32,2,0,1,1,1,X,False,0
+Fran Torres,9,0,0,3,0,X,1,False,0
+Fran Torres,21,1,1,1,2,X,2,False,0
+Fran Torres,33,0,2,0,0,2,X,False,0
+Fran Torres,10,2,0,0,1,1,2,False,0
+Fran Torres,22,3,1,2,0,1,1,True,1
+Fran Torres,34,1,1,1,1,X,X,True,3
+Fran Torres,11,1,1,3,1,X,1,False,0
+Fran Torres,23,0,2,1,1,2,X,False,0
+Fran Torres,35,0,2,2,0,2,1,False,0
+Fran Torres,12,2,2,2,1,X,1,False,0
+Fran Torres,24,0,2,0,3,2,2,True,2
+Fran Torres,36,1,1,1,2,X,2,False,0
+Gabi,1,3,0,5,1,1,1,True,1
+Gabi,13,2,0,2,0,1,1,True,3
+Gabi,25,1,1,0,1,X,2,False,0
+Gabi,2,2,2,1,3,X,2,False,0
+Gabi,14,1,1,1,1,X,X,True,3
+Gabi,26,0,3,1,1,2,X,False,0
+Gabi,3,1,1,3,0,X,1,False,0
+Gabi,15,2,0,2,2,1,X,False,0
+Gabi,27,2,2,1,1,X,X,True,1
+Gabi,4,2,0,2,1,1,1,True,2
+Gabi,16,2,1,1,0,1,1,True,1
+Gabi,28,0,4,0,1,2,2,True,2
+Gabi,5,0,1,1,1,2,X,False,0
+Gabi,17,1,1,1,1,X,X,True,3
+Gabi,29,3,0,0,0,1,X,False,0
+Gabi,6,0,2,0,1,2,2,True,2
+Gabi,18,1,1,1,1,X,X,True,3
+Gabi,30,1,1,0,0,X,X,True,1
+Gabi,7,0,2,1,2,2,2,True,2
+Gabi,19,1,1,1,3,X,2,False,0
+Gabi,31,2,0,2,3,1,2,False,0
+Gabi,8,0,4,0,1,2,2,True,2
+Gabi,20,1,1,0,0,X,X,True,1
+Gabi,32,3,0,1,1,1,X,False,0
+Gabi,9,1,1,3,0,X,1,False,0
+Gabi,21,1,1,1,2,X,2,False,0
+Gabi,33,0,3,0,0,2,X,False,0
+Gabi,10,3,0,0,1,1,2,False,0
+Gabi,22,3,0,2,0,1,1,True,2
+Gabi,34,1,1,1,1,X,X,True,3
+Gabi,11,2,0,3,1,1,1,True,1
+Gabi,23,0,2,1,1,2,X,False,0
+Gabi,35,0,4,2,0,2,1,False,0
+Gabi,12,2,0,2,1,1,1,True,2
+Gabi,24,1,1,0,3,X,2,False,0
+Gabi,36,1,1,1,2,X,2,False,0
+Germán,1,3,1,5,1,1,1,True,2
+Germán,13,3,1,2,0,1,1,True,1
+Germán,25,2,1,0,1,1,2,False,0
+Germán,2,1,1,1,3,X,2,False,0
+Germán,14,1,1,1,1,X,X,True,3
+Germán,26,1,2,1,1,2,X,False,0
+Germán,3,2,1,3,0,1,1,True,1
+Germán,15,1,0,2,2,1,X,False,0
+Germán,27,1,2,1,1,2,X,False,0
+Germán,4,1,0,2,1,1,1,True,1
+Germán,16,2,1,1,0,1,1,True,1
+Germán,28,0,3,0,1,2,2,True,2
+Germán,5,0,0,1,1,X,X,True,1
+Germán,17,1,1,1,1,X,X,True,3
+Germán,29,4,2,0,0,1,X,False,0
+Germán,6,1,3,0,1,2,2,True,1
+Germán,18,0,2,1,1,2,X,False,0
+Germán,30,1,3,0,0,2,X,False,0
+Germán,7,1,1,1,2,X,2,False,0
+Germán,19,0,0,1,3,X,2,False,0
+Germán,31,3,1,2,3,1,2,False,0
+Germán,8,1,3,0,1,2,2,True,1
+Germán,20,1,4,0,0,2,X,False,0
+Germán,32,2,1,1,1,1,X,False,0
+Germán,9,1,1,3,0,X,1,False,0
+Germán,21,2,2,1,2,X,2,False,0
+Germán,33,0,0,0,0,X,X,True,3
+Germán,10,2,1,0,1,1,2,False,0
+Germán,22,2,1,2,0,1,1,True,2
+Germán,34,0,0,1,1,X,X,True,1
+Germán,11,1,1,3,1,X,1,False,0
+Germán,23,0,0,1,1,X,X,True,1
+Germán,35,1,4,2,0,2,1,False,0
+Germán,12,2,0,2,1,1,1,True,2
+Germán,24,0,3,0,3,2,2,True,3
+Germán,36,2,2,1,2,X,2,False,0
+Guillermo de la Fe,1,5,2,5,1,1,1,True,2
+Guillermo de la Fe,13,2,0,2,0,1,1,True,3
+Guillermo de la Fe,25,0,0,0,1,X,2,False,0
+Guillermo de la Fe,2,0,2,1,3,2,2,True,1
+Guillermo de la Fe,14,0,1,1,1,2,X,False,0
+Guillermo de la Fe,26,0,1,1,1,2,X,False,0
+Guillermo de la Fe,3,2,1,3,0,1,1,True,1
+Guillermo de la Fe,15,2,0,2,2,1,X,False,0
+Guillermo de la Fe,27,2,3,1,1,2,X,False,0
+Guillermo de la Fe,4,1,0,2,1,1,1,True,1
+Guillermo de la Fe,16,2,1,1,0,1,1,True,1
+Guillermo de la Fe,28,0,3,0,1,2,2,True,2
+Guillermo de la Fe,5,0,0,1,1,X,X,True,1
+Guillermo de la Fe,17,0,2,1,1,2,X,False,0
+Guillermo de la Fe,29,1,0,0,0,1,X,False,0
+Guillermo de la Fe,6,1,2,0,1,2,2,True,1
+Guillermo de la Fe,18,0,1,1,1,2,X,False,0
+Guillermo de la Fe,30,0,2,0,0,2,X,False,0
+Guillermo de la Fe,7,0,1,1,2,2,2,True,1
+Guillermo de la Fe,19,1,0,1,3,1,2,False,0
+Guillermo de la Fe,31,4,0,2,3,1,2,False,0
+Guillermo de la Fe,8,0,4,0,1,2,2,True,2
+Guillermo de la Fe,20,0,2,0,0,2,X,False,0
+Guillermo de la Fe,32,2,1,1,1,1,X,False,0
+Guillermo de la Fe,9,0,0,3,0,X,1,False,0
+Guillermo de la Fe,21,0,0,1,2,X,2,False,0
+Guillermo de la Fe,33,0,1,0,0,2,X,False,0
+Guillermo de la Fe,10,1,0,0,1,1,2,False,0
+Guillermo de la Fe,22,1,0,2,0,1,1,True,2
+Guillermo de la Fe,34,0,0,1,1,X,X,True,1
+Guillermo de la Fe,11,0,0,3,1,X,1,False,0
+Guillermo de la Fe,23,0,1,1,1,2,X,False,0
+Guillermo de la Fe,35,0,3,2,0,2,1,False,0
+Guillermo de la Fe,12,1,0,2,1,1,1,True,1
+Guillermo de la Fe,24,0,2,0,3,2,2,True,2
+Guillermo de la Fe,36,2,0,1,2,1,2,False,0
+Gustavo Gcia.,1,3,1,5,1,1,1,True,2
+Gustavo Gcia.,13,1,0,2,0,1,1,True,2
+Gustavo Gcia.,25,0,1,0,1,2,2,True,3
+Gustavo Gcia.,2,0,2,1,3,2,2,True,1
+Gustavo Gcia.,14,1,3,1,1,2,X,False,0
+Gustavo Gcia.,26,2,2,1,1,X,X,True,1
+Gustavo Gcia.,3,1,0,3,0,1,1,True,2
+Gustavo Gcia.,15,1,0,2,2,1,X,False,0
+Gustavo Gcia.,27,1,2,1,1,2,X,False,0
+Gustavo Gcia.,4,3,0,2,1,1,1,True,1
+Gustavo Gcia.,16,1,2,1,0,2,1,False,0
+Gustavo Gcia.,28,1,3,0,1,2,2,True,1
+Gustavo Gcia.,5,1,2,1,1,2,X,False,0
+Gustavo Gcia.,17,1,1,1,1,X,X,True,3
+Gustavo Gcia.,29,3,0,0,0,1,X,False,0
+Gustavo Gcia.,6,1,1,0,1,X,2,False,0
+Gustavo Gcia.,18,1,2,1,1,2,X,False,0
+Gustavo Gcia.,30,2,4,0,0,2,X,False,0
+Gustavo Gcia.,7,1,2,1,2,2,2,True,3
+Gustavo Gcia.,19,0,0,1,3,X,2,False,0
+Gustavo Gcia.,31,2,2,2,3,X,2,False,0
+Gustavo Gcia.,8,1,2,0,1,2,2,True,1
+Gustavo Gcia.,20,2,3,0,0,2,X,False,0
+Gustavo Gcia.,32,3,1,1,1,1,X,False,0
+Gustavo Gcia.,9,1,0,3,0,1,1,True,2
+Gustavo Gcia.,21,3,0,1,2,1,2,False,0
+Gustavo Gcia.,33,2,1,0,0,1,X,False,0
+Gustavo Gcia.,10,2,3,0,1,2,2,True,1
+Gustavo Gcia.,22,2,1,2,0,1,1,True,2
+Gustavo Gcia.,34,0,1,1,1,2,X,False,0
+Gustavo Gcia.,11,1,0,3,1,1,1,True,1
+Gustavo Gcia.,23,1,3,1,1,2,X,False,0
+Gustavo Gcia.,35,0,2,2,0,2,1,False,0
+Gustavo Gcia.,12,2,0,2,1,1,1,True,2
+Gustavo Gcia.,24,1,1,0,3,X,2,False,0
+Gustavo Gcia.,36,1,0,1,2,1,2,False,0
+Gustavo Glez.,1,2,0,5,1,1,1,True,1
+Gustavo Glez.,13,2,1,2,0,1,1,True,2
+Gustavo Glez.,25,1,1,0,1,X,2,False,0
+Gustavo Glez.,2,1,1,1,3,X,2,False,0
+Gustavo Glez.,14,1,1,1,1,X,X,True,3
+Gustavo Glez.,26,1,3,1,1,2,X,False,0
+Gustavo Glez.,3,3,1,3,0,1,1,True,2
+Gustavo Glez.,15,2,0,2,2,1,X,False,0
+Gustavo Glez.,27,1,1,1,1,X,X,True,3
+Gustavo Glez.,4,2,0,2,1,1,1,True,2
+Gustavo Glez.,16,2,1,1,0,1,1,True,1
+Gustavo Glez.,28,0,4,0,1,2,2,True,2
+Gustavo Glez.,5,2,2,1,1,X,X,True,1
+Gustavo Glez.,17,1,1,1,1,X,X,True,3
+Gustavo Glez.,29,3,0,0,0,1,X,False,0
+Gustavo Glez.,6,1,3,0,1,2,2,True,1
+Gustavo Glez.,18,1,3,1,1,2,X,False,0
+Gustavo Glez.,30,1,1,0,0,X,X,True,1
+Gustavo Glez.,7,1,2,1,2,2,2,True,3
+Gustavo Glez.,19,0,0,1,3,X,2,False,0
+Gustavo Glez.,31,2,1,2,3,1,2,False,0
+Gustavo Glez.,8,0,3,0,1,2,2,True,2
+Gustavo Glez.,20,1,3,0,0,2,X,False,0
+Gustavo Glez.,32,4,1,1,1,1,X,False,0
+Gustavo Glez.,9,1,1,3,0,X,1,False,0
+Gustavo Glez.,21,1,1,1,2,X,2,False,0
+Gustavo Glez.,33,2,1,0,0,1,X,False,0
+Gustavo Glez.,10,2,1,0,1,1,2,False,0
+Gustavo Glez.,22,2,2,2,0,X,1,False,0
+Gustavo Glez.,34,1,2,1,1,2,X,False,0
+Gustavo Glez.,11,2,1,3,1,1,1,True,2
+Gustavo Glez.,23,1,1,1,1,X,X,True,3
+Gustavo Glez.,35,1,1,2,0,X,1,False,0
+Gustavo Glez.,12,2,2,2,1,X,1,False,0
+Gustavo Glez.,24,1,2,0,3,2,2,True,1
+Gustavo Glez.,36,3,1,1,2,1,2,False,0
+Hilario Santana,1,3,1,5,1,1,1,True,2
+Hilario Santana,13,3,0,2,0,1,1,True,2
+Hilario Santana,25,2,0,0,1,1,2,False,0
+Hilario Santana,2,1,2,1,3,2,2,True,2
+Hilario Santana,14,2,2,1,1,X,X,True,1
+Hilario Santana,26,1,3,1,1,2,X,False,0
+Hilario Santana,3,2,1,3,0,1,1,True,1
+Hilario Santana,15,3,0,2,2,1,X,False,0
+Hilario Santana,27,1,1,1,1,X,X,True,3
+Hilario Santana,4,4,0,2,1,1,1,True,1
+Hilario Santana,16,1,1,1,0,X,1,False,0
+Hilario Santana,28,0,2,0,1,2,2,True,2
+Hilario Santana,5,1,1,1,1,X,X,True,3
+Hilario Santana,17,1,2,1,1,2,X,False,0
+Hilario Santana,29,2,0,0,0,1,X,False,0
+Hilario Santana,6,1,3,0,1,2,2,True,1
+Hilario Santana,18,1,2,1,1,2,X,False,0
+Hilario Santana,30,1,1,0,0,X,X,True,1
+Hilario Santana,7,1,2,1,2,2,2,True,3
+Hilario Santana,19,2,0,1,3,1,2,False,0
+Hilario Santana,31,3,1,2,3,1,2,False,0
+Hilario Santana,8,0,3,0,1,2,2,True,2
+Hilario Santana,20,1,3,0,0,2,X,False,0
+Hilario Santana,32,3,0,1,1,1,X,False,0
+Hilario Santana,9,1,1,3,0,X,1,False,0
+Hilario Santana,21,1,1,1,2,X,2,False,0
+Hilario Santana,33,0,1,0,0,2,X,False,0
+Hilario Santana,10,2,1,0,1,1,2,False,0
+Hilario Santana,22,2,1,2,0,1,1,True,2
+Hilario Santana,34,0,0,1,1,X,X,True,1
+Hilario Santana,11,2,1,3,1,1,1,True,2
+Hilario Santana,23,1,2,1,1,2,X,False,0
+Hilario Santana,35,1,3,2,0,2,1,False,0
+Hilario Santana,12,3,1,2,1,1,1,True,2
+Hilario Santana,24,0,2,0,3,2,2,True,2
+Hilario Santana,36,2,2,1,2,X,2,False,0
+Idalia Hdez.,1,2,1,5,1,1,1,True,2
+Idalia Hdez.,13,2,0,2,0,1,1,True,3
+Idalia Hdez.,25,0,0,0,1,X,2,False,0
+Idalia Hdez.,2,0,1,1,3,2,2,True,1
+Idalia Hdez.,14,1,1,1,1,X,X,True,3
+Idalia Hdez.,26,1,2,1,1,2,X,False,0
+Idalia Hdez.,3,2,0,3,0,1,1,True,2
+Idalia Hdez.,15,1,0,2,2,1,X,False,0
+Idalia Hdez.,27,0,2,1,1,2,X,False,0
+Idalia Hdez.,4,2,0,2,1,1,1,True,2
+Idalia Hdez.,16,1,1,1,0,X,1,False,0
+Idalia Hdez.,28,0,2,0,1,2,2,True,2
+Idalia Hdez.,5,0,0,1,1,X,X,True,1
+Idalia Hdez.,17,0,0,1,1,X,X,True,1
+Idalia Hdez.,29,2,0,0,0,1,X,False,0
+Idalia Hdez.,6,1,3,0,1,2,2,True,1
+Idalia Hdez.,18,0,1,1,1,2,X,False,0
+Idalia Hdez.,30,1,0,0,0,1,X,False,0
+Idalia Hdez.,7,0,0,1,2,X,2,False,0
+Idalia Hdez.,19,1,1,1,3,X,2,False,0
+Idalia Hdez.,31,1,1,2,3,X,2,False,0
+Idalia Hdez.,8,0,1,0,1,2,2,True,3
+Idalia Hdez.,20,0,1,0,0,2,X,False,0
+Idalia Hdez.,32,1,0,1,1,1,X,False,0
+Idalia Hdez.,9,0,1,3,0,2,1,False,0
+Idalia Hdez.,21,0,0,1,2,X,2,False,0
+Idalia Hdez.,33,0,1,0,0,2,X,False,0
+Idalia Hdez.,10,1,0,0,1,1,2,False,0
+Idalia Hdez.,22,1,0,2,0,1,1,True,2
+Idalia Hdez.,34,0,0,1,1,X,X,True,1
+Idalia Hdez.,11,1,0,3,1,1,1,True,1
+Idalia Hdez.,23,0,1,1,1,2,X,False,0
+Idalia Hdez.,35,0,2,2,0,2,1,False,0
+Idalia Hdez.,12,2,0,2,1,1,1,True,2
+Idalia Hdez.,24,0,1,0,3,2,2,True,2
+Idalia Hdez.,36,2,0,1,2,1,2,False,0
+Ignacio Calandria,1,3,1,5,1,1,1,True,2
+Ignacio Calandria,13,3,1,2,0,1,1,True,1
+Ignacio Calandria,25,0,1,0,1,2,2,True,3
+Ignacio Calandria,2,1,3,1,3,2,2,True,3
+Ignacio Calandria,14,0,2,1,1,2,X,False,0
+Ignacio Calandria,26,2,2,1,1,X,X,True,1
+Ignacio Calandria,3,2,1,3,0,1,1,True,1
+Ignacio Calandria,15,3,0,2,2,1,X,False,0
+Ignacio Calandria,27,2,1,1,1,1,X,False,0
+Ignacio Calandria,4,3,0,2,1,1,1,True,1
+Ignacio Calandria,16,2,1,1,0,1,1,True,1
+Ignacio Calandria,28,0,3,0,1,2,2,True,2
+Ignacio Calandria,5,0,2,1,1,2,X,False,0
+Ignacio Calandria,17,1,2,1,1,2,X,False,0
+Ignacio Calandria,29,3,1,0,0,1,X,False,0
+Ignacio Calandria,6,0,4,0,1,2,2,True,2
+Ignacio Calandria,18,1,2,1,1,2,X,False,0
+Ignacio Calandria,30,2,1,0,0,1,X,False,0
+Ignacio Calandria,7,1,2,1,2,2,2,True,3
+Ignacio Calandria,19,1,1,1,3,X,2,False,0
+Ignacio Calandria,31,2,2,2,3,X,2,False,0
+Ignacio Calandria,8,0,3,0,1,2,2,True,2
+Ignacio Calandria,20,1,3,0,0,2,X,False,0
+Ignacio Calandria,32,2,0,1,1,1,X,False,0
+Ignacio Calandria,9,1,1,3,0,X,1,False,0
+Ignacio Calandria,21,1,1,1,2,X,2,False,0
+Ignacio Calandria,10,2,1,0,1,1,2,False,0
+Ignacio Calandria,22,2,1,2,0,1,1,True,2
+Ignacio Calandria,34,2,2,1,1,X,X,True,1
+Ignacio Calandria,11,2,2,3,1,X,1,False,0
+Ignacio Calandria,23,0,1,1,1,2,X,False,0
+Ignacio Calandria,35,0,3,2,0,2,1,False,0
+Ignacio Calandria,12,3,0,2,1,1,1,True,1
+Ignacio Calandria,24,0,2,0,3,2,2,True,2
+Ignacio Calandria,36,1,1,1,2,X,2,False,0
+Ino,1,2,1,5,1,1,1,True,2
+Ino,13,3,0,2,0,1,1,True,2
+Ino,25,1,0,0,1,1,2,False,0
+Ino,2,1,1,1,3,X,2,False,0
+Ino,14,1,1,1,1,X,X,True,3
+Ino,26,1,2,1,1,2,X,False,0
+Ino,3,2,0,3,0,1,1,True,2
+Ino,15,0,1,2,2,2,X,False,0
+Ino,27,0,2,1,1,2,X,False,0
+Ino,4,3,1,2,1,1,1,True,2
+Ino,16,2,1,1,0,1,1,True,1
+Ino,28,0,2,0,1,2,2,True,2
+Ino,5,1,1,1,1,X,X,True,3
+Ino,17,1,0,1,1,1,X,False,0
+Ino,29,2,1,0,0,1,X,False,0
+Ino,6,1,3,0,1,2,2,True,1
+Ino,18,1,2,1,1,2,X,False,0
+Ino,30,1,0,0,0,1,X,False,0
+Ino,7,1,0,1,2,1,2,False,0
+Ino,19,1,1,1,3,X,2,False,0
+Ino,31,1,1,2,3,X,2,False,0
+Ino,8,1,2,0,1,2,2,True,1
+Ino,20,0,2,0,0,2,X,False,0
+Ino,32,2,1,1,1,1,X,False,0
+Ino,9,1,1,3,0,X,1,False,0
+Ino,21,1,1,1,2,X,2,False,0
+Ino,33,0,1,0,0,2,X,False,0
+Ino,10,2,0,0,1,1,2,False,0
+Ino,22,1,1,2,0,X,1,False,0
+Ino,34,0,0,1,1,X,X,True,1
+Ino,11,1,1,3,1,X,1,False,0
+Ino,23,0,1,1,1,2,X,False,0
+Ino,35,0,2,2,0,2,1,False,0
+Ino,12,1,0,2,1,1,1,True,1
+Ino,24,0,2,0,3,2,2,True,2
+Ino,36,1,1,1,2,X,2,False,0
+Iñaki,1,1,0,5,1,1,1,True,1
+Iñaki,13,2,1,2,0,1,1,True,2
+Iñaki,25,1,3,0,1,2,2,True,1
+Iñaki,2,1,1,1,3,X,2,False,0
+Iñaki,14,1,1,1,1,X,X,True,3
+Iñaki,26,0,2,1,1,2,X,False,0
+Iñaki,3,1,1,3,0,X,1,False,0
+Iñaki,15,3,0,2,2,1,X,False,0
+Iñaki,27,1,0,1,1,1,X,False,0
+Iñaki,4,2,0,2,1,1,1,True,2
+Iñaki,16,1,0,1,0,1,1,True,3
+Iñaki,28,0,4,0,1,2,2,True,2
+Iñaki,5,1,1,1,1,X,X,True,3
+Iñaki,17,2,2,1,1,X,X,True,1
+Iñaki,29,3,0,0,0,1,X,False,0
+Iñaki,6,1,2,0,1,2,2,True,1
+Iñaki,18,1,2,1,1,2,X,False,0
+Iñaki,30,2,1,0,0,1,X,False,0
+Iñaki,7,0,2,1,2,2,2,True,2
+Iñaki,19,1,2,1,3,2,2,True,2
+Iñaki,31,1,2,2,3,2,2,True,1
+Iñaki,8,1,3,0,1,2,2,True,1
+Iñaki,20,0,3,0,0,2,X,False,0
+Iñaki,32,3,0,1,1,1,X,False,0
+Iñaki,9,0,0,3,0,X,1,False,0
+Iñaki,21,0,1,1,2,2,2,True,1
+Iñaki,33,1,2,0,0,2,X,False,0
+Iñaki,10,2,0,0,1,1,2,False,0
+Iñaki,22,1,0,2,0,1,1,True,2
+Iñaki,34,0,0,1,1,X,X,True,1
+Iñaki,11,2,0,3,1,1,1,True,1
+Iñaki,23,0,2,1,1,2,X,False,0
+Iñaki,35,0,5,2,0,2,1,False,0
+Iñaki,12,3,1,2,1,1,1,True,2
+Iñaki,24,0,2,0,3,2,2,True,2
+Iñaki,36,2,1,1,2,1,2,False,0
+Isaac Guillén,1,2,1,5,1,1,1,True,2
+Isaac Guillén,13,2,1,2,0,1,1,True,2
+Isaac Guillén,25,2,1,0,1,1,2,False,0
+Isaac Guillén,2,1,1,1,3,X,2,False,0
+Isaac Guillén,14,1,1,1,1,X,X,True,3
+Isaac Guillén,26,2,1,1,1,1,X,False,0
+Isaac Guillén,3,2,1,3,0,1,1,True,1
+Isaac Guillén,15,1,0,2,2,1,X,False,0
+Isaac Guillén,27,2,2,1,1,X,X,True,1
+Isaac Guillén,4,2,0,2,1,1,1,True,2
+Isaac Guillén,16,2,2,1,0,X,1,False,0
+Isaac Guillén,28,0,4,0,1,2,2,True,2
+Isaac Guillén,5,0,1,1,1,2,X,False,0
+Isaac Guillén,17,1,1,1,1,X,X,True,3
+Isaac Guillén,29,3,0,0,0,1,X,False,0
+Isaac Guillén,6,0,3,0,1,2,2,True,2
+Isaac Guillén,18,0,1,1,1,2,X,False,0
+Isaac Guillén,30,3,0,0,0,1,X,False,0
+Isaac Guillén,7,0,1,1,2,2,2,True,1
+Isaac Guillén,19,1,1,1,3,X,2,False,0
+Isaac Guillén,31,2,1,2,3,1,2,False,0
+Isaac Guillén,8,1,4,0,1,2,2,True,1
+Isaac Guillén,20,1,2,0,0,2,X,False,0
+Isaac Guillén,32,2,1,1,1,1,X,False,0
+Isaac Guillén,9,1,2,3,0,2,1,False,0
+Isaac Guillén,21,1,1,1,2,X,2,False,0
+Isaac Guillén,33,1,2,0,0,2,X,False,0
+Isaac Guillén,10,2,1,0,1,1,2,False,0
+Isaac Guillén,22,3,1,2,0,1,1,True,1
+Isaac Guillén,34,1,1,1,1,X,X,True,3
+Isaac Guillén,11,0,0,3,1,X,1,False,0
+Isaac Guillén,23,1,0,1,1,1,X,False,0
+Isaac Guillén,35,0,2,2,0,2,1,False,0
+Isaac Guillén,12,2,0,2,1,1,1,True,2
+Isaac Guillén,24,0,3,0,3,2,2,True,3
+Isaac Guillén,36,1,2,1,2,2,2,True,3
+Isidro Ajenjo,1,2,0,5,1,1,1,True,1
+Isidro Ajenjo,13,2,0,2,0,1,1,True,3
+Isidro Ajenjo,25,2,1,0,1,1,2,False,0
+Isidro Ajenjo,2,1,1,1,3,X,2,False,0
+Isidro Ajenjo,14,1,1,1,1,X,X,True,3
+Isidro Ajenjo,26,1,1,1,1,X,X,True,3
+Isidro Ajenjo,3,3,0,3,0,1,1,True,3
+Isidro Ajenjo,15,2,0,2,2,1,X,False,0
+Isidro Ajenjo,27,1,1,1,1,X,X,True,3
+Isidro Ajenjo,4,2,0,2,1,1,1,True,2
+Isidro Ajenjo,16,2,0,1,0,1,1,True,2
+Isidro Ajenjo,28,1,4,0,1,2,2,True,1
+Isidro Ajenjo,5,1,2,1,1,2,X,False,0
+Isidro Ajenjo,17,2,1,1,1,1,X,False,0
+Isidro Ajenjo,29,3,1,0,0,1,X,False,0
+Isidro Ajenjo,6,1,3,0,1,2,2,True,1
+Isidro Ajenjo,18,1,2,1,1,2,X,False,0
+Isidro Ajenjo,30,2,0,0,0,1,X,False,0
+Isidro Ajenjo,7,1,2,1,2,2,2,True,3
+Isidro Ajenjo,19,1,1,1,3,X,2,False,0
+Isidro Ajenjo,31,2,0,2,3,1,2,False,0
+Isidro Ajenjo,8,0,3,0,1,2,2,True,2
+Isidro Ajenjo,20,0,1,0,0,2,X,False,0
+Isidro Ajenjo,32,2,1,1,1,1,X,False,0
+Isidro Ajenjo,9,1,3,3,0,2,1,False,0
+Isidro Ajenjo,21,1,2,1,2,2,2,True,3
+Isidro Ajenjo,33,1,1,0,0,X,X,True,1
+Isidro Ajenjo,10,3,1,0,1,1,2,False,0
+Isidro Ajenjo,22,2,0,2,0,1,1,True,3
+Isidro Ajenjo,34,1,1,1,1,X,X,True,3
+Isidro Ajenjo,11,1,0,3,1,1,1,True,1
+Isidro Ajenjo,23,0,2,1,1,2,X,False,0
+Isidro Ajenjo,35,1,1,2,0,X,1,False,0
+Isidro Ajenjo,12,2,2,2,1,X,1,False,0
+Isidro Ajenjo,24,0,2,0,3,2,2,True,2
+Isidro Ajenjo,36,1,1,1,2,X,2,False,0
+Itahisa Tejera,1,1,2,5,1,2,1,False,0
+Itahisa Tejera,13,0,2,2,0,2,1,False,0
+Itahisa Tejera,25,2,0,0,1,1,2,False,0
+Itahisa Tejera,2,0,1,1,3,2,2,True,1
+Itahisa Tejera,14,3,3,1,1,X,X,True,1
+Itahisa Tejera,26,2,0,1,1,1,X,False,0
+Itahisa Tejera,3,2,0,3,0,1,1,True,2
+Itahisa Tejera,15,2,4,2,2,2,X,False,0
+Itahisa Tejera,27,2,4,1,1,2,X,False,0
+Itahisa Tejera,4,3,0,2,1,1,1,True,1
+Itahisa Tejera,16,1,0,1,0,1,1,True,3
+Itahisa Tejera,28,1,3,0,1,2,2,True,1
+Itahisa Tejera,5,2,2,1,1,X,X,True,1
+Itahisa Tejera,17,4,1,1,1,1,X,False,0
+Itahisa Tejera,29,4,3,0,0,1,X,False,0
+Itahisa Tejera,6,2,3,0,1,2,2,True,1
+Itahisa Tejera,18,1,1,1,1,X,X,True,3
+Itahisa Tejera,30,0,0,0,0,X,X,True,3
+Itahisa Tejera,7,1,1,1,2,X,2,False,0
+Itahisa Tejera,19,2,0,1,3,1,2,False,0
+Itahisa Tejera,31,3,1,2,3,1,2,False,0
+Itahisa Tejera,8,0,4,0,1,2,2,True,2
+Itahisa Tejera,20,0,0,0,0,X,X,True,3
+Itahisa Tejera,32,0,1,1,1,2,X,False,0
+Itahisa Tejera,9,2,3,3,0,2,1,False,0
+Itahisa Tejera,21,0,2,1,2,2,2,True,2
+Itahisa Tejera,33,3,2,0,0,1,X,False,0
+Itahisa Tejera,10,2,2,0,1,X,2,False,0
+Itahisa Tejera,22,3,2,2,0,1,1,True,1
+Itahisa Tejera,34,2,2,1,1,X,X,True,1
+Itahisa Tejera,11,3,0,3,1,1,1,True,2
+Itahisa Tejera,23,1,3,1,1,2,X,False,0
+Itahisa Tejera,35,1,0,2,0,1,1,True,2
+Itahisa Tejera,12,2,1,2,1,1,1,True,3
+Itahisa Tejera,24,1,3,0,3,2,2,True,2
+Itahisa Tejera,36,3,0,1,2,1,2,False,0
+Jaime,1,2,0,5,1,1,1,True,1
+Jaime,13,2,1,2,0,1,1,True,2
+Jaime,25,1,1,0,1,X,2,False,0
+Jaime,2,1,1,1,3,X,2,False,0
+Jaime,14,1,0,1,1,1,X,False,0
+Jaime,26,1,2,1,1,2,X,False,0
+Jaime,3,2,1,3,0,1,1,True,1
+Jaime,15,2,0,2,2,1,X,False,0
+Jaime,27,1,2,1,1,2,X,False,0
+Jaime,4,2,0,2,1,1,1,True,2
+Jaime,16,1,1,1,0,X,1,False,0
+Jaime,28,0,3,0,1,2,2,True,2
+Jaime,5,0,2,1,1,2,X,False,0
+Jaime,17,1,1,1,1,X,X,True,3
+Jaime,29,3,0,0,0,1,X,False,0
+Jaime,6,1,2,0,1,2,2,True,1
+Jaime,18,1,2,1,1,2,X,False,0
+Jaime,30,2,0,0,0,1,X,False,0
+Jaime,7,1,2,1,2,2,2,True,3
+Jaime,19,2,1,1,3,1,2,False,0
+Jaime,31,2,0,2,3,1,2,False,0
+Jaime,8,1,3,0,1,2,2,True,1
+Jaime,20,1,2,0,0,2,X,False,0
+Jaime,32,2,1,1,1,1,X,False,0
+Jaime,9,0,2,3,0,2,1,False,0
+Jaime,21,0,1,1,2,2,2,True,1
+Jaime,33,1,1,0,0,X,X,True,1
+Jaime,10,2,0,0,1,1,2,False,0
+Jaime,22,2,0,2,0,1,1,True,3
+Jaime,34,0,1,1,1,2,X,False,0
+Jaime,11,2,0,3,1,1,1,True,1
+Jaime,23,1,2,1,1,2,X,False,0
+Jaime,35,0,3,2,0,2,1,False,0
+Jaime,12,2,1,2,1,1,1,True,3
+Jaime,24,0,2,0,3,2,2,True,2
+Jaime,36,2,1,1,2,1,2,False,0
+Jaime Padre,1,3,0,5,1,1,1,True,1
+Jaime Padre,13,2,0,2,0,1,1,True,3
+Jaime Padre,25,2,0,0,1,1,2,False,0
+Jaime Padre,2,1,2,1,3,2,2,True,2
+Jaime Padre,14,0,2,1,1,2,X,False,0
+Jaime Padre,26,1,2,1,1,2,X,False,0
+Jaime Padre,3,1,2,3,0,2,1,False,0
+Jaime Padre,15,3,0,2,2,1,X,False,0
+Jaime Padre,27,2,1,1,1,1,X,False,0
+Jaime Padre,4,4,0,2,1,1,1,True,1
+Jaime Padre,16,2,1,1,0,1,1,True,1
+Jaime Padre,28,0,2,0,1,2,2,True,2
+Jaime Padre,5,0,2,1,1,2,X,False,0
+Jaime Padre,17,1,1,1,1,X,X,True,3
+Jaime Padre,29,3,0,0,0,1,X,False,0
+Jaime Padre,6,0,3,0,1,2,2,True,2
+Jaime Padre,18,2,2,1,1,X,X,True,1
+Jaime Padre,30,2,0,0,0,1,X,False,0
+Jaime Padre,7,1,3,1,2,2,2,True,2
+Jaime Padre,19,2,0,1,3,1,2,False,0
+Jaime Padre,31,2,0,2,3,1,2,False,0
+Jaime Padre,8,0,4,0,1,2,2,True,2
+Jaime Padre,20,2,3,0,0,2,X,False,0
+Jaime Padre,32,3,0,1,1,1,X,False,0
+Jaime Padre,9,2,2,3,0,X,1,False,0
+Jaime Padre,21,0,2,1,2,2,2,True,2
+Jaime Padre,33,1,2,0,0,2,X,False,0
+Jaime Padre,10,3,1,0,1,1,2,False,0
+Jaime Padre,22,2,0,2,0,1,1,True,3
+Jaime Padre,34,1,2,1,1,2,X,False,0
+Jaime Padre,11,2,0,3,1,1,1,True,1
+Jaime Padre,23,0,2,1,1,2,X,False,0
+Jaime Padre,35,0,3,2,0,2,1,False,0
+Jaime Padre,12,3,0,2,1,1,1,True,1
+Jaime Padre,24,0,2,0,3,2,2,True,2
+Jaime Padre,36,2,1,1,2,1,2,False,0
+Javi Ballesteros,1,2,1,5,1,1,1,True,2
+Javi Ballesteros,13,2,0,2,0,1,1,True,3
+Javi Ballesteros,25,2,0,0,1,1,2,False,0
+Javi Ballesteros,2,0,1,1,3,2,2,True,1
+Javi Ballesteros,14,1,1,1,1,X,X,True,3
+Javi Ballesteros,26,1,1,1,1,X,X,True,3
+Javi Ballesteros,3,1,1,3,0,X,1,False,0
+Javi Ballesteros,15,2,1,2,2,1,X,False,0
+Javi Ballesteros,27,2,1,1,1,1,X,False,0
+Javi Ballesteros,4,1,1,2,1,X,1,False,0
+Javi Ballesteros,16,2,0,1,0,1,1,True,2
+Javi Ballesteros,28,0,3,0,1,2,2,True,2
+Javi Ballesteros,5,0,2,1,1,2,X,False,0
+Javi Ballesteros,17,0,2,1,1,2,X,False,0
+Javi Ballesteros,29,5,0,0,0,1,X,False,0
+Javi Ballesteros,6,1,3,0,1,2,2,True,1
+Javi Ballesteros,18,1,2,1,1,2,X,False,0
+Javi Ballesteros,30,1,1,0,0,X,X,True,1
+Javi Ballesteros,7,0,2,1,2,2,2,True,2
+Javi Ballesteros,19,1,1,1,3,X,2,False,0
+Javi Ballesteros,31,2,0,2,3,1,2,False,0
+Javi Ballesteros,8,0,4,0,1,2,2,True,2
+Javi Ballesteros,20,1,2,0,0,2,X,False,0
+Javi Ballesteros,32,3,0,1,1,1,X,False,0
+Javi Ballesteros,9,2,1,3,0,1,1,True,1
+Javi Ballesteros,21,0,1,1,2,2,2,True,1
+Javi Ballesteros,33,1,2,0,0,2,X,False,0
+Javi Ballesteros,10,3,0,0,1,1,2,False,0
+Javi Ballesteros,22,2,1,2,0,1,1,True,2
+Javi Ballesteros,34,0,2,1,1,2,X,False,0
+Javi Ballesteros,11,1,1,3,1,X,1,False,0
+Javi Ballesteros,23,0,1,1,1,2,X,False,0
+Javi Ballesteros,35,1,3,2,0,2,1,False,0
+Javi Ballesteros,12,4,1,2,1,1,1,True,2
+Javi Ballesteros,24,1,2,0,3,2,2,True,1
+Javi Ballesteros,36,2,1,1,2,1,2,False,0
+Javi Hdez.,1,3,0,5,1,1,1,True,1
+Javi Hdez.,13,2,0,2,0,1,1,True,3
+Javi Hdez.,25,0,1,0,1,2,2,True,3
+Javi Hdez.,2,0,2,1,3,2,2,True,1
+Javi Hdez.,14,0,2,1,1,2,X,False,0
+Javi Hdez.,26,1,2,1,1,2,X,False,0
+Javi Hdez.,3,1,0,3,0,1,1,True,2
+Javi Hdez.,15,2,0,2,2,1,X,False,0
+Javi Hdez.,27,1,2,1,1,2,X,False,0
+Javi Hdez.,4,2,0,2,1,1,1,True,2
+Javi Hdez.,16,1,1,1,0,X,1,False,0
+Javi Hdez.,28,1,3,0,1,2,2,True,1
+Javi Hdez.,5,0,1,1,1,2,X,False,0
+Javi Hdez.,17,0,0,1,1,X,X,True,1
+Javi Hdez.,29,3,0,0,0,1,X,False,0
+Javi Hdez.,6,0,3,0,1,2,2,True,2
+Javi Hdez.,18,0,2,1,1,2,X,False,0
+Javi Hdez.,30,1,0,0,0,1,X,False,0
+Javi Hdez.,7,1,2,1,2,2,2,True,3
+Javi Hdez.,19,1,0,1,3,1,2,False,0
+Javi Hdez.,31,2,0,2,3,1,2,False,0
+Javi Hdez.,8,0,3,0,1,2,2,True,2
+Javi Hdez.,20,1,2,0,0,2,X,False,0
+Javi Hdez.,32,4,1,1,1,1,X,False,0
+Javi Hdez.,9,0,2,3,0,2,1,False,0
+Javi Hdez.,21,0,1,1,2,2,2,True,1
+Javi Hdez.,33,1,2,0,0,2,X,False,0
+Javi Hdez.,10,2,0,0,1,1,2,False,0
+Javi Hdez.,22,2,0,2,0,1,1,True,3
+Javi Hdez.,34,1,1,1,1,X,X,True,3
+Javi Hdez.,11,1,1,3,1,X,1,False,0
+Javi Hdez.,23,1,1,1,1,X,X,True,3
+Javi Hdez.,35,0,2,2,0,2,1,False,0
+Javi Hdez.,12,2,0,2,1,1,1,True,2
+Javi Hdez.,24,1,3,0,3,2,2,True,2
+Javi Hdez.,36,1,1,1,2,X,2,False,0
+Javi Macarro,1,3,0,5,1,1,1,True,1
+Javi Macarro,13,1,0,2,0,1,1,True,2
+Javi Macarro,25,0,0,0,1,X,2,False,0
+Javi Macarro,2,1,2,1,3,2,2,True,2
+Javi Macarro,14,1,2,1,1,2,X,False,0
+Javi Macarro,26,1,3,1,1,2,X,False,0
+Javi Macarro,3,3,1,3,0,1,1,True,2
+Javi Macarro,15,2,1,2,2,1,X,False,0
+Javi Macarro,27,2,2,1,1,X,X,True,1
+Javi Macarro,4,4,0,2,1,1,1,True,1
+Javi Macarro,16,1,1,1,0,X,1,False,0
+Javi Macarro,28,1,3,0,1,2,2,True,1
+Javi Macarro,5,1,2,1,1,2,X,False,0
+Javi Macarro,17,2,0,1,1,1,X,False,0
+Javi Macarro,29,4,0,0,0,1,X,False,0
+Javi Macarro,6,0,3,0,1,2,2,True,2
+Javi Macarro,18,2,2,1,1,X,X,True,1
+Javi Macarro,30,0,1,0,0,2,X,False,0
+Javi Macarro,7,0,4,1,2,2,2,True,1
+Javi Macarro,19,1,1,1,3,X,2,False,0
+Javi Macarro,31,3,0,2,3,1,2,False,0
+Javi Macarro,8,0,2,0,1,2,2,True,2
+Javi Macarro,20,0,0,0,0,X,X,True,3
+Javi Macarro,32,3,0,1,1,1,X,False,0
+Javi Macarro,9,0,0,3,0,X,1,False,0
+Javi Macarro,21,1,3,1,2,2,2,True,2
+Javi Macarro,33,0,0,0,0,X,X,True,3
+Javi Macarro,10,3,0,0,1,1,2,False,0
+Javi Macarro,22,3,0,2,0,1,1,True,2
+Javi Macarro,34,0,1,1,1,2,X,False,0
+Javi Macarro,11,0,1,3,1,2,1,False,0
+Javi Macarro,23,0,0,1,1,X,X,True,1
+Javi Macarro,35,2,3,2,0,2,1,False,0
+Javi Macarro,12,3,1,2,1,1,1,True,2
+Javi Macarro,24,1,4,0,3,2,2,True,1
+Javi Macarro,36,1,1,1,2,X,2,False,0
+Javi &Richard,1,3,0,5,1,1,1,True,1
+Javi &Richard,13,1,0,2,0,1,1,True,2
+Javi &Richard,25,2,0,0,1,1,2,False,0
+Javi &Richard,2,1,1,1,3,X,2,False,0
+Javi &Richard,14,1,2,1,1,2,X,False,0
+Javi &Richard,26,1,1,1,1,X,X,True,3
+Javi &Richard,3,2,1,3,0,1,1,True,1
+Javi &Richard,15,1,0,2,2,1,X,False,0
+Javi &Richard,27,1,1,1,1,X,X,True,3
+Javi &Richard,4,1,0,2,1,1,1,True,1
+Javi &Richard,16,0,0,1,0,X,1,False,0
+Javi &Richard,28,0,2,0,1,2,2,True,2
+Javi &Richard,5,0,0,1,1,X,X,True,1
+Javi &Richard,17,1,1,1,1,X,X,True,3
+Javi &Richard,29,4,1,0,0,1,X,False,0
+Javi &Richard,6,1,1,0,1,X,2,False,0
+Javi &Richard,18,1,3,1,1,2,X,False,0
+Javi &Richard,30,2,2,0,0,X,X,True,1
+Javi &Richard,7,0,2,1,2,2,2,True,2
+Javi &Richard,19,2,1,1,3,1,2,False,0
+Javi &Richard,31,3,1,2,3,1,2,False,0
+Javi &Richard,8,1,3,0,1,2,2,True,1
+Javi &Richard,20,1,2,0,0,2,X,False,0
+Javi &Richard,32,3,0,1,1,1,X,False,0
+Javi &Richard,9,2,2,3,0,X,1,False,0
+Javi &Richard,21,1,1,1,2,X,2,False,0
+Javi &Richard,33,2,3,0,0,2,X,False,0
+Javi &Richard,10,2,1,0,1,1,2,False,0
+Javi &Richard,22,2,1,2,0,1,1,True,2
+Javi &Richard,34,2,2,1,1,X,X,True,1
+Javi &Richard,11,3,0,3,1,1,1,True,2
+Javi &Richard,23,0,2,1,1,2,X,False,0
+Javi &Richard,35,0,5,2,0,2,1,False,0
+Javi &Richard,12,2,0,2,1,1,1,True,2
+Javi &Richard,24,2,3,0,3,2,2,True,2
+Javi &Richard,36,1,3,1,2,2,2,True,2
+Jesús Vega,1,2,1,5,1,1,1,True,2
+Jesús Vega,13,3,1,2,0,1,1,True,1
+Jesús Vega,25,2,1,0,1,1,2,False,0
+Jesús Vega,2,1,1,1,3,X,2,False,0
+Jesús Vega,14,1,1,1,1,X,X,True,3
+Jesús Vega,26,1,2,1,1,2,X,False,0
+Jesús Vega,3,1,1,3,0,X,1,False,0
+Jesús Vega,15,2,1,2,2,1,X,False,0
+Jesús Vega,27,1,1,1,1,X,X,True,3
+Jesús Vega,4,2,0,2,1,1,1,True,2
+Jesús Vega,16,0,0,1,0,X,1,False,0
+Jesús Vega,28,0,2,0,1,2,2,True,2
+Jesús Vega,5,0,1,1,1,2,X,False,0
+Jesús Vega,17,1,2,1,1,2,X,False,0
+Jesús Vega,29,2,0,0,0,1,X,False,0
+Jesús Vega,6,2,2,0,1,X,2,False,0
+Jesús Vega,18,1,2,1,1,2,X,False,0
+Jesús Vega,30,0,0,0,0,X,X,True,3
+Jesús Vega,7,0,2,1,2,2,2,True,2
+Jesús Vega,19,0,1,1,3,2,2,True,1
+Jesús Vega,31,3,1,2,3,1,2,False,0
+Jesús Vega,8,0,3,0,1,2,2,True,2
+Jesús Vega,20,2,2,0,0,X,X,True,1
+Jesús Vega,32,2,1,1,1,1,X,False,0
+Jesús Vega,9,0,2,3,0,2,1,False,0
+Jesús Vega,21,1,2,1,2,2,2,True,3
+Jesús Vega,33,2,2,0,0,X,X,True,1
+Jesús Vega,10,3,2,0,1,1,2,False,0
+Jesús Vega,22,3,1,2,0,1,1,True,1
+Jesús Vega,34,1,0,1,1,1,X,False,0
+Jesús Vega,11,1,1,3,1,X,1,False,0
+Jesús Vega,23,0,1,1,1,2,X,False,0
+Jesús Vega,35,0,3,2,0,2,1,False,0
+Jesús Vega,12,2,1,2,1,1,1,True,3
+Jesús Vega,24,1,3,0,3,2,2,True,2
+Jesús Vega,36,1,2,1,2,2,2,True,3
+Jordi López,1,3,1,5,1,1,1,True,2
+Jordi López,13,2,0,2,0,1,1,True,3
+Jordi López,25,1,1,0,1,X,2,False,0
+Jordi López,2,0,1,1,3,2,2,True,1
+Jordi López,14,1,2,1,1,2,X,False,0
+Jordi López,26,1,3,1,1,2,X,False,0
+Jordi López,3,1,1,3,0,X,1,False,0
+Jordi López,15,3,0,2,2,1,X,False,0
+Jordi López,27,2,2,1,1,X,X,True,1
+Jordi López,4,2,0,2,1,1,1,True,2
+Jordi López,16,2,1,1,0,1,1,True,1
+Jordi López,28,1,4,0,1,2,2,True,1
+Jordi López,5,0,1,1,1,2,X,False,0
+Jordi López,17,1,3,1,1,2,X,False,0
+Jordi López,29,3,2,0,0,1,X,False,0
+Jordi López,6,2,3,0,1,2,2,True,1
+Jordi López,18,2,2,1,1,X,X,True,1
+Jordi López,30,1,1,0,0,X,X,True,1
+Jordi López,7,0,1,1,2,2,2,True,1
+Jordi López,19,2,1,1,3,1,2,False,0
+Jordi López,31,1,1,2,3,X,2,False,0
+Jordi López,8,1,3,0,1,2,2,True,1
+Jordi López,20,0,2,0,0,2,X,False,0
+Jordi López,32,3,1,1,1,1,X,False,0
+Jordi López,9,0,0,3,0,X,1,False,0
+Jordi López,21,0,1,1,2,2,2,True,1
+Jordi López,33,1,2,0,0,2,X,False,0
+Jordi López,10,2,0,0,1,1,2,False,0
+Jordi López,22,3,1,2,0,1,1,True,1
+Jordi López,34,0,1,1,1,2,X,False,0
+Jordi López,11,1,1,3,1,X,1,False,0
+Jordi López,23,2,0,1,1,1,X,False,0
+Jordi López,35,0,3,2,0,2,1,False,0
+Jordi López,12,4,1,2,1,1,1,True,2
+Jordi López,24,1,3,0,3,2,2,True,2
+Jordi López,36,0,0,1,2,X,2,False,0
+Jonay Cardona,1,2,1,5,1,1,1,True,2
+Jonay Cardona,13,1,0,2,0,1,1,True,2
+Jonay Cardona,25,0,0,0,1,X,2,False,0
+Jonay Cardona,2,0,1,1,3,2,2,True,1
+Jonay Cardona,14,1,1,1,1,X,X,True,3
+Jonay Cardona,26,2,2,1,1,X,X,True,1
+Jonay Cardona,3,1,1,3,0,X,1,False,0
+Jonay Cardona,15,2,0,2,2,1,X,False,0
+Jonay Cardona,27,1,1,1,1,X,X,True,3
+Jonay Cardona,4,1,0,2,1,1,1,True,1
+Jonay Cardona,16,1,1,1,0,X,1,False,0
+Jonay Cardona,28,1,2,0,1,2,2,True,1
+Jonay Cardona,5,0,0,1,1,X,X,True,1
+Jonay Cardona,17,1,0,1,1,1,X,False,0
+Jonay Cardona,29,2,0,0,0,1,X,False,0
+Jonay Cardona,6,0,3,0,1,2,2,True,2
+Jonay Cardona,18,2,2,1,1,X,X,True,1
+Jonay Cardona,30,1,1,0,0,X,X,True,1
+Jonay Cardona,7,1,2,1,2,2,2,True,3
+Jonay Cardona,19,0,1,1,3,2,2,True,1
+Jonay Cardona,31,1,2,2,3,2,2,True,1
+Jonay Cardona,8,1,2,0,1,2,2,True,1
+Jonay Cardona,20,0,2,0,0,2,X,False,0
+Jonay Cardona,32,2,0,1,1,1,X,False,0
+Jonay Cardona,9,0,3,3,0,2,1,False,0
+Jonay Cardona,21,1,2,1,2,2,2,True,3
+Jonay Cardona,33,1,0,0,0,1,X,False,0
+Jonay Cardona,10,2,0,0,1,1,2,False,0
+Jonay Cardona,22,2,0,2,0,1,1,True,3
+Jonay Cardona,34,1,1,1,1,X,X,True,3
+Jonay Cardona,11,0,0,3,1,X,1,False,0
+Jonay Cardona,23,1,1,1,1,X,X,True,3
+Jonay Cardona,35,0,2,2,0,2,1,False,0
+Jonay Cardona,12,2,0,2,1,1,1,True,2
+Jonay Cardona,24,1,3,0,3,2,2,True,2
+Jonay Cardona,36,1,1,1,2,X,2,False,0
+Joni,1,3,1,5,1,1,1,True,2
+Joni,13,2,1,2,0,1,1,True,2
+Joni,25,1,3,0,1,2,2,True,1
+Joni,2,2,1,1,3,1,2,False,0
+Joni,14,1,1,1,1,X,X,True,3
+Joni,26,0,2,1,1,2,X,False,0
+Joni,3,2,1,3,0,1,1,True,1
+Joni,15,3,0,2,2,1,X,False,0
+Joni,27,1,2,1,1,2,X,False,0
+Joni,4,4,0,2,1,1,1,True,1
+Joni,16,2,2,1,0,X,1,False,0
+Joni,28,1,4,0,1,2,2,True,1
+Joni,5,0,2,1,1,2,X,False,0
+Joni,17,0,1,1,1,2,X,False,0
+Joni,29,3,0,0,0,1,X,False,0
+Joni,6,1,3,0,1,2,2,True,1
+Joni,18,1,2,1,1,2,X,False,0
+Joni,30,1,1,0,0,X,X,True,1
+Joni,7,0,2,1,2,2,2,True,2
+Joni,19,1,2,1,3,2,2,True,2
+Joni,31,1,0,2,3,1,2,False,0
+Joni,8,1,2,0,1,2,2,True,1
+Joni,20,1,1,0,0,X,X,True,1
+Joni,32,2,0,1,1,1,X,False,0
+Joni,9,0,3,3,0,2,1,False,0
+Joni,21,0,3,1,2,2,2,True,1
+Joni,33,2,1,0,0,1,X,False,0
+Joni,10,2,0,0,1,1,2,False,0
+Joni,22,2,0,2,0,1,1,True,3
+Joni,34,0,0,1,1,X,X,True,1
+Joni,11,2,0,3,1,1,1,True,1
+Joni,23,1,2,1,1,2,X,False,0
+Joni,35,0,4,2,0,2,1,False,0
+Joni,12,2,0,2,1,1,1,True,2
+Joni,24,1,2,0,3,2,2,True,1
+Joni,36,1,2,1,2,2,2,True,3
+Jorge Domínguez,1,2,0,5,1,1,1,True,1
+Jorge Domínguez,13,3,1,2,0,1,1,True,1
+Jorge Domínguez,25,1,2,0,1,2,2,True,1
+Jorge Domínguez,2,1,2,1,3,2,2,True,2
+Jorge Domínguez,14,2,2,1,1,X,X,True,1
+Jorge Domínguez,26,0,2,1,1,2,X,False,0
+Jorge Domínguez,3,2,1,3,0,1,1,True,1
+Jorge Domínguez,15,3,1,2,2,1,X,False,0
+Jorge Domínguez,27,2,1,1,1,1,X,False,0
+Jorge Domínguez,4,2,0,2,1,1,1,True,2
+Jorge Domínguez,16,2,1,1,0,1,1,True,1
+Jorge Domínguez,28,0,5,0,1,2,2,True,2
+Jorge Domínguez,5,0,2,1,1,2,X,False,0
+Jorge Domínguez,17,1,2,1,1,2,X,False,0
+Jorge Domínguez,29,3,0,0,0,1,X,False,0
+Jorge Domínguez,6,0,3,0,1,2,2,True,2
+Jorge Domínguez,18,1,2,1,1,2,X,False,0
+Jorge Domínguez,30,2,0,0,0,1,X,False,0
+Jorge Domínguez,7,1,2,1,2,2,2,True,3
+Jorge Domínguez,19,2,0,1,3,1,2,False,0
+Jorge Domínguez,31,3,1,2,3,1,2,False,0
+Jorge Domínguez,8,0,4,0,1,2,2,True,2
+Jorge Domínguez,20,1,3,0,0,2,X,False,0
+Jorge Domínguez,32,3,1,1,1,1,X,False,0
+Jorge Domínguez,9,1,2,3,0,2,1,False,0
+Jorge Domínguez,21,1,2,1,2,2,2,True,3
+Jorge Domínguez,33,0,2,0,0,2,X,False,0
+Jorge Domínguez,10,2,0,0,1,1,2,False,0
+Jorge Domínguez,22,2,0,2,0,1,1,True,3
+Jorge Domínguez,34,0,2,1,1,2,X,False,0
+Jorge Domínguez,11,3,1,3,1,1,1,True,3
+Jorge Domínguez,23,1,2,1,1,2,X,False,0
+Jorge Domínguez,35,0,3,2,0,2,1,False,0
+Jorge Domínguez,12,3,1,2,1,1,1,True,2
+Jorge Domínguez,24,0,3,0,3,2,2,True,3
+Jorge Domínguez,36,2,1,1,2,1,2,False,0
+Jorge Hdez.,1,2,0,5,1,1,1,True,1
+Jorge Hdez.,13,3,1,2,0,1,1,True,1
+Jorge Hdez.,25,1,1,0,1,X,2,False,0
+Jorge Hdez.,2,1,1,1,3,X,2,False,0
+Jorge Hdez.,14,2,1,1,1,1,X,False,0
+Jorge Hdez.,26,1,2,1,1,2,X,False,0
+Jorge Hdez.,3,2,1,3,0,1,1,True,1
+Jorge Hdez.,15,3,0,2,2,1,X,False,0
+Jorge Hdez.,27,3,2,1,1,1,X,False,0
+Jorge Hdez.,4,3,0,2,1,1,1,True,1
+Jorge Hdez.,16,0,0,1,0,X,1,False,0
+Jorge Hdez.,28,0,3,0,1,2,2,True,2
+Jorge Hdez.,5,1,2,1,1,2,X,False,0
+Jorge Hdez.,17,0,1,1,1,2,X,False,0
+Jorge Hdez.,29,2,0,0,0,1,X,False,0
+Jorge Hdez.,6,0,2,0,1,2,2,True,2
+Jorge Hdez.,18,1,3,1,1,2,X,False,0
+Jorge Hdez.,30,2,1,0,0,1,X,False,0
+Jorge Hdez.,7,1,2,1,2,2,2,True,3
+Jorge Hdez.,19,2,1,1,3,1,2,False,0
+Jorge Hdez.,31,1,1,2,3,X,2,False,0
+Jorge Hdez.,8,1,2,0,1,2,2,True,1
+Jorge Hdez.,20,0,2,0,0,2,X,False,0
+Jorge Hdez.,32,2,0,1,1,1,X,False,0
+Jorge Hdez.,9,1,1,3,0,X,1,False,0
+Jorge Hdez.,21,1,0,1,2,1,2,False,0
+Jorge Hdez.,33,2,1,0,0,1,X,False,0
+Jorge Hdez.,10,2,0,0,1,1,2,False,0
+Jorge Hdez.,22,2,0,2,0,1,1,True,3
+Jorge Hdez.,34,0,0,1,1,X,X,True,1
+Jorge Hdez.,11,2,0,3,1,1,1,True,1
+Jorge Hdez.,23,0,2,1,1,2,X,False,0
+Jorge Hdez.,35,0,3,2,0,2,1,False,0
+Jorge Hdez.,12,2,0,2,1,1,1,True,2
+Jorge Hdez.,24,1,3,0,3,2,2,True,2
+Jorge Hdez.,36,1,0,1,2,1,2,False,0
+Jorge Soto,1,2,0,5,1,1,1,True,1
+Jorge Soto,13,2,0,2,0,1,1,True,3
+Jorge Soto,25,1,1,0,1,X,2,False,0
+Jorge Soto,2,1,2,1,3,2,2,True,2
+Jorge Soto,14,0,1,1,1,2,X,False,0
+Jorge Soto,26,1,2,1,1,2,X,False,0
+Jorge Soto,3,1,0,3,0,1,1,True,2
+Jorge Soto,15,1,0,2,2,1,X,False,0
+Jorge Soto,27,1,1,1,1,X,X,True,3
+Jorge Soto,4,2,0,2,1,1,1,True,2
+Jorge Soto,16,0,1,1,0,2,1,False,0
+Jorge Soto,28,0,2,0,1,2,2,True,2
+Jorge Soto,5,1,2,1,1,2,X,False,0
+Jorge Soto,17,0,0,1,1,X,X,True,1
+Jorge Soto,29,2,0,0,0,1,X,False,0
+Jorge Soto,6,1,3,0,1,2,2,True,1
+Jorge Soto,18,1,1,1,1,X,X,True,3
+Jorge Soto,30,1,1,0,0,X,X,True,1
+Jorge Soto,7,2,2,1,2,X,2,False,0
+Jorge Soto,19,2,1,1,3,1,2,False,0
+Jorge Soto,31,2,1,2,3,1,2,False,0
+Jorge Soto,8,0,2,0,1,2,2,True,2
+Jorge Soto,20,1,1,0,0,X,X,True,1
+Jorge Soto,32,3,0,1,1,1,X,False,0
+Jorge Soto,9,0,1,3,0,2,1,False,0
+Jorge Soto,21,0,1,1,2,2,2,True,1
+Jorge Soto,33,1,2,0,0,2,X,False,0
+Jorge Soto,10,1,0,0,1,1,2,False,0
+Jorge Soto,22,2,0,2,0,1,1,True,3
+Jorge Soto,34,2,2,1,1,X,X,True,1
+Jorge Soto,11,1,0,3,1,1,1,True,1
+Jorge Soto,23,1,1,1,1,X,X,True,3
+Jorge Soto,35,0,2,2,0,2,1,False,0
+Jorge Soto,12,2,0,2,1,1,1,True,2
+Jorge Soto,24,1,2,0,3,2,2,True,1
+Jorge Soto,36,0,2,1,2,2,2,True,2
+Jorginho,1,1,0,5,1,1,1,True,1
+Jorginho,13,3,1,2,0,1,1,True,1
+Jorginho,25,1,2,0,1,2,2,True,1
+Jorginho,2,0,2,1,3,2,2,True,1
+Jorginho,14,2,2,1,1,X,X,True,1
+Jorginho,26,0,2,1,1,2,X,False,0
+Jorginho,3,2,1,3,0,1,1,True,1
+Jorginho,15,3,1,2,2,1,X,False,0
+Jorginho,27,2,1,1,1,1,X,False,0
+Jorginho,4,2,0,2,1,1,1,True,2
+Jorginho,16,2,1,1,0,1,1,True,1
+Jorginho,28,0,5,0,1,2,2,True,2
+Jorginho,5,2,0,1,1,1,X,False,0
+Jorginho,17,1,2,1,1,2,X,False,0
+Jorginho,29,3,0,0,0,1,X,False,0
+Jorginho,6,0,3,0,1,2,2,True,2
+Jorginho,18,1,2,1,1,2,X,False,0
+Jorginho,30,2,0,0,0,1,X,False,0
+Jorginho,7,2,2,1,2,X,2,False,0
+Jorginho,19,2,0,1,3,1,2,False,0
+Jorginho,31,3,1,2,3,1,2,False,0
+Jorginho,8,0,4,0,1,2,2,True,2
+Jorginho,20,1,3,0,0,2,X,False,0
+Jorginho,32,3,1,1,1,1,X,False,0
+Jorginho,9,1,1,3,0,X,1,False,0
+Jorginho,21,1,2,1,2,2,2,True,3
+Jorginho,33,0,2,0,0,2,X,False,0
+Jorginho,10,2,0,0,1,1,2,False,0
+Jorginho,22,2,0,2,0,1,1,True,3
+Jorginho,34,0,2,1,1,2,X,False,0
+Jorginho,11,0,1,3,1,2,1,False,0
+Jorginho,23,1,2,1,1,2,X,False,0
+Jorginho,35,0,3,2,0,2,1,False,0
+Jorginho,12,3,1,2,1,1,1,True,2
+Jorginho,24,0,3,0,3,2,2,True,3
+Jorginho,36,2,1,1,2,1,2,False,0
+Jose Domingo Suárez,1,3,1,5,1,1,1,True,2
+Jose Domingo Suárez,13,3,0,2,0,1,1,True,2
+Jose Domingo Suárez,25,1,1,0,1,X,2,False,0
+Jose Domingo Suárez,2,1,1,1,3,X,2,False,0
+Jose Domingo Suárez,14,0,0,1,1,X,X,True,1
+Jose Domingo Suárez,26,0,2,1,1,2,X,False,0
+Jose Domingo Suárez,3,2,2,3,0,X,1,False,0
+Jose Domingo Suárez,15,2,0,2,2,1,X,False,0
+Jose Domingo Suárez,27,2,2,1,1,X,X,True,1
+Jose Domingo Suárez,4,3,0,2,1,1,1,True,1
+Jose Domingo Suárez,16,1,1,1,0,X,1,False,0
+Jose Domingo Suárez,28,0,0,0,1,X,2,False,0
+Jose Domingo Suárez,5,1,0,1,1,1,X,False,0
+Jose Domingo Suárez,17,0,0,1,1,X,X,True,1
+Jose Domingo Suárez,29,4,0,0,0,1,X,False,0
+Jose Domingo Suárez,6,1,2,0,1,2,2,True,1
+Jose Domingo Suárez,18,2,3,1,1,2,X,False,0
+Jose Domingo Suárez,30,3,1,0,0,1,X,False,0
+Jose Domingo Suárez,7,1,3,1,2,2,2,True,2
+Jose Domingo Suárez,19,1,1,1,3,X,2,False,0
+Jose Domingo Suárez,31,2,0,2,3,1,2,False,0
+Jose Domingo Suárez,8,0,2,0,1,2,2,True,2
+Jose Domingo Suárez,20,1,3,0,0,2,X,False,0
+Jose Domingo Suárez,32,2,0,1,1,1,X,False,0
+Jose Domingo Suárez,9,0,0,3,0,X,1,False,0
+Jose Domingo Suárez,21,0,1,1,2,2,2,True,1
+Jose Domingo Suárez,33,0,0,0,0,X,X,True,3
+Jose Domingo Suárez,10,0,0,0,1,X,2,False,0
+Jose Domingo Suárez,22,2,1,2,0,1,1,True,2
+Jose Domingo Suárez,34,1,1,1,1,X,X,True,3
+Jose Domingo Suárez,11,2,0,3,1,1,1,True,1
+Jose Domingo Suárez,23,0,2,1,1,2,X,False,0
+Jose Domingo Suárez,35,0,3,2,0,2,1,False,0
+Jose Domingo Suárez,12,2,1,2,1,1,1,True,3
+Jose Domingo Suárez,24,1,2,0,3,2,2,True,1
+Jose Domingo Suárez,36,2,2,1,2,X,2,False,0
+Jose Chirri,1,2,0,5,1,1,1,True,1
+Jose Chirri,13,4,0,2,0,1,1,True,2
+Jose Chirri,25,2,2,0,1,X,2,False,0
+Jose Chirri,2,1,1,1,3,X,2,False,0
+Jose Chirri,14,0,0,1,1,X,X,True,1
+Jose Chirri,26,1,3,1,1,2,X,False,0
+Jose Chirri,3,1,1,3,0,X,1,False,0
+Jose Chirri,15,3,0,2,2,1,X,False,0
+Jose Chirri,27,1,1,1,1,X,X,True,3
+Jose Chirri,4,3,0,2,1,1,1,True,1
+Jose Chirri,16,1,1,1,0,X,1,False,0
+Jose Chirri,28,0,4,0,1,2,2,True,2
+Jose Chirri,5,0,0,1,1,X,X,True,1
+Jose Chirri,17,1,1,1,1,X,X,True,3
+Jose Chirri,29,3,0,0,0,1,X,False,0
+Jose Chirri,6,0,2,0,1,2,2,True,2
+Jose Chirri,18,1,1,1,1,X,X,True,3
+Jose Chirri,30,1,0,0,0,1,X,False,0
+Jose Chirri,7,1,3,1,2,2,2,True,2
+Jose Chirri,19,2,0,1,3,1,2,False,0
+Jose Chirri,31,2,0,2,3,1,2,False,0
+Jose Chirri,8,0,2,0,1,2,2,True,2
+Jose Chirri,20,1,1,0,0,X,X,True,1
+Jose Chirri,32,0,0,1,1,X,X,True,1
+Jose Chirri,9,1,0,3,0,1,1,True,2
+Jose Chirri,21,0,0,1,2,X,2,False,0
+Jose Chirri,33,0,2,0,0,2,X,False,0
+Jose Chirri,10,4,1,0,1,1,2,False,0
+Jose Chirri,22,2,0,2,0,1,1,True,3
+Jose Chirri,34,2,3,1,1,2,X,False,0
+Jose Chirri,11,1,0,3,1,1,1,True,1
+Jose Chirri,23,1,1,1,1,X,X,True,3
+Jose Chirri,35,0,0,2,0,X,1,False,0
+Jose Chirri,12,2,1,2,1,1,1,True,3
+Jose Chirri,24,1,3,0,3,2,2,True,2
+Jose Chirri,36,0,0,1,2,X,2,False,0
+Jose Matula,1,3,0,5,1,1,1,True,1
+Jose Matula,13,2,1,2,0,1,1,True,2
+Jose Matula,25,1,1,0,1,X,2,False,0
+Jose Matula,2,1,1,1,3,X,2,False,0
+Jose Matula,14,0,0,1,1,X,X,True,1
+Jose Matula,26,0,2,1,1,2,X,False,0
+Jose Matula,3,2,1,3,0,1,1,True,1
+Jose Matula,15,3,0,2,2,1,X,False,0
+Jose Matula,27,1,0,1,1,1,X,False,0
+Jose Matula,4,1,0,2,1,1,1,True,1
+Jose Matula,16,0,0,1,0,X,1,False,0
+Jose Matula,28,0,5,0,1,2,2,True,2
+Jose Matula,5,0,0,1,1,X,X,True,1
+Jose Matula,17,1,1,1,1,X,X,True,3
+Jose Matula,29,2,0,0,0,1,X,False,0
+Jose Matula,6,1,2,0,1,2,2,True,1
+Jose Matula,18,1,2,1,1,2,X,False,0
+Jose Matula,30,2,1,0,0,1,X,False,0
+Jose Matula,7,0,2,1,2,2,2,True,2
+Jose Matula,19,0,1,1,3,2,2,True,1
+Jose Matula,31,1,1,2,3,X,2,False,0
+Jose Matula,8,1,3,0,1,2,2,True,1
+Jose Matula,20,0,3,0,0,2,X,False,0
+Jose Matula,32,4,0,1,1,1,X,False,0
+Jose Matula,9,0,0,3,0,X,1,False,0
+Jose Matula,21,1,1,1,2,X,2,False,0
+Jose Matula,33,1,3,0,0,2,X,False,0
+Jose Matula,10,1,0,0,1,1,2,False,0
+Jose Matula,22,2,0,2,0,1,1,True,3
+Jose Matula,34,0,0,1,1,X,X,True,1
+Jose Matula,11,2,0,3,1,1,1,True,1
+Jose Matula,23,0,2,1,1,2,X,False,0
+Jose Matula,35,0,4,2,0,2,1,False,0
+Jose Matula,12,3,1,2,1,1,1,True,2
+Jose Matula,24,1,2,0,3,2,2,True,1
+Jose Matula,36,2,2,1,2,X,2,False,0
+Jose Oliva,1,2,1,5,1,1,1,True,2
+Jose Oliva,13,2,0,2,0,1,1,True,3
+Jose Oliva,25,1,1,0,1,X,2,False,0
+Jose Oliva,2,1,1,1,3,X,2,False,0
+Jose Oliva,14,2,2,1,1,X,X,True,1
+Jose Oliva,26,2,2,1,1,X,X,True,1
+Jose Oliva,3,2,2,3,0,X,1,False,0
+Jose Oliva,15,3,0,2,2,1,X,False,0
+Jose Oliva,27,2,1,1,1,1,X,False,0
+Jose Oliva,4,1,0,2,1,1,1,True,1
+Jose Oliva,16,2,1,1,0,1,1,True,1
+Jose Oliva,28,0,2,0,1,2,2,True,2
+Jose Oliva,5,2,2,1,1,X,X,True,1
+Jose Oliva,17,1,1,1,1,X,X,True,3
+Jose Oliva,29,2,1,0,0,1,X,False,0
+Jose Oliva,6,1,3,0,1,2,2,True,1
+Jose Oliva,18,2,1,1,1,1,X,False,0
+Jose Oliva,30,2,0,0,0,1,X,False,0
+Jose Oliva,7,2,2,1,2,X,2,False,0
+Jose Oliva,19,2,1,1,3,1,2,False,0
+Jose Oliva,31,3,0,2,3,1,2,False,0
+Jose Oliva,8,0,4,0,1,2,2,True,2
+Jose Oliva,20,1,3,0,0,2,X,False,0
+Jose Oliva,32,2,0,1,1,1,X,False,0
+Jose Oliva,9,1,1,3,0,X,1,False,0
+Jose Oliva,21,1,0,1,2,1,2,False,0
+Jose Oliva,33,1,1,0,0,X,X,True,1
+Jose Oliva,10,1,1,0,1,X,2,False,0
+Jose Oliva,22,2,0,2,0,1,1,True,3
+Jose Oliva,34,1,1,1,1,X,X,True,3
+Jose Oliva,11,0,0,3,1,X,1,False,0
+Jose Oliva,23,1,1,1,1,X,X,True,3
+Jose Oliva,35,0,2,2,0,2,1,False,0
+Jose Oliva,12,3,1,2,1,1,1,True,2
+Jose Oliva,24,1,3,0,3,2,2,True,2
+Jose Oliva,36,1,1,1,2,X,2,False,0
+Jose Rogelio,1,3,0,5,1,1,1,True,1
+Jose Rogelio,13,1,0,2,0,1,1,True,2
+Jose Rogelio,25,1,1,0,1,X,2,False,0
+Jose Rogelio,2,2,1,1,3,1,2,False,0
+Jose Rogelio,14,0,2,1,1,2,X,False,0
+Jose Rogelio,26,0,0,1,1,X,X,True,1
+Jose Rogelio,3,1,1,3,0,X,1,False,0
+Jose Rogelio,15,1,0,2,2,1,X,False,0
+Jose Rogelio,27,2,0,1,1,1,X,False,0
+Jose Rogelio,4,5,0,2,1,1,1,True,1
+Jose Rogelio,16,1,1,1,0,X,1,False,0
+Jose Rogelio,28,1,3,0,1,2,2,True,1
+Jose Rogelio,5,2,1,1,1,1,X,False,0
+Jose Rogelio,17,0,2,1,1,2,X,False,0
+Jose Rogelio,29,2,0,0,0,1,X,False,0
+Jose Rogelio,6,1,1,0,1,X,2,False,0
+Jose Rogelio,18,0,1,1,1,2,X,False,0
+Jose Rogelio,30,0,0,0,0,X,X,True,3
+Jose Rogelio,7,2,3,1,2,2,2,True,1
+Jose Rogelio,19,1,0,1,3,1,2,False,0
+Jose Rogelio,31,2,2,2,3,X,2,False,0
+Jose Rogelio,8,1,2,0,1,2,2,True,1
+Jose Rogelio,20,0,1,0,0,2,X,False,0
+Jose Rogelio,32,1,1,1,1,X,X,True,3
+Jose Rogelio,9,0,1,3,0,2,1,False,0
+Jose Rogelio,21,0,2,1,2,2,2,True,2
+Jose Rogelio,33,0,2,0,0,2,X,False,0
+Jose Rogelio,10,3,0,0,1,1,2,False,0
+Jose Rogelio,22,4,1,2,0,1,1,True,1
+Jose Rogelio,34,0,0,1,1,X,X,True,1
+Jose Rogelio,11,1,0,3,1,1,1,True,1
+Jose Rogelio,23,0,1,1,1,2,X,False,0
+Jose Rogelio,35,0,3,2,0,2,1,False,0
+Jose Rogelio,12,2,0,2,1,1,1,True,2
+Jose Rogelio,24,0,2,0,3,2,2,True,2
+Jose Rogelio,36,1,1,1,2,X,2,False,0
+Jose Tovar,1,3,1,5,1,1,1,True,2
+Jose Tovar,13,3,0,2,0,1,1,True,2
+Jose Tovar,25,2,0,0,1,1,2,False,0
+Jose Tovar,2,0,2,1,3,2,2,True,1
+Jose Tovar,14,0,0,1,1,X,X,True,1
+Jose Tovar,26,2,2,1,1,X,X,True,1
+Jose Tovar,3,2,1,3,0,1,1,True,1
+Jose Tovar,15,2,0,2,2,1,X,False,0
+Jose Tovar,27,1,2,1,1,2,X,False,0
+Jose Tovar,4,3,0,2,1,1,1,True,1
+Jose Tovar,16,1,1,1,0,X,1,False,0
+Jose Tovar,28,0,4,0,1,2,2,True,2
+Jose Tovar,5,1,2,1,1,2,X,False,0
+Jose Tovar,17,0,1,1,1,2,X,False,0
+Jose Tovar,29,3,0,0,0,1,X,False,0
+Jose Tovar,6,0,3,0,1,2,2,True,2
+Jose Tovar,18,1,3,1,1,2,X,False,0
+Jose Tovar,30,2,1,0,0,1,X,False,0
+Jose Tovar,7,1,2,1,2,2,2,True,3
+Jose Tovar,19,1,0,1,3,1,2,False,0
+Jose Tovar,31,3,0,2,3,1,2,False,0
+Jose Tovar,8,0,4,0,1,2,2,True,2
+Jose Tovar,20,0,2,0,0,2,X,False,0
+Jose Tovar,32,2,0,1,1,1,X,False,0
+Jose Tovar,9,0,1,3,0,2,1,False,0
+Jose Tovar,21,1,1,1,2,X,2,False,0
+Jose Tovar,33,1,1,0,0,X,X,True,1
+Jose Tovar,10,2,1,0,1,1,2,False,0
+Jose Tovar,22,2,0,2,0,1,1,True,3
+Jose Tovar,34,2,0,1,1,1,X,False,0
+Jose Tovar,11,3,0,3,1,1,1,True,2
+Jose Tovar,23,1,3,1,1,2,X,False,0
+Jose Tovar,35,0,3,2,0,2,1,False,0
+Jose Tovar,12,2,0,2,1,1,1,True,2
+Jose Tovar,24,1,3,0,3,2,2,True,2
+Jose Tovar,36,2,2,1,2,X,2,False,0
+Jose Villena,1,4,1,5,1,1,1,True,2
+Jose Villena,13,4,0,2,0,1,1,True,2
+Jose Villena,25,1,1,0,1,X,2,False,0
+Jose Villena,2,1,1,1,3,X,2,False,0
+Jose Villena,14,1,1,1,1,X,X,True,3
+Jose Villena,26,0,3,1,1,2,X,False,0
+Jose Villena,3,2,0,3,0,1,1,True,2
+Jose Villena,15,0,0,2,2,X,X,True,1
+Jose Villena,27,1,2,1,1,2,X,False,0
+Jose Villena,4,3,1,2,1,1,1,True,2
+Jose Villena,16,1,0,1,0,1,1,True,3
+Jose Villena,28,0,2,0,1,2,2,True,2
+Jose Villena,5,1,3,1,1,2,X,False,0
+Jose Villena,17,0,1,1,1,2,X,False,0
+Jose Villena,29,3,0,0,0,1,X,False,0
+Jose Villena,6,1,4,0,1,2,2,True,1
+Jose Villena,18,1,2,1,1,2,X,False,0
+Jose Villena,30,0,0,0,0,X,X,True,3
+Jose Villena,7,2,2,1,2,X,2,False,0
+Jose Villena,19,2,1,1,3,1,2,False,0
+Jose Villena,31,1,0,2,3,1,2,False,0
+Jose Villena,8,0,3,0,1,2,2,True,2
+Jose Villena,20,1,2,0,0,2,X,False,0
+Jose Villena,32,2,1,1,1,1,X,False,0
+Jose Villena,9,1,1,3,0,X,1,False,0
+Jose Villena,21,1,1,1,2,X,2,False,0
+Jose Villena,33,0,1,0,0,2,X,False,0
+Jose Villena,10,2,1,0,1,1,2,False,0
+Jose Villena,22,2,1,2,0,1,1,True,2
+Jose Villena,34,0,0,1,1,X,X,True,1
+Jose Villena,11,2,0,3,1,1,1,True,1
+Jose Villena,23,1,1,1,1,X,X,True,3
+Jose Villena,35,0,2,2,0,2,1,False,0
+Jose Villena,12,2,1,2,1,1,1,True,3
+Jose Villena,24,0,1,0,3,2,2,True,2
+Jose Villena,36,1,1,1,2,X,2,False,0
+Jose Juán Hdez.,1,1,0,5,1,1,1,True,1
+Jose Juán Hdez.,13,3,0,2,0,1,1,True,2
+Jose Juán Hdez.,25,1,0,0,1,1,2,False,0
+Jose Juán Hdez.,2,1,1,1,3,X,2,False,0
+Jose Juán Hdez.,14,0,1,1,1,2,X,False,0
+Jose Juán Hdez.,26,0,2,1,1,2,X,False,0
+Jose Juán Hdez.,3,1,0,3,0,1,1,True,2
+Jose Juán Hdez.,15,2,0,2,2,1,X,False,0
+Jose Juán Hdez.,27,0,0,1,1,X,X,True,1
+Jose Juán Hdez.,4,2,0,2,1,1,1,True,2
+Jose Juán Hdez.,16,1,1,1,0,X,1,False,0
+Jose Juán Hdez.,28,0,3,0,1,2,2,True,2
+Jose Juán Hdez.,5,0,0,1,1,X,X,True,1
+Jose Juán Hdez.,17,1,1,1,1,X,X,True,3
+Jose Juán Hdez.,29,3,0,0,0,1,X,False,0
+Jose Juán Hdez.,6,0,2,0,1,2,2,True,2
+Jose Juán Hdez.,18,0,2,1,1,2,X,False,0
+Jose Juán Hdez.,30,1,1,0,0,X,X,True,1
+Jose Juán Hdez.,7,1,2,1,2,2,2,True,3
+Jose Juán Hdez.,19,1,1,1,3,X,2,False,0
+Jose Juán Hdez.,31,2,0,2,3,1,2,False,0
+Jose Juán Hdez.,8,0,2,0,1,2,2,True,2
+Jose Juán Hdez.,20,1,1,0,0,X,X,True,1
+Jose Juán Hdez.,32,2,0,1,1,1,X,False,0
+Jose Juán Hdez.,9,1,0,3,0,1,1,True,2
+Jose Juán Hdez.,21,1,1,1,2,X,2,False,0
+Jose Juán Hdez.,33,1,2,0,0,2,X,False,0
+Jose Juán Hdez.,10,3,0,0,1,1,2,False,0
+Jose Juán Hdez.,22,2,0,2,0,1,1,True,3
+Jose Juán Hdez.,34,0,0,1,1,X,X,True,1
+Jose Juán Hdez.,11,1,1,3,1,X,1,False,0
+Jose Juán Hdez.,23,0,1,1,1,2,X,False,0
+Jose Juán Hdez.,35,0,2,2,0,2,1,False,0
+Jose Juán Hdez.,12,2,0,2,1,1,1,True,2
+Jose Juán Hdez.,24,0,1,0,3,2,2,True,2
+Jose Juán Hdez.,36,1,1,1,2,X,2,False,0
+Jose Luis Guerra,1,2,0,5,1,1,1,True,1
+Jose Luis Guerra,13,4,0,2,0,1,1,True,2
+Jose Luis Guerra,25,1,1,0,1,X,2,False,0
+Jose Luis Guerra,2,0,0,1,3,X,2,False,0
+Jose Luis Guerra,14,0,0,1,1,X,X,True,1
+Jose Luis Guerra,26,0,2,1,1,2,X,False,0
+Jose Luis Guerra,3,2,1,3,0,1,1,True,1
+Jose Luis Guerra,15,2,0,2,2,1,X,False,0
+Jose Luis Guerra,27,2,2,1,1,X,X,True,1
+Jose Luis Guerra,4,2,1,2,1,1,1,True,3
+Jose Luis Guerra,16,2,1,1,0,1,1,True,1
+Jose Luis Guerra,28,0,3,0,1,2,2,True,2
+Jose Luis Guerra,5,0,1,1,1,2,X,False,0
+Jose Luis Guerra,17,1,1,1,1,X,X,True,3
+Jose Luis Guerra,29,3,0,0,0,1,X,False,0
+Jose Luis Guerra,6,0,2,0,1,2,2,True,2
+Jose Luis Guerra,18,0,2,1,1,2,X,False,0
+Jose Luis Guerra,30,1,1,0,0,X,X,True,1
+Jose Luis Guerra,7,0,2,1,2,2,2,True,2
+Jose Luis Guerra,19,1,1,1,3,X,2,False,0
+Jose Luis Guerra,31,2,0,2,3,1,2,False,0
+Jose Luis Guerra,8,0,3,0,1,2,2,True,2
+Jose Luis Guerra,20,2,3,0,0,2,X,False,0
+Jose Luis Guerra,32,3,0,1,1,1,X,False,0
+Jose Luis Guerra,9,0,1,3,0,2,1,False,0
+Jose Luis Guerra,21,0,1,1,2,2,2,True,1
+Jose Luis Guerra,33,1,2,0,0,2,X,False,0
+Jose Luis Guerra,10,1,0,0,1,1,2,False,0
+Jose Luis Guerra,22,2,0,2,0,1,1,True,3
+Jose Luis Guerra,34,0,0,1,1,X,X,True,1
+Jose Luis Guerra,11,2,0,3,1,1,1,True,1
+Jose Luis Guerra,23,0,1,1,1,2,X,False,0
+Jose Luis Guerra,35,0,3,2,0,2,1,False,0
+Jose Luis Guerra,12,2,0,2,1,1,1,True,2
+Jose Luis Guerra,24,1,3,0,3,2,2,True,2
+Jose Luis Guerra,36,1,1,1,2,X,2,False,0
+Jose Luis Ramos,1,2,0,5,1,1,1,True,1
+Jose Luis Ramos,13,3,1,2,0,1,1,True,1
+Jose Luis Ramos,25,1,2,0,1,2,2,True,1
+Jose Luis Ramos,2,1,1,1,3,X,2,False,0
+Jose Luis Ramos,14,1,2,1,1,2,X,False,0
+Jose Luis Ramos,26,1,3,1,1,2,X,False,0
+Jose Luis Ramos,3,3,0,3,0,1,1,True,3
+Jose Luis Ramos,15,2,0,2,2,1,X,False,0
+Jose Luis Ramos,27,1,1,1,1,X,X,True,3
+Jose Luis Ramos,4,1,0,2,1,1,1,True,1
+Jose Luis Ramos,16,2,1,1,0,1,1,True,1
+Jose Luis Ramos,28,0,4,0,1,2,2,True,2
+Jose Luis Ramos,5,0,2,1,1,2,X,False,0
+Jose Luis Ramos,17,1,2,1,1,2,X,False,0
+Jose Luis Ramos,29,3,0,0,0,1,X,False,0
+Jose Luis Ramos,6,0,4,0,1,2,2,True,2
+Jose Luis Ramos,18,0,1,1,1,2,X,False,0
+Jose Luis Ramos,30,1,2,0,0,2,X,False,0
+Jose Luis Ramos,7,1,2,1,2,2,2,True,3
+Jose Luis Ramos,19,2,0,1,3,1,2,False,0
+Jose Luis Ramos,31,2,0,2,3,1,2,False,0
+Jose Luis Ramos,8,0,3,0,1,2,2,True,2
+Jose Luis Ramos,20,1,2,0,0,2,X,False,0
+Jose Luis Ramos,32,3,0,1,1,1,X,False,0
+Jose Luis Ramos,9,1,3,3,0,2,1,False,0
+Jose Luis Ramos,21,0,1,1,2,2,2,True,1
+Jose Luis Ramos,33,1,1,0,0,X,X,True,1
+Jose Luis Ramos,10,2,0,0,1,1,2,False,0
+Jose Luis Ramos,22,3,0,2,0,1,1,True,2
+Jose Luis Ramos,34,1,2,1,1,2,X,False,0
+Jose Luis Ramos,11,1,0,3,1,1,1,True,1
+Jose Luis Ramos,23,1,2,1,1,2,X,False,0
+Jose Luis Ramos,35,0,2,2,0,2,1,False,0
+Jose Luis Ramos,12,2,1,2,1,1,1,True,3
+Jose Luis Ramos,24,1,1,0,3,X,2,False,0
+Jose Luis Ramos,36,0,1,1,2,2,2,True,1
+Jose Miguel Rguez.,1,1,1,5,1,X,1,False,0
+Jose Miguel Rguez.,13,2,0,2,0,1,1,True,3
+Jose Miguel Rguez.,25,1,0,0,1,1,2,False,0
+Jose Miguel Rguez.,2,2,1,1,3,1,2,False,0
+Jose Miguel Rguez.,14,2,1,1,1,1,X,False,0
+Jose Miguel Rguez.,26,1,2,1,1,2,X,False,0
+Jose Miguel Rguez.,3,0,1,3,0,2,1,False,0
+Jose Miguel Rguez.,15,3,0,2,2,1,X,False,0
+Jose Miguel Rguez.,27,2,2,1,1,X,X,True,1
+Jose Miguel Rguez.,4,2,0,2,1,1,1,True,2
+Jose Miguel Rguez.,16,1,1,1,0,X,1,False,0
+Jose Miguel Rguez.,28,0,2,0,1,2,2,True,2
+Jose Miguel Rguez.,5,1,1,1,1,X,X,True,3
+Jose Miguel Rguez.,17,1,1,1,1,X,X,True,3
+Jose Miguel Rguez.,29,2,0,0,0,1,X,False,0
+Jose Miguel Rguez.,6,1,3,0,1,2,2,True,1
+Jose Miguel Rguez.,18,1,2,1,1,2,X,False,0
+Jose Miguel Rguez.,30,1,1,0,0,X,X,True,1
+Jose Miguel Rguez.,7,0,2,1,2,2,2,True,2
+Jose Miguel Rguez.,19,0,0,1,3,X,2,False,0
+Jose Miguel Rguez.,31,2,0,2,3,1,2,False,0
+Jose Miguel Rguez.,8,1,2,0,1,2,2,True,1
+Jose Miguel Rguez.,20,1,2,0,0,2,X,False,0
+Jose Miguel Rguez.,32,1,0,1,1,1,X,False,0
+Jose Miguel Rguez.,9,0,0,3,0,X,1,False,0
+Jose Miguel Rguez.,21,1,1,1,2,X,2,False,0
+Jose Miguel Rguez.,33,0,0,0,0,X,X,True,3
+Jose Miguel Rguez.,10,2,0,0,1,1,2,False,0
+Jose Miguel Rguez.,22,2,0,2,0,1,1,True,3
+Jose Miguel Rguez.,34,2,1,1,1,1,X,False,0
+Jose Miguel Rguez.,11,2,0,3,1,1,1,True,1
+Jose Miguel Rguez.,23,1,2,1,1,2,X,False,0
+Jose Miguel Rguez.,35,1,3,2,0,2,1,False,0
+Jose Miguel Rguez.,12,2,1,2,1,1,1,True,3
+Jose Miguel Rguez.,24,1,2,0,3,2,2,True,1
+Jose Miguel Rguez.,36,2,1,1,2,1,2,False,0
+Juan Macarro,1,2,0,5,1,1,1,True,1
+Juan Macarro,13,1,0,2,0,1,1,True,2
+Juan Macarro,25,1,1,0,1,X,2,False,0
+Juan Macarro,2,1,2,1,3,2,2,True,2
+Juan Macarro,14,1,1,1,1,X,X,True,3
+Juan Macarro,26,1,2,1,1,2,X,False,0
+Juan Macarro,3,1,1,3,0,X,1,False,0
+Juan Macarro,15,2,0,2,2,1,X,False,0
+Juan Macarro,27,0,2,1,1,2,X,False,0
+Juan Macarro,4,3,0,2,1,1,1,True,1
+Juan Macarro,16,2,1,1,0,1,1,True,1
+Juan Macarro,28,1,3,0,1,2,2,True,1
+Juan Macarro,5,0,1,1,1,2,X,False,0
+Juan Macarro,17,1,0,1,1,1,X,False,0
+Juan Macarro,29,1,0,0,0,1,X,False,0
+Juan Macarro,6,0,2,0,1,2,2,True,2
+Juan Macarro,18,0,1,1,1,2,X,False,0
+Juan Macarro,30,2,0,0,0,1,X,False,0
+Juan Macarro,7,0,1,1,2,2,2,True,1
+Juan Macarro,19,1,1,1,3,X,2,False,0
+Juan Macarro,31,0,1,2,3,2,2,True,1
+Juan Macarro,8,1,3,0,1,2,2,True,1
+Juan Macarro,20,0,3,0,0,2,X,False,0
+Juan Macarro,32,2,0,1,1,1,X,False,0
+Juan Macarro,9,0,1,3,0,2,1,False,0
+Juan Macarro,21,0,1,1,2,2,2,True,1
+Juan Macarro,33,0,2,0,0,2,X,False,0
+Juan Macarro,10,2,0,0,1,1,2,False,0
+Juan Macarro,22,2,0,2,0,1,1,True,3
+Juan Macarro,34,0,0,1,1,X,X,True,1
+Juan Macarro,11,3,1,3,1,1,1,True,3
+Juan Macarro,23,0,1,1,1,2,X,False,0
+Juan Macarro,35,0,3,2,0,2,1,False,0
+Juan Macarro,12,1,0,2,1,1,1,True,1
+Juan Macarro,24,1,1,0,3,X,2,False,0
+Juan Macarro,36,0,0,1,2,X,2,False,0
+Juan Páez,1,2,0,5,1,1,1,True,1
+Juan Páez,13,3,0,2,0,1,1,True,2
+Juan Páez,25,1,1,0,1,X,2,False,0
+Juan Páez,2,0,1,1,3,2,2,True,1
+Juan Páez,14,1,1,1,1,X,X,True,3
+Juan Páez,26,0,2,1,1,2,X,False,0
+Juan Páez,3,2,0,3,0,1,1,True,2
+Juan Páez,15,2,0,2,2,1,X,False,0
+Juan Páez,27,1,1,1,1,X,X,True,3
+Juan Páez,4,3,0,2,1,1,1,True,1
+Juan Páez,16,1,1,1,0,X,1,False,0
+Juan Páez,28,0,3,0,1,2,2,True,2
+Juan Páez,5,1,1,1,1,X,X,True,3
+Juan Páez,17,1,1,1,1,X,X,True,3
+Juan Páez,29,2,0,0,0,1,X,False,0
+Juan Páez,6,1,3,0,1,2,2,True,1
+Juan Páez,18,0,2,1,1,2,X,False,0
+Juan Páez,30,1,1,0,0,X,X,True,1
+Juan Páez,7,1,2,1,2,2,2,True,3
+Juan Páez,19,1,1,1,3,X,2,False,0
+Juan Páez,31,1,1,2,3,X,2,False,0
+Juan Páez,8,0,3,0,1,2,2,True,2
+Juan Páez,20,2,2,0,0,X,X,True,1
+Juan Páez,32,3,1,1,1,1,X,False,0
+Juan Páez,9,1,2,3,0,2,1,False,0
+Juan Páez,21,0,2,1,2,2,2,True,2
+Juan Páez,33,2,1,0,0,1,X,False,0
+Juan Páez,10,3,1,0,1,1,2,False,0
+Juan Páez,22,2,1,2,0,1,1,True,2
+Juan Páez,34,1,1,1,1,X,X,True,3
+Juan Páez,11,2,0,3,1,1,1,True,1
+Juan Páez,23,0,1,1,1,2,X,False,0
+Juan Páez,35,0,4,2,0,2,1,False,0
+Juan Páez,12,2,0,2,1,1,1,True,2
+Juan Páez,24,1,2,0,3,2,2,True,1
+Juan Páez,36,1,1,1,2,X,2,False,0
+Juanma Hdez.,1,3,0,5,1,1,1,True,1
+Juanma Hdez.,13,3,0,2,0,1,1,True,2
+Juanma Hdez.,25,1,0,0,1,1,2,False,0
+Juanma Hdez.,2,0,2,1,3,2,2,True,1
+Juanma Hdez.,14,0,1,1,1,2,X,False,0
+Juanma Hdez.,26,1,2,1,1,2,X,False,0
+Juanma Hdez.,3,1,0,3,0,1,1,True,2
+Juanma Hdez.,15,3,0,2,2,1,X,False,0
+Juanma Hdez.,27,1,1,1,1,X,X,True,3
+Juanma Hdez.,4,3,0,2,1,1,1,True,1
+Juanma Hdez.,16,2,2,1,0,X,1,False,0
+Juanma Hdez.,28,0,3,0,1,2,2,True,2
+Juanma Hdez.,5,0,3,1,1,2,X,False,0
+Juanma Hdez.,17,1,2,1,1,2,X,False,0
+Juanma Hdez.,29,4,0,0,0,1,X,False,0
+Juanma Hdez.,6,0,3,0,1,2,2,True,2
+Juanma Hdez.,18,1,2,1,1,2,X,False,0
+Juanma Hdez.,30,2,1,0,0,1,X,False,0
+Juanma Hdez.,7,1,2,1,2,2,2,True,3
+Juanma Hdez.,19,2,0,1,3,1,2,False,0
+Juanma Hdez.,31,2,0,2,3,1,2,False,0
+Juanma Hdez.,8,0,2,0,1,2,2,True,2
+Juanma Hdez.,20,1,2,0,0,2,X,False,0
+Juanma Hdez.,32,2,1,1,1,1,X,False,0
+Juanma Hdez.,9,0,2,3,0,2,1,False,0
+Juanma Hdez.,21,0,0,1,2,X,2,False,0
+Juanma Hdez.,33,0,3,0,0,2,X,False,0
+Juanma Hdez.,10,4,0,0,1,1,2,False,0
+Juanma Hdez.,22,4,0,2,0,1,1,True,2
+Juanma Hdez.,34,2,2,1,1,X,X,True,1
+Juanma Hdez.,11,4,0,3,1,1,1,True,1
+Juanma Hdez.,23,0,2,1,1,2,X,False,0
+Juanma Hdez.,35,0,3,2,0,2,1,False,0
+Juanma Hdez.,12,2,0,2,1,1,1,True,2
+Juanma Hdez.,24,1,3,0,3,2,2,True,2
+Juanma Hdez.,36,1,3,1,2,2,2,True,2
+Julián Ferrero,1,2,0,5,1,1,1,True,1
+Julián Ferrero,13,3,1,2,0,1,1,True,1
+Julián Ferrero,25,0,1,0,1,2,2,True,3
+Julián Ferrero,2,1,1,1,3,X,2,False,0
+Julián Ferrero,14,1,2,1,1,2,X,False,0
+Julián Ferrero,26,1,2,1,1,2,X,False,0
+Julián Ferrero,3,2,1,3,0,1,1,True,1
+Julián Ferrero,15,2,0,2,2,1,X,False,0
+Julián Ferrero,27,0,0,1,1,X,X,True,1
+Julián Ferrero,4,2,0,2,1,1,1,True,2
+Julián Ferrero,16,1,0,1,0,1,1,True,3
+Julián Ferrero,28,0,4,0,1,2,2,True,2
+Julián Ferrero,5,0,1,1,1,2,X,False,0
+Julián Ferrero,17,0,2,1,1,2,X,False,0
+Julián Ferrero,29,4,0,0,0,1,X,False,0
+Julián Ferrero,6,1,3,0,1,2,2,True,1
+Julián Ferrero,18,1,3,1,1,2,X,False,0
+Julián Ferrero,30,2,1,0,0,1,X,False,0
+Julián Ferrero,7,1,2,1,2,2,2,True,3
+Julián Ferrero,19,0,0,1,3,X,2,False,0
+Julián Ferrero,31,3,0,2,3,1,2,False,0
+Julián Ferrero,8,0,3,0,1,2,2,True,2
+Julián Ferrero,20,0,2,0,0,2,X,False,0
+Julián Ferrero,32,3,0,1,1,1,X,False,0
+Julián Ferrero,9,0,0,3,0,X,1,False,0
+Julián Ferrero,21,0,1,1,2,2,2,True,1
+Julián Ferrero,33,1,2,0,0,2,X,False,0
+Julián Ferrero,10,3,0,0,1,1,2,False,0
+Julián Ferrero,22,2,0,2,0,1,1,True,3
+Julián Ferrero,34,1,1,1,1,X,X,True,3
+Julián Ferrero,11,2,0,3,1,1,1,True,1
+Julián Ferrero,23,0,2,1,1,2,X,False,0
+Julián Ferrero,35,0,3,2,0,2,1,False,0
+Julián Ferrero,12,3,0,2,1,1,1,True,1
+Julián Ferrero,24,1,2,0,3,2,2,True,1
+Julián Ferrero,36,0,2,1,2,2,2,True,2
+Kevinazo,1,3,0,5,1,1,1,True,1
+Kevinazo,13,1,0,2,0,1,1,True,2
+Kevinazo,25,1,1,0,1,X,2,False,0
+Kevinazo,2,0,0,1,3,X,2,False,0
+Kevinazo,14,0,1,1,1,2,X,False,0
+Kevinazo,26,0,2,1,1,2,X,False,0
+Kevinazo,3,1,0,3,0,1,1,True,2
+Kevinazo,15,2,0,2,2,1,X,False,0
+Kevinazo,27,1,2,1,1,2,X,False,0
+Kevinazo,4,1,0,2,1,1,1,True,1
+Kevinazo,16,1,1,1,0,X,1,False,0
+Kevinazo,28,0,2,0,1,2,2,True,2
+Kevinazo,5,1,1,1,1,X,X,True,3
+Kevinazo,17,0,0,1,1,X,X,True,1
+Kevinazo,29,2,1,0,0,1,X,False,0
+Kevinazo,6,0,2,0,1,2,2,True,2
+Kevinazo,18,0,2,1,1,2,X,False,0
+Kevinazo,30,1,1,0,0,X,X,True,1
+Kevinazo,7,1,1,1,2,X,2,False,0
+Kevinazo,19,1,0,1,3,1,2,False,0
+Kevinazo,31,1,0,2,3,1,2,False,0
+Kevinazo,8,0,2,0,1,2,2,True,2
+Kevinazo,20,1,3,0,0,2,X,False,0
+Kevinazo,32,2,1,1,1,1,X,False,0
+Kevinazo,9,0,1,3,0,2,1,False,0
+Kevinazo,21,0,1,1,2,2,2,True,1
+Kevinazo,33,1,2,0,0,2,X,False,0
+Kevinazo,10,1,0,0,1,1,2,False,0
+Kevinazo,22,2,0,2,0,1,1,True,3
+Kevinazo,34,2,0,1,1,1,X,False,0
+Kevinazo,11,0,0,3,1,X,1,False,0
+Kevinazo,23,1,1,1,1,X,X,True,3
+Kevinazo,35,1,2,2,0,2,1,False,0
+Kevinazo,12,2,0,2,1,1,1,True,2
+Kevinazo,24,0,1,0,3,2,2,True,2
+Kevinazo,36,1,1,1,2,X,2,False,0
+Lola,1,4,3,5,1,1,1,True,1
+Lola,13,4,2,2,0,1,1,True,1
+Lola,25,3,2,0,1,1,2,False,0
+Lola,2,2,4,1,3,2,2,True,1
+Lola,14,3,4,1,1,2,X,False,0
+Lola,26,3,4,1,1,2,X,False,0
+Lola,3,3,4,3,0,2,1,False,0
+Lola,15,3,3,2,2,X,X,True,1
+Lola,27,2,3,1,1,2,X,False,0
+Lola,4,5,3,2,1,1,1,True,1
+Lola,16,3,4,1,0,2,1,False,0
+Lola,28,1,1,0,1,X,2,False,0
+Lola,5,2,2,1,1,X,X,True,1
+Lola,17,2,2,1,1,X,X,True,1
+Lola,29,2,1,0,0,1,X,False,0
+Lola,6,3,4,0,1,2,2,True,1
+Lola,18,2,2,1,1,X,X,True,1
+Lola,30,2,1,0,0,1,X,False,0
+Lola,7,4,2,1,2,1,2,False,0
+Lola,19,1,2,1,3,2,2,True,2
+Lola,31,2,1,2,3,1,2,False,0
+Lola,8,3,4,0,1,2,2,True,1
+Lola,20,3,4,0,0,2,X,False,0
+Lola,32,3,1,1,1,1,X,False,0
+Lola,9,4,2,3,0,1,1,True,1
+Lola,21,2,3,1,2,2,2,True,1
+Lola,33,1,2,0,0,2,X,False,0
+Lola,10,3,4,0,1,2,2,True,1
+Lola,22,3,2,2,0,1,1,True,1
+Lola,34,1,1,1,1,X,X,True,3
+Lola,11,3,2,3,1,1,1,True,2
+Lola,23,2,3,1,1,2,X,False,0
+Lola,35,1,2,2,0,2,1,False,0
+Lola,12,4,2,2,1,1,1,True,1
+Lola,24,2,4,0,3,2,2,True,1
+Lola,36,1,1,1,2,X,2,False,0
+Lorena,1,3,0,5,1,1,1,True,1
+Lorena,13,2,1,2,0,1,1,True,2
+Lorena,25,1,1,0,1,X,2,False,0
+Lorena,2,1,0,1,3,1,2,False,0
+Lorena,14,1,0,1,1,1,X,False,0
+Lorena,26,1,2,1,1,2,X,False,0
+Lorena,3,2,1,3,0,1,1,True,1
+Lorena,15,2,1,2,2,1,X,False,0
+Lorena,27,1,1,1,1,X,X,True,3
+Lorena,4,2,0,2,1,1,1,True,2
+Lorena,16,2,2,1,0,X,1,False,0
+Lorena,28,0,1,0,1,2,2,True,3
+Lorena,5,1,1,1,1,X,X,True,3
+Lorena,17,1,0,1,1,1,X,False,0
+Lorena,29,2,0,0,0,1,X,False,0
+Lorena,6,2,2,0,1,X,2,False,0
+Lorena,18,0,1,1,1,2,X,False,0
+Lorena,30,0,2,0,0,2,X,False,0
+Lorena,7,0,1,1,2,2,2,True,1
+Lorena,19,1,0,1,3,1,2,False,0
+Lorena,31,0,0,2,3,X,2,False,0
+Lorena,8,0,1,0,1,2,2,True,3
+Lorena,20,1,2,0,0,2,X,False,0
+Lorena,32,2,1,1,1,1,X,False,0
+Lorena,9,0,1,3,0,2,1,False,0
+Lorena,21,0,1,1,2,2,2,True,1
+Lorena,33,2,1,0,0,1,X,False,0
+Lorena,10,1,0,0,1,1,2,False,0
+Lorena,22,2,1,2,0,1,1,True,2
+Lorena,34,1,1,1,1,X,X,True,3
+Lorena,11,2,1,3,1,1,1,True,2
+Lorena,23,1,1,1,1,X,X,True,3
+Lorena,35,1,3,2,0,2,1,False,0
+Lorena,12,2,0,2,1,1,1,True,2
+Lorena,24,2,1,0,3,1,2,False,0
+Lorena,36,0,2,1,2,2,2,True,2
+Lorenzo Soliveres,1,3,0,5,1,1,1,True,1
+Lorenzo Soliveres,13,3,0,2,0,1,1,True,2
+Lorenzo Soliveres,25,1,1,0,1,X,2,False,0
+Lorenzo Soliveres,2,1,1,1,3,X,2,False,0
+Lorenzo Soliveres,14,0,1,1,1,2,X,False,0
+Lorenzo Soliveres,26,1,2,1,1,2,X,False,0
+Lorenzo Soliveres,3,2,1,3,0,1,1,True,1
+Lorenzo Soliveres,15,2,0,2,2,1,X,False,0
+Lorenzo Soliveres,27,2,2,1,1,X,X,True,1
+Lorenzo Soliveres,4,4,0,2,1,1,1,True,1
+Lorenzo Soliveres,16,2,2,1,0,X,1,False,0
+Lorenzo Soliveres,28,0,3,0,1,2,2,True,2
+Lorenzo Soliveres,5,0,1,1,1,2,X,False,0
+Lorenzo Soliveres,17,1,1,1,1,X,X,True,3
+Lorenzo Soliveres,29,3,1,0,0,1,X,False,0
+Lorenzo Soliveres,6,0,2,0,1,2,2,True,2
+Lorenzo Soliveres,18,1,3,1,1,2,X,False,0
+Lorenzo Soliveres,30,2,1,0,0,1,X,False,0
+Lorenzo Soliveres,7,1,3,1,2,2,2,True,2
+Lorenzo Soliveres,19,2,1,1,3,1,2,False,0
+Lorenzo Soliveres,31,3,0,2,3,1,2,False,0
+Lorenzo Soliveres,8,1,3,0,1,2,2,True,1
+Lorenzo Soliveres,20,2,2,0,0,X,X,True,1
+Lorenzo Soliveres,32,3,1,1,1,1,X,False,0
+Lorenzo Soliveres,9,0,0,3,0,X,1,False,0
+Lorenzo Soliveres,21,1,1,1,2,X,2,False,0
+Lorenzo Soliveres,33,1,1,0,0,X,X,True,1
+Lorenzo Soliveres,10,2,1,0,1,1,2,False,0
+Lorenzo Soliveres,22,2,0,2,0,1,1,True,3
+Lorenzo Soliveres,34,0,0,1,1,X,X,True,1
+Lorenzo Soliveres,11,1,1,3,1,X,1,False,0
+Lorenzo Soliveres,23,0,1,1,1,2,X,False,0
+Lorenzo Soliveres,35,0,1,2,0,2,1,False,0
+Lorenzo Soliveres,12,2,1,2,1,1,1,True,3
+Lorenzo Soliveres,24,1,2,0,3,2,2,True,1
+Lorenzo Soliveres,36,1,2,1,2,2,2,True,3
+Lucy,1,1,0,5,1,1,1,True,1
+Lucy,13,3,1,2,0,1,1,True,1
+Lucy,25,2,1,0,1,1,2,False,0
+Lucy,2,1,1,1,3,X,2,False,0
+Lucy,14,1,1,1,1,X,X,True,3
+Lucy,26,0,3,1,1,2,X,False,0
+Lucy,3,2,2,3,0,X,1,False,0
+Lucy,15,2,0,2,2,1,X,False,0
+Lucy,27,1,3,1,1,2,X,False,0
+Lucy,4,2,1,2,1,1,1,True,3
+Lucy,16,1,2,1,0,2,1,False,0
+Lucy,28,3,3,0,1,X,2,False,0
+Lucy,5,0,1,1,1,2,X,False,0
+Lucy,17,1,1,1,1,X,X,True,3
+Lucy,29,3,0,0,0,1,X,False,0
+Lucy,6,1,2,0,1,2,2,True,1
+Lucy,18,1,3,1,1,2,X,False,0
+Lucy,30,1,2,0,0,2,X,False,0
+Lucy,7,1,2,1,2,2,2,True,3
+Lucy,19,0,1,1,3,2,2,True,1
+Lucy,31,2,1,2,3,1,2,False,0
+Lucy,8,0,3,0,1,2,2,True,2
+Lucy,20,1,2,0,0,2,X,False,0
+Lucy,32,3,0,1,1,1,X,False,0
+Lucy,9,0,1,3,0,2,1,False,0
+Lucy,21,2,1,1,2,1,2,False,0
+Lucy,33,1,2,0,0,2,X,False,0
+Lucy,10,2,0,0,1,1,2,False,0
+Lucy,22,2,0,2,0,1,1,True,3
+Lucy,34,1,0,1,1,1,X,False,0
+Lucy,11,1,1,3,1,X,1,False,0
+Lucy,23,0,1,1,1,2,X,False,0
+Lucy,35,1,3,2,0,2,1,False,0
+Lucy,12,2,0,2,1,1,1,True,2
+Lucy,24,0,2,0,3,2,2,True,2
+Lucy,36,1,1,1,2,X,2,False,0
+Luis Tavío,1,2,0,5,1,1,1,True,1
+Luis Tavío,13,2,1,2,0,1,1,True,2
+Luis Tavío,25,1,2,0,1,2,2,True,1
+Luis Tavío,2,1,1,1,3,X,2,False,0
+Luis Tavío,14,0,0,1,1,X,X,True,1
+Luis Tavío,26,0,1,1,1,2,X,False,0
+Luis Tavío,3,1,1,3,0,X,1,False,0
+Luis Tavío,15,2,0,2,2,1,X,False,0
+Luis Tavío,27,1,1,1,1,X,X,True,3
+Luis Tavío,4,3,0,2,1,1,1,True,1
+Luis Tavío,16,1,1,1,0,X,1,False,0
+Luis Tavío,28,0,3,0,1,2,2,True,2
+Luis Tavío,5,0,2,1,1,2,X,False,0
+Luis Tavío,17,0,0,1,1,X,X,True,1
+Luis Tavío,29,3,0,0,0,1,X,False,0
+Luis Tavío,6,1,3,0,1,2,2,True,1
+Luis Tavío,18,1,1,1,1,X,X,True,3
+Luis Tavío,30,2,0,0,0,1,X,False,0
+Luis Tavío,7,0,3,1,2,2,2,True,1
+Luis Tavío,19,0,2,1,3,2,2,True,1
+Luis Tavío,31,2,0,2,3,1,2,False,0
+Luis Tavío,8,0,2,0,1,2,2,True,2
+Luis Tavío,20,1,1,0,0,X,X,True,1
+Luis Tavío,32,2,1,1,1,1,X,False,0
+Luis Tavío,9,1,1,3,0,X,1,False,0
+Luis Tavío,21,0,0,1,2,X,2,False,0
+Luis Tavío,33,0,0,0,0,X,X,True,3
+Luis Tavío,10,2,1,0,1,1,2,False,0
+Luis Tavío,22,3,1,2,0,1,1,True,1
+Luis Tavío,34,1,1,1,1,X,X,True,3
+Luis Tavío,11,0,0,3,1,X,1,False,0
+Luis Tavío,23,0,2,1,1,2,X,False,0
+Luis Tavío,35,0,3,2,0,2,1,False,0
+Luis Tavío,12,2,1,2,1,1,1,True,3
+Luis Tavío,24,0,1,0,3,2,2,True,2
+Luis Tavío,36,2,0,1,2,1,2,False,0
+Luismi AEA,1,2,0,5,1,1,1,True,1
+Luismi AEA,13,3,1,2,0,1,1,True,1
+Luismi AEA,25,0,1,0,1,2,2,True,3
+Luismi AEA,2,1,1,1,3,X,2,False,0
+Luismi AEA,14,1,1,1,1,X,X,True,3
+Luismi AEA,26,1,2,1,1,2,X,False,0
+Luismi AEA,3,1,0,3,0,1,1,True,2
+Luismi AEA,15,2,0,2,2,1,X,False,0
+Luismi AEA,27,0,1,1,1,2,X,False,0
+Luismi AEA,4,2,0,2,1,1,1,True,2
+Luismi AEA,16,0,0,1,0,X,1,False,0
+Luismi AEA,28,0,3,0,1,2,2,True,2
+Luismi AEA,5,1,2,1,1,2,X,False,0
+Luismi AEA,17,1,2,1,1,2,X,False,0
+Luismi AEA,29,4,1,0,0,1,X,False,0
+Luismi AEA,6,1,3,0,1,2,2,True,1
+Luismi AEA,18,1,1,1,1,X,X,True,3
+Luismi AEA,30,2,2,0,0,X,X,True,1
+Luismi AEA,7,1,3,1,2,2,2,True,2
+Luismi AEA,19,0,0,1,3,X,2,False,0
+Luismi AEA,31,2,1,2,3,1,2,False,0
+Luismi AEA,8,0,2,0,1,2,2,True,2
+Luismi AEA,20,2,2,0,0,X,X,True,1
+Luismi AEA,32,2,0,1,1,1,X,False,0
+Luismi AEA,9,2,2,3,0,X,1,False,0
+Luismi AEA,21,0,1,1,2,2,2,True,1
+Luismi AEA,33,1,1,0,0,X,X,True,1
+Luismi AEA,10,3,2,0,1,1,2,False,0
+Luismi AEA,22,3,1,2,0,1,1,True,1
+Luismi AEA,34,2,2,1,1,X,X,True,1
+Luismi AEA,11,1,0,3,1,1,1,True,1
+Luismi AEA,23,0,2,1,1,2,X,False,0
+Luismi AEA,35,1,3,2,0,2,1,False,0
+Luismi AEA,12,2,1,2,1,1,1,True,3
+Luismi AEA,24,1,1,0,3,X,2,False,0
+Luismi AEA,36,1,2,1,2,2,2,True,3
+Many,1,2,0,5,1,1,1,True,1
+Many,13,3,0,2,0,1,1,True,2
+Many,25,1,0,0,1,1,2,False,0
+Many,2,0,1,1,3,2,2,True,1
+Many,14,1,1,1,1,X,X,True,3
+Many,26,1,2,1,1,2,X,False,0
+Many,3,1,0,3,0,1,1,True,2
+Many,15,2,0,2,2,1,X,False,0
+Many,27,1,1,1,1,X,X,True,3
+Many,4,2,0,2,1,1,1,True,2
+Many,16,2,0,1,0,1,1,True,2
+Many,28,0,3,0,1,2,2,True,2
+Many,5,1,1,1,1,X,X,True,3
+Many,17,1,1,1,1,X,X,True,3
+Many,29,2,0,0,0,1,X,False,0
+Many,6,0,2,0,1,2,2,True,2
+Many,18,1,2,1,1,2,X,False,0
+Many,30,1,1,0,0,X,X,True,1
+Many,7,1,2,1,2,2,2,True,3
+Many,19,1,0,1,3,1,2,False,0
+Many,31,2,0,2,3,1,2,False,0
+Many,8,0,3,0,1,2,2,True,2
+Many,20,1,1,0,0,X,X,True,1
+Many,32,3,1,1,1,1,X,False,0
+Many,9,0,0,3,0,X,1,False,0
+Many,21,0,0,1,2,X,2,False,0
+Many,33,0,2,0,0,2,X,False,0
+Many,10,2,1,0,1,1,2,False,0
+Many,22,2,0,2,0,1,1,True,3
+Many,34,1,1,1,1,X,X,True,3
+Many,11,2,0,3,1,1,1,True,1
+Many,23,0,1,1,1,2,X,False,0
+Many,35,0,3,2,0,2,1,False,0
+Many,12,2,0,2,1,1,1,True,2
+Many,24,1,2,0,3,2,2,True,1
+Many,36,1,2,1,2,2,2,True,3
+Marcos Jiménez,1,2,0,5,1,1,1,True,1
+Marcos Jiménez,13,2,0,2,0,1,1,True,3
+Marcos Jiménez,25,0,1,0,1,2,2,True,3
+Marcos Jiménez,2,0,1,1,3,2,2,True,1
+Marcos Jiménez,14,0,1,1,1,2,X,False,0
+Marcos Jiménez,26,0,1,1,1,2,X,False,0
+Marcos Jiménez,3,1,0,3,0,1,1,True,2
+Marcos Jiménez,15,1,0,2,2,1,X,False,0
+Marcos Jiménez,27,0,1,1,1,2,X,False,0
+Marcos Jiménez,4,1,0,2,1,1,1,True,1
+Marcos Jiménez,16,1,0,1,0,1,1,True,3
+Marcos Jiménez,28,0,2,0,1,2,2,True,2
+Marcos Jiménez,5,0,1,1,1,2,X,False,0
+Marcos Jiménez,17,0,1,1,1,2,X,False,0
+Marcos Jiménez,29,2,0,0,0,1,X,False,0
+Marcos Jiménez,6,0,1,0,1,2,2,True,3
+Marcos Jiménez,18,0,1,1,1,2,X,False,0
+Marcos Jiménez,30,1,0,0,0,1,X,False,0
+Marcos Jiménez,7,0,1,1,2,2,2,True,1
+Marcos Jiménez,19,0,1,1,3,2,2,True,1
+Marcos Jiménez,31,2,1,2,3,1,2,False,0
+Marcos Jiménez,8,0,2,0,1,2,2,True,2
+Marcos Jiménez,20,0,1,0,0,2,X,False,0
+Marcos Jiménez,32,2,0,1,1,1,X,False,0
+Marcos Jiménez,9,0,1,3,0,2,1,False,0
+Marcos Jiménez,21,0,1,1,2,2,2,True,1
+Marcos Jiménez,33,0,1,0,0,2,X,False,0
+Marcos Jiménez,10,2,0,0,1,1,2,False,0
+Marcos Jiménez,22,2,0,2,0,1,1,True,3
+Marcos Jiménez,34,1,0,1,1,1,X,False,0
+Marcos Jiménez,11,1,0,3,1,1,1,True,1
+Marcos Jiménez,23,0,1,1,1,2,X,False,0
+Marcos Jiménez,35,0,2,2,0,2,1,False,0
+Marcos Jiménez,12,2,0,2,1,1,1,True,2
+Marcos Jiménez,24,0,1,0,3,2,2,True,2
+Marcos Jiménez,36,0,1,1,2,2,2,True,1
+Mare Santana,1,2,1,5,1,1,1,True,2
+Mare Santana,13,3,1,2,0,1,1,True,1
+Mare Santana,25,2,1,0,1,1,2,False,0
+Mare Santana,2,1,1,1,3,X,2,False,0
+Mare Santana,14,2,1,1,1,1,X,False,0
+Mare Santana,26,0,2,1,1,2,X,False,0
+Mare Santana,3,2,1,3,0,1,1,True,1
+Mare Santana,15,1,0,2,2,1,X,False,0
+Mare Santana,27,1,3,1,1,2,X,False,0
+Mare Santana,4,3,0,2,1,1,1,True,1
+Mare Santana,16,2,1,1,0,1,1,True,1
+Mare Santana,28,1,3,0,1,2,2,True,1
+Mare Santana,5,0,2,1,1,2,X,False,0
+Mare Santana,17,0,1,1,1,2,X,False,0
+Mare Santana,29,3,0,0,0,1,X,False,0
+Mare Santana,6,1,3,0,1,2,2,True,1
+Mare Santana,18,0,3,1,1,2,X,False,0
+Mare Santana,30,2,1,0,0,1,X,False,0
+Mare Santana,7,2,2,1,2,X,2,False,0
+Mare Santana,19,1,1,1,3,X,2,False,0
+Mare Santana,31,3,0,2,3,1,2,False,0
+Mare Santana,8,0,2,0,1,2,2,True,2
+Mare Santana,20,2,2,0,0,X,X,True,1
+Mare Santana,32,2,1,1,1,1,X,False,0
+Mare Santana,9,0,0,3,0,X,1,False,0
+Mare Santana,21,1,0,1,2,1,2,False,0
+Mare Santana,33,0,1,0,0,2,X,False,0
+Mare Santana,10,2,0,0,1,1,2,False,0
+Mare Santana,22,1,1,2,0,X,1,False,0
+Mare Santana,34,1,1,1,1,X,X,True,3
+Mare Santana,11,1,1,3,1,X,1,False,0
+Mare Santana,23,0,2,1,1,2,X,False,0
+Mare Santana,35,0,3,2,0,2,1,False,0
+Mare Santana,12,3,1,2,1,1,1,True,2
+Mare Santana,24,0,2,0,3,2,2,True,2
+Mare Santana,36,1,1,1,2,X,2,False,0
+Mª Teresa Castellano,1,2,2,5,1,X,1,False,0
+Mª Teresa Castellano,13,0,2,2,0,2,1,False,0
+Mª Teresa Castellano,25,3,2,0,1,1,2,False,0
+Mª Teresa Castellano,2,1,0,1,3,1,2,False,0
+Mª Teresa Castellano,14,1,1,1,1,X,X,True,3
+Mª Teresa Castellano,26,2,1,1,1,1,X,False,0
+Mª Teresa Castellano,3,1,3,3,0,2,1,False,0
+Mª Teresa Castellano,15,2,3,2,2,2,X,False,0
+Mª Teresa Castellano,27,1,2,1,1,2,X,False,0
+Mª Teresa Castellano,4,2,0,2,1,1,1,True,2
+Mª Teresa Castellano,16,1,2,1,0,2,1,False,0
+Mª Teresa Castellano,28,2,1,0,1,1,2,False,0
+Mª Teresa Castellano,5,2,0,1,1,1,X,False,0
+Mª Teresa Castellano,17,3,1,1,1,1,X,False,0
+Mª Teresa Castellano,29,1,2,0,0,2,X,False,0
+Mª Teresa Castellano,6,3,2,0,1,1,2,False,0
+Mª Teresa Castellano,18,1,3,1,1,2,X,False,0
+Mª Teresa Castellano,30,2,1,0,0,1,X,False,0
+Mª Teresa Castellano,7,1,2,1,2,2,2,True,3
+Mª Teresa Castellano,19,2,2,1,3,X,2,False,0
+Mª Teresa Castellano,31,1,2,2,3,2,2,True,1
+Mª Teresa Castellano,8,1,2,0,1,2,2,True,1
+Mª Teresa Castellano,20,1,1,0,0,X,X,True,1
+Mª Teresa Castellano,32,2,1,1,1,1,X,False,0
+Mª Teresa Castellano,9,2,2,3,0,X,1,False,0
+Mª Teresa Castellano,21,0,2,1,2,2,2,True,2
+Mª Teresa Castellano,33,1,2,0,0,2,X,False,0
+Mª Teresa Castellano,10,1,1,0,1,X,2,False,0
+Mª Teresa Castellano,22,2,0,2,0,1,1,True,3
+Mª Teresa Castellano,34,2,1,1,1,1,X,False,0
+Mª Teresa Castellano,11,2,2,3,1,X,1,False,0
+Mª Teresa Castellano,23,3,3,1,1,X,X,True,1
+Mª Teresa Castellano,35,1,2,2,0,2,1,False,0
+Mª Teresa Castellano,12,3,0,2,1,1,1,True,1
+Mª Teresa Castellano,24,1,2,0,3,2,2,True,1
+Mª Teresa Castellano,36,2,1,1,2,1,2,False,0
+Mariana Hdez.,1,2,0,5,1,1,1,True,1
+Mariana Hdez.,13,2,0,2,0,1,1,True,3
+Mariana Hdez.,25,1,0,0,1,1,2,False,0
+Mariana Hdez.,2,0,1,1,3,2,2,True,1
+Mariana Hdez.,14,1,0,1,1,1,X,False,0
+Mariana Hdez.,26,0,3,1,1,2,X,False,0
+Mariana Hdez.,3,2,0,3,0,1,1,True,2
+Mariana Hdez.,15,3,0,2,2,1,X,False,0
+Mariana Hdez.,27,1,1,1,1,X,X,True,3
+Mariana Hdez.,4,2,0,2,1,1,1,True,2
+Mariana Hdez.,16,1,0,1,0,1,1,True,3
+Mariana Hdez.,28,0,4,0,1,2,2,True,2
+Mariana Hdez.,5,0,1,1,1,2,X,False,0
+Mariana Hdez.,17,1,1,1,1,X,X,True,3
+Mariana Hdez.,29,2,0,0,0,1,X,False,0
+Mariana Hdez.,6,0,2,0,1,2,2,True,2
+Mariana Hdez.,18,0,2,1,1,2,X,False,0
+Mariana Hdez.,30,1,1,0,0,X,X,True,1
+Mariana Hdez.,7,0,2,1,2,2,2,True,2
+Mariana Hdez.,19,1,0,1,3,1,2,False,0
+Mariana Hdez.,31,2,0,2,3,1,2,False,0
+Mariana Hdez.,8,0,3,0,1,2,2,True,2
+Mariana Hdez.,20,1,1,0,0,X,X,True,1
+Mariana Hdez.,32,3,0,1,1,1,X,False,0
+Mariana Hdez.,9,1,1,3,0,X,1,False,0
+Mariana Hdez.,21,0,0,1,2,X,2,False,0
+Mariana Hdez.,33,0,2,0,0,2,X,False,0
+Mariana Hdez.,10,3,1,0,1,1,2,False,0
+Mariana Hdez.,22,2,0,2,0,1,1,True,3
+Mariana Hdez.,34,1,1,1,1,X,X,True,3
+Mariana Hdez.,11,2,0,3,1,1,1,True,1
+Mariana Hdez.,23,0,2,1,1,2,X,False,0
+Mariana Hdez.,35,0,3,2,0,2,1,False,0
+Mariana Hdez.,12,3,1,2,1,1,1,True,2
+Mariana Hdez.,24,1,1,0,3,X,2,False,0
+Mariana Hdez.,36,1,2,1,2,2,2,True,3
+Matías Glez.,1,2,2,5,1,X,1,False,0
+Matías Glez.,13,2,0,2,0,1,1,True,3
+Matías Glez.,25,2,0,0,1,1,2,False,0
+Matías Glez.,2,1,3,1,3,2,2,True,3
+Matías Glez.,14,2,1,1,1,1,X,False,0
+Matías Glez.,26,2,2,1,1,X,X,True,1
+Matías Glez.,3,1,1,3,0,X,1,False,0
+Matías Glez.,15,2,0,2,2,1,X,False,0
+Matías Glez.,27,1,0,1,1,1,X,False,0
+Matías Glez.,4,2,1,2,1,1,1,True,3
+Matías Glez.,16,1,1,1,0,X,1,False,0
+Matías Glez.,28,0,2,0,1,2,2,True,2
+Matías Glez.,5,1,1,1,1,X,X,True,3
+Matías Glez.,17,2,1,1,1,1,X,False,0
+Matías Glez.,29,2,1,0,0,1,X,False,0
+Matías Glez.,6,1,3,0,1,2,2,True,1
+Matías Glez.,18,1,2,1,1,2,X,False,0
+Matías Glez.,30,1,1,0,0,X,X,True,1
+Matías Glez.,7,1,3,1,2,2,2,True,2
+Matías Glez.,19,1,2,1,3,2,2,True,2
+Matías Glez.,31,2,1,2,3,1,2,False,0
+Matías Glez.,8,1,2,0,1,2,2,True,1
+Matías Glez.,20,0,2,0,0,2,X,False,0
+Matías Glez.,32,2,0,1,1,1,X,False,0
+Matías Glez.,9,0,1,3,0,2,1,False,0
+Matías Glez.,21,1,2,1,2,2,2,True,3
+Matías Glez.,33,2,2,0,0,X,X,True,1
+Matías Glez.,10,2,0,0,1,1,2,False,0
+Matías Glez.,22,3,0,2,0,1,1,True,2
+Matías Glez.,34,0,0,1,1,X,X,True,1
+Matías Glez.,11,2,1,3,1,1,1,True,2
+Matías Glez.,23,0,0,1,1,X,X,True,1
+Matías Glez.,35,1,3,2,0,2,1,False,0
+Matías Glez.,12,3,0,2,1,1,1,True,1
+Matías Glez.,24,1,3,0,3,2,2,True,2
+Matías Glez.,36,1,1,1,2,X,2,False,0
+MaViPi,1,3,1,5,1,1,1,True,2
+MaViPi,13,2,0,2,0,1,1,True,3
+MaViPi,25,0,2,0,1,2,2,True,2
+MaViPi,2,0,2,1,3,2,2,True,1
+MaViPi,14,2,3,1,1,2,X,False,0
+MaViPi,26,3,5,1,1,2,X,False,0
+MaViPi,3,3,2,3,0,1,1,True,2
+MaViPi,15,1,0,2,2,1,X,False,0
+MaViPi,27,1,1,1,1,X,X,True,3
+MaViPi,4,1,0,2,1,1,1,True,1
+MaViPi,16,1,1,1,0,X,1,False,0
+MaViPi,28,1,3,0,1,2,2,True,1
+MaViPi,5,0,2,1,1,2,X,False,0
+MaViPi,17,2,4,1,1,2,X,False,0
+MaViPi,29,3,1,0,0,1,X,False,0
+MaViPi,6,0,2,0,1,2,2,True,2
+MaViPi,18,1,3,1,1,2,X,False,0
+MaViPi,30,1,0,0,0,1,X,False,0
+MaViPi,7,0,0,1,2,X,2,False,0
+MaViPi,19,2,1,1,3,1,2,False,0
+MaViPi,31,2,1,2,3,1,2,False,0
+MaViPi,8,1,2,0,1,2,2,True,1
+MaViPi,20,0,5,0,0,2,X,False,0
+MaViPi,32,2,0,1,1,1,X,False,0
+MaViPi,9,1,0,3,0,1,1,True,2
+MaViPi,21,0,0,1,2,X,2,False,0
+MaViPi,33,0,3,0,0,2,X,False,0
+MaViPi,10,3,0,0,1,1,2,False,0
+MaViPi,22,2,1,2,0,1,1,True,2
+MaViPi,34,2,2,1,1,X,X,True,1
+MaViPi,11,2,0,3,1,1,1,True,1
+MaViPi,23,1,2,1,1,2,X,False,0
+MaViPi,35,0,3,2,0,2,1,False,0
+MaViPi,12,3,0,2,1,1,1,True,1
+MaViPi,24,0,3,0,3,2,2,True,3
+MaViPi,36,1,1,1,2,X,2,False,0
+Mayte Glez,1,1,0,5,1,1,1,True,1
+Mayte Glez,13,1,0,2,0,1,1,True,2
+Mayte Glez,25,1,0,0,1,1,2,False,0
+Mayte Glez,2,0,1,1,3,2,2,True,1
+Mayte Glez,14,1,2,1,1,2,X,False,0
+Mayte Glez,26,1,1,1,1,X,X,True,3
+Mayte Glez,3,2,1,3,0,1,1,True,1
+Mayte Glez,15,1,0,2,2,1,X,False,0
+Mayte Glez,27,1,2,1,1,2,X,False,0
+Mayte Glez,4,2,0,2,1,1,1,True,2
+Mayte Glez,16,2,1,1,0,1,1,True,1
+Mayte Glez,28,0,2,0,1,2,2,True,2
+Mayte Glez,5,1,1,1,1,X,X,True,3
+Mayte Glez,17,1,1,1,1,X,X,True,3
+Mayte Glez,29,2,0,0,0,1,X,False,0
+Mayte Glez,6,0,1,0,1,2,2,True,3
+Mayte Glez,18,1,2,1,1,2,X,False,0
+Mayte Glez,30,1,1,0,0,X,X,True,1
+Mayte Glez,7,1,1,1,2,X,2,False,0
+Mayte Glez,19,1,1,1,3,X,2,False,0
+Mayte Glez,31,1,1,2,3,X,2,False,0
+Mayte Glez,8,0,1,0,1,2,2,True,3
+Mayte Glez,20,2,2,0,0,X,X,True,1
+Mayte Glez,32,2,0,1,1,1,X,False,0
+Mayte Glez,9,0,0,3,0,X,1,False,0
+Mayte Glez,21,1,1,1,2,X,2,False,0
+Mayte Glez,33,1,2,0,0,2,X,False,0
+Mayte Glez,10,1,0,0,1,1,2,False,0
+Mayte Glez,22,2,1,2,0,1,1,True,2
+Mayte Glez,34,1,1,1,1,X,X,True,3
+Mayte Glez,11,0,0,3,1,X,1,False,0
+Mayte Glez,23,0,1,1,1,2,X,False,0
+Mayte Glez,35,0,1,2,0,2,1,False,0
+Mayte Glez,12,2,1,2,1,1,1,True,3
+Mayte Glez,24,0,2,0,3,2,2,True,2
+Mayte Glez,36,2,1,1,2,1,2,False,0
+Miguel Romero,1,3,0,5,1,1,1,True,1
+Miguel Romero,13,2,0,2,0,1,1,True,3
+Miguel Romero,25,1,1,0,1,X,2,False,0
+Miguel Romero,2,1,1,1,3,X,2,False,0
+Miguel Romero,14,0,0,1,1,X,X,True,1
+Miguel Romero,26,0,2,1,1,2,X,False,0
+Miguel Romero,3,2,2,3,0,X,1,False,0
+Miguel Romero,15,2,0,2,2,1,X,False,0
+Miguel Romero,27,1,1,1,1,X,X,True,3
+Miguel Romero,4,2,0,2,1,1,1,True,2
+Miguel Romero,16,1,0,1,0,1,1,True,3
+Miguel Romero,28,1,3,0,1,2,2,True,1
+Miguel Romero,5,2,3,1,1,2,X,False,0
+Miguel Romero,17,0,0,1,1,X,X,True,1
+Miguel Romero,29,2,0,0,0,1,X,False,0
+Miguel Romero,6,1,2,0,1,2,2,True,1
+Miguel Romero,18,2,2,1,1,X,X,True,1
+Miguel Romero,30,1,0,0,0,1,X,False,0
+Miguel Romero,7,1,2,1,2,2,2,True,3
+Miguel Romero,19,1,1,1,3,X,2,False,0
+Miguel Romero,31,2,0,2,3,1,2,False,0
+Miguel Romero,8,0,4,0,1,2,2,True,2
+Miguel Romero,20,1,3,0,0,2,X,False,0
+Miguel Romero,32,3,0,1,1,1,X,False,0
+Miguel Romero,9,0,0,3,0,X,1,False,0
+Miguel Romero,21,1,1,1,2,X,2,False,0
+Miguel Romero,33,0,3,0,0,2,X,False,0
+Miguel Romero,10,2,0,0,1,1,2,False,0
+Miguel Romero,22,2,0,2,0,1,1,True,3
+Miguel Romero,34,0,1,1,1,2,X,False,0
+Miguel Romero,11,3,0,3,1,1,1,True,2
+Miguel Romero,23,1,0,1,1,1,X,False,0
+Miguel Romero,35,0,4,2,0,2,1,False,0
+Miguel Romero,12,2,0,2,1,1,1,True,2
+Miguel Romero,24,1,2,0,3,2,2,True,1
+Miguel Romero,36,1,2,1,2,2,2,True,3
+Miqueas,1,2,0,5,1,1,1,True,1
+Miqueas,13,3,1,2,0,1,1,True,1
+Miqueas,25,1,1,0,1,X,2,False,0
+Miqueas,2,0,1,1,3,2,2,True,1
+Miqueas,14,1,1,1,1,X,X,True,3
+Miqueas,26,1,1,1,1,X,X,True,3
+Miqueas,3,2,1,3,0,1,1,True,1
+Miqueas,15,2,0,2,2,1,X,False,0
+Miqueas,27,2,2,1,1,X,X,True,1
+Miqueas,4,2,1,2,1,1,1,True,3
+Miqueas,16,2,1,1,0,1,1,True,1
+Miqueas,28,0,3,0,1,2,2,True,2
+Miqueas,5,1,1,1,1,X,X,True,3
+Miqueas,17,1,1,1,1,X,X,True,3
+Miqueas,29,2,1,0,0,1,X,False,0
+Miqueas,6,0,1,0,1,2,2,True,3
+Miqueas,18,1,2,1,1,2,X,False,0
+Miqueas,30,2,1,0,0,1,X,False,0
+Miqueas,7,1,2,1,2,2,2,True,3
+Miqueas,19,2,1,1,3,1,2,False,0
+Miqueas,31,2,0,2,3,1,2,False,0
+Miqueas,8,0,2,0,1,2,2,True,2
+Miqueas,20,2,2,0,0,X,X,True,1
+Miqueas,32,2,1,1,1,1,X,False,0
+Miqueas,9,0,3,3,0,2,1,False,0
+Miqueas,21,1,3,1,2,2,2,True,2
+Miqueas,33,2,2,0,0,X,X,True,1
+Miqueas,10,2,0,0,1,1,2,False,0
+Miqueas,22,3,0,2,0,1,1,True,2
+Miqueas,34,2,1,1,1,1,X,False,0
+Miqueas,11,2,0,3,1,1,1,True,1
+Miqueas,23,0,1,1,1,2,X,False,0
+Miqueas,35,0,3,2,0,2,1,False,0
+Miqueas,12,3,1,2,1,1,1,True,2
+Miqueas,24,1,2,0,3,2,2,True,1
+Miqueas,36,2,2,1,2,X,2,False,0
+Miriam Montesdeoca,1,2,1,5,1,1,1,True,2
+Miriam Montesdeoca,13,5,1,2,0,1,1,True,1
+Miriam Montesdeoca,25,1,2,0,1,2,2,True,1
+Miriam Montesdeoca,2,0,2,1,3,2,2,True,1
+Miriam Montesdeoca,14,1,1,1,1,X,X,True,3
+Miriam Montesdeoca,26,2,2,1,1,X,X,True,1
+Miriam Montesdeoca,3,3,1,3,0,1,1,True,2
+Miriam Montesdeoca,15,1,0,2,2,1,X,False,0
+Miriam Montesdeoca,27,0,2,1,1,2,X,False,0
+Miriam Montesdeoca,4,4,1,2,1,1,1,True,2
+Miriam Montesdeoca,16,1,1,1,0,X,1,False,0
+Miriam Montesdeoca,28,0,4,0,1,2,2,True,2
+Miriam Montesdeoca,5,1,1,1,1,X,X,True,3
+Miriam Montesdeoca,17,0,0,1,1,X,X,True,1
+Miriam Montesdeoca,29,3,1,0,0,1,X,False,0
+Miriam Montesdeoca,6,0,3,0,1,2,2,True,2
+Miriam Montesdeoca,18,1,2,1,1,2,X,False,0
+Miriam Montesdeoca,30,5,1,0,0,1,X,False,0
+Miriam Montesdeoca,7,1,1,1,2,X,2,False,0
+Miriam Montesdeoca,19,2,3,1,3,2,2,True,2
+Miriam Montesdeoca,31,1,3,2,3,2,2,True,2
+Miriam Montesdeoca,8,2,3,0,1,2,2,True,1
+Miriam Montesdeoca,20,1,2,0,0,2,X,False,0
+Miriam Montesdeoca,32,4,0,1,1,1,X,False,0
+Miriam Montesdeoca,9,2,2,3,0,X,1,False,0
+Miriam Montesdeoca,21,2,0,1,2,1,2,False,0
+Miriam Montesdeoca,33,0,1,0,0,2,X,False,0
+Miriam Montesdeoca,10,1,2,0,1,2,2,True,1
+Miriam Montesdeoca,22,3,2,2,0,1,1,True,1
+Miriam Montesdeoca,34,1,0,1,1,1,X,False,0
+Miriam Montesdeoca,11,1,0,3,1,1,1,True,1
+Miriam Montesdeoca,23,1,2,1,1,2,X,False,0
+Miriam Montesdeoca,35,1,1,2,0,X,1,False,0
+Miriam Montesdeoca,12,0,1,2,1,2,1,False,0
+Miriam Montesdeoca,24,1,0,0,3,1,2,False,0
+Miriam Montesdeoca,36,2,1,1,2,1,2,False,0
+Moisés Guillén,1,2,0,5,1,1,1,True,1
+Moisés Guillén,13,2,0,2,0,1,1,True,3
+Moisés Guillén,25,1,1,0,1,X,2,False,0
+Moisés Guillén,2,1,2,1,3,2,2,True,2
+Moisés Guillén,14,1,1,1,1,X,X,True,3
+Moisés Guillén,26,1,2,1,1,2,X,False,0
+Moisés Guillén,3,1,1,3,0,X,1,False,0
+Moisés Guillén,15,2,0,2,2,1,X,False,0
+Moisés Guillén,27,1,1,1,1,X,X,True,3
+Moisés Guillén,4,3,0,2,1,1,1,True,1
+Moisés Guillén,16,2,2,1,0,X,1,False,0
+Moisés Guillén,28,0,3,0,1,2,2,True,2
+Moisés Guillén,5,0,1,1,1,2,X,False,0
+Moisés Guillén,17,1,1,1,1,X,X,True,3
+Moisés Guillén,29,2,0,0,0,1,X,False,0
+Moisés Guillén,6,1,2,0,1,2,2,True,1
+Moisés Guillén,18,0,2,1,1,2,X,False,0
+Moisés Guillén,30,1,1,0,0,X,X,True,1
+Moisés Guillén,7,0,2,1,2,2,2,True,2
+Moisés Guillén,19,1,1,1,3,X,2,False,0
+Moisés Guillén,31,2,0,2,3,1,2,False,0
+Moisés Guillén,8,1,3,0,1,2,2,True,1
+Moisés Guillén,20,1,2,0,0,2,X,False,0
+Moisés Guillén,32,2,0,1,1,1,X,False,0
+Moisés Guillén,9,0,0,3,0,X,1,False,0
+Moisés Guillén,21,0,1,1,2,2,2,True,1
+Moisés Guillén,33,1,2,0,0,2,X,False,0
+Moisés Guillén,10,1,1,0,1,X,2,False,0
+Moisés Guillén,22,1,1,2,0,X,1,False,0
+Moisés Guillén,34,1,1,1,1,X,X,True,3
+Moisés Guillén,11,1,0,3,1,1,1,True,1
+Moisés Guillén,23,0,1,1,1,2,X,False,0
+Moisés Guillén,35,0,1,2,0,2,1,False,0
+Moisés Guillén,12,2,1,2,1,1,1,True,3
+Moisés Guillén,24,1,2,0,3,2,2,True,1
+Moisés Guillén,36,1,2,1,2,2,2,True,3
+Monia,1,1,0,5,1,1,1,True,1
+Monia,13,2,0,2,0,1,1,True,3
+Monia,25,1,1,0,1,X,2,False,0
+Monia,2,0,1,1,3,2,2,True,1
+Monia,14,1,1,1,1,X,X,True,3
+Monia,26,0,2,1,1,2,X,False,0
+Monia,3,2,1,3,0,1,1,True,1
+Monia,15,2,0,2,2,1,X,False,0
+Monia,27,0,3,1,1,2,X,False,0
+Monia,4,3,0,2,1,1,1,True,1
+Monia,16,2,2,1,0,X,1,False,0
+Monia,28,0,4,0,1,2,2,True,2
+Monia,5,0,1,1,1,2,X,False,0
+Monia,17,0,2,1,1,2,X,False,0
+Monia,29,2,0,0,0,1,X,False,0
+Monia,6,0,2,0,1,2,2,True,2
+Monia,18,1,3,1,1,2,X,False,0
+Monia,30,1,1,0,0,X,X,True,1
+Monia,7,0,0,1,2,X,2,False,0
+Monia,19,1,1,1,3,X,2,False,0
+Monia,31,2,0,2,3,1,2,False,0
+Monia,8,1,3,0,1,2,2,True,1
+Monia,20,1,3,0,0,2,X,False,0
+Monia,32,2,0,1,1,1,X,False,0
+Monia,9,1,1,3,0,X,1,False,0
+Monia,21,1,1,1,2,X,2,False,0
+Monia,33,1,3,0,0,2,X,False,0
+Monia,10,2,0,0,1,1,2,False,0
+Monia,22,2,0,2,0,1,1,True,3
+Monia,34,1,1,1,1,X,X,True,3
+Monia,11,1,1,3,1,X,1,False,0
+Monia,23,0,2,1,1,2,X,False,0
+Monia,35,1,3,2,0,2,1,False,0
+Monia,12,2,0,2,1,1,1,True,2
+Monia,24,0,3,0,3,2,2,True,3
+Monia,36,0,0,1,2,X,2,False,0
+Nau,1,2,0,5,1,1,1,True,1
+Nau,13,1,0,2,0,1,1,True,2
+Nau,25,1,1,0,1,X,2,False,0
+Nau,2,0,1,1,3,2,2,True,1
+Nau,14,0,2,1,1,2,X,False,0
+Nau,26,1,3,1,1,2,X,False,0
+Nau,3,2,1,3,0,1,1,True,1
+Nau,15,3,0,2,2,1,X,False,0
+Nau,27,3,0,1,1,1,X,False,0
+Nau,4,3,0,2,1,1,1,True,1
+Nau,16,1,2,1,0,2,1,False,0
+Nau,28,0,4,0,1,2,2,True,2
+Nau,5,0,3,1,1,2,X,False,0
+Nau,17,0,2,1,1,2,X,False,0
+Nau,29,3,0,0,0,1,X,False,0
+Nau,6,0,2,0,1,2,2,True,2
+Nau,18,2,2,1,1,X,X,True,1
+Nau,30,2,0,0,0,1,X,False,0
+Nau,7,0,1,1,2,2,2,True,1
+Nau,19,1,0,1,3,1,2,False,0
+Nau,31,2,0,2,3,1,2,False,0
+Nau,8,0,4,0,1,2,2,True,2
+Nau,20,1,3,0,0,2,X,False,0
+Nau,32,3,0,1,1,1,X,False,0
+Nau,9,0,0,3,0,X,1,False,0
+Nau,21,1,2,1,2,2,2,True,3
+Nau,33,0,2,0,0,2,X,False,0
+Nau,10,2,0,0,1,1,2,False,0
+Nau,22,2,0,2,0,1,1,True,3
+Nau,34,2,1,1,1,1,X,False,0
+Nau,11,1,0,3,1,1,1,True,1
+Nau,23,0,0,1,1,X,X,True,1
+Nau,35,1,2,2,0,2,1,False,0
+Nau,12,2,0,2,1,1,1,True,2
+Nau,24,1,3,0,3,2,2,True,2
+Nau,36,0,3,1,2,2,2,True,1
+Pablo Almeida,1,3,1,5,1,1,1,True,2
+Pablo Almeida,13,3,1,2,0,1,1,True,1
+Pablo Almeida,25,2,0,0,1,1,2,False,0
+Pablo Almeida,2,1,1,1,3,X,2,False,0
+Pablo Almeida,14,1,2,1,1,2,X,False,0
+Pablo Almeida,26,1,4,1,1,2,X,False,0
+Pablo Almeida,3,2,2,3,0,X,1,False,0
+Pablo Almeida,15,2,0,2,2,1,X,False,0
+Pablo Almeida,27,3,2,1,1,1,X,False,0
+Pablo Almeida,4,3,0,2,1,1,1,True,1
+Pablo Almeida,16,3,2,1,0,1,1,True,1
+Pablo Almeida,28,0,5,0,1,2,2,True,2
+Pablo Almeida,5,1,2,1,1,2,X,False,0
+Pablo Almeida,17,1,1,1,1,X,X,True,3
+Pablo Almeida,29,3,0,0,0,1,X,False,0
+Pablo Almeida,6,1,4,0,1,2,2,True,1
+Pablo Almeida,18,1,3,1,1,2,X,False,0
+Pablo Almeida,30,2,0,0,0,1,X,False,0
+Pablo Almeida,7,2,1,1,2,1,2,False,0
+Pablo Almeida,19,2,0,1,3,1,2,False,0
+Pablo Almeida,31,3,1,2,3,1,2,False,0
+Pablo Almeida,8,1,4,0,1,2,2,True,1
+Pablo Almeida,20,2,4,0,0,2,X,False,0
+Pablo Almeida,32,3,2,1,1,1,X,False,0
+Pablo Almeida,9,1,1,3,0,X,1,False,0
+Pablo Almeida,21,2,0,1,2,1,2,False,0
+Pablo Almeida,33,1,5,0,0,2,X,False,0
+Pablo Almeida,10,4,1,0,1,1,2,False,0
+Pablo Almeida,22,4,1,2,0,1,1,True,1
+Pablo Almeida,34,2,2,1,1,X,X,True,1
+Pablo Almeida,11,2,0,3,1,1,1,True,1
+Pablo Almeida,23,2,3,1,1,2,X,False,0
+Pablo Almeida,35,1,4,2,0,2,1,False,0
+Pablo Almeida,12,3,1,2,1,1,1,True,2
+Pablo Almeida,24,0,3,0,3,2,2,True,3
+Pablo Almeida,36,3,2,1,2,1,2,False,0
+Pablo Imprenta,1,3,0,5,1,1,1,True,1
+Pablo Imprenta,13,3,0,2,0,1,1,True,2
+Pablo Imprenta,25,2,1,0,1,1,2,False,0
+Pablo Imprenta,2,0,2,1,3,2,2,True,1
+Pablo Imprenta,14,1,1,1,1,X,X,True,3
+Pablo Imprenta,26,0,1,1,1,2,X,False,0
+Pablo Imprenta,3,1,0,3,0,1,1,True,2
+Pablo Imprenta,15,2,0,2,2,1,X,False,0
+Pablo Imprenta,27,1,1,1,1,X,X,True,3
+Pablo Imprenta,4,2,1,2,1,1,1,True,3
+Pablo Imprenta,16,1,1,1,0,X,1,False,0
+Pablo Imprenta,28,0,3,0,1,2,2,True,2
+Pablo Imprenta,5,0,1,1,1,2,X,False,0
+Pablo Imprenta,17,2,3,1,1,2,X,False,0
+Pablo Imprenta,29,2,0,0,0,1,X,False,0
+Pablo Imprenta,6,0,3,0,1,2,2,True,2
+Pablo Imprenta,18,1,3,1,1,2,X,False,0
+Pablo Imprenta,30,1,1,0,0,X,X,True,1
+Pablo Imprenta,7,0,3,1,2,2,2,True,1
+Pablo Imprenta,19,2,2,1,3,X,2,False,0
+Pablo Imprenta,31,2,1,2,3,1,2,False,0
+Pablo Imprenta,8,1,3,0,1,2,2,True,1
+Pablo Imprenta,20,2,1,0,0,1,X,False,0
+Pablo Imprenta,32,2,0,1,1,1,X,False,0
+Pablo Imprenta,9,0,2,3,0,2,1,False,0
+Pablo Imprenta,21,0,1,1,2,2,2,True,1
+Pablo Imprenta,33,1,1,0,0,X,X,True,1
+Pablo Imprenta,10,2,0,0,1,1,2,False,0
+Pablo Imprenta,22,4,0,2,0,1,1,True,2
+Pablo Imprenta,34,0,0,1,1,X,X,True,1
+Pablo Imprenta,11,2,1,3,1,1,1,True,2
+Pablo Imprenta,23,2,1,1,1,1,X,False,0
+Pablo Imprenta,35,1,3,2,0,2,1,False,0
+Pablo Imprenta,12,3,0,2,1,1,1,True,1
+Pablo Imprenta,24,0,3,0,3,2,2,True,3
+Pablo Imprenta,36,0,2,1,2,2,2,True,2
+Pablo Lobo,1,3,0,5,1,1,1,True,1
+Pablo Lobo,13,3,0,2,0,1,1,True,2
+Pablo Lobo,25,1,2,0,1,2,2,True,1
+Pablo Lobo,2,0,1,1,3,2,2,True,1
+Pablo Lobo,14,1,2,1,1,2,X,False,0
+Pablo Lobo,26,1,2,1,1,2,X,False,0
+Pablo Lobo,3,1,1,3,0,X,1,False,0
+Pablo Lobo,15,2,0,2,2,1,X,False,0
+Pablo Lobo,27,2,1,1,1,1,X,False,0
+Pablo Lobo,4,3,0,2,1,1,1,True,1
+Pablo Lobo,16,2,1,1,0,1,1,True,1
+Pablo Lobo,28,0,6,0,1,2,2,True,2
+Pablo Lobo,5,0,2,1,1,2,X,False,0
+Pablo Lobo,17,0,1,1,1,2,X,False,0
+Pablo Lobo,29,2,0,0,0,1,X,False,0
+Pablo Lobo,6,0,2,0,1,2,2,True,2
+Pablo Lobo,18,1,2,1,1,2,X,False,0
+Pablo Lobo,30,2,2,0,0,X,X,True,1
+Pablo Lobo,7,1,2,1,2,2,2,True,3
+Pablo Lobo,19,1,1,1,3,X,2,False,0
+Pablo Lobo,31,3,1,2,3,1,2,False,0
+Pablo Lobo,8,0,4,0,1,2,2,True,2
+Pablo Lobo,20,1,3,0,0,2,X,False,0
+Pablo Lobo,32,2,1,1,1,1,X,False,0
+Pablo Lobo,9,0,1,3,0,2,1,False,0
+Pablo Lobo,21,1,1,1,2,X,2,False,0
+Pablo Lobo,33,0,2,0,0,2,X,False,0
+Pablo Lobo,10,3,0,0,1,1,2,False,0
+Pablo Lobo,22,3,0,2,0,1,1,True,2
+Pablo Lobo,34,2,1,1,1,1,X,False,0
+Pablo Lobo,11,2,0,3,1,1,1,True,1
+Pablo Lobo,23,1,2,1,1,2,X,False,0
+Pablo Lobo,35,0,4,2,0,2,1,False,0
+Pablo Lobo,12,3,0,2,1,1,1,True,1
+Pablo Lobo,24,0,2,0,3,2,2,True,2
+Pablo Lobo,36,1,1,1,2,X,2,False,0
+Paco,1,2,0,5,1,1,1,True,1
+Paco,13,3,0,2,0,1,1,True,2
+Paco,25,1,0,0,1,1,2,False,0
+Paco,2,1,1,1,3,X,2,False,0
+Paco,14,1,1,1,1,X,X,True,3
+Paco,26,1,3,1,1,2,X,False,0
+Paco,3,1,1,3,0,X,1,False,0
+Paco,15,2,0,2,2,1,X,False,0
+Paco,27,2,2,1,1,X,X,True,1
+Paco,4,2,0,2,1,1,1,True,2
+Paco,16,1,1,1,0,X,1,False,0
+Paco,28,0,3,0,1,2,2,True,2
+Paco,5,1,2,1,1,2,X,False,0
+Paco,17,0,1,1,1,2,X,False,0
+Paco,29,3,0,0,0,1,X,False,0
+Paco,6,1,3,0,1,2,2,True,1
+Paco,18,0,2,1,1,2,X,False,0
+Paco,30,2,1,0,0,1,X,False,0
+Paco,7,0,2,1,2,2,2,True,2
+Paco,19,1,1,1,3,X,2,False,0
+Paco,31,3,0,2,3,1,2,False,0
+Paco,8,0,3,0,1,2,2,True,2
+Paco,20,1,2,0,0,2,X,False,0
+Paco,32,3,1,1,1,1,X,False,0
+Paco,9,1,2,3,0,2,1,False,0
+Paco,21,0,2,1,2,2,2,True,2
+Paco,33,1,1,0,0,X,X,True,1
+Paco,10,2,1,0,1,1,2,False,0
+Paco,22,2,1,2,0,1,1,True,2
+Paco,34,1,1,1,1,X,X,True,3
+Paco,11,1,1,3,1,X,1,False,0
+Paco,23,0,0,1,1,X,X,True,1
+Paco,35,0,2,2,0,2,1,False,0
+Paco,12,3,1,2,1,1,1,True,2
+Paco,24,0,2,0,3,2,2,True,2
+Paco,36,1,0,1,2,1,2,False,0
+Pelayo,1,3,0,5,1,1,1,True,1
+Pelayo,13,2,1,2,0,1,1,True,2
+Pelayo,25,2,2,0,1,X,2,False,0
+Pelayo,2,0,2,1,3,2,2,True,1
+Pelayo,14,1,3,1,1,2,X,False,0
+Pelayo,26,1,1,1,1,X,X,True,3
+Pelayo,3,2,0,3,0,1,1,True,2
+Pelayo,15,3,0,2,2,1,X,False,0
+Pelayo,27,1,1,1,1,X,X,True,3
+Pelayo,4,3,1,2,1,1,1,True,2
+Pelayo,16,2,1,1,0,1,1,True,1
+Pelayo,28,0,4,0,1,2,2,True,2
+Pelayo,5,1,2,1,1,2,X,False,0
+Pelayo,17,2,3,1,1,2,X,False,0
+Pelayo,29,3,1,0,0,1,X,False,0
+Pelayo,6,1,1,0,1,X,2,False,0
+Pelayo,18,2,1,1,1,1,X,False,0
+Pelayo,30,1,1,0,0,X,X,True,1
+Pelayo,7,0,1,1,2,2,2,True,1
+Pelayo,19,2,0,1,3,1,2,False,0
+Pelayo,31,1,0,2,3,1,2,False,0
+Pelayo,8,0,4,0,1,2,2,True,2
+Pelayo,20,2,2,0,0,X,X,True,1
+Pelayo,32,2,0,1,1,1,X,False,0
+Pelayo,9,1,0,3,0,1,1,True,2
+Pelayo,21,0,1,1,2,2,2,True,1
+Pelayo,33,0,3,0,0,2,X,False,0
+Pelayo,10,2,0,0,1,1,2,False,0
+Pelayo,22,1,0,2,0,1,1,True,2
+Pelayo,34,1,1,1,1,X,X,True,3
+Pelayo,11,2,1,3,1,1,1,True,2
+Pelayo,23,2,1,1,1,1,X,False,0
+Pelayo,35,0,3,2,0,2,1,False,0
+Pelayo,12,1,1,2,1,X,1,False,0
+Pelayo,24,0,2,0,3,2,2,True,2
+Pelayo,36,2,0,1,2,1,2,False,0
+Pepa Cañuelo,1,2,1,5,1,1,1,True,2
+Pepa Cañuelo,13,2,1,2,0,1,1,True,2
+Pepa Cañuelo,25,1,2,0,1,2,2,True,1
+Pepa Cañuelo,2,2,3,1,3,2,2,True,2
+Pepa Cañuelo,14,1,2,1,1,2,X,False,0
+Pepa Cañuelo,26,1,2,1,1,2,X,False,0
+Pepa Cañuelo,3,3,2,3,0,1,1,True,2
+Pepa Cañuelo,15,3,0,2,2,1,X,False,0
+Pepa Cañuelo,27,2,1,1,1,1,X,False,0
+Pepa Cañuelo,4,2,0,2,1,1,1,True,2
+Pepa Cañuelo,16,3,2,1,0,1,1,True,1
+Pepa Cañuelo,28,1,3,0,1,2,2,True,1
+Pepa Cañuelo,5,1,2,1,1,2,X,False,0
+Pepa Cañuelo,17,0,1,1,1,2,X,False,0
+Pepa Cañuelo,29,3,0,0,0,1,X,False,0
+Pepa Cañuelo,6,0,3,0,1,2,2,True,2
+Pepa Cañuelo,18,0,2,1,1,2,X,False,0
+Pepa Cañuelo,30,2,0,0,0,1,X,False,0
+Pepa Cañuelo,7,1,2,1,2,2,2,True,3
+Pepa Cañuelo,19,2,1,1,3,1,2,False,0
+Pepa Cañuelo,31,2,1,2,3,1,2,False,0
+Pepa Cañuelo,8,0,2,0,1,2,2,True,2
+Pepa Cañuelo,20,1,2,0,0,2,X,False,0
+Pepa Cañuelo,32,2,0,1,1,1,X,False,0
+Pepa Cañuelo,9,1,2,3,0,2,1,False,0
+Pepa Cañuelo,21,1,2,1,2,2,2,True,3
+Pepa Cañuelo,33,0,2,0,0,2,X,False,0
+Pepa Cañuelo,10,2,1,0,1,1,2,False,0
+Pepa Cañuelo,22,2,0,2,0,1,1,True,3
+Pepa Cañuelo,34,2,1,1,1,1,X,False,0
+Pepa Cañuelo,11,1,1,3,1,X,1,False,0
+Pepa Cañuelo,23,2,1,1,1,1,X,False,0
+Pepa Cañuelo,35,1,3,2,0,2,1,False,0
+Pepa Cañuelo,12,4,1,2,1,1,1,True,2
+Pepa Cañuelo,24,0,3,0,3,2,2,True,3
+Pepa Cañuelo,36,1,2,1,2,2,2,True,3
+Quique Pérez,1,5,2,5,1,1,1,True,2
+Quique Pérez,13,4,1,2,0,1,1,True,1
+Quique Pérez,25,1,3,0,1,2,2,True,1
+Quique Pérez,2,2,2,1,3,X,2,False,0
+Quique Pérez,14,2,3,1,1,2,X,False,0
+Quique Pérez,26,2,2,1,1,X,X,True,1
+Quique Pérez,3,2,2,3,0,X,1,False,0
+Quique Pérez,15,3,2,2,2,1,X,False,0
+Quique Pérez,27,1,3,1,1,2,X,False,0
+Quique Pérez,4,5,2,2,1,1,1,True,1
+Quique Pérez,16,2,1,1,0,1,1,True,1
+Quique Pérez,28,2,5,0,1,2,2,True,1
+Quique Pérez,5,2,4,1,1,2,X,False,0
+Quique Pérez,17,2,3,1,1,2,X,False,0
+Quique Pérez,29,4,1,0,0,1,X,False,0
+Quique Pérez,6,2,4,0,1,2,2,True,1
+Quique Pérez,18,2,2,1,1,X,X,True,1
+Quique Pérez,30,2,1,0,0,1,X,False,0
+Quique Pérez,7,2,3,1,2,2,2,True,1
+Quique Pérez,19,1,1,1,3,X,2,False,0
+Quique Pérez,31,3,1,2,3,1,2,False,0
+Quique Pérez,8,2,3,0,1,2,2,True,1
+Quique Pérez,20,1,1,0,0,X,X,True,1
+Quique Pérez,32,4,1,1,1,1,X,False,0
+Quique Pérez,9,2,3,3,0,2,1,False,0
+Quique Pérez,21,1,1,1,2,X,2,False,0
+Quique Pérez,33,1,3,0,0,2,X,False,0
+Quique Pérez,10,3,2,0,1,1,2,False,0
+Quique Pérez,22,4,1,2,0,1,1,True,1
+Quique Pérez,34,3,1,1,1,1,X,False,0
+Quique Pérez,11,2,2,3,1,X,1,False,0
+Quique Pérez,23,2,2,1,1,X,X,True,1
+Quique Pérez,35,1,5,2,0,2,1,False,0
+Quique Pérez,12,4,1,2,1,1,1,True,2
+Quique Pérez,24,2,4,0,3,2,2,True,1
+Quique Pérez,36,1,1,1,2,X,2,False,0
+Rafa Santana,1,3,0,5,1,1,1,True,1
+Rafa Santana,13,3,0,2,0,1,1,True,2
+Rafa Santana,25,1,0,0,1,1,2,False,0
+Rafa Santana,2,0,1,1,3,2,2,True,1
+Rafa Santana,14,0,2,1,1,2,X,False,0
+Rafa Santana,26,0,2,1,1,2,X,False,0
+Rafa Santana,3,2,2,3,0,X,1,False,0
+Rafa Santana,15,3,0,2,2,1,X,False,0
+Rafa Santana,27,2,1,1,1,1,X,False,0
+Rafa Santana,4,3,1,2,1,1,1,True,2
+Rafa Santana,16,2,0,1,0,1,1,True,2
+Rafa Santana,28,0,4,0,1,2,2,True,2
+Rafa Santana,5,0,0,1,1,X,X,True,1
+Rafa Santana,17,1,1,1,1,X,X,True,3
+Rafa Santana,29,3,0,0,0,1,X,False,0
+Rafa Santana,6,1,3,0,1,2,2,True,1
+Rafa Santana,18,2,3,1,1,2,X,False,0
+Rafa Santana,30,2,2,0,0,X,X,True,1
+Rafa Santana,7,2,1,1,2,1,2,False,0
+Rafa Santana,19,2,0,1,3,1,2,False,0
+Rafa Santana,31,2,0,2,3,1,2,False,0
+Rafa Santana,8,0,4,0,1,2,2,True,2
+Rafa Santana,20,2,3,0,0,2,X,False,0
+Rafa Santana,32,3,1,1,1,1,X,False,0
+Rafa Santana,9,0,2,3,0,2,1,False,0
+Rafa Santana,21,1,2,1,2,2,2,True,3
+Rafa Santana,33,1,2,0,0,2,X,False,0
+Rafa Santana,10,3,1,0,1,1,2,False,0
+Rafa Santana,22,3,1,2,0,1,1,True,1
+Rafa Santana,34,0,0,1,1,X,X,True,1
+Rafa Santana,11,2,2,3,1,X,1,False,0
+Rafa Santana,23,0,1,1,1,2,X,False,0
+Rafa Santana,35,0,4,2,0,2,1,False,0
+Rafa Santana,12,3,2,2,1,1,1,True,1
+Rafa Santana,24,0,3,0,3,2,2,True,3
+Rafa Santana,36,3,0,1,2,1,2,False,0
+Richard Melián,1,4,1,5,1,1,1,True,2
+Richard Melián,13,3,0,2,0,1,1,True,2
+Richard Melián,25,2,0,0,1,1,2,False,0
+Richard Melián,2,1,2,1,3,2,2,True,2
+Richard Melián,14,1,1,1,1,X,X,True,3
+Richard Melián,26,1,2,1,1,2,X,False,0
+Richard Melián,3,1,1,3,0,X,1,False,0
+Richard Melián,15,2,1,2,2,1,X,False,0
+Richard Melián,27,2,2,1,1,X,X,True,1
+Richard Melián,4,2,0,2,1,1,1,True,2
+Richard Melián,16,2,1,1,0,1,1,True,1
+Richard Melián,28,0,3,0,1,2,2,True,2
+Richard Melián,5,1,2,1,1,2,X,False,0
+Richard Melián,17,1,1,1,1,X,X,True,3
+Richard Melián,29,3,0,0,0,1,X,False,0
+Richard Melián,6,0,4,0,1,2,2,True,2
+Richard Melián,18,1,2,1,1,2,X,False,0
+Richard Melián,30,2,0,0,0,1,X,False,0
+Richard Melián,7,1,3,1,2,2,2,True,2
+Richard Melián,19,1,1,1,3,X,2,False,0
+Richard Melián,31,2,1,2,3,1,2,False,0
+Richard Melián,8,0,4,0,1,2,2,True,2
+Richard Melián,20,2,2,0,0,X,X,True,1
+Richard Melián,32,2,1,1,1,1,X,False,0
+Richard Melián,9,1,1,3,0,X,1,False,0
+Richard Melián,21,2,2,1,2,X,2,False,0
+Richard Melián,33,1,3,0,0,2,X,False,0
+Richard Melián,10,3,1,0,1,1,2,False,0
+Richard Melián,22,1,0,2,0,1,1,True,2
+Richard Melián,34,1,1,1,1,X,X,True,3
+Richard Melián,11,3,0,3,1,1,1,True,2
+Richard Melián,23,1,2,1,1,2,X,False,0
+Richard Melián,35,0,5,2,0,2,1,False,0
+Richard Melián,12,3,2,2,1,1,1,True,1
+Richard Melián,24,1,3,0,3,2,2,True,2
+Richard Melián,36,2,2,1,2,X,2,False,0
+Rosi Santana,1,0,1,5,1,2,1,False,0
+Rosi Santana,13,1,0,2,0,1,1,True,2
+Rosi Santana,25,2,2,0,1,X,2,False,0
+Rosi Santana,2,1,0,1,3,1,2,False,0
+Rosi Santana,14,0,1,1,1,2,X,False,0
+Rosi Santana,26,1,2,1,1,2,X,False,0
+Rosi Santana,3,2,2,3,0,X,1,False,0
+Rosi Santana,15,2,2,2,2,X,X,True,3
+Rosi Santana,27,0,0,1,1,X,X,True,1
+Rosi Santana,4,0,2,2,1,2,1,False,0
+Rosi Santana,16,2,0,1,0,1,1,True,2
+Rosi Santana,28,2,1,0,1,1,2,False,0
+Rosi Santana,5,1,1,1,1,X,X,True,3
+Rosi Santana,17,1,1,1,1,X,X,True,3
+Rosi Santana,29,1,2,0,0,2,X,False,0
+Rosi Santana,6,2,0,0,1,1,2,False,0
+Rosi Santana,18,0,2,1,1,2,X,False,0
+Rosi Santana,30,0,2,0,0,2,X,False,0
+Rosi Santana,7,0,2,1,2,2,2,True,2
+Rosi Santana,19,2,0,1,3,1,2,False,0
+Rosi Santana,31,2,0,2,3,1,2,False,0
+Rosi Santana,8,1,2,0,1,2,2,True,1
+Rosi Santana,20,2,1,0,0,1,X,False,0
+Rosi Santana,32,1,1,1,1,X,X,True,3
+Rosi Santana,9,2,1,3,0,1,1,True,1
+Rosi Santana,21,1,2,1,2,2,2,True,3
+Rosi Santana,33,0,2,0,0,2,X,False,0
+Rosi Santana,10,0,0,0,1,X,2,False,0
+Rosi Santana,22,0,0,2,0,X,1,False,0
+Rosi Santana,34,2,2,1,1,X,X,True,1
+Rosi Santana,11,1,2,3,1,2,1,False,0
+Rosi Santana,23,2,1,1,1,1,X,False,0
+Rosi Santana,35,1,0,2,0,1,1,True,2
+Rosi Santana,12,2,2,2,1,X,1,False,0
+Rosi Santana,24,2,2,0,3,X,2,False,0
+Rosi Santana,36,0,1,1,2,2,2,True,1
+Sergio Hdez.,1,3,1,5,1,1,1,True,2
+Sergio Hdez.,13,1,2,2,0,2,1,False,0
+Sergio Hdez.,25,0,0,0,1,X,2,False,0
+Sergio Hdez.,2,2,2,1,3,X,2,False,0
+Sergio Hdez.,14,1,2,1,1,2,X,False,0
+Sergio Hdez.,26,1,3,1,1,2,X,False,0
+Sergio Hdez.,3,3,2,3,0,1,1,True,2
+Sergio Hdez.,15,3,0,2,2,1,X,False,0
+Sergio Hdez.,27,2,2,1,1,X,X,True,1
+Sergio Hdez.,4,1,0,2,1,1,1,True,1
+Sergio Hdez.,16,3,2,1,0,1,1,True,1
+Sergio Hdez.,28,1,5,0,1,2,2,True,1
+Sergio Hdez.,5,2,3,1,1,2,X,False,0
+Sergio Hdez.,17,1,3,1,1,2,X,False,0
+Sergio Hdez.,29,1,0,0,0,1,X,False,0
+Sergio Hdez.,6,2,1,0,1,1,2,False,0
+Sergio Hdez.,18,2,1,1,1,1,X,False,0
+Sergio Hdez.,30,2,3,0,0,2,X,False,0
+Sergio Hdez.,7,0,2,1,2,2,2,True,2
+Sergio Hdez.,19,2,2,1,3,X,2,False,0
+Sergio Hdez.,31,1,2,2,3,2,2,True,1
+Sergio Hdez.,8,1,3,0,1,2,2,True,1
+Sergio Hdez.,20,2,2,0,0,X,X,True,1
+Sergio Hdez.,32,3,1,1,1,1,X,False,0
+Sergio Hdez.,9,2,1,3,0,1,1,True,1
+Sergio Hdez.,21,1,2,1,2,2,2,True,3
+Sergio Hdez.,33,0,2,0,0,2,X,False,0
+Sergio Hdez.,10,1,0,0,1,1,2,False,0
+Sergio Hdez.,22,2,2,2,0,X,1,False,0
+Sergio Hdez.,34,1,3,1,1,2,X,False,0
+Sergio Hdez.,11,2,2,3,1,X,1,False,0
+Sergio Hdez.,23,1,3,1,1,2,X,False,0
+Sergio Hdez.,35,0,3,2,0,2,1,False,0
+Sergio Hdez.,12,1,2,2,1,2,1,False,0
+Sergio Hdez.,24,1,2,0,3,2,2,True,1
+Sergio Hdez.,36,4,2,1,2,1,2,False,0
+Sofía,1,2,1,5,1,1,1,True,2
+Sofía,13,2,0,2,0,1,1,True,3
+Sofía,25,0,1,0,1,2,2,True,3
+Sofía,2,3,1,1,3,1,2,False,0
+Sofía,14,1,1,1,1,X,X,True,3
+Sofía,26,1,2,1,1,2,X,False,0
+Sofía,3,4,2,3,0,1,1,True,1
+Sofía,15,2,0,2,2,1,X,False,0
+Sofía,27,2,2,1,1,X,X,True,1
+Sofía,4,2,2,2,1,X,1,False,0
+Sofía,16,2,2,1,0,X,1,False,0
+Sofía,28,0,4,0,1,2,2,True,2
+Sofía,5,0,1,1,1,2,X,False,0
+Sofía,17,1,1,1,1,X,X,True,3
+Sofía,29,2,1,0,0,1,X,False,0
+Sofía,6,0,2,0,1,2,2,True,2
+Sofía,18,1,3,1,1,2,X,False,0
+Sofía,30,1,1,0,0,X,X,True,1
+Sofía,7,2,2,1,2,X,2,False,0
+Sofía,19,1,1,1,3,X,2,False,0
+Sofía,31,3,0,2,3,1,2,False,0
+Sofía,8,0,2,0,1,2,2,True,2
+Sofía,20,1,2,0,0,2,X,False,0
+Sofía,32,2,2,1,1,X,X,True,1
+Sofía,9,2,1,3,0,1,1,True,1
+Sofía,21,1,1,1,2,X,2,False,0
+Sofía,33,1,2,0,0,2,X,False,0
+Sofía,10,0,0,0,1,X,2,False,0
+Sofía,22,2,0,2,0,1,1,True,3
+Sofía,34,1,1,1,1,X,X,True,3
+Sofía,11,2,1,3,1,1,1,True,2
+Sofía,23,0,1,1,1,2,X,False,0
+Sofía,35,0,2,2,0,2,1,False,0
+Sofía,12,3,1,2,1,1,1,True,2
+Sofía,24,1,3,0,3,2,2,True,2
+Sofía,36,1,2,1,2,2,2,True,3
+Talal,1,1,0,5,1,1,1,True,1
+Talal,13,2,0,2,0,1,1,True,3
+Talal,25,2,1,0,1,1,2,False,0
+Talal,2,1,1,1,3,X,2,False,0
+Talal,14,1,1,1,1,X,X,True,3
+Talal,26,1,3,1,1,2,X,False,0
+Talal,3,2,0,3,0,1,1,True,2
+Talal,15,2,1,2,2,1,X,False,0
+Talal,27,2,3,1,1,2,X,False,0
+Talal,4,2,1,2,1,1,1,True,3
+Talal,16,2,1,1,0,1,1,True,1
+Talal,28,1,3,0,1,2,2,True,1
+Talal,5,0,0,1,1,X,X,True,1
+Talal,17,1,2,1,1,2,X,False,0
+Talal,29,3,1,0,0,1,X,False,0
+Talal,6,1,2,0,1,2,2,True,1
+Talal,18,1,3,1,1,2,X,False,0
+Talal,30,2,2,0,0,X,X,True,1
+Talal,7,1,1,1,2,X,2,False,0
+Talal,19,2,2,1,3,X,2,False,0
+Talal,31,1,2,2,3,2,2,True,1
+Talal,8,1,2,0,1,2,2,True,1
+Talal,20,1,3,0,0,2,X,False,0
+Talal,32,3,1,1,1,1,X,False,0
+Talal,9,1,1,3,0,X,1,False,0
+Talal,21,2,2,1,2,X,2,False,0
+Talal,33,2,2,0,0,X,X,True,1
+Talal,10,1,1,0,1,X,2,False,0
+Talal,22,2,1,2,0,1,1,True,2
+Talal,34,1,1,1,1,X,X,True,3
+Talal,11,2,0,3,1,1,1,True,1
+Talal,23,2,2,1,1,X,X,True,1
+Talal,35,1,3,2,0,2,1,False,0
+Talal,12,2,0,2,1,1,1,True,2
+Talal,24,2,2,0,3,X,2,False,0
+Talal,36,1,3,1,2,2,2,True,2
+Tina,1,2,2,5,1,X,1,False,0
+Tina,13,2,0,2,0,1,1,True,3
+Tina,25,3,0,0,1,1,2,False,0
+Tina,2,0,1,1,3,2,2,True,1
+Tina,14,1,1,1,1,X,X,True,3
+Tina,26,2,2,1,1,X,X,True,1
+Tina,3,2,1,3,0,1,1,True,1
+Tina,15,3,2,2,2,1,X,False,0
+Tina,27,2,2,1,1,X,X,True,1
+Tina,4,5,0,2,1,1,1,True,1
+Tina,16,1,0,1,0,1,1,True,3
+Tina,28,1,5,0,1,2,2,True,1
+Tina,5,0,0,1,1,X,X,True,1
+Tina,17,0,0,1,1,X,X,True,1
+Tina,29,2,0,0,0,1,X,False,0
+Tina,6,0,1,0,1,2,2,True,3
+Tina,18,2,2,1,1,X,X,True,1
+Tina,30,1,1,0,0,X,X,True,1
+Tina,7,0,3,1,2,2,2,True,1
+Tina,19,1,1,1,3,X,2,False,0
+Tina,31,0,0,2,3,X,2,False,0
+Tina,8,0,6,0,1,2,2,True,2
+Tina,20,2,3,0,0,2,X,False,0
+Tina,32,3,1,1,1,1,X,False,0
+Tina,9,0,1,3,0,2,1,False,0
+Tina,21,1,2,1,2,2,2,True,3
+Tina,33,1,1,0,0,X,X,True,1
+Tina,10,0,0,0,1,X,2,False,0
+Tina,22,2,0,2,0,1,1,True,3
+Tina,34,0,0,1,1,X,X,True,1
+Tina,11,0,0,3,1,X,1,False,0
+Tina,23,0,0,1,1,X,X,True,1
+Tina,35,0,2,2,0,2,1,False,0
+Tina,12,2,1,2,1,1,1,True,3
+Tina,24,1,2,0,3,2,2,True,1
+Tina,36,0,1,1,2,2,2,True,1
+Tino,1,0,0,5,1,X,1,False,0
+Tino,13,2,0,2,0,1,1,True,3
+Tino,25,0,0,0,1,X,2,False,0
+Tino,2,0,1,1,3,2,2,True,1
+Tino,14,1,1,1,1,X,X,True,3
+Tino,26,1,2,1,1,2,X,False,0
+Tino,3,2,0,3,0,1,1,True,2
+Tino,15,1,0,2,2,1,X,False,0
+Tino,27,1,2,1,1,2,X,False,0
+Tino,4,2,0,2,1,1,1,True,2
+Tino,16,1,0,1,0,1,1,True,3
+Tino,28,0,2,0,1,2,2,True,2
+Tino,5,2,2,1,1,X,X,True,1
+Tino,17,2,2,1,1,X,X,True,1
+Tino,29,1,0,0,0,1,X,False,0
+Tino,6,1,0,0,1,1,2,False,0
+Tino,18,0,2,1,1,2,X,False,0
+Tino,30,1,0,0,0,1,X,False,0
+Tino,7,0,1,1,2,2,2,True,1
+Tino,19,2,2,1,3,X,2,False,0
+Tino,31,2,0,2,3,1,2,False,0
+Tino,8,0,1,0,1,2,2,True,3
+Tino,20,1,2,0,0,2,X,False,0
+Tino,32,2,0,1,1,1,X,False,0
+Tino,9,1,1,3,0,X,1,False,0
+Tino,21,1,1,1,2,X,2,False,0
+Tino,33,1,2,0,0,2,X,False,0
+Tino,10,1,0,0,1,1,2,False,0
+Tino,22,2,0,2,0,1,1,True,3
+Tino,34,1,1,1,1,X,X,True,3
+Tino,11,0,0,3,1,X,1,False,0
+Tino,23,1,1,1,1,X,X,True,3
+Tino,35,1,2,2,0,2,1,False,0
+Tino,12,1,1,2,1,X,1,False,0
+Tino,24,1,1,0,3,X,2,False,0
+Tino,36,2,2,1,2,X,2,False,0
+Tomás Olivares,1,2,0,5,1,1,1,True,1
+Tomás Olivares,13,1,0,2,0,1,1,True,2
+Tomás Olivares,25,1,1,0,1,X,2,False,0
+Tomás Olivares,2,1,1,1,3,X,2,False,0
+Tomás Olivares,14,0,4,1,1,2,X,False,0
+Tomás Olivares,26,1,1,1,1,X,X,True,3
+Tomás Olivares,3,0,0,3,0,X,1,False,0
+Tomás Olivares,15,2,0,2,2,1,X,False,0
+Tomás Olivares,27,2,1,1,1,1,X,False,0
+Tomás Olivares,4,2,0,2,1,1,1,True,2
+Tomás Olivares,16,1,1,1,0,X,1,False,0
+Tomás Olivares,28,0,5,0,1,2,2,True,2
+Tomás Olivares,5,2,1,1,1,1,X,False,0
+Tomás Olivares,17,1,2,1,1,2,X,False,0
+Tomás Olivares,29,1,0,0,0,1,X,False,0
+Tomás Olivares,6,0,1,0,1,2,2,True,3
+Tomás Olivares,18,1,1,1,1,X,X,True,3
+Tomás Olivares,30,0,1,0,0,2,X,False,0
+Tomás Olivares,7,1,1,1,2,X,2,False,0
+Tomás Olivares,19,3,3,1,3,X,2,False,0
+Tomás Olivares,31,1,2,2,3,2,2,True,1
+Tomás Olivares,8,0,2,0,1,2,2,True,2
+Tomás Olivares,20,0,2,0,0,2,X,False,0
+Tomás Olivares,32,4,1,1,1,1,X,False,0
+Tomás Olivares,9,1,1,3,0,X,1,False,0
+Tomás Olivares,21,1,1,1,2,X,2,False,0
+Tomás Olivares,33,1,1,0,0,X,X,True,1
+Tomás Olivares,10,3,1,0,1,1,2,False,0
+Tomás Olivares,22,2,0,2,0,1,1,True,3
+Tomás Olivares,34,0,2,1,1,2,X,False,0
+Tomás Olivares,11,4,0,3,1,1,1,True,1
+Tomás Olivares,23,0,2,1,1,2,X,False,0
+Tomás Olivares,35,1,3,2,0,2,1,False,0
+Tomás Olivares,12,1,0,2,1,1,1,True,1
+Tomás Olivares,24,0,0,0,3,X,2,False,0
+Tomás Olivares,36,0,0,1,2,X,2,False,0
+Toño,1,2,0,5,1,1,1,True,1
+Toño,13,2,1,2,0,1,1,True,2
+Toño,25,0,0,0,1,X,2,False,0
+Toño,2,0,1,1,3,2,2,True,1
+Toño,14,1,1,1,1,X,X,True,3
+Toño,26,1,2,1,1,2,X,False,0
+Toño,3,2,1,3,0,1,1,True,1
+Toño,15,3,0,2,2,1,X,False,0
+Toño,27,1,1,1,1,X,X,True,3
+Toño,4,3,0,2,1,1,1,True,1
+Toño,16,1,1,1,0,X,1,False,0
+Toño,28,1,4,0,1,2,2,True,1
+Toño,5,1,1,1,1,X,X,True,3
+Toño,17,0,1,1,1,2,X,False,0
+Toño,29,3,0,0,0,1,X,False,0
+Toño,6,1,2,0,1,2,2,True,1
+Toño,18,1,2,1,1,2,X,False,0
+Toño,30,2,1,0,0,1,X,False,0
+Toño,7,0,0,1,2,X,2,False,0
+Toño,19,1,1,1,3,X,2,False,0
+Toño,31,2,1,2,3,1,2,False,0
+Toño,8,0,3,0,1,2,2,True,2
+Toño,20,1,1,0,0,X,X,True,1
+Toño,32,3,1,1,1,1,X,False,0
+Toño,9,1,0,3,0,1,1,True,2
+Toño,21,2,1,1,2,1,2,False,0
+Toño,33,1,2,0,0,2,X,False,0
+Toño,10,2,0,0,1,1,2,False,0
+Toño,22,2,0,2,0,1,1,True,3
+Toño,34,0,0,1,1,X,X,True,1
+Toño,11,1,0,3,1,1,1,True,1
+Toño,23,1,2,1,1,2,X,False,0
+Toño,35,1,2,2,0,2,1,False,0
+Toño,12,2,1,2,1,1,1,True,3
+Toño,24,1,1,0,3,X,2,False,0
+Toño,36,2,1,1,2,1,2,False,0
+Winning Eleven,1,2,0,5,1,1,1,True,1
+Winning Eleven,13,2,0,2,0,1,1,True,3
+Winning Eleven,25,1,1,0,1,X,2,False,0
+Winning Eleven,2,0,1,1,3,2,2,True,1
+Winning Eleven,14,0,1,1,1,2,X,False,0
+Winning Eleven,26,0,2,1,1,2,X,False,0
+Winning Eleven,3,2,1,3,0,1,1,True,1
+Winning Eleven,15,2,0,2,2,1,X,False,0
+Winning Eleven,27,1,2,1,1,2,X,False,0
+Winning Eleven,4,3,0,2,1,1,1,True,1
+Winning Eleven,16,1,1,1,0,X,1,False,0
+Winning Eleven,28,0,3,0,1,2,2,True,2
+Winning Eleven,5,1,2,1,1,2,X,False,0
+Winning Eleven,17,1,1,1,1,X,X,True,3
+Winning Eleven,29,3,0,0,0,1,X,False,0
+Winning Eleven,6,0,2,0,1,2,2,True,2
+Winning Eleven,18,1,2,1,1,2,X,False,0
+Winning Eleven,30,1,1,0,0,X,X,True,1
+Winning Eleven,7,1,2,1,2,2,2,True,3
+Winning Eleven,19,1,1,1,3,X,2,False,0
+Winning Eleven,31,2,0,2,3,1,2,False,0
+Winning Eleven,8,1,3,0,1,2,2,True,1
+Winning Eleven,20,1,1,0,0,X,X,True,1
+Winning Eleven,32,3,0,1,1,1,X,False,0
+Winning Eleven,9,1,1,3,0,X,1,False,0
+Winning Eleven,21,1,1,1,2,X,2,False,0
+Winning Eleven,33,0,1,0,0,2,X,False,0
+Winning Eleven,10,2,0,0,1,1,2,False,0
+Winning Eleven,22,2,0,2,0,1,1,True,3
+Winning Eleven,34,1,1,1,1,X,X,True,3
+Winning Eleven,11,1,0,3,1,1,1,True,1
+Winning Eleven,23,0,1,1,1,2,X,False,0
+Winning Eleven,35,1,2,2,0,2,1,False,0
+Winning Eleven,12,2,0,2,1,1,1,True,2
+Winning Eleven,24,1,2,0,3,2,2,True,1
+Winning Eleven,36,1,2,1,2,2,2,True,3
+Yapci de la Fe,1,3,0,5,1,1,1,True,1
+Yapci de la Fe,13,2,0,2,0,1,1,True,3
+Yapci de la Fe,25,1,1,0,1,X,2,False,0
+Yapci de la Fe,2,0,0,1,3,X,2,False,0
+Yapci de la Fe,14,0,1,1,1,2,X,False,0
+Yapci de la Fe,26,0,2,1,1,2,X,False,0
+Yapci de la Fe,3,1,1,3,0,X,1,False,0
+Yapci de la Fe,15,3,0,2,2,1,X,False,0
+Yapci de la Fe,27,2,0,1,1,1,X,False,0
+Yapci de la Fe,4,3,0,2,1,1,1,True,1
+Yapci de la Fe,16,2,1,1,0,1,1,True,1
+Yapci de la Fe,28,0,3,0,1,2,2,True,2
+Yapci de la Fe,5,0,1,1,1,2,X,False,0
+Yapci de la Fe,17,0,0,1,1,X,X,True,1
+Yapci de la Fe,29,2,0,0,0,1,X,False,0
+Yapci de la Fe,6,0,3,0,1,2,2,True,2
+Yapci de la Fe,18,0,2,1,1,2,X,False,0
+Yapci de la Fe,30,2,1,0,0,1,X,False,0
+Yapci de la Fe,7,0,2,1,2,2,2,True,2
+Yapci de la Fe,19,1,0,1,3,1,2,False,0
+Yapci de la Fe,31,2,0,2,3,1,2,False,0
+Yapci de la Fe,8,0,3,0,1,2,2,True,2
+Yapci de la Fe,20,0,2,0,0,2,X,False,0
+Yapci de la Fe,32,2,0,1,1,1,X,False,0
+Yapci de la Fe,9,1,1,3,0,X,1,False,0
+Yapci de la Fe,21,0,1,1,2,2,2,True,1
+Yapci de la Fe,33,0,1,0,0,2,X,False,0
+Yapci de la Fe,10,3,0,0,1,1,2,False,0
+Yapci de la Fe,22,2,0,2,0,1,1,True,3
+Yapci de la Fe,34,0,0,1,1,X,X,True,1
+Yapci de la Fe,11,2,1,3,1,1,1,True,2
+Yapci de la Fe,23,1,1,1,1,X,X,True,3
+Yapci de la Fe,35,0,3,2,0,2,1,False,0
+Yapci de la Fe,12,2,0,2,1,1,1,True,2
+Yapci de la Fe,24,0,2,0,3,2,2,True,2
+Yapci de la Fe,36,0,1,1,2,2,2,True,1
+Yeray Andrade,1,2,0,5,1,1,1,True,1
+Yeray Andrade,13,2,1,2,0,1,1,True,2
+Yeray Andrade,25,0,1,0,1,2,2,True,3
+Yeray Andrade,2,1,1,1,3,X,2,False,0
+Yeray Andrade,14,0,1,1,1,2,X,False,0
+Yeray Andrade,26,1,2,1,1,2,X,False,0
+Yeray Andrade,3,2,1,3,0,1,1,True,1
+Yeray Andrade,15,2,0,2,2,1,X,False,0
+Yeray Andrade,27,1,0,1,1,1,X,False,0
+Yeray Andrade,4,3,0,2,1,1,1,True,1
+Yeray Andrade,16,3,1,1,0,1,1,True,1
+Yeray Andrade,28,0,4,0,1,2,2,True,2
+Yeray Andrade,5,1,2,1,1,2,X,False,0
+Yeray Andrade,17,1,1,1,1,X,X,True,3
+Yeray Andrade,29,2,0,0,0,1,X,False,0
+Yeray Andrade,6,0,2,0,1,2,2,True,2
+Yeray Andrade,18,0,2,1,1,2,X,False,0
+Yeray Andrade,30,1,0,0,0,1,X,False,0
+Yeray Andrade,7,0,1,1,2,2,2,True,1
+Yeray Andrade,19,1,0,1,3,1,2,False,0
+Yeray Andrade,31,1,0,2,3,1,2,False,0
+Yeray Andrade,8,0,3,0,1,2,2,True,2
+Yeray Andrade,20,1,2,0,0,2,X,False,0
+Yeray Andrade,32,2,0,1,1,1,X,False,0
+Yeray Andrade,9,0,2,3,0,2,1,False,0
+Yeray Andrade,21,1,1,1,2,X,2,False,0
+Yeray Andrade,33,1,2,0,0,2,X,False,0
+Yeray Andrade,10,2,0,0,1,1,2,False,0
+Yeray Andrade,22,2,0,2,0,1,1,True,3
+Yeray Andrade,34,1,1,1,1,X,X,True,3
+Yeray Andrade,11,1,0,3,1,1,1,True,1
+Yeray Andrade,23,0,3,1,1,2,X,False,0
+Yeray Andrade,35,0,3,2,0,2,1,False,0
+Yeray Andrade,12,2,0,2,1,1,1,True,2
+Yeray Andrade,24,0,2,0,3,2,2,True,2
+Yeray Andrade,36,2,0,1,2,1,2,False,0

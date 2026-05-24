@@ -10,7 +10,7 @@ font="sans serif"
 headless=true
 
 [client]
-toolbarMode = "minimal"
+toolbarMode="minimal"
 
 [ui]
-hideTopBar = true
+hideTopBar=true
