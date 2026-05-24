@@ -1,0 +1,16 @@
+Copia estos archivos/carpetas en la raíz de tu repositorio GitHub:
+
+1) app.py
+   Sustituye tu app.py actual.
+
+2) assets/worldcup_2026.jpg
+   Copia la imagen en la carpeta assets.
+
+3) app/static/worldcup_2026.jpg
+   Copia también esta carpeta para que Streamlit pueda mostrar la imagen desde HTML.
+
+Después ejecuta:
+
+git add .
+git commit -m "Actualizar cabecera con imagen derecha"
+git push

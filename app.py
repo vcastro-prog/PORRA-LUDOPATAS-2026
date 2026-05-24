@@ -14,6 +14,15 @@ from scoring import calcular_puntos, clasificacion, estadisticas_participantes, 
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 ASSETS_DIR = BASE_DIR / "assets"
+STATIC_DIR = BASE_DIR / "app" / "static"
+STATIC_DIR.mkdir(parents=True, exist_ok=True)
+
+logo_src = ASSETS_DIR / "worldcup_2026.jpg"
+logo_dst = STATIC_DIR / "worldcup_2026.jpg"
+
+if logo_src.exists() and not logo_dst.exists():
+    import shutil
+    shutil.copy(logo_src, logo_dst)
 
 st.set_page_config(
     page_title="Porra Ludópatas 2026",
@@ -55,9 +64,6 @@ st.markdown(
   border-right: 1px solid var(--line);
 }
 h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em;}
-.logo-top {display:flex; align-items:center; gap:14px; margin: 0 0 12px 0;}
-.logo-top img {width: 92px; height: 52px; object-fit: cover; border-radius: 16px; border:1px solid rgba(255,255,255,.22); box-shadow: 0 10px 30px rgba(0,0,0,.28);}
-.logo-text {font-weight:900; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:.75rem;}
 .hero {
   position: relative;
   padding: 34px 34px 30px 34px;
@@ -69,17 +75,46 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     radial-gradient(circle at 75% 30%, rgba(255,209,102,.28), transparent 30%);
   box-shadow: 0 25px 80px rgba(0,0,0,.38);
 }
-.cup-art {
+@media (max-width: 900px) {}
+
+.hero-right-logo {
   position: absolute;
-  right: 26px;
-  top: 18px;
-  width: 165px;
-  height: 165px;
-  opacity: .23;
-  filter: drop-shadow(0 0 28px rgba(255,209,102,.28));
+  right: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
-.cup-art svg {width:100%; height:100%;}
-@media (max-width: 900px) {.cup-art {width: 92px; height: 92px; right: 18px; top: 18px; opacity:.18;}}
+.hero-right-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 26px rgba(255,255,255,.08))
+    drop-shadow(0 0 36px rgba(255,209,102,.18));
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-right: 360px;
+}
+@media (max-width: 900px) {
+  .hero-content {
+    padding-right: 0;
+  }
+  .hero-right-logo {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 210px;
+    margin: 24px auto 0 auto;
+  }
+}
+
 .kicker {color: var(--cyan); text-transform: uppercase; font-weight: 900; letter-spacing: .18em; font-size: .86rem;}
 .hero-title {font-family: 'Bebas Neue', 'Inter', sans-serif; font-size: clamp(58px, 8vw, 116px); line-height: .85; margin: 8px 0 12px 0; letter-spacing: .02em;}
 .hero-title span {background: linear-gradient(90deg, var(--gold), #fff, var(--cyan)); -webkit-background-clip: text; color: transparent;}
@@ -379,30 +414,33 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 # Portada
 # -----------------------------
-logo_b64 = logo_base64()
 st.markdown(
-    f"""
+    """
 <div class='hero'>
-  <div class='logo-top'><img src='data:image/png;base64,{logo_b64}' alt='Ludópatas'><div class='logo-text'>Porra Ludópatas · Mundial 2026</div></div>
-  <div class='cup-art'>
-    <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFD166"/><stop offset=".55" stop-color="#FFF3B0"/><stop offset="1" stop-color="#F59E0B"/></linearGradient></defs>
-      <path d="M58 31h64v20c0 34-14 56-32 56S58 85 58 51V31Z" fill="url(#g)"/>
-      <path d="M58 45H32c0 23 10 39 30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
-      <path d="M122 45h26c0 23-10 39-30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
-      <path d="M82 107h16v29H82zM61 140h58v13H61zM49 155h82v12H49z" fill="url(#g)"/>
-      <circle cx="90" cy="62" r="15" fill="none" stroke="#07101f" stroke-width="7" opacity=".45"/>
-    </svg>
+
+  <div class='hero-content'>
+    <div class='kicker'>Canada · México · USA 2026</div>
+
+    <div class='hero-title'>
+      PORRA <span>LUDÓPATAS</span> 2026
+    </div>
+
+    <div class='hero-sub'>
+      Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.
+    </div>
+
+    <div class='badge-row'>
+      <div class='badge'>🌎 48 selecciones</div>
+      <div class='badge'>🏟️ 16 sedes</div>
+      <div class='badge'>📅 11 junio – 19 julio</div>
+      <div class='badge'>⚡ 104 partidos</div>
+    </div>
   </div>
-  <div class='kicker'>Canada · México · USA 2026</div>
-  <div class='hero-title'>PORRA <span>LUDÓPATAS</span> 2026</div>
-  <div class='hero-sub'>Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>
-  <div class='badge-row'>
-    <div class='badge'>🌎 48 selecciones</div>
-    <div class='badge'>🏟️ 16 sedes</div>
-    <div class='badge'>📅 11 junio – 19 julio</div>
-    <div class='badge'>⚡ 104 partidos</div>
+
+  <div class='hero-right-logo'>
+    <img src='app/static/worldcup_2026.jpg' alt='World Cup 2026'>
   </div>
+
 </div>
 """,
     unsafe_allow_html=True,
@@ -410,10 +448,6 @@ st.markdown(
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
-if demo_mode:
-    st.info("Vista demo: configura APUESTAS_SHEET_URL y RESULTADOS_SHEET_URL en Streamlit Secrets para leer datos reales desde Google Sheets.")
-else:
-    st.success("Datos cargados desde la fuente configurada. La app solo lee datos externos; no guarda tablas en Streamlit Cloud.")
 
 st.write("")
 left, right = st.columns([1.7, 1])
