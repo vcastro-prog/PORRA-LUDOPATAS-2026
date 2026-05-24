@@ -67,18 +67,19 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   box-shadow: 0 25px 80px rgba(0,0,0,.38);
 }
 @media (max-width: 900px) {}
+
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-right: 365px;
+  padding-right: 390px;
 }
 .hero-right-logo {
   position: absolute;
   right: 42px;
   top: 50%;
   transform: translateY(-50%);
-  width: 330px;
-  max-width: 34%;
+  width: 350px;
+  max-width: 35%;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -88,11 +89,10 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 18px;
-  mix-blend-mode: screen;
+  border-radius: 22px;
   filter:
-    drop-shadow(0 0 18px rgba(255,255,255,.10))
-    drop-shadow(0 0 34px rgba(255,209,102,.18));
+    drop-shadow(0 0 26px rgba(255,255,255,.10))
+    drop-shadow(0 0 38px rgba(255,209,102,.22));
 }
 @media (max-width: 900px) {
   .hero-content {
@@ -103,8 +103,8 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     right: auto;
     top: auto;
     transform: none;
-    width: 220px;
-    max-width: 70%;
+    width: 230px;
+    max-width: 72%;
     margin: 26px auto 0 auto;
   }
 }
@@ -417,37 +417,24 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 worldcup_b64 = imagen_asset_base64("worldcup_2026.jpg")
 
-st.markdown(
-    f"""
-<div class="hero">
-
-  <div class="hero-content">
-    <div class="kicker">Canada · México · USA 2026</div>
-
-    <div class="hero-title">
-      PORRA <span>LUDÓPATAS</span> 2026
-    </div>
-
-    <div class="hero-sub">
-      Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.
-    </div>
-
-    <div class="badge-row">
-      <div class="badge">🌎 48 selecciones</div>
-      <div class="badge">🏟️ 16 sedes</div>
-      <div class="badge">📅 11 junio – 19 julio</div>
-      <div class="badge">⚡ 104 partidos</div>
-    </div>
-  </div>
-
-  <div class="hero-right-logo">
-    <img src="data:image/jpeg;base64,{worldcup_b64}" alt="World Cup 2026">
-  </div>
-
+hero_html = f"""<div class="hero">
+<div class="hero-content">
+<div class="kicker">Canada · México · USA 2026</div>
+<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>
+<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>
+<div class="badge-row">
+<div class="badge">🌎 48 selecciones</div>
+<div class="badge">🏟️ 16 sedes</div>
+<div class="badge">📅 11 junio – 19 julio</div>
+<div class="badge">⚡ 104 partidos</div>
 </div>
-""",
-    unsafe_allow_html=True,
-)
+</div>
+<div class="hero-right-logo">
+<img src="data:image/jpeg;base64,{worldcup_b64}" alt="World Cup 2026">
+</div>
+</div>"""
+
+st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)

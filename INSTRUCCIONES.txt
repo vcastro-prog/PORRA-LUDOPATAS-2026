@@ -1,17 +1,16 @@
 Copia estos archivos en la raíz de tu repositorio:
 
-- app.py  -> sustituye el app.py actual
-- assets/worldcup_2026.jpg -> copia esta imagen en la carpeta assets
+1) app.py
+   Sustituye tu app.py actual.
 
-Después ejecuta:
+2) assets/worldcup_2026.jpg
+   Copia esta imagen en la carpeta assets.
+
+Después:
 
 git add .
-git commit -m "Corregir cabecera con imagen derecha"
+git commit -m "Corregir cabecera final"
 git push
 
-Esta versión:
-- elimina la imagen/logo de la izquierda
-- elimina la copa SVG anterior
-- coloca assets/worldcup_2026.jpg centrada arriba a la derecha
-- incrusta la imagen en base64 para que Streamlit no falle con rutas HTML
-- elimina los mensajes técnicos de demo/Google Sheets
+Nota:
+Esta versión evita que Streamlit muestre el HTML como texto porque el bloque HTML no contiene líneas indentadas que Markdown pueda interpretar como código.
