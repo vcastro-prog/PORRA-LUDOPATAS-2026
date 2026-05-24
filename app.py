@@ -14,15 +14,6 @@ from scoring import calcular_puntos, clasificacion, estadisticas_participantes, 
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 ASSETS_DIR = BASE_DIR / "assets"
-STATIC_DIR = BASE_DIR / "app" / "static"
-STATIC_DIR.mkdir(parents=True, exist_ok=True)
-
-logo_src = ASSETS_DIR / "worldcup_2026.jpg"
-logo_dst = STATIC_DIR / "worldcup_2026.jpg"
-
-if logo_src.exists() and not logo_dst.exists():
-    import shutil
-    shutil.copy(logo_src, logo_dst)
 
 st.set_page_config(
     page_title="Porra Ludópatas 2026",
@@ -76,30 +67,32 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   box-shadow: 0 25px 80px rgba(0,0,0,.38);
 }
 @media (max-width: 900px) {}
-
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-right: 365px;
+}
 .hero-right-logo {
   position: absolute;
-  right: 38px;
+  right: 42px;
   top: 50%;
   transform: translateY(-50%);
   width: 330px;
+  max-width: 34%;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 .hero-right-logo img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 18px;
+  mix-blend-mode: screen;
   filter:
-    drop-shadow(0 0 26px rgba(255,255,255,.08))
-    drop-shadow(0 0 36px rgba(255,209,102,.18));
-}
-.hero-content {
-  position: relative;
-  z-index: 3;
-  padding-right: 360px;
+    drop-shadow(0 0 18px rgba(255,255,255,.10))
+    drop-shadow(0 0 34px rgba(255,209,102,.18));
 }
 @media (max-width: 900px) {
   .hero-content {
@@ -110,8 +103,9 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     right: auto;
     top: auto;
     transform: none;
-    width: 210px;
-    margin: 24px auto 0 auto;
+    width: 220px;
+    max-width: 70%;
+    margin: 26px auto 0 auto;
   }
 }
 
@@ -307,6 +301,13 @@ def logo_base64() -> str:
         return ""
     return base64.b64encode(p.read_bytes()).decode("utf-8")
 
+
+def imagen_asset_base64(nombre_archivo: str) -> str:
+    p = ASSETS_DIR / nombre_archivo
+    if not p.exists():
+        return ""
+    return base64.b64encode(p.read_bytes()).decode("utf-8")
+
 def demo_apuestas(partidos: pd.DataFrame, n: int = 24) -> pd.DataFrame:
     nombres = ["Vi", "Carlos", "Marta", "Ana", "Javi", "Laura", "Sergio", "Elena", "David", "Nuria", "Pablo", "Bea", "Rafa", "Cris", "Gonzalo", "Silvia", "Mario", "Alba", "Dani", "Irene", "Óscar", "Patri", "Nacho", "Lola"][:n]
     rows = []
@@ -414,31 +415,33 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 # Portada
 # -----------------------------
+worldcup_b64 = imagen_asset_base64("worldcup_2026.jpg")
+
 st.markdown(
-    """
-<div class='hero'>
+    f"""
+<div class="hero">
 
-  <div class='hero-content'>
-    <div class='kicker'>Canada · México · USA 2026</div>
+  <div class="hero-content">
+    <div class="kicker">Canada · México · USA 2026</div>
 
-    <div class='hero-title'>
+    <div class="hero-title">
       PORRA <span>LUDÓPATAS</span> 2026
     </div>
 
-    <div class='hero-sub'>
+    <div class="hero-sub">
       Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.
     </div>
 
-    <div class='badge-row'>
-      <div class='badge'>🌎 48 selecciones</div>
-      <div class='badge'>🏟️ 16 sedes</div>
-      <div class='badge'>📅 11 junio – 19 julio</div>
-      <div class='badge'>⚡ 104 partidos</div>
+    <div class="badge-row">
+      <div class="badge">🌎 48 selecciones</div>
+      <div class="badge">🏟️ 16 sedes</div>
+      <div class="badge">📅 11 junio – 19 julio</div>
+      <div class="badge">⚡ 104 partidos</div>
     </div>
   </div>
 
-  <div class='hero-right-logo'>
-    <img src='app/static/worldcup_2026.jpg' alt='World Cup 2026'>
+  <div class="hero-right-logo">
+    <img src="data:image/jpeg;base64,{worldcup_b64}" alt="World Cup 2026">
   </div>
 
 </div>
