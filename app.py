@@ -71,7 +71,7 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-right: 260px;
+  padding-right: 245px;
 }
 .hero-title {
   white-space: nowrap;
@@ -96,8 +96,8 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   right: 42px;
   top: 50%;
   transform: translateY(-50%);
-  width: 185px;
-  max-width: 20%;
+  width: 165px;
+  max-width: 18%;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -180,6 +180,197 @@ button[kind="primary"] {border-radius: 999px;}
 .ribbon {display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(71,245,155,.13); border:1px solid rgba(71,245,155,.28); color:#74ffb4; font-weight:900;}
 .big-cta {padding:22px 26px; border-radius:28px; background:linear-gradient(90deg, rgba(255,209,102,.22), rgba(255,78,205,.18), rgba(31,228,255,.16)); border:1px solid rgba(255,255,255,.20);}
 @media (max-width: 900px) {.metric-strip {grid-template-columns: repeat(2, 1fr);} .hero-title {font-size: 56px;}}
+
+/* ===== AJUSTES FINALES PARA ENVIAR AL PROPIETARIO ===== */
+.hero {
+  min-height: 285px;
+}
+
+.hero-title {
+  white-space: nowrap;
+}
+
+.hero-right-logo {
+  overflow: visible;
+}
+
+.hero-right-logo img {
+  max-height: 230px;
+}
+
+/* Métricas superiores más consistentes */
+.metric-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Versión tablet */
+@media (max-width: 1100px) {
+  .block-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero {
+    padding: 28px 28px 32px 28px;
+  }
+
+  .hero-content {
+    padding-right: 210px;
+  }
+
+  .hero-title {
+    font-size: clamp(46px, 6.2vw, 76px);
+  }
+
+  .hero-sub {
+    max-width: 620px;
+  }
+
+  .hero-right-logo {
+    width: 145px;
+    max-width: 18%;
+  }
+
+  .hero-right-logo img {
+    max-height: 210px;
+  }
+
+  .hero-badges {
+    flex-wrap: wrap;
+  }
+
+  .metric-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Versión móvil: mobile first para compartir por WhatsApp */
+@media (max-width: 760px) {
+  .block-container {
+    padding-top: .7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+
+  .hero {
+    padding: 22px 20px 24px 20px;
+    border-radius: 26px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
+  .kicker {
+    font-size: .70rem;
+    letter-spacing: .14em;
+  }
+
+  .hero-title {
+    white-space: normal;
+    font-size: clamp(44px, 17vw, 64px);
+    line-height: .88;
+    margin-top: 10px;
+  }
+
+  .hero-sub {
+    font-size: .98rem;
+    line-height: 1.35;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-badges,
+  .badge-row {
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge,
+  .hero-badges .badge {
+    font-size: .84rem;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .hero-right-logo {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 138px;
+    max-width: 58%;
+    margin: 18px auto 0 auto;
+  }
+
+  .hero-right-logo img {
+    max-height: 170px;
+  }
+
+  .metric-strip {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    border-radius: 22px;
+    padding: 18px 18px;
+  }
+
+  .stat-value {
+    font-size: 1.85rem;
+  }
+
+  .podium {
+    grid-template-columns: 1fr;
+  }
+
+  .podium-card.first {
+    padding-top: 18px;
+  }
+
+  .match-card {
+    padding: 13px 14px;
+  }
+
+  h2 {
+    font-size: 1.55rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  div[data-testid="stHorizontalBlock"] {
+    gap: .75rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .hero-right-logo {
+    width: 125px;
+  }
+
+  .badge,
+  .hero-badges .badge {
+    font-size: .78rem;
+    padding: 7px 9px;
+  }
+
+  .hero-sub {
+    font-size: .92rem;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,

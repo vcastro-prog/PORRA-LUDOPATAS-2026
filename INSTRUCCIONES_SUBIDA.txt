@@ -1,0 +1,24 @@
+VERSIÓN PARA ENVIAR AL PROPIETARIO
+
+Copia estos archivos en la raíz del repositorio GitHub:
+
+- app.py
+- requirements.txt
+- carpeta assets
+
+Después ejecuta:
+
+git add .
+git commit -m "Version responsive para propietario"
+git push
+
+Cambios incluidos:
+- cabecera optimizada para PC y móvil
+- logo más pequeño para que no se corte
+- cards y podio adaptados a móvil
+- badges adaptables
+- sin mensajes técnicos de demo/Google Sheets
+
+Nota:
+La barra negra superior con Share / estrella / editar / tres puntos pertenece al modo preview/gestión de Streamlit Cloud. 
+Cuando el propietario entre por la URL pública de la app, no debería verla como tú la ves desde la consola.
