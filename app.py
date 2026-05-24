@@ -498,9 +498,15 @@ def cargar_apuestas_desde_fuente() -> pd.DataFrame:
             return normalizar_apuestas(leer_csv_externo(convertir_google_sheet_a_csv(url, gid)))
         except Exception as e:
             st.warning(f"No pude leer APUESTAS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+    # Fallback local: apuestas ya normalizadas desde el Excel real
+    apuestas_reales_csv = DATA_DIR / "apuestas_reales.csv"
+    if apuestas_reales_csv.exists():
+        return normalizar_apuestas(pd.read_csv(apuestas_reales_csv))
+
     apuestas_csv = DATA_DIR / "apuestas.csv"
     if apuestas_csv.exists():
         return normalizar_apuestas(pd.read_csv(apuestas_csv))
+
     return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
 
 
