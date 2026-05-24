@@ -16,9 +16,9 @@ DATA_DIR = Path(__file__).parent / "data"
 
 st.set_page_config(
     page_title="Porra Ludópatas 2026",
-    page_icon="⚽",
+    page_icon="🏆",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
 # -----------------------------
@@ -65,15 +65,17 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
     radial-gradient(circle at 75% 30%, rgba(255,209,102,.28), transparent 30%);
   box-shadow: 0 25px 80px rgba(0,0,0,.38);
 }
-.hero:after {
-  content: "⚽";
+.cup-art {
   position: absolute;
-  right: 28px;
-  top: 12px;
-  font-size: 138px;
-  opacity: .12;
-  filter: blur(.2px);
+  right: 26px;
+  top: 18px;
+  width: 165px;
+  height: 165px;
+  opacity: .23;
+  filter: drop-shadow(0 0 28px rgba(255,209,102,.28));
 }
+.cup-art svg {width:100%; height:100%;}
+@media (max-width: 900px) {.cup-art {width: 92px; height: 92px; right: 18px; top: 18px; opacity:.18;}}
 .kicker {color: var(--cyan); text-transform: uppercase; font-weight: 900; letter-spacing: .18em; font-size: .86rem;}
 .hero-title {font-family: 'Bebas Neue', 'Inter', sans-serif; font-size: clamp(58px, 8vw, 116px); line-height: .85; margin: 8px 0 12px 0; letter-spacing: .02em;}
 .hero-title span {background: linear-gradient(90deg, var(--gold), #fff, var(--cyan)); -webkit-background-clip: text; color: transparent;}
@@ -124,12 +126,6 @@ FLAG = {
     "COLOMBIA":"🇨🇴", "INGLATERRA":"🏴", "CROCIA":"🇭🇷", "CROACIA":"🇭🇷", "GHANA":"🇬🇭", "PANAMÁ":"🇵🇦",
 }
 
-SLOGANS = [
-    "El Excel era solo el principio. Ahora empieza la guerra psicológica.",
-    "No hace falta saber de fútbol. Hace falta acertar cuando todos fallan.",
-    "Cada gol mueve la clasificación. Cada empate destruye una ilusión.",
-    "123 participantes es el récord. 2026 pide algo más grande.",
-]
 
 @st.cache_data
 def cargar_partidos() -> pd.DataFrame:
@@ -216,14 +212,67 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
 partidos = cargar_partidos()
 
 # -----------------------------
-# Sidebar: carga de datos
+# Acceso administrador y carga de datos
 # -----------------------------
-st.sidebar.title("⚙️ Centro de mando")
-st.sidebar.caption("Sube Excels, mete resultados y deja que la porra haga ruido.")
 
-demo_mode = st.sidebar.toggle("Modo demo impactante", value=True, help="Muestra la web con participantes ficticios si aún no has subido Excels.")
+def get_admin_password() -> str:
+    try:
+        return st.secrets.get("ADMIN_PASSWORD", "")
+    except Exception:
+        return ""
 
-uploaded = st.sidebar.file_uploader("1) Sube los Excel rellenados", type=["xlsx"], accept_multiple_files=True)
+if "admin" not in st.session_state:
+    st.session_state["admin"] = False
+if "show_admin_login" not in st.session_state:
+    st.session_state["show_admin_login"] = False
+
+admin_query = st.query_params.get("admin", "") in ["1", "true", "si", "sí"]
+
+# Botón discreto: los participantes no necesitan login; solo abre la zona de administrador.
+admin_col, _ = st.columns([0.16, 0.84])
+with admin_col:
+    if st.button("🔐 Admin", help="Acceso exclusivo para gestionar datos"):
+        st.session_state["show_admin_login"] = True
+
+if admin_query or st.session_state["show_admin_login"] or st.session_state["admin"]:
+    with st.expander("🔐 Acceso administrador", expanded=not st.session_state["admin"]):
+        if st.session_state["admin"]:
+            st.success("Modo administrador activo")
+            if st.button("Cerrar sesión admin"):
+                st.session_state["admin"] = False
+                st.session_state["show_admin_login"] = False
+                st.rerun()
+        else:
+            pwd = st.text_input("Contraseña", type="password", placeholder="Introduce la contraseña de administrador")
+            admin_password = get_admin_password()
+            if st.button("Entrar"):
+                if admin_password and pwd == admin_password:
+                    st.session_state["admin"] = True
+                    st.success("Acceso concedido")
+                    st.rerun()
+                elif not admin_password:
+                    st.error("Falta configurar ADMIN_PASSWORD en Streamlit Secrets.")
+                else:
+                    st.error("Contraseña incorrecta")
+
+is_admin = st.session_state.get("admin", False)
+
+# Por defecto la web es pública, limpia y sin panel lateral.
+demo_mode = True
+uploaded = []
+resultados_upload = None
+
+if is_admin:
+    st.sidebar.title("⚙️ Centro de mando")
+    st.sidebar.caption("Zona privada para cargar apuestas y resultados.")
+    demo_mode = st.sidebar.toggle("Modo demo", value=True, help="Muestra participantes ficticios si aún no hay datos reales.")
+    uploaded = st.sidebar.file_uploader("1) Subir Excel de apuestas", type=["xlsx"], accept_multiple_files=True)
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("2) Resultados")
+    resultados_upload = st.sidebar.file_uploader("Subir resultados CSV", type=["csv"])
+else:
+    # Los participantes ven una app limpia. No se muestran cargas ni edición.
+    demo_mode = True
 
 apuestas = []
 for f in uploaded:
@@ -235,17 +284,35 @@ for f in uploaded:
     except Exception as e:
         st.sidebar.error(f"No pude leer {f.name}: {e}")
 
-apuestas_df = pd.concat(apuestas, ignore_index=True) if apuestas else pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+# Si existe un CSV de apuestas real en /data, se usa automáticamente en la parte pública.
+apuestas_csv = DATA_DIR / "apuestas.csv"
+if apuestas:
+    apuestas_df = pd.concat(apuestas, ignore_index=True)
+elif apuestas_csv.exists():
+    apuestas_df = pd.read_csv(apuestas_csv)
+else:
+    apuestas_df = pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+
 if apuestas_df.empty and demo_mode:
     apuestas_df = demo_apuestas(partidos)
-    st.sidebar.info("Estás viendo datos ficticios para enseñar la experiencia. Desactiva el modo demo cuando subas apuestas reales.")
+    if is_admin:
+        st.sidebar.info("Estás viendo datos ficticios. Desactiva el modo demo cuando tengas apuestas reales.")
 
-st.sidebar.markdown("---")
-st.sidebar.subheader("2) Resultados")
-resultados_upload = st.sidebar.file_uploader("Opcional: subir resultados CSV", type=["csv"])
 resultados_base = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].copy()
 resultados_base["goles_local"] = pd.NA
 resultados_base["goles_visitante"] = pd.NA
+
+resultados_csv = DATA_DIR / "resultados.csv"
+if resultados_csv.exists():
+    try:
+        prev_repo = pd.read_csv(resultados_csv)
+        if {"partido_id", "goles_local", "goles_visitante"}.issubset(prev_repo.columns):
+            resultados_base = resultados_base.drop(columns=["goles_local", "goles_visitante"]).merge(
+                prev_repo[["partido_id", "goles_local", "goles_visitante"]], on="partido_id", how="left"
+            )
+    except Exception:
+        pass
+
 if resultados_upload is not None:
     try:
         prev = pd.read_csv(resultados_upload)
@@ -253,34 +320,39 @@ if resultados_upload is not None:
     except Exception as e:
         st.sidebar.error(f"No pude leer el CSV de resultados: {e}")
 
-with st.sidebar.expander("Editar resultados", expanded=True):
-    resultados_editados = st.data_editor(
-        resultados_base,
-        hide_index=True,
-        use_container_width=True,
-        num_rows="fixed",
-        column_config={
-            "partido_id": st.column_config.NumberColumn("#", disabled=True),
-            "grupo": st.column_config.TextColumn("Grupo", disabled=True),
-            "fecha": st.column_config.TextColumn("Fecha", disabled=True),
-            "local": st.column_config.TextColumn("Local", disabled=True),
-            "visitante": st.column_config.TextColumn("Visitante", disabled=True),
-            "goles_local": st.column_config.NumberColumn("GL", min_value=0, step=1),
-            "goles_visitante": st.column_config.NumberColumn("GV", min_value=0, step=1),
-        },
-    )
+if is_admin:
+    with st.sidebar.expander("Editar resultados", expanded=True):
+        resultados_editados = st.data_editor(
+            resultados_base,
+            hide_index=True,
+            use_container_width=True,
+            num_rows="fixed",
+            column_config={
+                "partido_id": st.column_config.NumberColumn("#", disabled=True),
+                "grupo": st.column_config.TextColumn("Grupo", disabled=True),
+                "fecha": st.column_config.TextColumn("Fecha", disabled=True),
+                "local": st.column_config.TextColumn("Local", disabled=True),
+                "visitante": st.column_config.TextColumn("Visitante", disabled=True),
+                "goles_local": st.column_config.NumberColumn("GL", min_value=0, step=1),
+                "goles_visitante": st.column_config.NumberColumn("GV", min_value=0, step=1),
+            },
+        )
+else:
+    resultados_editados = resultados_base
 
 resultados_df = resultados_editados[["partido_id", "goles_local", "goles_visitante"]]
-if demo_mode and uploaded == [] and resultados_df.dropna(subset=["goles_local", "goles_visitante"]).empty:
-    # Para que el modo demo tenga vida desde el primer click.
+if demo_mode and resultados_df.dropna(subset=["goles_local", "goles_visitante"]).empty:
     demo_res = partidos.head(10)[["partido_id"]].copy()
     rnd = random.Random(101)
     demo_res["goles_local"] = [rnd.choice([0,1,1,2,2,3]) for _ in range(len(demo_res))]
     demo_res["goles_visitante"] = [rnd.choice([0,0,1,1,2]) for _ in range(len(demo_res))]
     resultados_df = resultados_df.drop(columns=["goles_local", "goles_visitante"]).merge(demo_res, on="partido_id", how="left")
 
-csv_resultados = resultados_df.to_csv(index=False).encode("utf-8")
-st.sidebar.download_button("Descargar resultados CSV", csv_resultados, "resultados_porra_2026.csv", "text/csv")
+if is_admin:
+    csv_resultados = resultados_df.to_csv(index=False).encode("utf-8")
+    st.sidebar.download_button("Descargar resultados CSV", csv_resultados, "resultados_porra_2026.csv", "text/csv")
+    if not apuestas_df.empty:
+        st.sidebar.download_button("Descargar apuestas CSV", apuestas_df.to_csv(index=False).encode("utf-8"), "apuestas_porra_2026.csv", "text/csv")
 
 # -----------------------------
 # Cálculo
@@ -298,9 +370,19 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 st.markdown(
     f"""
 <div class='hero'>
+  <div class='cup-art'>
+    <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFD166"/><stop offset=".55" stop-color="#FFF3B0"/><stop offset="1" stop-color="#F59E0B"/></linearGradient></defs>
+      <path d="M58 31h64v20c0 34-14 56-32 56S58 85 58 51V31Z" fill="url(#g)"/>
+      <path d="M58 45H32c0 23 10 39 30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
+      <path d="M122 45h26c0 23-10 39-30 45" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
+      <path d="M82 107h16v29H82zM61 140h58v13H61zM49 155h82v12H49z" fill="url(#g)"/>
+      <circle cx="90" cy="62" r="15" fill="none" stroke="#07101f" stroke-width="7" opacity=".45"/>
+    </svg>
+  </div>
   <div class='kicker'>Canada · México · USA 2026</div>
   <div class='hero-title'>PORRA <span>LUDÓPATAS</span> 2026</div>
-  <div class='hero-sub'>{random.choice(SLOGANS)} Ranking en vivo, apuestas visibles, piques diarios y cada gol moviendo la tabla.</div>
+  <div class='hero-sub'>Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>
   <div class='badge-row'>
     <div class='badge'>🌎 48 selecciones</div>
     <div class='badge'>🏟️ 16 sedes</div>
@@ -346,7 +428,7 @@ with b:
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
 
 with tab1:
-    st.markdown("### La tabla que va a doler")
+    st.markdown("### Clasificación general")
     if tabla.empty:
         st.info("Sube apuestas para ver la clasificación.")
     else:
@@ -371,7 +453,7 @@ with tab2:
     st.dataframe(partidos_resultados[["partido_id", "grupo", "fecha", "partido", "resultado"]], hide_index=True, use_container_width=True)
 
 with tab3:
-    st.markdown("### Apuestas del resto: transparencia total")
+    st.markdown("### Apuestas de los participantes")
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
     else:
@@ -405,8 +487,8 @@ with tab5:
     st.markdown(
         """
 <div class='callout'>
-<strong>¿Quieres enganchar a más gente?</strong><br>
-Mándales el Excel, enséñales esta web en modo demo y promételes una cosa: podrán ver todas las apuestas, el ranking y los piques desde el móvil durante todo el Mundial.
+<strong>Participa en la Porra Ludópatas 2026</strong><br>
+Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durante todo el Mundial.
 </div>
 """,
         unsafe_allow_html=True,
@@ -419,7 +501,7 @@ Mándales el Excel, enséñales esta web en modo demo y promételes una cosa: po
 - Si fallas el signo: 0 puntos, aunque aciertes algún gol.
 
 ### Frase para compartir
-**Rellena tu Excel y entra en la Porra Ludópatas 2026. No hace falta saber de fútbol: hace falta tener más suerte que tus amigos.**
+**Rellena tu Excel y entra en la Porra Ludópatas 2026. Cada resultado actualizará la clasificación.**
 """)
 
 st.caption("Diseño inspirado en el ambiente del Mundial 2026. No usa logos oficiales ni material protegido de FIFA.")

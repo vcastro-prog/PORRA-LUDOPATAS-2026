@@ -61,3 +61,23 @@ Esta versión está pensada para captar participantes desde el primer día:
 ## Recomendación para el grupo
 
 Primero publica la app con el modo demo activado para enseñar cómo se verá. Cuando empiecen a llegar Excels reales, desactiva el modo demo y sube los archivos de participantes desde la barra lateral.
+
+## Zona administrador
+
+La web pública no pide contraseña a los participantes. Solo verán clasificación, partidos, apuestas y estadísticas.
+
+Para abrir la zona de administrador:
+
+1. Pulsa el botón discreto `🔐 Admin` en la parte superior de la app, o entra con `?admin=1` al final de la URL.
+2. Introduce la contraseña configurada en Streamlit Cloud.
+3. Aparecerá el panel lateral para subir apuestas, editar resultados y descargar copias CSV.
+
+En Streamlit Cloud configura la contraseña en:
+
+`App > Settings > Secrets`
+
+```toml
+ADMIN_PASSWORD = "cambia_esta_clave"
+```
+
+No subas esa contraseña a GitHub.
