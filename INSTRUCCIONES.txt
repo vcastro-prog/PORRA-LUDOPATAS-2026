@@ -1,10 +1,11 @@
-Copia estos archivos en tu repositorio:
+Sustituye tu app.py por este app.py.
 
-- app.py
-- carpeta assets
+Cambio aplicado:
+- La columna Puntos deja de usar ProgressColumn.
+- Ahora usa NumberColumn con formato "%d pts".
 
-Después:
+Subida:
 
 git add .
-git commit -m "Reducir logo cabecera"
+git commit -m "Corregir puntos sin porcentaje"
 git push

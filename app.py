@@ -525,7 +525,7 @@ with tab1:
             use_container_width=True,
             column_config={
                 "posición": st.column_config.NumberColumn("Pos."),
-                "puntos": st.column_config.ProgressColumn("Puntos", min_value=0, max_value=max(1, len(partidos)*3)),
+                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
             },
         )
         st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
