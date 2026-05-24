@@ -1,16 +1,22 @@
-Copia estos archivos en la raíz de tu repositorio:
+Copia estos archivos/carpetas en la raíz del repositorio:
 
-1) app.py
-   Sustituye tu app.py actual.
+- app.py
+- assets/worldcup_2026_clean.png
+- assets/worldcup_2026.jpg
 
-2) assets/worldcup_2026.jpg
-   Copia esta imagen en la carpeta assets.
-
-Después:
+Después ejecuta:
 
 git add .
-git commit -m "Corregir cabecera final"
+git commit -m "Ajustar cabecera e imagen World Cup"
 git push
 
-Nota:
-Esta versión evita que Streamlit muestre el HTML como texto porque el bloque HTML no contiene líneas indentadas que Markdown pueda interpretar como código.
+Cambios aplicados:
+- elimina logo izquierdo de la cabecera
+- elimina copa SVG antigua
+- coloca la imagen en la parte superior derecha
+- reduce el tamaño de la imagen
+- elimina el fondo blanco de la imagen
+- convierte el texto oscuro inferior de la imagen a blanco
+- fuerza 'PORRA LUDÓPATAS 2026' a una sola línea en escritorio
+- fuerza las insignias a una sola línea si hay espacio
+- elimina mensajes técnicos de demo/Google Sheets

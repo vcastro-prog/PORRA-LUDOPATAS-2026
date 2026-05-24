@@ -71,15 +71,33 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-right: 390px;
+  padding-right: 300px;
+}
+.hero-title {
+  white-space: nowrap;
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(56px, 7.2vw, 104px);
+  line-height: .90;
+  margin: 8px 0 12px 0;
+  letter-spacing: .02em;
+}
+.hero-badges {
+  display:flex;
+  gap:10px;
+  flex-wrap:nowrap;
+  margin-top:18px;
+  align-items:center;
+}
+.hero-badges .badge {
+  white-space:nowrap;
 }
 .hero-right-logo {
   position: absolute;
   right: 42px;
   top: 50%;
   transform: translateY(-50%);
-  width: 350px;
-  max-width: 35%;
+  width: 245px;
+  max-width: 25%;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -89,23 +107,44 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 22px;
   filter:
-    drop-shadow(0 0 26px rgba(255,255,255,.10))
-    drop-shadow(0 0 38px rgba(255,209,102,.22));
+    drop-shadow(0 0 18px rgba(255,255,255,.16))
+    drop-shadow(0 0 34px rgba(255,209,102,.25));
+}
+@media (max-width: 1100px) {
+  .hero-content {
+    padding-right: 240px;
+  }
+  .hero-title {
+    font-size: clamp(48px, 6.2vw, 82px);
+  }
+  .hero-right-logo {
+    width: 205px;
+    max-width: 24%;
+  }
+  .hero-badges {
+    flex-wrap:wrap;
+  }
 }
 @media (max-width: 900px) {
   .hero-content {
     padding-right: 0;
+  }
+  .hero-title {
+    white-space: normal;
+    font-size: 56px;
   }
   .hero-right-logo {
     position: relative;
     right: auto;
     top: auto;
     transform: none;
-    width: 230px;
-    max-width: 72%;
-    margin: 26px auto 0 auto;
+    width: 190px;
+    max-width: 70%;
+    margin: 24px auto 0 auto;
+  }
+  .hero-badges {
+    flex-wrap:wrap;
   }
 }
 
@@ -415,24 +454,26 @@ lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
 # -----------------------------
 # Portada
 # -----------------------------
-worldcup_b64 = imagen_asset_base64("worldcup_2026.jpg")
+worldcup_b64 = imagen_asset_base64("worldcup_2026_clean.png")
 
-hero_html = f"""<div class="hero">
-<div class="hero-content">
-<div class="kicker">Canada · México · USA 2026</div>
-<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>
-<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>
-<div class="badge-row">
-<div class="badge">🌎 48 selecciones</div>
-<div class="badge">🏟️ 16 sedes</div>
-<div class="badge">📅 11 junio – 19 julio</div>
-<div class="badge">⚡ 104 partidos</div>
-</div>
-</div>
-<div class="hero-right-logo">
-<img src="data:image/jpeg;base64,{worldcup_b64}" alt="World Cup 2026">
-</div>
-</div>"""
+hero_html = (
+    f'<div class="hero">'
+    f'<div class="hero-content">'
+    f'<div class="kicker">Canada · México · USA 2026</div>'
+    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
+    f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
+    f'<div class="hero-badges">'
+    f'<div class="badge">🌎 48 selecciones</div>'
+    f'<div class="badge">🏟️ 16 sedes</div>'
+    f'<div class="badge">📅 11 junio – 19 julio</div>'
+    f'<div class="badge">⚡ 104 partidos</div>'
+    f'</div>'
+    f'</div>'
+    f'<div class="hero-right-logo">'
+    f'<img src="data:image/png;base64,{worldcup_b64}" alt="World Cup 2026">'
+    f'</div>'
+    f'</div>'
+)
 
 st.markdown(hero_html, unsafe_allow_html=True)
 
