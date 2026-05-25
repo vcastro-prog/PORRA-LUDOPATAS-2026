@@ -1,0 +1,15 @@
+IMPORTANTE
+
+Esta versión muestra al final de la página:
+v2-banderas-img
+
+Si después de subir no ves ese texto abajo, Streamlit NO está ejecutando este app.py.
+
+Cambios:
+- Próximos partidos reconstruido completamente con imágenes de banderas.
+- Añadida marca visible v2-banderas-img para confirmar despliegue.
+- Si sigue igual y no aparece la marca, hay que revisar:
+  1) que app.py se haya copiado en la raíz del repo
+  2) que hicieras git push
+  3) que Streamlit redeployó la rama correcta
+  4) hacer Manage app > Reboot app

@@ -373,6 +373,21 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+.flag-img {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 3px;
+  vertical-align: -3px;
+  margin-right: 6px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.22);
+}
+.flag-img + span,
+.flag-img-fallback {
+  margin-right: 4px;
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -485,6 +500,91 @@ FLAG_NORMALIZADO = {
 
 def bandera_equipo(nombre: str) -> str:
     return FLAG_NORMALIZADO.get(normalizar_texto_bandera(nombre), "🏳️")
+
+
+ISO_BANDERAS = {
+    "ALEMANIA": "de",
+    "ESCOCIA": "gb-sct",
+    "HUNGRIA": "hu",
+    "SUIZA": "ch",
+    "ESPANA": "es",
+    "CROACIA": "hr",
+    "CROCIA": "hr",
+    "ITALIA": "it",
+    "ALBANIA": "al",
+    "POLONIA": "pl",
+    "PAISES BAJOS": "nl",
+    "HOLANDA": "nl",
+    "ESLOVENIA": "si",
+    "DINAMARCA": "dk",
+    "SERBIA": "rs",
+    "INGLATERRA": "gb-eng",
+    "RUMANIA": "ro",
+    "UCRANIA": "ua",
+    "BELGICA": "be",
+    "ESLOVAQUIA": "sk",
+    "AUSTRIA": "at",
+    "FRANCIA": "fr",
+    "TURQUIA": "tr",
+    "GEORGIA": "ge",
+    "PORTUGAL": "pt",
+    "CHEQUIA": "cz",
+    "REPUBLICA CHECA": "cz",
+    "REP CHECA": "cz",
+
+    "MEXICO": "mx",
+    "CANADA": "ca",
+    "ESTADOS UNIDOS": "us",
+    "USA": "us",
+    "BRASIL": "br",
+    "ARGENTINA": "ar",
+    "URUGUAY": "uy",
+    "COLOMBIA": "co",
+    "ECUADOR": "ec",
+    "PARAGUAY": "py",
+    "AUSTRALIA": "au",
+    "JAPON": "jp",
+    "COREA DEL SUR": "kr",
+    "MARRUECOS": "ma",
+    "SENEGAL": "sn",
+    "GHANA": "gh",
+    "TUNEZ": "tn",
+    "ARGELIA": "dz",
+    "EGIPTO": "eg",
+    "SUDAFRICA": "za",
+    "QATAR": "qa",
+    "IRAN": "ir",
+    "ARABIA SAUDI": "sa",
+    "NUEVA ZELANDA": "nz",
+    "NORUEGA": "no",
+    "SUECIA": "se",
+    "PANAMA": "pa",
+    "HAITI": "ht",
+    "CABO VERDE": "cv",
+    "COSTA DE MARFIL": "ci",
+    "COSTA DEMARFIL": "ci",
+    "BOSNIA": "ba",
+    "JORDANIA": "jo",
+    "UZBEKISTAN": "uz",
+    "IRAQ": "iq",
+}
+
+
+def bandera_html(nombre: str) -> str:
+    """Devuelve una imagen de bandera para escritorio.
+
+    Los emoji de banderas no se renderizan bien en muchos equipos de escritorio
+    y aparecen como SK, RO, GE... Por eso en las tarjetas usamos imágenes.
+    """
+    codigo = ISO_BANDERAS.get(normalizar_texto_bandera(nombre), "")
+    if not codigo:
+        return "<span class='flag-img-fallback'>🏳️</span>"
+    return (
+        f"<img class='flag-img' "
+        f"src='https://flagcdn.com/24x18/{codigo}.png' "
+        f"srcset='https://flagcdn.com/48x36/{codigo}.png 2x' "
+        f"alt='{nombre}'>"
+    )
 
 
 @st.cache_data
@@ -920,26 +1020,32 @@ def podium(tabla: pd.DataFrame):
 
 
 def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
-    jugados = set(resultados_df.dropna(subset=["goles_local", "goles_visitante"])["partido_id"].astype(int))
+    jugados = set(
+        resultados_df.dropna(subset=["goles_local", "goles_visitante"])["partido_id"].astype(int)
+    )
     pendientes = partidos[~partidos["partido_id"].astype(int).isin(jugados)].head(3)
 
     if pendientes.empty:
         st.success("Todos los partidos están cerrados. ¡A revisar el campeón de la porra!")
         return
 
+    html = ""
     for _, p in pendientes.iterrows():
-        local_bandera = bandera_equipo(p["local"])
-        visitante_bandera = bandera_equipo(p["visitante"])
-
-        st.markdown(
-            f"<div class='match-card'>"
+        local = str(p["local"])
+        visitante = str(p["visitante"])
+        html += (
+            "<div class='match-card'>"
             f"<div class='small-muted'>{p['fecha']} · {p['grupo']} · Partido {int(p['partido_id'])}</div>"
-            f"<div class='team-line'>{local_bandera} {p['local']} "
-            f"<span style='color:#FFD166'>vs</span> "
-            f"{visitante_bandera} {p['visitante']}</div>"
-            f"</div>",
-            unsafe_allow_html=True,
+            "<div class='team-line'>"
+            f"{bandera_html(local)} {local} "
+            "<span style='color:#FFD166'>vs</span> "
+            f"{bandera_html(visitante)} {visitante}"
+            "</div>"
+            "</div>"
         )
+
+    st.markdown(html, unsafe_allow_html=True)
+
 
 
 
@@ -1183,3 +1289,5 @@ Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durant
 """)
 
 st.caption("Diseño inspirado en el ambiente del Mundial 2026. No usa logos oficiales ni material protegido de FIFA.")
+
+st.caption("v2-banderas-img")

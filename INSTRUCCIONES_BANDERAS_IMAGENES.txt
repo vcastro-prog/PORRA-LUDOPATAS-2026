@@ -1,0 +1,13 @@
+Corrección aplicada:
+- En escritorio los emoji de bandera pueden verse como códigos SK/RO/GE.
+- Se cambia 'Próximos partidos' para usar imágenes de banderas desde flagcdn.com.
+- En móvil seguirá viéndose bien, y en escritorio ya no deberían aparecer códigos.
+
+Subida:
+git add .
+git commit -m "Usar imagenes de banderas en proximos partidos"
+git push
+
+Después:
+- Pulsa 🔄 Actualizar datos.
+- Si no cambia, reinicia la app en Streamlit Cloud.
