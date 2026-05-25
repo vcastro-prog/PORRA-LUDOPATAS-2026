@@ -489,7 +489,8 @@ def bandera_equipo(nombre: str) -> str:
 
 @st.cache_data
 def cargar_partidos() -> pd.DataFrame:
-    df = pd.read_csv(DATA_DIR / "partidos.csv")    df["local_flag"] = df["local"].apply(bandera_equipo)
+    df = pd.read_csv(DATA_DIR / "partidos.csv")
+    df["local_flag"] = df["local"].apply(bandera_equipo)
     df["visitante_flag"] = df["visitante"].apply(bandera_equipo)
     return df
 
