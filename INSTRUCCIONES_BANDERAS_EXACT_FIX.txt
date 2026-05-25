@@ -1,0 +1,9 @@
+Corrección aplicada:
+- Reemplazada la función cargar_partidos() completa.
+- Se sobrescriben local_flag y visitante_flag con bandera_equipo().
+- Se sustituyen todos los renderizados de p['local_flag'] por bandera_equipo(p['local']).
+
+Después de subir:
+1. Espera a que Streamlit redeploye.
+2. Pulsa '🔄 Actualizar datos'.
+3. Si sigue igual: Manage app > Reboot app.

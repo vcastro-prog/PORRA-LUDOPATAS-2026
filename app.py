@@ -491,10 +491,10 @@ def bandera_equipo(nombre: str) -> str:
 def cargar_partidos() -> pd.DataFrame:
     df = pd.read_csv(DATA_DIR / "partidos.csv")
 
-    # Forzamos banderas desde los nombres de equipos, ignorando cualquier
-    # código anterior tipo SK, GE, CZ que pueda venir de datos antiguos.
-    df["local_flag"] = df["local"].apply(bandera_equipo)
-    df["visitante_flag"] = df["visitante"].apply(bandera_equipo)
+    # Banderas reales a partir de los nombres de equipo.
+    # No usamos códigos antiguos del CSV tipo SK, GE, CZ.
+    df["local_flag"] = df["local"].apply(lambda x: bandera_equipo(str(x)))
+    df["visitante_flag"] = df["visitante"].apply(lambda x: bandera_equipo(str(x)))
 
     return df
 
