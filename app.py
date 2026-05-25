@@ -425,7 +425,7 @@ def obtener_google_sheet_id() -> str:
     return match.group(1) if match else valor.strip()
 
 
-@st.cache_data(ttl=300, show_spinner=False)
+@st.cache_data(ttl=30, show_spinner=False)
 def descargar_google_sheet_como_excel(sheet_id: str) -> bytes:
     """Descarga una Google Sheet pública como archivo XLSX.
 
@@ -725,6 +725,11 @@ def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.Dat
     if partidos is None:
         partidos = cargar_partidos()
 
+# Botón útil durante pruebas: fuerza a leer de nuevo Google Sheets.
+if st.button("🔄 Actualizar datos", help="Vacía la caché y vuelve a leer Google Sheets"):
+    st.cache_data.clear()
+    st.rerun()
+
     if obtener_google_sheet_id():
         try:
             apuestas_google = cargar_apuestas_desde_google_multipestana(partidos)
@@ -872,6 +877,17 @@ if demo_mode:
     demo_res["goles_local"] = [rnd.choice([0,1,1,2,2,3]) for _ in range(len(demo_res))]
     demo_res["goles_visitante"] = [rnd.choice([0,0,1,1,2]) for _ in range(len(demo_res))]
     resultados_df = partidos[["partido_id"]].merge(demo_res, on="partido_id", how="left")
+
+# Diagnóstico oculto para comprobar fuente de datos durante pruebas
+with st.expander("🛠️ Diagnóstico de datos", expanded=False):
+    st.write({
+        "GOOGLE_SHEET_ID_configurado": bool(obtener_google_sheet_id()),
+        "partidos": int(len(partidos)),
+        "apuestas_filas": int(len(apuestas_df)),
+        "participantes": int(apuestas_df["participante"].nunique()) if not apuestas_df.empty else 0,
+        "resultados_rellenados": int(resultados_df.dropna(subset=["goles_local", "goles_visitante"]).shape[0]) if not resultados_df.empty else 0,
+        "modo_demo": bool(demo_mode),
+    })
 
 # -----------------------------
 # Cálculo
