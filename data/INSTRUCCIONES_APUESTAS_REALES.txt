@@ -1,0 +1,23 @@
+APUESTAS REALES CONECTADAS
+
+Incluye:
+- data/apuestas_base.xlsx: Excel de ejemplo de la Eurocopa 2024 convertido a XLSX.
+- data/apuestas_reales.csv: 123 participantes extraídos automáticamente.
+- data/partidos.csv: 36 partidos extraídos del Excel.
+- data/resultados.csv: resultados vacíos para que los completes manualmente.
+- tools/convertir_excel_porra.py: conversor para repetir el proceso con otro Excel del mismo formato.
+
+Para subirlo a GitHub:
+
+git add .
+git commit -m "Conectar apuestas reales desde Excel"
+git push
+
+Para regenerar CSV si cambias el Excel:
+
+python tools/convertir_excel_porra.py
+
+Notas:
+- La app usará data/apuestas_reales.csv si no hay Google Sheet configurada.
+- Los participantes salen de cada hoja del Excel, usando la celda B3 como nombre.
+- Se han detectado 123 participantes y 4427 apuestas.

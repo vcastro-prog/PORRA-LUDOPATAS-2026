@@ -1,0 +1,26 @@
+VERSIÓN FINAL CON DEMO EURO 2024
+
+Incluye:
+- Cabecera correcta con logo real a la derecha.
+- Responsive móvil.
+- Puntos como puntos, no porcentaje.
+- Lectura futura desde Google Sheets.
+- Demo local recuperada con datos de la Eurocopa 2024 si no hay Google Sheet configurada.
+
+Funcionamiento:
+1. Si configuras GOOGLE_SHEET_ID en Streamlit Secrets, la app intentará leer Google Sheets.
+2. Si no hay Google Sheet configurada o falla, usa los CSV locales de data/ como demo.
+3. Esa demo permite enseñar la aplicación al propietario con participantes/resultados de ejemplo.
+
+Subir a GitHub:
+
+git add .
+git commit -m "Recuperar demo Euro 2024 manteniendo version final"
+git push
+
+En Streamlit Cloud, cuando quieras conectar Google Sheets reales:
+
+GOOGLE_SHEET_ID = "ID_DE_TU_GOOGLE_SHEET"
+
+Nota:
+Para el formato real final de la porra, la app deberá leer todas las pestañas de participantes y excluir RESULTADOS.

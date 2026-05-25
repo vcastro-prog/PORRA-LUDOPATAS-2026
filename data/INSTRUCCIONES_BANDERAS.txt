@@ -1,0 +1,10 @@
+Corrección aplicada:
+- Sistema robusto de banderas.
+- Normaliza acentos, puntos, espacios y variantes.
+- Incluye Eurocopa 2024 y selecciones previstas del Mundial.
+- cargar_partidos() ahora usa bandera_equipo().
+
+Subida:
+git add .
+git commit -m "Corregir banderas de equipos"
+git push

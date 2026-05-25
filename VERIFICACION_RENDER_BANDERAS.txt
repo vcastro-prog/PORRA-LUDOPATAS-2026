@@ -1,0 +1,3 @@
+proximo usa bandera_equipo local: True
+calendario usa apply bandera: True
+apuestas usa apply bandera: True

@@ -1,0 +1,26 @@
+PRUEBA LOCAL GOOGLE SHEETS
+
+1. Crea una carpeta llamada .streamlit en la raíz del proyecto.
+2. Dentro crea exactamente este archivo:
+   .streamlit/secrets.toml
+
+3. Contenido:
+   GOOGLE_SHEET_ID = "1cm078Qw5kVBjlaKsxRZeVin85sJk-UxeCEa-mPsVJTw"
+
+IMPORTANTE:
+- No sirve que el archivo se llame secrets(1).toml.
+- No sirve si está en Descargas.
+- Debe estar exactamente en .streamlit/secrets.toml.
+
+4. Ejecuta:
+   streamlit run app.py
+
+5. En la app pulsa "🔄 Actualizar datos".
+6. Abre el desplegable "🛠️ Diagnóstico de datos".
+   Debe mostrar:
+   - GOOGLE_SHEET_ID_configurado: True
+   - resultados_rellenados: 36
+   - participantes: aproximadamente 123
+   - modo_demo: False
+
+Si modo_demo aparece True, la app no está leyendo Google Sheets.

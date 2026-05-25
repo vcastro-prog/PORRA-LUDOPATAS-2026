@@ -1,0 +1,16 @@
+[theme]
+base="dark"
+primaryColor="#FFD166"
+backgroundColor="#070A13"
+secondaryBackgroundColor="#11172B"
+textColor="#F8FAFC"
+font="sans serif"
+
+[server]
+headless=true
+
+[client]
+toolbarMode="minimal"
+
+[ui]
+hideTopBar=true

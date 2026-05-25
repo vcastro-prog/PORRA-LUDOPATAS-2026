@@ -1,0 +1,30 @@
+VERSIÓN GOOGLE SHEETS MULTIPESTAÑA + PARTICIPANTE EN B3
+
+Estructura esperada de Google Sheets:
+- Una pestaña llamada RESULTADOS.
+- Una pestaña por cada participante.
+- En cada pestaña de participante, el nombre real está en B3.
+
+La app:
+- descarga la Google Sheet completa como XLSX
+- lee todas las pestañas excepto RESULTADOS y otras auxiliares
+- usa B3 como nombre del participante
+- extrae apuestas del formato original de la porra
+- lee resultados desde RESULTADOS
+- recalcula automáticamente al cambiar goles en RESULTADOS
+
+Para probar local:
+1. Crea .streamlit/secrets.toml
+2. Añade:
+   GOOGLE_SHEET_ID = "1cm078Qw5kVBjlaKsxRZeVin85sJk-UxeCEa-mPsVJTw"
+3. Ejecuta:
+   streamlit run app.py
+
+En Streamlit Cloud:
+App > Settings > Secrets:
+   GOOGLE_SHEET_ID = "1cm078Qw5kVBjlaKsxRZeVin85sJk-UxeCEa-mPsVJTw"
+
+Subir:
+git add .
+git commit -m "Leer Google Sheets multipestana con participante en B3"
+git push

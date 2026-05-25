@@ -1,0 +1,14 @@
+VERSIÓN PULIDA
+
+Cambios:
+- Eliminado el diagnóstico visible de cabecera.
+- Se mantiene botón '🔄 Actualizar datos'.
+- Recuperadas banderas con normalización de nombres de selecciones.
+- La gráfica 'La comunidad opina' ya no se puede editar ni dejar descolocada.
+- Añadido selector para elegir el partido de la gráfica de comunidad.
+- No se agranda la página con muchas gráficas: solo se muestra una gráfica seleccionable.
+
+Subida:
+git add .
+git commit -m "Pulir vista publica y comunidad opina"
+git push

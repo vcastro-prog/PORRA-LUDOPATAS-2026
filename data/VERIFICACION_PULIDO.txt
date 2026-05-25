@@ -1,0 +1,4 @@
+diagnostico_visible: False
+normalizar_bandera: True
+staticPlot: True
+selector_comunidad: True

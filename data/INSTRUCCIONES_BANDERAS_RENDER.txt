@@ -1,0 +1,9 @@
+Corrección aplicada:
+- Las tarjetas de Próximos partidos ya no usan local_flag/visitante_flag del DataFrame.
+- Ahora llaman directamente a bandera_equipo(local) y bandera_equipo(visitante).
+- También se corrige el renderizado de banderas en Calendario y Apuestas.
+
+Subida:
+git add .
+git commit -m "Mostrar banderas reales en partidos"
+git push

@@ -1,0 +1,3 @@
+bandera_equipo: True
+ESPANA: True
+df local flag patched: True
