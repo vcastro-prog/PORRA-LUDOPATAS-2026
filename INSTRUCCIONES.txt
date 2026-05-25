@@ -1,11 +1,10 @@
-Sustituye tu app.py por este app.py.
-
-Cambio aplicado:
-- La columna Puntos deja de usar ProgressColumn.
-- Ahora usa NumberColumn con formato "%d pts".
+Cambios realizados:
+- La previsión de clasificados sale ahora en la HOME principal.
+- Aparece como último gran bloque de la página.
+- Se elimina de Estadísticas > Radiografía.
+- Mantiene diseño responsive móvil/escritorio.
 
 Subida:
-
 git add .
-git commit -m "Corregir puntos sin porcentaje"
+git commit -m "Mover prediccion de grupos a home"
 git push

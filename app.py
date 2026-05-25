@@ -470,6 +470,16 @@ button[kind="primary"] {border-radius: 999px;}
   font-weight: 900;
 }
 
+
+@media (max-width: 760px) {
+  .prediction-card {
+    padding: 12px 14px;
+  }
+  .prediction-table {
+    font-size: .82rem;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -1437,6 +1447,14 @@ with b:
     st.markdown("### 🧠 La comunidad opina")
     bloque_comunidad(apuestas_df, partidos)
 
+
+
+st.markdown("## 🔮 La comunidad predice")
+st.caption("Predicción de clasificados por grupo según la tendencia global de las apuestas de la porra.")
+
+pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos)
+render_prediccion_grupos(pred_grupos_home)
+
 # -----------------------------
 # Tabs
 # -----------------------------
@@ -1532,10 +1550,7 @@ with tab4:
             st.markdown("#### Partido más discutido")
             resumen = resumen_partido(apuestas_df, resultados_df, partidos)
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
-        st.markdown("#### 🔮 Previsión de clasificados por grupo")
-        st.caption("Según las apuestas de todos los participantes. Se simula la clasificación de cada grupo con los pronósticos de cada persona y se calcula qué equipos aparecen más veces en puestos de clasificación.")
-        pred_grupos = prediccion_clasificados_por_grupo(apuestas_df, partidos)
-        render_prediccion_grupos(pred_grupos)
+
 
 with tab5:
     st.markdown(
