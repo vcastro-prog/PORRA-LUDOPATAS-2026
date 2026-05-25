@@ -712,23 +712,9 @@ def normalizar_resultados(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.DataFrame:
-    """Carga apuestas.
-
-    Prioridad:
-    1. Google Sheet multipestaña:
-       - RESULTADOS
-       - una hoja por participante
-       - nombre participante en B3
-    2. CSV local data/apuestas.csv o data/apuestas_reales.csv
-    3. DataFrame vacío para activar demo.
-    """
+    """Carga apuestas desde Google Sheets multipestaña o CSV local."""
     if partidos is None:
         partidos = cargar_partidos()
-
-# Botón útil durante pruebas: fuerza a leer de nuevo Google Sheets.
-if st.button("🔄 Actualizar datos", help="Vacía la caché y vuelve a leer Google Sheets"):
-    st.cache_data.clear()
-    st.rerun()
 
     if obtener_google_sheet_id():
         try:
@@ -736,14 +722,19 @@ if st.button("🔄 Actualizar datos", help="Vacía la caché y vuelve a leer Goo
             if not apuestas_google.empty:
                 return apuestas_google
         except Exception as e:
-            st.warning(f"No pude leer apuestas desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+            st.warning(
+                f"No pude leer apuestas desde Google Sheets. "
+                f"Uso copia local si existe. Detalle: {e}"
+            )
 
     for filename in ["apuestas.csv", "apuestas_reales.csv"]:
         apuestas_csv = DATA_DIR / filename
         if apuestas_csv.exists():
             return normalizar_apuestas(pd.read_csv(apuestas_csv))
 
-    return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+    return pd.DataFrame(
+        columns=["participante", "partido_id", "goles_local", "goles_visitante"]
+    )
 
 
 def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
