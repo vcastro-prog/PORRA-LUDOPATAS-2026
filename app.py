@@ -393,45 +393,105 @@ FLAG = {
 
 
 
+
 def normalizar_texto_bandera(valor: str) -> str:
-    """Normaliza nombres de selecciones para recuperar banderas aunque haya acentos, puntos o espacios."""
+    """Normaliza nombres de selecciones para encontrar banderas."""
     if pd.isna(valor):
         return ""
+
     texto = str(valor).strip().upper()
     reemplazos = {
-        "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U", "Ü": "U", "Ñ": "N",
-        ".": "", ",": "", "-": " ", "  ": " ",
+        "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U",
+        "À": "A", "È": "E", "Ì": "I", "Ò": "O", "Ù": "U",
+        "Ü": "U", "Ñ": "N", "Ç": "C",
+        ".": "", ",": "", "-": " ", "_": " ",
     }
     for origen, destino in reemplazos.items():
         texto = texto.replace(origen, destino)
+
     texto = re.sub(r"\s+", " ", texto).strip()
     return texto
 
-FLAG_NORMALIZADO = {normalizar_texto_bandera(k): v for k, v in FLAG.items()}
-FLAG_NORMALIZADO.update({
-    "PAISES BAJOS": "🇳🇱",
-    "REPUBLICA CHECA": "🇨🇿",
-    "REP CHECA": "🇨🇿",
-    "CHEQUIA": "🇨🇿",
+
+FLAG_NORMALIZADO = {
+    "ALEMANIA": "🇩🇪",
+    "ESCOCIA": "🏴",
+    "HUNGRIA": "🇭🇺",
+    "SUIZA": "🇨🇭",
+    "ESPANA": "🇪🇸",
     "CROACIA": "🇭🇷",
     "CROCIA": "🇭🇷",
+    "ITALIA": "🇮🇹",
+    "ALBANIA": "🇦🇱",
+    "POLONIA": "🇵🇱",
+    "PAISES BAJOS": "🇳🇱",
+    "HOLANDA": "🇳🇱",
+    "ESLOVENIA": "🇸🇮",
+    "DINAMARCA": "🇩🇰",
+    "SERBIA": "🇷🇸",
+    "INGLATERRA": "🏴",
+    "RUMANIA": "🇷🇴",
+    "UCRANIA": "🇺🇦",
     "BELGICA": "🇧🇪",
-    "TUNEZ": "🇹🇳",
+    "ESLOVAQUIA": "🇸🇰",
+    "AUSTRIA": "🇦🇹",
+    "FRANCIA": "🇫🇷",
     "TURQUIA": "🇹🇷",
+    "GEORGIA": "🇬🇪",
+    "PORTUGAL": "🇵🇹",
+    "CHEQUIA": "🇨🇿",
+    "REPUBLICA CHECA": "🇨🇿",
+    "REP CHECA": "🇨🇿",
+
+    "MEXICO": "🇲🇽",
     "SUDAFRICA": "🇿🇦",
+    "COREA DEL SUR": "🇰🇷",
+    "CANADA": "🇨🇦",
+    "BOSNIA": "🇧🇦",
+    "QATAR": "🇶🇦",
+    "BRASIL": "🇧🇷",
+    "MARRUECOS": "🇲🇦",
+    "HAITI": "🇭🇹",
+    "ESTADOS UNIDOS": "🇺🇸",
+    "USA": "🇺🇸",
+    "PARAGUAY": "🇵🇾",
+    "AUSTRALIA": "🇦🇺",
+    "COSTA DE MARFIL": "🇨🇮",
+    "COSTA DEMARFIL": "🇨🇮",
+    "ECUADOR": "🇪🇨",
+    "JAPON": "🇯🇵",
+    "SUECIA": "🇸🇪",
+    "TUNEZ": "🇹🇳",
+    "EGIPTO": "🇪🇬",
+    "IRAN": "🇮🇷",
+    "NUEVA ZELANDA": "🇳🇿",
     "ARABIA SAUDI": "🇸🇦",
+    "URUGUAY": "🇺🇾",
+    "CABO VERDE": "🇨🇻",
+    "SENEGAL": "🇸🇳",
+    "IRAQ": "🇮🇶",
+    "NORUEGA": "🇳🇴",
+    "ARGENTINA": "🇦🇷",
+    "ARGELIA": "🇩🇿",
+    "JORDANIA": "🇯🇴",
     "R D CONGO": "🇨🇩",
     "RDCONGO": "🇨🇩",
-    "COSTA DEMARFIL": "🇨🇮",
-    "COSTA DE MARFIL": "🇨🇮",
-    "ESTADOS UNIDOS": "🇺🇸",
-})
+    "UZBEKISTAN": "🇺🇿",
+    "COLOMBIA": "🇨🇴",
+    "GHANA": "🇬🇭",
+    "PANAMA": "🇵🇦",
+}
+
+
+def bandera_equipo(nombre: str) -> str:
+    return FLAG_NORMALIZADO.get(normalizar_texto_bandera(nombre), "🏳️")
+
 
 @st.cache_data
 def cargar_partidos() -> pd.DataFrame:
     df = pd.read_csv(DATA_DIR / "partidos.csv")
-    df["local_flag"] = df["local"].apply(lambda x: FLAG_NORMALIZADO.get(normalizar_texto_bandera(x), "🏳️"))
-    df["visitante_flag"] = df["visitante"].apply(lambda x: FLAG_NORMALIZADO.get(normalizar_texto_bandera(x), "🏳️"))
+        df["local_flag"] = df["local"].apply(bandera_equipo)
+    df["visitante_flag"] = df["visitante"].apply(bandera_equipo)
     return df
 
 
