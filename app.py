@@ -490,8 +490,12 @@ def bandera_equipo(nombre: str) -> str:
 @st.cache_data
 def cargar_partidos() -> pd.DataFrame:
     df = pd.read_csv(DATA_DIR / "partidos.csv")
+
+    # Forzamos banderas desde los nombres de equipos, ignorando cualquier
+    # código anterior tipo SK, GE, CZ que pueda venir de datos antiguos.
     df["local_flag"] = df["local"].apply(bandera_equipo)
     df["visitante_flag"] = df["visitante"].apply(bandera_equipo)
+
     return df
 
 
@@ -918,15 +922,25 @@ def podium(tabla: pd.DataFrame):
 def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
     jugados = set(resultados_df.dropna(subset=["goles_local", "goles_visitante"])["partido_id"].astype(int))
     pendientes = partidos[~partidos["partido_id"].astype(int).isin(jugados)].head(3)
+
     if pendientes.empty:
-        st.success("Todos los partidos de la fase de grupos están cerrados. ¡A revisar el campeón de la porra!")
+        st.success("Todos los partidos están cerrados. ¡A revisar el campeón de la porra!")
         return
+
     for _, p in pendientes.iterrows():
+        local_bandera = bandera_equipo(p["local"])
+        visitante_bandera = bandera_equipo(p["visitante"])
+
         st.markdown(
-            f"<div class='match-card'><div class='small-muted'>{p['fecha']} · {p['grupo']} · Partido {int(p['partido_id'])}</div>"
-            f"<div class='team-line'>{bandera_equipo(p['local'])} {p['local']} <span style='color:#FFD166'>vs</span> {bandera_equipo(p['visitante'])} {p['visitante']}</div></div>",
+            f"<div class='match-card'>"
+            f"<div class='small-muted'>{p['fecha']} · {p['grupo']} · Partido {int(p['partido_id'])}</div>"
+            f"<div class='team-line'>{local_bandera} {p['local']} "
+            f"<span style='color:#FFD166'>vs</span> "
+            f"{visitante_bandera} {p['visitante']}</div>"
+            f"</div>",
             unsafe_allow_html=True,
         )
+
 
 
 def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):

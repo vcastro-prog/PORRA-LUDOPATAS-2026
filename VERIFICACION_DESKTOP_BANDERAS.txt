@@ -1,0 +1,3 @@
+local_bandera en proximo: True
+cargar_partidos recalcula: True
+no ProgressColumn: True
