@@ -4,6 +4,7 @@ from pathlib import Path
 import base64
 import random
 import re
+from io import BytesIO
 import requests
 
 import pandas as pd
@@ -408,6 +409,185 @@ def leer_secret(nombre: str, default: str = "") -> str:
         return default
 
 
+def obtener_google_sheet_id() -> str:
+    """Lee el ID de la Google Sheet desde Streamlit Secrets.
+
+    Ejemplo:
+        GOOGLE_SHEET_ID = "1cm078Qw5kVBjlaKsxRZeVin85sJk-UxeCEa-mPsVJTw"
+
+    También acepta una URL completa por compatibilidad.
+    """
+    valor = leer_secret("GOOGLE_SHEET_ID") or leer_secret("GOOGLE_SHEET_URL")
+    if not valor:
+        return ""
+
+    match = re.search(r"/d/([a-zA-Z0-9-_]+)", valor)
+    return match.group(1) if match else valor.strip()
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def descargar_google_sheet_como_excel(sheet_id: str) -> bytes:
+    """Descarga una Google Sheet pública como archivo XLSX.
+
+    La hoja debe estar compartida como:
+        Cualquiera con el enlace -> Lector
+    """
+    if not sheet_id:
+        return b""
+
+    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx"
+    response = requests.get(url, timeout=45)
+    response.raise_for_status()
+
+    content_type = response.headers.get("content-type", "")
+    if "html" in content_type.lower():
+        raise RuntimeError(
+            "Google devolvió HTML en lugar de XLSX. Revisa que la hoja sea pública con permiso de lectura."
+        )
+
+    return response.content
+
+
+def leer_excel_google_sheet(sheet_id: str) -> pd.ExcelFile:
+    excel_bytes = descargar_google_sheet_como_excel(sheet_id)
+    return pd.ExcelFile(BytesIO(excel_bytes), engine="openpyxl")
+
+
+def limpiar_nombre_equipo(valor) -> str:
+    if pd.isna(valor):
+        return ""
+    texto = str(valor).strip()
+    texto = re.sub(r"\s+", " ", texto)
+    return texto
+
+
+def extraer_apuestas_de_hoja_excel(df: pd.DataFrame, nombre_hoja: str, partidos_ref: pd.DataFrame) -> pd.DataFrame:
+    """Extrae apuestas de una hoja de participante.
+
+    - El nombre real del participante se toma de la celda B3.
+    - Detecta partidos buscando patrón:
+        LOCAL | goles_local | goles_visitante | VISITANTE
+    - Cruza con partidos.csv para obtener partido_id.
+    """
+    if df.empty:
+        return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+
+    try:
+        participante = str(df.iat[2, 1]).strip()  # B3
+    except Exception:
+        participante = ""
+
+    if not participante or participante.lower() in ["nan", "none"]:
+        participante = str(nombre_hoja).strip()
+
+    partidos_tmp = partidos_ref.copy()
+    partidos_tmp["local_norm"] = partidos_tmp["local"].astype(str).str.strip().str.upper()
+    partidos_tmp["visitante_norm"] = partidos_tmp["visitante"].astype(str).str.strip().str.upper()
+
+    rows = []
+    n_rows, n_cols = df.shape
+
+    for r in range(n_rows):
+        for c in range(max(0, n_cols - 3)):
+            local = limpiar_nombre_equipo(df.iat[r, c])
+            visitante = limpiar_nombre_equipo(df.iat[r, c + 3]) if c + 3 < n_cols else ""
+
+            if not local or not visitante:
+                continue
+
+            gl_num = pd.to_numeric(df.iat[r, c + 1], errors="coerce") if c + 1 < n_cols else pd.NA
+            gv_num = pd.to_numeric(df.iat[r, c + 2], errors="coerce") if c + 2 < n_cols else pd.NA
+
+            if pd.isna(gl_num) or pd.isna(gv_num):
+                continue
+
+            local_norm = local.upper()
+            visitante_norm = visitante.upper()
+
+            match = partidos_tmp[
+                (partidos_tmp["local_norm"] == local_norm) &
+                (partidos_tmp["visitante_norm"] == visitante_norm)
+            ]
+
+            if match.empty:
+                continue
+
+            rows.append({
+                "participante": participante,
+                "partido_id": int(match.iloc[0]["partido_id"]),
+                "goles_local": int(gl_num),
+                "goles_visitante": int(gv_num),
+            })
+
+    out = pd.DataFrame(rows, columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+    if not out.empty:
+        out = out.drop_duplicates(subset=["participante", "partido_id"], keep="first")
+    return out
+
+
+def cargar_apuestas_desde_google_multipestana(partidos: pd.DataFrame) -> pd.DataFrame:
+    """Carga apuestas desde Google Sheets multipestaña.
+
+    Estructura:
+        RESULTADOS
+        hoja participante 1
+        hoja participante 2
+        ...
+
+    El nombre del participante está en B3.
+    """
+    sheet_id = obtener_google_sheet_id()
+    if not sheet_id:
+        return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+
+    xls = leer_excel_google_sheet(sheet_id)
+
+    hojas_excluidas = {
+        "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN", "RESUMEN",
+        "INSTRUCCIONES", "PARTIDOS", "CONFIG", "CONFIGURACION", "CONFIGURACIÓN"
+    }
+
+    apuestas = []
+    for sheet_name in xls.sheet_names:
+        if sheet_name.strip().upper() in hojas_excluidas:
+            continue
+
+        try:
+            df_sheet = pd.read_excel(xls, sheet_name=sheet_name, header=None)
+            parsed = extraer_apuestas_de_hoja_excel(df_sheet, sheet_name, partidos)
+            if not parsed.empty:
+                apuestas.append(parsed)
+        except Exception as e:
+            st.warning(f"No pude leer la hoja '{sheet_name}'. Detalle: {e}")
+
+    if not apuestas:
+        return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
+
+    return pd.concat(apuestas, ignore_index=True)
+
+
+def cargar_resultados_desde_google_resultados() -> pd.DataFrame:
+    """Carga resultados desde la pestaña RESULTADOS."""
+    sheet_id = obtener_google_sheet_id()
+    if not sheet_id:
+        return pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"])
+
+    xls = leer_excel_google_sheet(sheet_id)
+
+    resultado_sheet = None
+    for sheet_name in xls.sheet_names:
+        if sheet_name.strip().upper() == "RESULTADOS":
+            resultado_sheet = sheet_name
+            break
+
+    if resultado_sheet is None:
+        raise ValueError("No existe una pestaña llamada RESULTADOS.")
+
+    df = pd.read_excel(xls, sheet_name=resultado_sheet)
+    return normalizar_resultados(df)
+
+
+
 
 def obtener_google_sheet_id() -> str:
     """Lee el ID de Google Sheet desde secrets.
@@ -531,39 +711,49 @@ def normalizar_resultados(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def cargar_apuestas_desde_fuente() -> pd.DataFrame:
-    """Carga apuestas desde Google Sheets, CSV local o modo demo."""
-    sheet_id = obtener_google_sheet_id()
+def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Carga apuestas.
 
-    if sheet_id:
+    Prioridad:
+    1. Google Sheet multipestaña:
+       - RESULTADOS
+       - una hoja por participante
+       - nombre participante en B3
+    2. CSV local data/apuestas.csv o data/apuestas_reales.csv
+    3. DataFrame vacío para activar demo.
+    """
+    if partidos is None:
+        partidos = cargar_partidos()
+
+    if obtener_google_sheet_id():
         try:
-            csv_url = construir_csv_url_por_pestana("APUESTAS")
-            return normalizar_apuestas(leer_csv_externo(csv_url))
+            apuestas_google = cargar_apuestas_desde_google_multipestana(partidos)
+            if not apuestas_google.empty:
+                return apuestas_google
         except Exception as e:
-            st.warning(f"No pude leer la pestaña APUESTAS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+            st.warning(f"No pude leer apuestas desde Google Sheets. Uso copia local si existe. Detalle: {e}")
 
-    apuestas_csv = DATA_DIR / "apuestas.csv"
-    if apuestas_csv.exists():
-        return normalizar_apuestas(pd.read_csv(apuestas_csv))
+    for filename in ["apuestas.csv", "apuestas_reales.csv"]:
+        apuestas_csv = DATA_DIR / filename
+        if apuestas_csv.exists():
+            return normalizar_apuestas(pd.read_csv(apuestas_csv))
 
     return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
 
 
 def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
-    """Carga resultados desde Google Sheets, CSV local o base vacía."""
+    """Carga resultados desde Google Sheets o CSV local."""
     base = partidos[["partido_id"]].copy()
     base["goles_local"] = pd.NA
     base["goles_visitante"] = pd.NA
 
     loaded = pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"])
 
-    sheet_id = obtener_google_sheet_id()
-    if sheet_id:
+    if obtener_google_sheet_id():
         try:
-            csv_url = construir_csv_url_por_pestana("RESULTADOS")
-            loaded = normalizar_resultados(leer_csv_externo(csv_url))
+            loaded = cargar_resultados_desde_google_resultados()
         except Exception as e:
-            st.warning(f"No pude leer la pestaña RESULTADOS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+            st.warning(f"No pude leer RESULTADOS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
 
     if loaded.empty:
         resultados_csv = DATA_DIR / "resultados.csv"
@@ -671,7 +861,7 @@ partidos = cargar_partidos()
 # La web es pública y limpia. Los datos se gestionan fuera: Google Sheets para apuestas/resultados
 # y, más adelante, SportMonks para resultados automáticos. Streamlit solo lee y calcula.
 
-apuestas_df = cargar_apuestas_desde_fuente()
+apuestas_df = cargar_apuestas_desde_fuente(partidos)
 resultados_df = cargar_resultados_desde_fuente(partidos)
 
 demo_mode = apuestas_df.empty

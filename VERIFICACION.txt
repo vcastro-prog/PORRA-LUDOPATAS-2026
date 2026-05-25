@@ -1,6 +1,5 @@
-hero-right-logo: True
-cup-art: False
-logo-top: False
+multipestana: True
+B3: True
+descarga_xlsx: True
 ProgressColumn: False
-NumberColumn puntos: True
-Google tabs: True
+hero-right-logo: True
