@@ -1,0 +1,3 @@
+Corrección aplicada:
+- Arreglado IndentationError en cargar_partidos().
+- Las líneas local_flag y visitante_flag ahora tienen indentación correcta.
