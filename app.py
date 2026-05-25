@@ -388,6 +388,46 @@ button[kind="primary"] {border-radius: 999px;}
   margin-right: 4px;
 }
 
+
+.table-card {
+  overflow-x: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.045);
+}
+.pretty-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+.pretty-table th {
+  color: var(--muted);
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.05);
+}
+.pretty-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  vertical-align: middle;
+}
+.pretty-table tr:last-child td {
+  border-bottom: none;
+}
+.pretty-table .flag-img {
+  margin-right: 7px;
+}
+@media (max-width: 760px) {
+  .pretty-table {
+    font-size: .84rem;
+  }
+  .pretty-table th,
+  .pretty-table td {
+    padding: 10px 11px;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -568,6 +608,17 @@ ISO_BANDERAS = {
     "UZBEKISTAN": "uz",
     "IRAQ": "iq",
 }
+
+
+
+def partido_html(local: str, visitante: str) -> str:
+    """Devuelve partido con imágenes de banderas para HTML."""
+    return f"{bandera_html(local)} {local} <span style='color:#FFD166'>vs</span> {bandera_html(visitante)} {visitante}"
+
+
+def partido_texto_con_banderas(local: str, visitante: str) -> str:
+    """Versión para tablas/dataframes. Usa emoji si el sistema lo soporta."""
+    return f"{bandera_equipo(local)} {local} vs {bandera_equipo(visitante)} {visitante}"
 
 
 def bandera_html(nombre: str) -> str:
@@ -1050,10 +1101,7 @@ def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
 
 
 def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
-    """Muestra el pulso de la comunidad para un partido seleccionable.
-
-    La gráfica es estática para evitar que los usuarios la editen, muevan o dejen en un estado raro.
-    """
+    """Muestra el pulso de la comunidad para un partido seleccionable."""
     if apuestas.empty:
         st.info("Aún no hay apuestas para leer el pulso de la comunidad.")
         return
@@ -1068,9 +1116,13 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
         return
 
     resumen = resumen.copy()
-    resumen["selector"] = resumen["partido_id"].astype(str) + " · " + resumen["partido"]
 
-    # Por defecto enseñamos el partido con más apuestas.
+    # Añadimos local/visitante para poder mostrar banderas como imágenes.
+    equipos = partidos[["partido_id", "local", "visitante"]].copy()
+    resumen = resumen.merge(equipos, on="partido_id", how="left")
+
+    resumen["selector"] = resumen["partido_id"].astype(str) + " · " + resumen["local"] + " vs " + resumen["visitante"]
+
     idx_default = int(resumen["total"].idxmax()) if "total" in resumen.columns else 0
     opciones = resumen["selector"].tolist()
     default_label = resumen.loc[idx_default, "selector"] if idx_default in resumen.index else opciones[0]
@@ -1085,14 +1137,17 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
 
     partido = resumen[resumen["selector"] == partido_sel].iloc[0]
 
+    local = str(partido["local"])
+    visitante = str(partido["visitante"])
+
     vals = pd.DataFrame({
-        "signo": ["Gana local", "Empate", "Gana visitante"],
+        "signo": [f"Gana {local}", "Empate", f"Gana {visitante}"],
         "porcentaje": [partido["1%"], partido["X%"], partido["2%"]]
     })
 
     st.markdown(
         f"<div class='card'><div class='stat-label'>Pulso de la comunidad</div>"
-        f"<div class='team-line'>{partido['partido']}</div>"
+        f"<div class='team-line'>{partido_html(local, visitante)}</div>"
         f"<div class='small-muted'>{int(partido['total'])} apuestas registradas para este partido.</div></div>",
         unsafe_allow_html=True
     )
@@ -1119,7 +1174,6 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
             "responsive": True,
         }
     )
-
 
 
 partidos = cargar_partidos()
@@ -1231,10 +1285,49 @@ with tab1:
 
 with tab2:
     st.markdown("### Calendario de la fase de grupos")
-    partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local_flag", "local", "visitante_flag", "visitante"]].merge(resultados_df, on="partido_id", how="left")
-    partidos_resultados["partido"] = partidos_resultados["local"].apply(bandera_equipo) + " " + partidos_resultados["local"] + " vs " + partidos_resultados["visitante"].apply(bandera_equipo) + " " + partidos_resultados["visitante"]
-    partidos_resultados["resultado"] = partidos_resultados.apply(lambda r: "Pendiente" if pd.isna(r["goles_local"]) or pd.isna(r["goles_visitante"]) else f"{int(r['goles_local'])}-{int(r['goles_visitante'])}", axis=1)
-    st.dataframe(partidos_resultados[["partido_id", "grupo", "fecha", "partido", "resultado"]], hide_index=True, use_container_width=True)
+    partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
+        resultados_df, on="partido_id", how="left"
+    )
+
+    def resultado_texto(r):
+        if pd.isna(r["goles_local"]) or pd.isna(r["goles_visitante"]):
+            return "Pendiente"
+        return f"{int(r['goles_local'])}-{int(r['goles_visitante'])}"
+
+    rows_html = ""
+    for _, r in partidos_resultados.iterrows():
+        rows_html += (
+            "<tr>"
+            f"<td>{int(r['partido_id'])}</td>"
+            f"<td>{r['grupo']}</td>"
+            f"<td>{r['fecha']}</td>"
+            f"<td>{partido_html(str(r['local']), str(r['visitante']))}</td>"
+            f"<td><strong>{resultado_texto(r)}</strong></td>"
+            "</tr>"
+        )
+
+    st.markdown(
+        f"""
+        <div class="table-card">
+          <table class="pretty-table">
+            <thead>
+              <tr>
+                <th>Partido</th>
+                <th>Grupo</th>
+                <th>Fecha</th>
+                <th>Encuentro</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows_html}
+            </tbody>
+          </table>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 with tab3:
     st.markdown("### Apuestas de los participantes")
@@ -1245,7 +1338,7 @@ with tab3:
         vista = apuestas_df.merge(partidos[["partido_id", "grupo", "local_flag", "local", "visitante_flag", "visitante"]], on="partido_id", how="left")
         if participante_sel != "Todos":
             vista = vista[vista["participante"] == participante_sel]
-        vista["partido"] = vista["local"].apply(bandera_equipo) + " " + vista["local"] + " vs " + vista["visitante"].apply(bandera_equipo) + " " + vista["visitante"]
+        vista["partido"] = vista.apply(lambda r: partido_texto_con_banderas(str(r["local"]), str(r["visitante"])), axis=1)
         vista["apuesta"] = vista["goles_local"].astype(str) + " - " + vista["goles_visitante"].astype(str)
         st.dataframe(vista[["participante", "partido_id", "grupo", "partido", "apuesta"]].sort_values(["participante", "partido_id"]), hide_index=True, use_container_width=True)
 
@@ -1290,4 +1383,3 @@ Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durant
 
 st.caption("Diseño inspirado en el ambiente del Mundial 2026. No usa logos oficiales ni material protegido de FIFA.")
 
-st.caption("v2-banderas-img")

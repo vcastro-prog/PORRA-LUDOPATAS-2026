@@ -1,0 +1,11 @@
+Cambios:
+- Pulso de la comunidad muestra banderas como imágenes.
+- Selector de partido mantiene texto limpio.
+- Calendario de fase de grupos ahora es tabla HTML con imágenes de banderas.
+- La gráfica sigue bloqueada/no editable.
+- Se elimina la marca de prueba v2-banderas-img.
+
+Subir:
+git add .
+git commit -m "Mostrar banderas en comunidad y calendario"
+git push

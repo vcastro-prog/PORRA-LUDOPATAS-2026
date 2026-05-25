@@ -1,0 +1,4 @@
+bloque_comunidad reemplazado: 1
+tab2 reemplazado: 1
+partido_html: True
+pretty_table: True
