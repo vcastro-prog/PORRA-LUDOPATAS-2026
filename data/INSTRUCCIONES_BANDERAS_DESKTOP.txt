@@ -1,0 +1,11 @@
+Corrección aplicada:
+- cargar_partidos() recalcula siempre las banderas desde los nombres.
+- Próximos partidos usa variables locales local_bandera/visitante_bandera.
+- Calendario y Apuestas usan bandera_equipo() directamente.
+- Evita que en escritorio aparezcan códigos tipo SK, GE, CZ.
+
+Después de subir:
+1. git add .
+2. git commit -m "Corregir banderas escritorio"
+3. git push
+4. En Streamlit pulsa '🔄 Actualizar datos' o reinicia la app.
