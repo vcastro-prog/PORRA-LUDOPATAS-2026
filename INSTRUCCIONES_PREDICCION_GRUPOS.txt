@@ -1,0 +1,10 @@
+Cambio aplicado:
+- En Estadísticas > Radiografía de la porra se elimina 'Detalle punto a punto'.
+- Se añade 'Previsión de clasificados por grupo' según las apuestas de la comunidad.
+- Para cada participante se simula la tabla de cada grupo usando sus pronósticos.
+- Se calcula el % de veces que cada equipo queda en TOP 2.
+
+Subida:
+git add .
+git commit -m "Anadir prediccion de clasificados por grupo"
+git push

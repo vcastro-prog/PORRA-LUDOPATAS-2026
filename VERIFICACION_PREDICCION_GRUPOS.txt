@@ -1,0 +1,3 @@
+pred_func: True
+detalle eliminado: True
+prediction css: True

@@ -428,6 +428,48 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+.prediction-card {
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.055);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+}
+.prediction-title {
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.prediction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .94rem;
+}
+.prediction-table th {
+  color: var(--muted);
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.prediction-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.prediction-table tr:last-child td {
+  border-bottom: none;
+}
+.prediction-table tr.clasificado td {
+  background: rgba(71,245,155,.08);
+}
+.prediction-table tr.clasificado td:first-child {
+  color: var(--green);
+  font-weight: 900;
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -1176,6 +1218,141 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
     )
 
 
+
+def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataFrame) -> pd.DataFrame:
+    """Calcula la previsión de clasificados por grupo según las apuestas.
+
+    Para cada participante se simula la clasificación de cada grupo usando sus
+    pronósticos. Luego se calcula:
+    - puntos medios previstos por equipo
+    - % de participantes que colocan a ese equipo en TOP 2
+    """
+    columnas = ["grupo", "equipo", "puntos_medios", "top2_pct", "prediccion_pos"]
+    if apuestas.empty or partidos.empty:
+        return pd.DataFrame(columns=columnas)
+
+    base = apuestas.merge(
+        partidos[["partido_id", "grupo", "local", "visitante"]],
+        on="partido_id",
+        how="inner"
+    )
+
+    if base.empty:
+        return pd.DataFrame(columns=columnas)
+
+    registros = []
+
+    for participante, df_part in base.groupby("participante"):
+        for grupo, df_grupo in df_part.groupby("grupo"):
+            puntos = {}
+
+            equipos = sorted(set(df_grupo["local"].dropna().astype(str)).union(set(df_grupo["visitante"].dropna().astype(str))))
+            for equipo in equipos:
+                puntos[equipo] = 0
+
+            for _, r in df_grupo.iterrows():
+                local = str(r["local"])
+                visitante = str(r["visitante"])
+                gl = int(r["goles_local"])
+                gv = int(r["goles_visitante"])
+
+                if gl > gv:
+                    puntos[local] = puntos.get(local, 0) + 3
+                    puntos[visitante] = puntos.get(visitante, 0) + 0
+                elif gl < gv:
+                    puntos[local] = puntos.get(local, 0) + 0
+                    puntos[visitante] = puntos.get(visitante, 0) + 3
+                else:
+                    puntos[local] = puntos.get(local, 0) + 1
+                    puntos[visitante] = puntos.get(visitante, 0) + 1
+
+            # Desempate simple para previsión: puntos y nombre.
+            ranking = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))
+
+            for pos, (equipo, pts) in enumerate(ranking, start=1):
+                registros.append({
+                    "participante": participante,
+                    "grupo": grupo,
+                    "equipo": equipo,
+                    "puntos_previstos": pts,
+                    "top2": 1 if pos <= 2 else 0,
+                })
+
+    pred = pd.DataFrame(registros)
+    if pred.empty:
+        return pd.DataFrame(columns=columnas)
+
+    resumen = (
+        pred
+        .groupby(["grupo", "equipo"], as_index=False)
+        .agg(
+            puntos_medios=("puntos_previstos", "mean"),
+            top2_pct=("top2", "mean"),
+        )
+    )
+
+    resumen["top2_pct"] = resumen["top2_pct"] * 100
+
+    resumen = resumen.sort_values(
+        ["grupo", "top2_pct", "puntos_medios", "equipo"],
+        ascending=[True, False, False, True]
+    )
+
+    resumen["prediccion_pos"] = resumen.groupby("grupo").cumcount() + 1
+
+    return resumen[columnas]
+
+
+def render_prediccion_grupos(pred: pd.DataFrame):
+    """Renderiza la predicción de grupos con tarjetas visuales."""
+    if pred.empty:
+        st.info("Aún no hay apuestas suficientes para calcular la previsión de grupos.")
+        return
+
+    grupos = list(pred["grupo"].dropna().unique())
+
+    for grupo in grupos:
+        df_g = pred[pred["grupo"] == grupo].copy().sort_values("prediccion_pos")
+
+        filas = ""
+        for _, r in df_g.iterrows():
+            equipo = str(r["equipo"])
+            pos = int(r["prediccion_pos"])
+            top2 = float(r["top2_pct"])
+            pts = float(r["puntos_medios"])
+            clase = "clasificado" if pos <= 2 else ""
+
+            filas += (
+                f"<tr class='{clase}'>"
+                f"<td>{pos}</td>"
+                f"<td>{bandera_html(equipo)} {equipo}</td>"
+                f"<td>{top2:.1f}%</td>"
+                f"<td>{pts:.2f}</td>"
+                f"</tr>"
+            )
+
+        st.markdown(
+            f"""
+            <div class="prediction-card">
+              <div class="prediction-title">Grupo {grupo}</div>
+              <table class="prediction-table">
+                <thead>
+                  <tr>
+                    <th>Pos.</th>
+                    <th>Equipo</th>
+                    <th>Top 2</th>
+                    <th>Pts medios</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filas}
+                </tbody>
+              </table>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 partidos = cargar_partidos()
 
 # -----------------------------
@@ -1355,10 +1532,10 @@ with tab4:
             st.markdown("#### Partido más discutido")
             resumen = resumen_partido(apuestas_df, resultados_df, partidos)
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
-        st.markdown("#### Detalle punto a punto")
-        detalle_vista = detalle.merge(partidos[["partido_id", "grupo", "local", "visitante"]], on="partido_id", how="left")
-        cols = ["participante", "partido_id", "grupo", "local", "visitante", "goles_local", "goles_visitante", "real_local", "real_visitante", "puntos"]
-        st.dataframe(detalle_vista[cols].sort_values(["participante", "partido_id"]), hide_index=True, use_container_width=True)
+        st.markdown("#### 🔮 Previsión de clasificados por grupo")
+        st.caption("Según las apuestas de todos los participantes. Se simula la clasificación de cada grupo con los pronósticos de cada persona y se calcula qué equipos aparecen más veces en puestos de clasificación.")
+        pred_grupos = prediccion_clasificados_por_grupo(apuestas_df, partidos)
+        render_prediccion_grupos(pred_grupos)
 
 with tab5:
     st.markdown(
