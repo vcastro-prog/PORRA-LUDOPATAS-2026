@@ -392,11 +392,46 @@ FLAG = {
 }
 
 
+
+def normalizar_texto_bandera(valor: str) -> str:
+    """Normaliza nombres de selecciones para recuperar banderas aunque haya acentos, puntos o espacios."""
+    if pd.isna(valor):
+        return ""
+    texto = str(valor).strip().upper()
+    reemplazos = {
+        "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U", "Ü": "U", "Ñ": "N",
+        ".": "", ",": "", "-": " ", "  ": " ",
+    }
+    for origen, destino in reemplazos.items():
+        texto = texto.replace(origen, destino)
+    texto = re.sub(r"\s+", " ", texto).strip()
+    return texto
+
+FLAG_NORMALIZADO = {normalizar_texto_bandera(k): v for k, v in FLAG.items()}
+FLAG_NORMALIZADO.update({
+    "PAISES BAJOS": "🇳🇱",
+    "REPUBLICA CHECA": "🇨🇿",
+    "REP CHECA": "🇨🇿",
+    "CHEQUIA": "🇨🇿",
+    "CROACIA": "🇭🇷",
+    "CROCIA": "🇭🇷",
+    "BELGICA": "🇧🇪",
+    "TUNEZ": "🇹🇳",
+    "TURQUIA": "🇹🇷",
+    "SUDAFRICA": "🇿🇦",
+    "ARABIA SAUDI": "🇸🇦",
+    "R D CONGO": "🇨🇩",
+    "RDCONGO": "🇨🇩",
+    "COSTA DEMARFIL": "🇨🇮",
+    "COSTA DE MARFIL": "🇨🇮",
+    "ESTADOS UNIDOS": "🇺🇸",
+})
+
 @st.cache_data
 def cargar_partidos() -> pd.DataFrame:
     df = pd.read_csv(DATA_DIR / "partidos.csv")
-    df["local_flag"] = df["local"].map(FLAG).fillna("🏳️")
-    df["visitante_flag"] = df["visitante"].map(FLAG).fillna("🏳️")
+    df["local_flag"] = df["local"].apply(lambda x: FLAG_NORMALIZADO.get(normalizar_texto_bandera(x), "🏳️"))
+    df["visitante_flag"] = df["visitante"].apply(lambda x: FLAG_NORMALIZADO.get(normalizar_texto_bandera(x), "🏳️"))
     return df
 
 
@@ -835,19 +870,77 @@ def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
 
 
 def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
+    """Muestra el pulso de la comunidad para un partido seleccionable.
+
+    La gráfica es estática para evitar que los usuarios la editen, muevan o dejen en un estado raro.
+    """
     if apuestas.empty:
         st.info("Aún no hay apuestas para leer el pulso de la comunidad.")
         return
-    resumen = resumen_partido(apuestas, pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"]), partidos)
+
+    resumen = resumen_partido(
+        apuestas,
+        pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"]),
+        partidos
+    )
+
     if resumen.empty:
         return
-    partido = resumen.sort_values("total", ascending=False).iloc[0]
-    vals = pd.DataFrame({"signo": ["Gana local", "Empate", "Gana visitante"], "porcentaje": [partido["1%"], partido["X%"], partido["2%"]]})
-    st.markdown(f"<div class='card'><div class='stat-label'>Partido con más apuestas</div><div class='team-line'>{partido['partido']}</div><div class='small-muted'>Así piensa la comunidad antes de que ruede el balón.</div></div>", unsafe_allow_html=True)
+
+    resumen = resumen.copy()
+    resumen["selector"] = resumen["partido_id"].astype(str) + " · " + resumen["partido"]
+
+    # Por defecto enseñamos el partido con más apuestas.
+    idx_default = int(resumen["total"].idxmax()) if "total" in resumen.columns else 0
+    opciones = resumen["selector"].tolist()
+    default_label = resumen.loc[idx_default, "selector"] if idx_default in resumen.index else opciones[0]
+    default_index = opciones.index(default_label) if default_label in opciones else 0
+
+    partido_sel = st.selectbox(
+        "Elige partido para ver cómo apostó la comunidad",
+        opciones,
+        index=default_index,
+        key="selector_comunidad_partido"
+    )
+
+    partido = resumen[resumen["selector"] == partido_sel].iloc[0]
+
+    vals = pd.DataFrame({
+        "signo": ["Gana local", "Empate", "Gana visitante"],
+        "porcentaje": [partido["1%"], partido["X%"], partido["2%"]]
+    })
+
+    st.markdown(
+        f"<div class='card'><div class='stat-label'>Pulso de la comunidad</div>"
+        f"<div class='team-line'>{partido['partido']}</div>"
+        f"<div class='small-muted'>{int(partido['total'])} apuestas registradas para este partido.</div></div>",
+        unsafe_allow_html=True
+    )
+
     fig = px.bar(vals, x="signo", y="porcentaje", text="porcentaje", range_y=[0, 100])
-    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=280, margin=dict(l=10,r=10,t=20,b=10), showlegend=False)
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        height=270,
+        margin=dict(l=10, r=10, t=20, b=10),
+        showlegend=False,
+        xaxis_title=None,
+        yaxis_title=None,
+    )
     fig.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
-    st.plotly_chart(fig, use_container_width=True)
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        config={
+            "displayModeBar": False,
+            "staticPlot": True,
+            "responsive": True,
+        }
+    )
+
+
 
 partidos = cargar_partidos()
 
@@ -868,17 +961,6 @@ if demo_mode:
     demo_res["goles_local"] = [rnd.choice([0,1,1,2,2,3]) for _ in range(len(demo_res))]
     demo_res["goles_visitante"] = [rnd.choice([0,0,1,1,2]) for _ in range(len(demo_res))]
     resultados_df = partidos[["partido_id"]].merge(demo_res, on="partido_id", how="left")
-
-# Diagnóstico oculto para comprobar fuente de datos durante pruebas
-with st.expander("🛠️ Diagnóstico de datos", expanded=False):
-    st.write({
-        "GOOGLE_SHEET_ID_configurado": bool(obtener_google_sheet_id()),
-        "partidos": int(len(partidos)),
-        "apuestas_filas": int(len(apuestas_df)),
-        "participantes": int(apuestas_df["participante"].nunique()) if not apuestas_df.empty else 0,
-        "resultados_rellenados": int(resultados_df.dropna(subset=["goles_local", "goles_visitante"]).shape[0]) if not resultados_df.empty else 0,
-        "modo_demo": bool(demo_mode),
-    })
 
 # -----------------------------
 # Cálculo
