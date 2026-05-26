@@ -715,7 +715,7 @@ def obtener_google_sheet_id() -> str:
     """Lee el ID de la Google Sheet desde Streamlit Secrets.
 
     Ejemplo:
-        GOOGLE_SHEET_ID = "1cm078Qw5kVBjlaKsxRZeVin85sJk-UxeCEa-mPsVJTw"
+        GOOGLE_SHEET_ID = "1_3apexP0SaMJ9RPlyd4Tyr39DAWpBBXK"
 
     También acepta una URL completa por compatibilidad.
     """
