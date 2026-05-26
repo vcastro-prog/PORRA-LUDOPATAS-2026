@@ -1,0 +1,19 @@
+Cambio aplicado:
+- En la pestaña 'Apuestas' se añade un botón:
+  📥 Descargar todas las apuestas en Excel
+
+El Excel incluye:
+1. Resumen
+2. Detalle apuestas
+3. Vista participantes
+4. Calendario
+
+Objetivo:
+- Transparencia total.
+- Cualquier usuario puede revisar qué apostó cada participante.
+- Facilita comprobar que no hay cambios ocultos ni amaños.
+
+Subida:
+git add .
+git commit -m "Permitir descargar apuestas para transparencia"
+git push

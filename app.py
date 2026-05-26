@@ -1238,6 +1238,85 @@ def demo_apuestas(partidos: pd.DataFrame, n: int = 24) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+
+def generar_excel_apuestas_transparencia(apuestas: pd.DataFrame, partidos: pd.DataFrame) -> bytes:
+    """Genera un Excel amigable con todas las apuestas para transparencia."""
+    output = BytesIO()
+
+    if apuestas.empty:
+        with pd.ExcelWriter(output, engine="openpyxl") as writer:
+            pd.DataFrame({"mensaje": ["No hay apuestas cargadas."]}).to_excel(writer, index=False, sheet_name="Sin apuestas")
+        return output.getvalue()
+
+    detalle_apuestas = apuestas.merge(
+        partidos[["partido_id", "grupo", "fecha", "local", "visitante"]],
+        on="partido_id",
+        how="left"
+    ).copy()
+
+    detalle_apuestas["partido"] = detalle_apuestas["local"].astype(str) + " vs " + detalle_apuestas["visitante"].astype(str)
+    detalle_apuestas["apuesta"] = detalle_apuestas["goles_local"].astype(str) + " - " + detalle_apuestas["goles_visitante"].astype(str)
+
+    detalle_apuestas = detalle_apuestas[
+        ["participante", "partido_id", "grupo", "fecha", "partido", "local", "visitante", "goles_local", "goles_visitante", "apuesta"]
+    ].sort_values(["participante", "partido_id"])
+
+    resumen = (
+        detalle_apuestas
+        .groupby("participante", as_index=False)
+        .agg(
+            apuestas_registradas=("partido_id", "count"),
+            primer_partido=("partido_id", "min"),
+            ultimo_partido=("partido_id", "max"),
+        )
+        .sort_values("participante")
+    )
+
+    # Formato ancho: una fila por participante y una columna por partido.
+    matriz = detalle_apuestas.pivot_table(
+        index="participante",
+        columns="partido_id",
+        values="apuesta",
+        aggfunc="first"
+    ).reset_index()
+
+    matriz.columns = [
+        "participante" if c == "participante" else f"Partido {int(c)}"
+        for c in matriz.columns
+    ]
+
+    calendario = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].copy()
+    calendario["partido"] = calendario["local"].astype(str) + " vs " + calendario["visitante"].astype(str)
+    calendario = calendario[["partido_id", "grupo", "fecha", "partido", "local", "visitante"]].sort_values("partido_id")
+
+    with pd.ExcelWriter(output, engine="openpyxl") as writer:
+        resumen.to_excel(writer, index=False, sheet_name="Resumen")
+        detalle_apuestas.to_excel(writer, index=False, sheet_name="Detalle apuestas")
+        matriz.to_excel(writer, index=False, sheet_name="Vista participantes")
+        calendario.to_excel(writer, index=False, sheet_name="Calendario")
+
+        # Formato visual básico
+        for sheet_name in writer.book.sheetnames:
+            ws = writer.book[sheet_name]
+            ws.freeze_panes = "A2"
+
+            for cell in ws[1]:
+                cell.font = cell.font.copy(bold=True)
+                cell.alignment = cell.alignment.copy(horizontal="center")
+
+            for column_cells in ws.columns:
+                max_length = 0
+                column_letter = column_cells[0].column_letter
+                for cell in column_cells:
+                    try:
+                        max_length = max(max_length, len(str(cell.value)) if cell.value is not None else 0)
+                    except Exception:
+                        pass
+                ws.column_dimensions[column_letter].width = min(max(max_length + 2, 12), 38)
+
+    return output.getvalue()
+
+
 def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int):
     c1, c2, c3, c4 = st.columns(4)
     items = [
@@ -1686,6 +1765,17 @@ with tab3:
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
     else:
+        excel_apuestas = generar_excel_apuestas_transparencia(apuestas_df, partidos)
+        st.download_button(
+            "📥 Descargar todas las apuestas en Excel",
+            data=excel_apuestas,
+            file_name="apuestas_porra_ludopatas.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            help="Descarga todas las apuestas para comprobar la transparencia de la porra."
+        )
+
+        st.caption("El Excel incluye resumen, detalle completo, vista por participante y calendario.")
+
         participante_sel = st.selectbox("Participante", ["Todos"] + sorted(apuestas_df["participante"].unique().tolist()))
         vista = apuestas_df.merge(partidos[["partido_id", "grupo", "local_flag", "local", "visitante_flag", "visitante"]], on="partido_id", how="left")
         if participante_sel != "Todos":
