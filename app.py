@@ -1647,17 +1647,6 @@ st.markdown(hero_html, unsafe_allow_html=True)
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
 
-with st.expander("Fuente de datos", expanded=False):
-    sheet_id_actual = obtener_google_sheet_id()
-    if sheet_id_actual:
-        st.write(f"Google Sheet activa: `{sheet_id_actual}`")
-        st.write(f"Apuestas leídas: `{len(apuestas_df)}`")
-        st.write(f"Participantes: `{apuestas_df['participante'].nunique() if not apuestas_df.empty else 0}`")
-        st.write(f"Partidos cargados: `{len(partidos)}`")
-        st.write(f"Resultados rellenos: `{resultados_df.dropna(subset=['goles_local', 'goles_visitante']).shape[0]}`")
-    else:
-        st.write("Sin GOOGLE_SHEET_ID configurado. Usando datos locales.")
-
 st.write("")
 left, right = st.columns([1.7, 1])
 with left:

@@ -1,0 +1,13 @@
+Cambio aplicado:
+- Eliminado el desplegable público 'Fuente de datos'.
+- La app sigue leyendo automáticamente la Google Sheet configurada.
+
+Notas:
+- Si el gestor añade nuevas hojas de participantes, la app las incorporará al refrescar.
+- Si rellena resultados simulados en la pestaña RESULTADOS, la clasificación se recalcula.
+- Para forzar actualización: botón 🔄 Actualizar datos o reiniciar la app.
+
+Subida:
+git add .
+git commit -m "Quitar diagnostico fuente de datos"
+git push
