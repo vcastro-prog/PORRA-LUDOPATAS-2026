@@ -1,21 +1,19 @@
 Sustituye tu app.py por este.
 
-Cambio aplicado:
-- La app ya no usa data/partidos.csv cuando hay GOOGLE_SHEET_ID.
-- El calendario y los grupos se extraen directamente desde la hoja de apuestas.
-- El grupo se toma de la columna A: Gp. A, Gp. B, etc.
-- Cuando una fila no tiene grupo, mantiene el último grupo encontrado.
-- Esto corrige:
-  - Próximos partidos
-  - Calendario
-  - La comunidad predice
-  - cualquier cálculo por grupo
+Corrige definitivamente:
+- Partidos y grupos desde Google Sheet del Mundial.
+- Apuestas desde Google Sheet del Mundial.
+- Participante desde B3.
+- Parser del formato:
+  FECHA | PARTIDO X | LOCAL | GOLES LOCAL | VISITANTE | GOLES VISITANTE
+- Si GOOGLE_SHEET_ID está configurado, la app NO usa CSV locales antiguos.
+- Añade desplegable 'Fuente de datos' para confirmar ID, número de apuestas, participantes y partidos.
 
 Subida:
 git add app.py
-git commit -m "Leer grupos y partidos del Excel Mundial"
+git commit -m "Usar solo Google Sheet Mundial para partidos y apuestas"
 git push
 
 Después:
-- Reboot app en Streamlit Cloud
+- Manage app > Reboot app
 - Pulsa 🔄 Actualizar datos
