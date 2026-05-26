@@ -1,10 +1,16 @@
-Cambios realizados:
-- La previsión de clasificados sale ahora en la HOME principal.
-- Aparece como último gran bloque de la página.
-- Se elimina de Estadísticas > Radiografía.
-- Mantiene diseño responsive móvil/escritorio.
+Sustituye tu app.py por este.
+
+Cambio aplicado:
+- El parser de cada hoja de participante ya entiende el formato definitivo:
+  FECHA | PARTIDO X | LOCAL | GOLES_LOCAL | VISITANTE | GOLES_VISITANTE
+- El nombre del participante sigue saliendo de B3.
+- La hoja RESULTADOS se mantiene igual.
 
 Subida:
-git add .
-git commit -m "Mover prediccion de grupos a home"
+git add app.py
+git commit -m "Adaptar parser al formato Mundial 2026"
 git push
+
+Luego:
+- Reboot app en Streamlit Cloud
+- Pulsa 🔄 Actualizar datos
