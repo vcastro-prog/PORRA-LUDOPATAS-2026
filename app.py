@@ -690,16 +690,126 @@ def bandera_html(nombre: str) -> str:
     )
 
 
-@st.cache_data
+@st.cache_data(ttl=30)
 def cargar_partidos() -> pd.DataFrame:
-    df = pd.read_csv(DATA_DIR / "partidos.csv")
+    """Carga el calendario y los grupos.
 
-    # Banderas reales a partir de los nombres de equipo.
-    # No usamos códigos antiguos del CSV tipo SK, GE, CZ.
+    Si GOOGLE_SHEET_ID está configurado, los partidos se generan desde la
+    propia hoja definitiva del Mundial, no desde data/partidos.csv.
+
+    La hoja tiene bloques como:
+        Gp. A | 11 de Junio | PARTIDO 1 | MEXICO | 2 | SUDÁFRICA | 0
+              | 12 de Junio | PARTIDO 2 | COREA DEL SUR | 1 | REP. CHECA | 1
+
+    El grupo se arrastra hacia abajo hasta encontrar el siguiente Gp.
+    Así los grupos reales del Mundial salen directamente del Excel.
+    """
+    sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
+
+    if sheet_id:
+        try:
+            xls = leer_excel_google_sheet(sheet_id)
+
+            hojas_excluidas = {
+                "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN", "RESUMEN",
+                "INSTRUCCIONES", "PARTIDOS", "CONFIG", "CONFIGURACION", "CONFIGURACIÓN"
+            }
+
+            hoja_base = None
+            for sheet_name in xls.sheet_names:
+                if sheet_name.strip().upper() not in hojas_excluidas:
+                    hoja_base = sheet_name
+                    break
+
+            if hoja_base is None:
+                raise ValueError("No encuentro ninguna hoja de participante para extraer partidos y grupos.")
+
+            df = pd.read_excel(xls, sheet_name=hoja_base, header=None)
+
+            registros = []
+            grupo_actual = ""
+
+            n_rows, n_cols = df.shape
+
+            for r in range(n_rows):
+                # Columna A: puede contener Gp. A, Gp. B, etc.
+                if n_cols > 0:
+                    valor_grupo = df.iat[r, 0]
+                    if not pd.isna(valor_grupo):
+                        texto_grupo = str(valor_grupo).strip()
+                        if texto_grupo.upper().startswith("GP"):
+                            grupo_actual = texto_grupo
+
+                for c in range(n_cols):
+                    valor = df.iat[r, c]
+
+                    if pd.isna(valor):
+                        continue
+
+                    texto = str(valor).strip().upper()
+                    match = re.search(r"PARTIDO\s*([0-9]+)", texto)
+
+                    if not match:
+                        continue
+
+                    partido_id = int(match.group(1))
+
+                    # Estructura:
+                    # c-1 fecha
+                    # c   PARTIDO X
+                    # c+1 local
+                    # c+2 goles local apostados
+                    # c+3 visitante
+                    # c+4 goles visitante apostados
+                    if c - 1 < 0 or c + 3 >= n_cols:
+                        continue
+
+                    fecha = limpiar_nombre_equipo(df.iat[r, c - 1])
+                    local = limpiar_nombre_equipo(df.iat[r, c + 1])
+                    visitante = limpiar_nombre_equipo(df.iat[r, c + 3])
+
+                    if not local or not visitante:
+                        continue
+
+                    registros.append({
+                        "partido_id": partido_id,
+                        "grupo": grupo_actual,
+                        "fecha": fecha,
+                        "local": local,
+                        "visitante": visitante,
+                    })
+
+            partidos_google = pd.DataFrame(registros)
+
+            if partidos_google.empty:
+                raise ValueError("No he podido extraer partidos desde la hoja de participante.")
+
+            partidos_google = (
+                partidos_google
+                .drop_duplicates(subset=["partido_id"], keep="first")
+                .sort_values("partido_id")
+                .reset_index(drop=True)
+            )
+
+            partidos_google["local_flag"] = partidos_google["local"].apply(lambda x: bandera_equipo(str(x)))
+            partidos_google["visitante_flag"] = partidos_google["visitante"].apply(lambda x: bandera_equipo(str(x)))
+
+            return partidos_google
+
+        except Exception as e:
+            st.error(
+                "No pude generar partidos y grupos desde la Google Sheet configurada. "
+                "No usaré data/partidos.csv para evitar mostrar grupos antiguos."
+            )
+            st.exception(e)
+            st.stop()
+
+    # Solo demo local si no hay GOOGLE_SHEET_ID configurado.
+    df = pd.read_csv(DATA_DIR / "partidos.csv")
     df["local_flag"] = df["local"].apply(lambda x: bandera_equipo(str(x)))
     df["visitante_flag"] = df["visitante"].apply(lambda x: bandera_equipo(str(x)))
-
     return df
+
 
 
 
@@ -764,18 +874,15 @@ def limpiar_nombre_equipo(valor) -> str:
 
 
 def extraer_apuestas_de_hoja_excel(df: pd.DataFrame, nombre_hoja: str, partidos_ref: pd.DataFrame) -> pd.DataFrame:
-    """Extrae apuestas de una hoja de participante del formato real Mundial 2026.
+    """Extrae apuestas de una hoja de participante.
 
-    Formato detectado en el Excel definitivo:
-    - El nombre real del participante está en B3.
-    - Cada bloque de partido tiene esta estructura:
-        FECHA | PARTIDO X | LOCAL | GOLES_LOCAL | VISITANTE | GOLES_VISITANTE
-    - Los bloques aparecen repartidos horizontalmente en la misma fila.
+    - El nombre real del participante se toma de la celda B3.
+    - Detecta partidos buscando patrón:
+        LOCAL | goles_local | goles_visitante | VISITANTE
+    - Cruza con partidos.csv para obtener partido_id.
     """
-    columnas = ["participante", "partido_id", "goles_local", "goles_visitante"]
-
     if df.empty:
-        return pd.DataFrame(columns=columnas)
+        return pd.DataFrame(columns=["participante", "partido_id", "goles_local", "goles_visitante"])
 
     try:
         participante = str(df.iat[2, 1]).strip()  # B3
@@ -785,64 +892,49 @@ def extraer_apuestas_de_hoja_excel(df: pd.DataFrame, nombre_hoja: str, partidos_
     if not participante or participante.lower() in ["nan", "none"]:
         participante = str(nombre_hoja).strip()
 
+    partidos_tmp = partidos_ref.copy()
+    partidos_tmp["local_norm"] = partidos_tmp["local"].astype(str).str.strip().str.upper()
+    partidos_tmp["visitante_norm"] = partidos_tmp["visitante"].astype(str).str.strip().str.upper()
+
     rows = []
     n_rows, n_cols = df.shape
 
     for r in range(n_rows):
-        for c in range(n_cols):
-            valor = df.iat[r, c]
-
-            if pd.isna(valor):
-                continue
-
-            texto = str(valor).strip().upper()
-
-            # Detecta PARTIDO 1, PARTIDO1, PARTIDO25, PARTIDO25 ...
-            match = re.search(r"PARTIDO\s*([0-9]+)", texto)
-            if not match:
-                continue
-
-            partido_id = int(match.group(1))
-
-            # Estructura real:
-            # c = celda "PARTIDO X"
-            # c+1 = local
-            # c+2 = goles local
-            # c+3 = visitante
-            # c+4 = goles visitante
-            if c + 4 >= n_cols:
-                continue
-
-            local = limpiar_nombre_equipo(df.iat[r, c + 1])
-            gl = pd.to_numeric(df.iat[r, c + 2], errors="coerce")
-            visitante = limpiar_nombre_equipo(df.iat[r, c + 3])
-            gv = pd.to_numeric(df.iat[r, c + 4], errors="coerce")
+        for c in range(max(0, n_cols - 3)):
+            local = limpiar_nombre_equipo(df.iat[r, c])
+            visitante = limpiar_nombre_equipo(df.iat[r, c + 3]) if c + 3 < n_cols else ""
 
             if not local or not visitante:
                 continue
 
-            if pd.isna(gl) or pd.isna(gv):
+            gl_num = pd.to_numeric(df.iat[r, c + 1], errors="coerce") if c + 1 < n_cols else pd.NA
+            gv_num = pd.to_numeric(df.iat[r, c + 2], errors="coerce") if c + 2 < n_cols else pd.NA
+
+            if pd.isna(gl_num) or pd.isna(gv_num):
+                continue
+
+            local_norm = local.upper()
+            visitante_norm = visitante.upper()
+
+            match = partidos_tmp[
+                (partidos_tmp["local_norm"] == local_norm) &
+                (partidos_tmp["visitante_norm"] == visitante_norm)
+            ]
+
+            if match.empty:
                 continue
 
             rows.append({
                 "participante": participante,
-                "partido_id": partido_id,
-                "goles_local": int(gl),
-                "goles_visitante": int(gv),
+                "partido_id": int(match.iloc[0]["partido_id"]),
+                "goles_local": int(gl_num),
+                "goles_visitante": int(gv_num),
             })
 
-    out = pd.DataFrame(rows, columns=columnas)
-
+    out = pd.DataFrame(rows, columns=["participante", "partido_id", "goles_local", "goles_visitante"])
     if not out.empty:
-        out = (
-            out
-            .drop_duplicates(subset=["participante", "partido_id"], keep="first")
-            .sort_values(["participante", "partido_id"])
-            .reset_index(drop=True)
-        )
-
+        out = out.drop_duplicates(subset=["participante", "partido_id"], keep="first")
     return out
-
 
 
 def cargar_apuestas_desde_google_multipestana(partidos: pd.DataFrame) -> pd.DataFrame:
