@@ -1,0 +1,16 @@
+Cambio aplicado:
+- En la pestaña Apuestas se añaden filtros:
+  - Participante
+  - Grupo
+  - Partido
+  - Signo apostado
+  - Marcador exacto
+  - Orden
+- Se añade contador de apuestas encontradas.
+- Se permite descargar solo las apuestas filtradas en CSV.
+- Se mantiene la descarga completa en Excel para transparencia.
+
+Subida:
+git add .
+git commit -m "Añadir filtros de apuestas"
+git push

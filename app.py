@@ -1776,13 +1776,129 @@ with tab3:
 
         st.caption("El Excel incluye resumen, detalle completo, vista por participante y calendario.")
 
-        participante_sel = st.selectbox("Participante", ["Todos"] + sorted(apuestas_df["participante"].unique().tolist()))
-        vista = apuestas_df.merge(partidos[["partido_id", "grupo", "local_flag", "local", "visitante_flag", "visitante"]], on="partido_id", how="left")
-        if participante_sel != "Todos":
-            vista = vista[vista["participante"] == participante_sel]
-        vista["partido"] = vista.apply(lambda r: partido_texto_con_banderas(str(r["local"]), str(r["visitante"])), axis=1)
+        vista = apuestas_df.merge(
+            partidos[["partido_id", "grupo", "local_flag", "local", "visitante_flag", "visitante"]],
+            on="partido_id",
+            how="left"
+        )
+
+        vista["partido"] = vista.apply(
+            lambda r: partido_texto_con_banderas(str(r["local"]), str(r["visitante"])),
+            axis=1
+        )
+        vista["partido_selector"] = (
+            vista["partido_id"].astype(str)
+            + " · "
+            + vista["local"].astype(str)
+            + " vs "
+            + vista["visitante"].astype(str)
+        )
         vista["apuesta"] = vista["goles_local"].astype(str) + " - " + vista["goles_visitante"].astype(str)
-        st.dataframe(vista[["participante", "partido_id", "grupo", "partido", "apuesta"]].sort_values(["participante", "partido_id"]), hide_index=True, use_container_width=True)
+
+        st.markdown("#### 🔎 Filtros de consulta")
+
+        f1, f2, f3 = st.columns([1.1, 1, 1.6])
+        with f1:
+            participante_sel = st.selectbox(
+                "Participante",
+                ["Todos"] + sorted(vista["participante"].dropna().unique().tolist()),
+                key="filtro_apuestas_participante"
+            )
+        with f2:
+            grupo_sel = st.selectbox(
+                "Grupo",
+                ["Todos"] + sorted(vista["grupo"].dropna().unique().tolist()),
+                key="filtro_apuestas_grupo"
+            )
+        with f3:
+            partidos_opciones = ["Todos"] + (
+                vista[["partido_id", "partido_selector"]]
+                .drop_duplicates()
+                .sort_values("partido_id")["partido_selector"]
+                .tolist()
+            )
+            partido_sel = st.selectbox(
+                "Partido",
+                partidos_opciones,
+                key="filtro_apuestas_partido"
+            )
+
+        f4, f5, f6 = st.columns([1, 1, 1])
+        with f4:
+            signo_sel = st.selectbox(
+                "Signo apostado",
+                ["Todos", "Gana local", "Empate", "Gana visitante"],
+                key="filtro_apuestas_signo"
+            )
+        with f5:
+            marcador_busqueda = st.text_input(
+                "Marcador exacto",
+                placeholder="Ej: 2-1",
+                key="filtro_apuestas_marcador"
+            )
+        with f6:
+            ordenar_por = st.selectbox(
+                "Ordenar por",
+                ["participante", "partido_id", "grupo", "apuesta"],
+                key="filtro_apuestas_orden"
+            )
+
+        filtrada = vista.copy()
+
+        if participante_sel != "Todos":
+            filtrada = filtrada[filtrada["participante"] == participante_sel]
+
+        if grupo_sel != "Todos":
+            filtrada = filtrada[filtrada["grupo"] == grupo_sel]
+
+        if partido_sel != "Todos":
+            partido_id_sel = int(str(partido_sel).split(" · ")[0])
+            filtrada = filtrada[filtrada["partido_id"] == partido_id_sel]
+
+        if signo_sel != "Todos":
+            if signo_sel == "Gana local":
+                filtrada = filtrada[filtrada["goles_local"] > filtrada["goles_visitante"]]
+            elif signo_sel == "Empate":
+                filtrada = filtrada[filtrada["goles_local"] == filtrada["goles_visitante"]]
+            elif signo_sel == "Gana visitante":
+                filtrada = filtrada[filtrada["goles_local"] < filtrada["goles_visitante"]]
+
+        marcador_limpio = marcador_busqueda.strip().replace(" ", "")
+        if marcador_limpio:
+            match = re.match(r"^(\d+)-(\d+)$", marcador_limpio)
+            if match:
+                gl_b, gv_b = int(match.group(1)), int(match.group(2))
+                filtrada = filtrada[
+                    (filtrada["goles_local"] == gl_b)
+                    & (filtrada["goles_visitante"] == gv_b)
+                ]
+            else:
+                st.warning("Formato de marcador no válido. Usa por ejemplo: 2-1")
+
+        st.markdown(
+            f"<div class='card'><div class='stat-label'>Apuestas encontradas</div>"
+            f"<div class='stat-value'>{len(filtrada)}</div>"
+            f"<div class='stat-note'>de {len(vista)} apuestas totales</div></div>",
+            unsafe_allow_html=True
+        )
+
+        columnas_vista = ["participante", "partido_id", "grupo", "partido", "apuesta"]
+
+        if filtrada.empty:
+            st.info("No hay apuestas que coincidan con los filtros seleccionados.")
+        else:
+            st.dataframe(
+                filtrada[columnas_vista].sort_values(ordenar_por),
+                hide_index=True,
+                use_container_width=True
+            )
+
+            st.download_button(
+                "📥 Descargar apuestas filtradas CSV",
+                data=filtrada[columnas_vista].sort_values(ordenar_por).to_csv(index=False).encode("utf-8"),
+                file_name="apuestas_filtradas.csv",
+                mime="text/csv"
+            )
 
 with tab4:
     st.markdown("### Radiografía de la porra")
