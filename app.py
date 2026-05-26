@@ -1014,20 +1014,35 @@ def normalizar_resultados(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.DataFrame:
-    """Carga apuestas desde Google Sheets multipestaña o CSV local."""
+    """Carga apuestas desde Google Sheets multipestaña o CSV local.
+
+    Si GOOGLE_SHEET_ID está configurado, la app NO debe usar la copia local
+    silenciosamente, porque eso puede hacer parecer que sigue leyendo una hoja antigua.
+    """
     if partidos is None:
         partidos = cargar_partidos()
 
-    if obtener_google_sheet_id():
+    sheet_id = obtener_google_sheet_id()
+
+    if sheet_id:
         try:
             apuestas_google = cargar_apuestas_desde_google_multipestana(partidos)
-            if not apuestas_google.empty:
-                return apuestas_google
         except Exception as e:
-            st.warning(
-                f"No pude leer apuestas desde Google Sheets. "
-                f"Uso copia local si existe. Detalle: {e}"
+            st.error(
+                "No pude leer las apuestas desde la Google Sheet configurada. "
+                "No usaré la copia local para evitar mostrar datos antiguos."
             )
+            st.exception(e)
+            st.stop()
+
+        if apuestas_google.empty:
+            st.error(
+                "La Google Sheet configurada se ha leído, pero no he encontrado apuestas válidas. "
+                "Revisa que haya una hoja por participante y que el nombre del participante esté en B3."
+            )
+            st.stop()
+
+        return apuestas_google
 
     for filename in ["apuestas.csv", "apuestas_reales.csv"]:
         apuestas_csv = DATA_DIR / filename
@@ -1039,21 +1054,38 @@ def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.Dat
     )
 
 
+
 def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
-    """Carga resultados desde Google Sheets o CSV local."""
+    """Carga resultados desde Google Sheets o CSV local.
+
+    Si GOOGLE_SHEET_ID está configurado, no se usa copia local si falla Google.
+    """
     base = partidos[["partido_id"]].copy()
     base["goles_local"] = pd.NA
     base["goles_visitante"] = pd.NA
 
     loaded = pd.DataFrame(columns=["partido_id", "goles_local", "goles_visitante"])
 
-    if obtener_google_sheet_id():
+    sheet_id = obtener_google_sheet_id()
+
+    if sheet_id:
         try:
             loaded = cargar_resultados_desde_google_resultados()
         except Exception as e:
-            st.warning(f"No pude leer RESULTADOS desde Google Sheets. Uso copia local si existe. Detalle: {e}")
+            st.error(
+                "No pude leer la pestaña RESULTADOS desde la Google Sheet configurada. "
+                "No usaré la copia local para evitar mostrar datos antiguos."
+            )
+            st.exception(e)
+            st.stop()
 
-    if loaded.empty:
+        if loaded.empty:
+            st.warning(
+                "La pestaña RESULTADOS existe, pero no tiene resultados válidos todavía. "
+                "La clasificación se mostrará sin partidos jugados."
+            )
+
+    else:
         resultados_csv = DATA_DIR / "resultados.csv"
         if resultados_csv.exists():
             loaded = normalizar_resultados(pd.read_csv(resultados_csv))
@@ -1062,6 +1094,7 @@ def cargar_resultados_desde_fuente(partidos: pd.DataFrame) -> pd.DataFrame:
         base = base.drop(columns=["goles_local", "goles_visitante"]).merge(loaded, on="partido_id", how="left")
 
     return base
+
 
 
 def logo_base64() -> str:
@@ -1421,6 +1454,16 @@ st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
 html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
+
+with st.expander("Fuente de datos", expanded=False):
+    sheet_id_actual = obtener_google_sheet_id()
+    if sheet_id_actual:
+        st.write(f"Google Sheet activa: `{sheet_id_actual}`")
+        st.write(f"Apuestas leídas: `{len(apuestas_df)}`")
+        st.write(f"Participantes: `{apuestas_df['participante'].nunique() if not apuestas_df.empty else 0}`")
+        st.write(f"Resultados rellenos: `{resultados_df.dropna(subset=['goles_local', 'goles_visitante']).shape[0]}`")
+    else:
+        st.write("Sin GOOGLE_SHEET_ID configurado. Usando datos locales.")
 
 st.write("")
 left, right = st.columns([1.7, 1])

@@ -1,0 +1,18 @@
+Sustituye tu app.py por este.
+
+Qué corrige:
+- Si GOOGLE_SHEET_ID está configurado, la app ya NO vuelve silenciosamente a los CSV locales.
+- Si Google Sheets falla, la app mostrará el error real y se parará.
+- Añade un desplegable "Fuente de datos" para confirmar qué ID está leyendo.
+
+Por qué te seguía saliendo la tabla anterior:
+- Tu app actual, si falla la lectura de Google Sheets, cae a data/apuestas.csv o data/apuestas_reales.csv.
+- Eso hace que parezca que sigue leyendo la hoja antigua aunque realmente está usando la copia local.
+
+Subida:
+git add app.py
+git commit -m "Evitar fallback silencioso a datos locales"
+git push
+
+Luego en Streamlit Cloud:
+Manage app > Reboot app
