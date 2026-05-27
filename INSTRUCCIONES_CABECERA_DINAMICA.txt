@@ -1,0 +1,21 @@
+Cambio aplicado:
+- La cabecera ya no tiene datos fijos del Mundial completo.
+- Ahora calcula automáticamente desde el Excel/Google Sheet:
+  - selecciones únicas
+  - grupos únicos
+  - rango de fechas
+  - total de partidos
+- Para vuestra porra debería mostrar:
+  48 selecciones
+  12 grupos
+  11 junio – 28 junio
+  72 partidos
+
+Subida:
+git add .
+git commit -m "Actualizar cabecera con datos reales de la porra"
+git push
+
+Después:
+- Reboot app en Streamlit Cloud
+- Pulsa 🔄 Actualizar datos

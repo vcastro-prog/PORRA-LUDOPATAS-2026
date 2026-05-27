@@ -1,0 +1,10 @@
+Cambios aplicados:
+- Normaliza equipos duplicados/erratas: COSTA DE MARFIL/COSTA DEMARFIL, R.D.CONGO/R.D. CONGO, CROACIA/CROCIA.
+- La comunidad predice muestra Pts reales y PJ además de la predicción.
+- Si un grupo tiene resultados reales, se ordena por puntos reales.
+- Si no tiene resultados, se ordena por predicción de la comunidad.
+
+Subida:
+git add .
+git commit -m "Normalizar equipos y anadir puntos reales por grupo"
+git push
