@@ -520,7 +520,59 @@ def normalizar_texto_bandera(valor: str) -> str:
     return texto
 
 
+def equipo_canonico(nombre: str) -> str:
+    """Unifica variantes/erratas habituales de selecciones.
+
+    Evita duplicados en grupos:
+    - COSTA DE MARFIL / COSTA DEMARFIL
+    - R.D.CONGO / R.D. CONGO
+    - CROACIA / CROCIA
+    """
+    if pd.isna(nombre):
+        return ""
+
+    texto = normalizar_texto_bandera(nombre)
+
+    equivalencias = {
+        "COSTA DEMARFIL": "COSTA DE MARFIL",
+        "COSTA DE MARFIL": "COSTA DE MARFIL",
+        "RD CONGO": "R.D. CONGO",
+        "R D CONGO": "R.D. CONGO",
+        "RDCONGO": "R.D. CONGO",
+        "R.D.CONGO": "R.D. CONGO",
+        "R.D. CONGO": "R.D. CONGO",
+        "CROCIA": "CROACIA",
+        "CROACIA": "CROACIA",
+        "REP CHECA": "REP. CHECA",
+        "REPUBLICA CHECA": "REP. CHECA",
+        "CHEQUIA": "REP. CHECA",
+        "ESPANA": "ESPAÑA",
+        "TURQUIA": "TURQUÍA",
+        "BELGICA": "BÉLGICA",
+        "JAPON": "JAPÓN",
+        "TUNEZ": "TÚNEZ",
+        "IRAN": "IRÁN",
+        "ARABIA SAUDI": "ARABIA SAUDÍ",
+        "UZBEKISTAN": "UZBEKISTÁN",
+        "PANAMA": "PANAMÁ",
+    }
+
+    return equivalencias.get(texto, str(nombre).strip())
+
+
+def canonizar_partidos_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Aplica nombres canónicos a columnas local/visitante si existen."""
+    out = df.copy()
+    if "local" in out.columns:
+        out["local"] = out["local"].apply(equipo_canonico)
+    if "visitante" in out.columns:
+        out["visitante"] = out["visitante"].apply(equipo_canonico)
+    return out
+
+
 FLAG_NORMALIZADO = {
+    "RD CONGO": "🇨🇩",
+    "R.D. CONGO": "🇨🇩",
     "ALEMANIA": "🇩🇪",
     "ESCOCIA": "🏴",
     "HUNGRIA": "🇭🇺",
@@ -659,6 +711,8 @@ ISO_BANDERAS = {
     "JORDANIA": "jo",
     "UZBEKISTAN": "uz",
     "IRAQ": "iq",
+    "R.D. CONGO": "cd",
+    "RD CONGO": "cd",
 }
 
 
@@ -781,6 +835,7 @@ def cargar_partidos() -> pd.DataFrame:
                 .reset_index(drop=True)
             )
 
+            partidos_google = canonizar_partidos_df(partidos_google)
             partidos_google["local_flag"] = partidos_google["local"].apply(lambda x: bandera_equipo(str(x)))
             partidos_google["visitante_flag"] = partidos_google["visitante"].apply(lambda x: bandera_equipo(str(x)))
 
@@ -795,6 +850,7 @@ def cargar_partidos() -> pd.DataFrame:
             st.stop()
 
     df = pd.read_csv(DATA_DIR / "partidos.csv")
+    df = canonizar_partidos_df(df)
     df["local_flag"] = df["local"].apply(lambda x: bandera_equipo(str(x)))
     df["visitante_flag"] = df["visitante"].apply(lambda x: bandera_equipo(str(x)))
     return df
@@ -1454,23 +1510,21 @@ def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
 
 
 
-def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataFrame) -> pd.DataFrame:
-    """Calcula la previsión de clasificados por grupo según las apuestas.
+def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataFrame, resultados: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Calcula previsión de clasificados y situación real por grupo.
 
-    Para cada participante se simula la clasificación de cada grupo usando sus
-    pronósticos. Luego se calcula:
-    - puntos medios previstos por equipo
-    - % de participantes que colocan a ese equipo en TOP 2
+    - Antes de que haya resultados: ordena por predicción de la comunidad.
+    - Cuando haya resultados en un grupo: ordena por puntos reales.
+    - Mantiene siempre la predicción de la comunidad como contexto.
     """
-    columnas = ["grupo", "equipo", "puntos_medios", "top2_pct", "prediccion_pos"]
+    columnas = ["grupo", "equipo", "pts_reales", "pj_reales", "puntos_medios", "top2_pct", "prediccion_pos"]
+
     if apuestas.empty or partidos.empty:
         return pd.DataFrame(columns=columnas)
 
-    base = apuestas.merge(
-        partidos[["partido_id", "grupo", "local", "visitante"]],
-        on="partido_id",
-        how="inner"
-    )
+    partidos_base = canonizar_partidos_df(partidos[["partido_id", "grupo", "local", "visitante"]])
+
+    base = apuestas.merge(partidos_base, on="partido_id", how="inner")
 
     if base.empty:
         return pd.DataFrame(columns=columnas)
@@ -1481,7 +1535,12 @@ def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataF
         for grupo, df_grupo in df_part.groupby("grupo"):
             puntos = {}
 
-            equipos = sorted(set(df_grupo["local"].dropna().astype(str)).union(set(df_grupo["visitante"].dropna().astype(str))))
+            equipos = sorted(
+                set(df_grupo["local"].dropna().astype(str)).union(
+                    set(df_grupo["visitante"].dropna().astype(str))
+                )
+            )
+
             for equipo in equipos:
                 puntos[equipo] = 0
 
@@ -1501,7 +1560,6 @@ def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataF
                     puntos[local] = puntos.get(local, 0) + 1
                     puntos[visitante] = puntos.get(visitante, 0) + 1
 
-            # Desempate simple para previsión: puntos y nombre.
             ranking = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))
 
             for pos, (equipo, pts) in enumerate(ranking, start=1):
@@ -1514,6 +1572,7 @@ def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataF
                 })
 
     pred = pd.DataFrame(registros)
+
     if pred.empty:
         return pd.DataFrame(columns=columnas)
 
@@ -1528,18 +1587,62 @@ def prediccion_clasificados_por_grupo(apuestas: pd.DataFrame, partidos: pd.DataF
 
     resumen["top2_pct"] = resumen["top2_pct"] * 100
 
+    reales_rows = []
+
+    if resultados is not None and not resultados.empty:
+        partidos_resultados = partidos_base.merge(resultados, on="partido_id", how="left")
+
+        for _, r in partidos_resultados.dropna(subset=["goles_local", "goles_visitante"]).iterrows():
+            grupo = r["grupo"]
+            local = str(r["local"])
+            visitante = str(r["visitante"])
+            gl = int(r["goles_local"])
+            gv = int(r["goles_visitante"])
+
+            if gl > gv:
+                reales_rows.append({"grupo": grupo, "equipo": local, "pts": 3, "pj": 1})
+                reales_rows.append({"grupo": grupo, "equipo": visitante, "pts": 0, "pj": 1})
+            elif gl < gv:
+                reales_rows.append({"grupo": grupo, "equipo": local, "pts": 0, "pj": 1})
+                reales_rows.append({"grupo": grupo, "equipo": visitante, "pts": 3, "pj": 1})
+            else:
+                reales_rows.append({"grupo": grupo, "equipo": local, "pts": 1, "pj": 1})
+                reales_rows.append({"grupo": grupo, "equipo": visitante, "pts": 1, "pj": 1})
+
+    if reales_rows:
+        reales = (
+            pd.DataFrame(reales_rows)
+            .groupby(["grupo", "equipo"], as_index=False)
+            .agg(
+                pts_reales=("pts", "sum"),
+                pj_reales=("pj", "sum"),
+            )
+        )
+        resumen = resumen.merge(reales, on=["grupo", "equipo"], how="left")
+    else:
+        resumen["pts_reales"] = 0
+        resumen["pj_reales"] = 0
+
+    resumen["pts_reales"] = resumen["pts_reales"].fillna(0).astype(int)
+    resumen["pj_reales"] = resumen["pj_reales"].fillna(0).astype(int)
+
+    # Si el grupo tiene algún partido jugado, ordena por puntos reales.
+    resumen["_hay_reales_grupo"] = resumen.groupby("grupo")["pj_reales"].transform("sum") > 0
+
     resumen = resumen.sort_values(
-        ["grupo", "top2_pct", "puntos_medios", "equipo"],
-        ascending=[True, False, False, True]
+        ["grupo", "_hay_reales_grupo", "pts_reales", "top2_pct", "puntos_medios", "equipo"],
+        ascending=[True, False, False, False, False, True],
     )
 
     resumen["prediccion_pos"] = resumen.groupby("grupo").cumcount() + 1
+    resumen = resumen.drop(columns=["_hay_reales_grupo"])
 
     return resumen[columnas]
 
 
+
 def render_prediccion_grupos(pred: pd.DataFrame):
-    """Renderiza la predicción de grupos con tarjetas visuales."""
+    """Renderiza predicción + puntos reales de grupos."""
     if pred.empty:
         st.info("Aún no hay apuestas suficientes para calcular la previsión de grupos.")
         return
@@ -1548,35 +1651,45 @@ def render_prediccion_grupos(pred: pd.DataFrame):
 
     for grupo in grupos:
         df_g = pred[pred["grupo"] == grupo].copy().sort_values("prediccion_pos")
+        hay_reales = int(df_g["pj_reales"].sum()) > 0 if "pj_reales" in df_g.columns else False
 
         filas = ""
         for _, r in df_g.iterrows():
             equipo = str(r["equipo"])
             pos = int(r["prediccion_pos"])
             top2 = float(r["top2_pct"])
-            pts = float(r["puntos_medios"])
+            pts_prev = float(r["puntos_medios"])
+            pts_real = int(r.get("pts_reales", 0))
+            pj_real = int(r.get("pj_reales", 0))
             clase = "clasificado" if pos <= 2 else ""
 
             filas += (
                 f"<tr class='{clase}'>"
                 f"<td>{pos}</td>"
                 f"<td>{bandera_html(equipo)} {equipo}</td>"
+                f"<td>{pts_real}</td>"
+                f"<td>{pj_real}</td>"
                 f"<td>{top2:.1f}%</td>"
-                f"<td>{pts:.2f}</td>"
+                f"<td>{pts_prev:.2f}</td>"
                 f"</tr>"
             )
+
+        subtitulo = "Ordenado por puntos reales" if hay_reales else "Ordenado por predicción de la comunidad"
 
         st.markdown(
             f"""
             <div class="prediction-card">
               <div class="prediction-title">Grupo {grupo}</div>
+              <div class="small-muted" style="margin-bottom:10px;">{subtitulo}</div>
               <table class="prediction-table">
                 <thead>
                   <tr>
                     <th>Pos.</th>
                     <th>Equipo</th>
-                    <th>Top 2</th>
-                    <th>Pts medios</th>
+                    <th>Pts reales</th>
+                    <th>PJ</th>
+                    <th>Top 2 comunidad</th>
+                    <th>Pts medios comunidad</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1587,6 +1700,7 @@ def render_prediccion_grupos(pred: pd.DataFrame):
             """,
             unsafe_allow_html=True
         )
+
 
 partidos = cargar_partidos()
 
@@ -1631,9 +1745,9 @@ hero_html = (
     f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
     f'<div class="hero-badges">'
     f'<div class="badge">🌎 48 selecciones</div>'
-    f'<div class="badge">🏟️ 16 sedes</div>'
-    f'<div class="badge">📅 11 junio – 19 julio</div>'
-    f'<div class="badge">⚡ 104 partidos</div>'
+    f'<div class="badge">🏆 12 grupos</div>'
+    f'<div class="badge">📅 11 junio – 28 junio</div>'
+    f'<div class="badge">⚡ 72 partidos</div>'
     f'</div>'
     f'</div>'
     f'<div class="hero-right-logo">'
@@ -1677,7 +1791,7 @@ with b:
 st.markdown("## 🔮 La comunidad predice")
 st.caption("Predicción de clasificados por grupo según la tendencia global de las apuestas de la porra.")
 
-pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos)
+pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos, resultados_df)
 render_prediccion_grupos(pred_grupos_home)
 
 # -----------------------------

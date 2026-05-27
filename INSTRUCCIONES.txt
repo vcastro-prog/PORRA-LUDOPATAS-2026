@@ -1,19 +1,21 @@
 Sustituye tu app.py por este.
 
-Corrige definitivamente:
-- Partidos y grupos desde Google Sheet del Mundial.
-- Apuestas desde Google Sheet del Mundial.
-- Participante desde B3.
-- Parser del formato:
-  FECHA | PARTIDO X | LOCAL | GOLES LOCAL | VISITANTE | GOLES VISITANTE
-- Si GOOGLE_SHEET_ID está configurado, la app NO usa CSV locales antiguos.
-- Añade desplegable 'Fuente de datos' para confirmar ID, número de apuestas, participantes y partidos.
+Base:
+- Parte del app.py estable que has subido.
+
+Cambios aplicados:
+- Cabecera fija:
+  48 selecciones · 12 grupos · 11 junio – 28 junio · 72 partidos
+- Normalización de nombres:
+  COSTA DE MARFIL / COSTA DEMARFIL
+  R.D.CONGO / R.D. CONGO
+  CROACIA / CROCIA
+- La comunidad predice:
+  añade Pts reales y PJ
+  mantiene Top 2 comunidad y Pts medios comunidad
+  ordena por puntos reales cuando ya haya resultados en el grupo
 
 Subida:
 git add app.py
-git commit -m "Usar solo Google Sheet Mundial para partidos y apuestas"
+git commit -m "Corregir grupos y puntos reales en prediccion"
 git push
-
-Después:
-- Manage app > Reboot app
-- Pulsa 🔄 Actualizar datos
