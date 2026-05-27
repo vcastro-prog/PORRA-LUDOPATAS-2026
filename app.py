@@ -732,24 +732,17 @@ def bandera_html(nombre: str) -> str:
 
 @st.cache_data(ttl=30)
 def cargar_partidos() -> pd.DataFrame:
-    """Carga el calendario y los grupos.
+    """Carga calendario de partidos."""
+    sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
 
-    Si GOOGLE_SHEET_ID está configurado, los partidos se generan desde la
-    propia hoja definitiva del Mundial, no desde data/partidos.csv.
-
-    La hoja tiene bloques como:
-        Gp. A | 11 de Junio | PARTIDO 1 | MEXICO | 2 | SUDÁFRICA | 0
-
-    El grupo se toma de la columna A y se arrastra hasta el siguiente grupo.
-    """
-sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
-if sheet_id:
+    if sheet_id:
         try:
             xls = leer_excel_google_sheet(sheet_id)
 
             hojas_excluidas = {
-                "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN", "RESUMEN",
-                "INSTRUCCIONES", "PARTIDOS", "CONFIG", "CONFIGURACION", "CONFIGURACIÓN"
+                "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN",
+                "RESUMEN", "INSTRUCCIONES", "CONFIG",
+                "CONFIGURACION", "CONFIGURACIÓN"
             }
 
             hoja_base = None
@@ -759,7 +752,7 @@ if sheet_id:
                     break
 
             if hoja_base is None:
-                raise ValueError("No encuentro ninguna hoja de participante para extraer partidos y grupos.")
+                raise ValueError("No encuentro hoja válida de participante.")
 
             df = pd.read_excel(xls, sheet_name=hoja_base, header=None)
 
@@ -811,7 +804,7 @@ if sheet_id:
             partidos_google = pd.DataFrame(registros)
 
             if partidos_google.empty:
-                raise ValueError("No he podido extraer partidos desde la hoja de participante.")
+                raise ValueError("No se pudieron extraer partidos.")
 
             partidos_google = (
                 partidos_google
@@ -821,23 +814,23 @@ if sheet_id:
             )
 
             partidos_google = canonizar_partidos_df(partidos_google)
+
             partidos_google["local_flag"] = partidos_google["local"].apply(lambda x: bandera_equipo(str(x)))
             partidos_google["visitante_flag"] = partidos_google["visitante"].apply(lambda x: bandera_equipo(str(x)))
 
             return partidos_google
 
         except Exception as e:
-            st.error(
-                "No pude generar partidos y grupos desde la Google Sheet configurada. "
-                "No usaré data/partidos.csv para evitar mostrar grupos antiguos."
-            )
+            st.error("No pude generar partidos y grupos desde Google Sheets.")
             st.exception(e)
             st.stop()
 
     df = pd.read_csv(DATA_DIR / "partidos.csv")
     df = canonizar_partidos_df(df)
+
     df["local_flag"] = df["local"].apply(lambda x: bandera_equipo(str(x)))
     df["visitante_flag"] = df["visitante"].apply(lambda x: bandera_equipo(str(x)))
+
     return df
 
 
