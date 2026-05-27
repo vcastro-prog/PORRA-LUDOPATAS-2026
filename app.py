@@ -743,8 +743,7 @@ def cargar_partidos() -> pd.DataFrame:
     El grupo se toma de la columna A y se arrastra hasta el siguiente grupo.
     """
 sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
-
-    if sheet_id:
+if sheet_id:
         try:
             xls = leer_excel_google_sheet(sheet_id)
 
@@ -1178,9 +1177,9 @@ def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.Dat
         partidos = cargar_partidos()
 cabecera_stats = resumen_cabecera_porra(partidos)
 
-    sheet_id = obtener_google_sheet_id()
+sheet_id = obtener_google_sheet_id()
 
-    if sheet_id:
+if sheet_id:
         try:
             apuestas_google = cargar_apuestas_desde_google_multipestana(partidos)
         except Exception as e:
