@@ -732,7 +732,16 @@ def bandera_html(nombre: str) -> str:
 
 @st.cache_data(ttl=30)
 def cargar_partidos() -> pd.DataFrame:
-    """Carga calendario de partidos."""
+    """Carga el calendario y los grupos.
+
+    Si GOOGLE_SHEET_ID está configurado, los partidos se generan desde la
+    propia hoja definitiva del Mundial, no desde data/partidos.csv.
+
+    La hoja tiene bloques como:
+        Gp. A | 11 de Junio | PARTIDO 1 | MEXICO | 2 | SUDÁFRICA | 0
+
+    El grupo se toma de la columna A y se arrastra hasta el siguiente grupo.
+    """
     sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
 
     if sheet_id:
@@ -740,9 +749,8 @@ def cargar_partidos() -> pd.DataFrame:
             xls = leer_excel_google_sheet(sheet_id)
 
             hojas_excluidas = {
-                "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN",
-                "RESUMEN", "INSTRUCCIONES", "CONFIG",
-                "CONFIGURACION", "CONFIGURACIÓN"
+                "RESULTADOS", "CLASIFICACION", "CLASIFICACIÓN", "RESUMEN",
+                "INSTRUCCIONES", "PARTIDOS", "CONFIG", "CONFIGURACION", "CONFIGURACIÓN"
             }
 
             hoja_base = None
@@ -752,7 +760,7 @@ def cargar_partidos() -> pd.DataFrame:
                     break
 
             if hoja_base is None:
-                raise ValueError("No encuentro hoja válida de participante.")
+                raise ValueError("No encuentro ninguna hoja de participante para extraer partidos y grupos.")
 
             df = pd.read_excel(xls, sheet_name=hoja_base, header=None)
 
@@ -804,7 +812,7 @@ def cargar_partidos() -> pd.DataFrame:
             partidos_google = pd.DataFrame(registros)
 
             if partidos_google.empty:
-                raise ValueError("No se pudieron extraer partidos.")
+                raise ValueError("No he podido extraer partidos desde la hoja de participante.")
 
             partidos_google = (
                 partidos_google
@@ -814,23 +822,23 @@ def cargar_partidos() -> pd.DataFrame:
             )
 
             partidos_google = canonizar_partidos_df(partidos_google)
-
             partidos_google["local_flag"] = partidos_google["local"].apply(lambda x: bandera_equipo(str(x)))
             partidos_google["visitante_flag"] = partidos_google["visitante"].apply(lambda x: bandera_equipo(str(x)))
 
             return partidos_google
 
         except Exception as e:
-            st.error("No pude generar partidos y grupos desde Google Sheets.")
+            st.error(
+                "No pude generar partidos y grupos desde la Google Sheet configurada. "
+                "No usaré data/partidos.csv para evitar mostrar grupos antiguos."
+            )
             st.exception(e)
             st.stop()
 
     df = pd.read_csv(DATA_DIR / "partidos.csv")
     df = canonizar_partidos_df(df)
-
     df["local_flag"] = df["local"].apply(lambda x: bandera_equipo(str(x)))
     df["visitante_flag"] = df["visitante"].apply(lambda x: bandera_equipo(str(x)))
-
     return df
 
 
@@ -1168,9 +1176,11 @@ def cargar_apuestas_desde_fuente(partidos: pd.DataFrame | None = None) -> pd.Dat
     """
     if partidos is None:
         partidos = cargar_partidos()
-sheet_id = obtener_google_sheet_id()
+cabecera_stats = resumen_cabecera_porra(partidos)
 
-if sheet_id:
+    sheet_id = obtener_google_sheet_id()
+
+    if sheet_id:
         try:
             apuestas_google = cargar_apuestas_desde_google_multipestana(partidos)
         except Exception as e:
@@ -1349,6 +1359,90 @@ def generar_excel_apuestas_transparencia(apuestas: pd.DataFrame, partidos: pd.Da
 
     return output.getvalue()
 
+
+
+def ordenar_fechas_porra(fecha: str) -> tuple:
+    """Convierte textos tipo '11 de Junio' en una clave ordenable."""
+    if pd.isna(fecha):
+        return (99, 99)
+
+    texto = str(fecha).strip().lower()
+    meses = {
+        "enero": 1,
+        "febrero": 2,
+        "marzo": 3,
+        "abril": 4,
+        "mayo": 5,
+        "junio": 6,
+        "julio": 7,
+        "agosto": 8,
+        "septiembre": 9,
+        "setiembre": 9,
+        "octubre": 10,
+        "noviembre": 11,
+        "diciembre": 12,
+    }
+
+    match = re.search(r"(\d{1,2})\s+de\s+([a-záéíóúñ]+)", texto)
+    if not match:
+        return (99, 99)
+
+    dia = int(match.group(1))
+    mes_txt = match.group(2)
+    mes_txt = (
+        mes_txt
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ú", "u")
+    )
+
+    return (meses.get(mes_txt, 99), dia)
+
+
+def resumen_cabecera_porra(partidos: pd.DataFrame) -> dict:
+    """Calcula los datos visibles de cabecera desde el calendario real de la porra."""
+    if partidos.empty:
+        return {
+            "selecciones": 0,
+            "grupos": 0,
+            "fechas": "—",
+            "partidos": 0,
+        }
+
+    equipos = set(partidos["local"].dropna().astype(str)).union(
+        set(partidos["visitante"].dropna().astype(str))
+    )
+
+    grupos = partidos["grupo"].dropna().astype(str).nunique()
+    total_partidos = int(partidos["partido_id"].nunique()) if "partido_id" in partidos.columns else len(partidos)
+
+    fechas = partidos["fecha"].dropna().astype(str).unique().tolist()
+    if fechas:
+        fechas_ordenadas = sorted(fechas, key=ordenar_fechas_porra)
+        fecha_inicio = fechas_ordenadas[0]
+        fecha_fin = fechas_ordenadas[-1]
+
+        # Simplificar: "11 de Junio" -> "11 junio"
+        def corta(f):
+            return (
+                str(f)
+                .replace(" de ", " ")
+                .replace("Junio", "junio")
+                .replace("Julio", "julio")
+            )
+
+        rango_fechas = f"{corta(fecha_inicio)} – {corta(fecha_fin)}"
+    else:
+        rango_fechas = "—"
+
+    return {
+        "selecciones": len(equipos),
+        "grupos": grupos,
+        "fechas": rango_fechas,
+        "partidos": total_partidos,
+    }
 
 
 def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int):
@@ -1696,10 +1790,10 @@ hero_html = (
     f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
     f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
     f'<div class="hero-badges">'
-    f'<div class="badge">🌎 48 selecciones</div>'
-    f'<div class="badge">🏆 12 grupos</div>'
-    f'<div class="badge">📅 11 junio – 28 junio</div>'
-    f'<div class="badge">⚡ 72 partidos</div>'
+    f'<div class="badge">🌎 {cabecera_stats["selecciones"]} selecciones</div>'
+    f'<div class="badge">🏆 {cabecera_stats["grupos"]} grupos</div>'
+    f'<div class="badge">📅 {cabecera_stats["fechas"]}</div>'
+    f'<div class="badge">⚡ {cabecera_stats["partidos"]} partidos</div>'
     f'</div>'
     f'</div>'
     f'<div class="hero-right-logo">'
