@@ -1,3 +1,8 @@
-Corrección aplicada:
-- Arreglado IndentationError en cargar_partidos().
-- Las líneas local_flag y visitante_flag ahora tienen indentación correcta.
+Corregido:
+- IndentationError en:
+  sheet_id = obtener_google_sheet_id()
+
+Subida:
+git add app.py
+git commit -m "Fix indentation error"
+git push

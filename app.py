@@ -742,7 +742,7 @@ def cargar_partidos() -> pd.DataFrame:
 
     El grupo se toma de la columna A y se arrastra hasta el siguiente grupo.
     """
-    sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
+sheet_id = obtener_google_sheet_id() if "obtener_google_sheet_id" in globals() else ""
 
     if sheet_id:
         try:
