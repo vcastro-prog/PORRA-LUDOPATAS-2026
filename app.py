@@ -1373,13 +1373,14 @@ def generar_excel_apuestas_transparencia(apuestas: pd.DataFrame, partidos: pd.Da
     return output.getvalue()
 
 
-def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int):
+def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int, maximo_posible: int):
     c1, c2, c3, c4 = st.columns(4)
+    partidos_pendientes = max(partidos_total - jugados, 0)
     items = [
         ("Participantes", participantes, "La grada de la porra"),
         ("Partidos jugados", f"{jugados}/{partidos_total}", "Se recalcula al instante"),
         ("Líder actual", lider, f"{lider_pts} puntos" if lider else "Sin líder todavía"),
-        ("Máximo posible", partidos_total * 3, "3 puntos por pleno"),
+        ("Máximo posible", maximo_posible, f"Líder + {partidos_pendientes * 3} pts pendientes"),
     ]
     for col, (label, value, note) in zip([c1,c2,c3,c4], items):
         col.markdown(f"<div class='card'><div class='stat-label'>{label}</div><div class='stat-value'>{value}</div><div class='stat-note'>{note}</div></div>", unsafe_allow_html=True)
@@ -1731,6 +1732,8 @@ stats = estadisticas_participantes(detalle)
 partidos_jugados = resultados_df.dropna(subset=["goles_local", "goles_visitante"]).shape[0]
 lider = tabla.iloc[0]["participante"] if not tabla.empty else ""
 lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
+puntos_pendientes = max(len(partidos) - partidos_jugados, 0) * 3
+maximo_posible = lider_pts + puntos_pendientes
 
 # -----------------------------
 # Portada
@@ -1759,7 +1762,7 @@ hero_html = (
 st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
-html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
+html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts, maximo_posible)
 
 st.write("")
 left, right = st.columns([1.7, 1])
@@ -1771,21 +1774,53 @@ with right:
     proximo_partido(partidos, resultados_df)
 
 st.write("")
-a, b = st.columns([1.1, 1])
-with a:
-    st.markdown("### 🔥 La jornada")
-    if not detalle.empty and partidos_jugados > 0:
-        jornada = detalle.dropna(subset=["real_local", "real_visitante"]).groupby("participante", as_index=False).agg(puntos=("puntos", "sum"), plenos=("puntos", lambda s: int((s == 3).sum())))
-        if not jornada.empty:
-            best = jornada.sort_values(["puntos", "plenos"], ascending=False).iloc[0]
-            worst = jornada.sort_values(["puntos", "plenos"], ascending=True).iloc[0]
-            st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Cada partido puede mover el ranking.</p></div>", unsafe_allow_html=True)
-    else:
-        st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
-with b:
-    st.markdown("### 🧠 La comunidad opina")
-    bloque_comunidad(apuestas_df, partidos)
+st.markdown("### 🔥 La jornada")
+if not detalle.empty and partidos_jugados > 0:
+    jornada = detalle.dropna(subset=["real_local", "real_visitante"]).groupby("participante", as_index=False).agg(puntos=("puntos", "sum"), plenos=("puntos", lambda s: int((s == 3).sum())))
+    if not jornada.empty:
+        best = jornada.sort_values(["puntos", "plenos"], ascending=False).iloc[0]
+        worst = jornada.sort_values(["puntos", "plenos"], ascending=True).iloc[0]
+        st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Cada partido puede mover el ranking.</p></div>", unsafe_allow_html=True)
+else:
+    st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
 
+
+st.write("")
+st.markdown("## 🔥 Clasificación general")
+st.caption("Ranking completo actualizado con los resultados introducidos hasta ahora.")
+
+if tabla.empty:
+    st.info("Sube apuestas para ver la clasificación.")
+else:
+    tabla_home = tabla.copy()
+    tabla_home["estado"] = tabla_home["posición"].map({
+        1: "👑 líder",
+        2: "🥈 acechando",
+        3: "🥉 podio",
+    }).fillna("⚔️ en pelea")
+
+    st.dataframe(
+        tabla_home[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
+        hide_index=True,
+        use_container_width=True,
+        column_config={
+            "posición": st.column_config.NumberColumn("Pos."),
+            "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+        },
+    )
+
+    st.download_button(
+        "Descargar clasificación CSV",
+        tabla.to_csv(index=False).encode("utf-8"),
+        "clasificacion_porra_2026.csv",
+        "text/csv",
+        key="descarga_clasificacion_home",
+    )
+
+
+st.write("")
+st.markdown("### 🧠 La comunidad opina")
+bloque_comunidad(apuestas_df, partidos)
 
 
 st.markdown("## 🔮 La comunidad predice")
