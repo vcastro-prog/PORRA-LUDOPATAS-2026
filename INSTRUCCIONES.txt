@@ -1,21 +1,12 @@
 Sustituye tu app.py por este.
 
-Base:
-- Parte del app.py estable que has subido.
-
-Cambios aplicados:
-- Cabecera fija:
-  48 selecciones · 12 grupos · 11 junio – 28 junio · 72 partidos
-- Normalización de nombres:
-  COSTA DE MARFIL / COSTA DEMARFIL
-  R.D.CONGO / R.D. CONGO
-  CROACIA / CROCIA
-- La comunidad predice:
-  añade Pts reales y PJ
-  mantiene Top 2 comunidad y Pts medios comunidad
-  ordena por puntos reales cuando ya haya resultados en el grupo
+Cambios:
+- En la home, la clasificación general muestra solo el Top 10.
+- La clasificación completa queda dentro del desplegable:
+  "Ver clasificación completa"
+- Se mantiene la descarga CSV.
 
 Subida:
 git add app.py
-git commit -m "Corregir grupos y puntos reales en prediccion"
+git commit -m "Mostrar top 10 y clasificacion completa desplegable"
 git push

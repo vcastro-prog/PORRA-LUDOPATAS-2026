@@ -1799,8 +1799,11 @@ else:
         3: "🥉 podio",
     }).fillna("⚔️ en pelea")
 
+    columnas_clasificacion = ["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]
+
+    st.markdown("#### Top 10")
     st.dataframe(
-        tabla_home[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
+        tabla_home[columnas_clasificacion].head(10),
         hide_index=True,
         use_container_width=True,
         column_config={
@@ -1808,6 +1811,17 @@ else:
             "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
         },
     )
+
+    with st.expander("Ver clasificación completa", expanded=False):
+        st.dataframe(
+            tabla_home[columnas_clasificacion],
+            hide_index=True,
+            use_container_width=True,
+            column_config={
+                "posición": st.column_config.NumberColumn("Pos."),
+                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+            },
+        )
 
     st.download_button(
         "Descargar clasificación CSV",
@@ -1832,27 +1846,9 @@ render_prediccion_grupos(pred_grupos_home)
 # -----------------------------
 # Tabs
 # -----------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
+tab1, tab2, tab3, tab4 = st.tabs(["⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
 
 with tab1:
-    st.markdown("### Clasificación general")
-    if tabla.empty:
-        st.info("Sube apuestas para ver la clasificación.")
-    else:
-        tabla_view = tabla.copy()
-        tabla_view["estado"] = tabla_view["posición"].map({1:"👑 líder", 2:"🥈 acechando", 3:"🥉 podio"}).fillna("⚔️ en pelea")
-        st.dataframe(
-            tabla_view[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
-            hide_index=True,
-            use_container_width=True,
-            column_config={
-                "posición": st.column_config.NumberColumn("Pos."),
-                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
-            },
-        )
-        st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
-
-with tab2:
     st.markdown("### Calendario de la fase de grupos")
     partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
         resultados_df, on="partido_id", how="left"
@@ -1898,7 +1894,7 @@ with tab2:
     )
 
 
-with tab3:
+with tab2:
     st.markdown("### Apuestas de los participantes")
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
@@ -2038,7 +2034,7 @@ with tab3:
                 mime="text/csv"
             )
 
-with tab4:
+with tab3:
     st.markdown("### Radiografía de la porra")
     if detalle.empty:
         st.info("Aún no hay puntos que mostrar.")
@@ -2053,7 +2049,7 @@ with tab4:
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
 
 
-with tab5:
+with tab4:
     st.markdown(
         """
 <div class='callout'>
