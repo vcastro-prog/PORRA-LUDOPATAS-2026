@@ -1241,6 +1241,85 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+/* ===== AJUSTE FINAL: COPA MÁS GRANDE EN MÓVIL ===== */
+@media (max-width: 760px) {
+  .hero-trophy-zone {
+    min-height: 360px !important;
+    margin-top: 6px !important;
+  }
+
+  .hero-trophy-zone::before {
+    width: 335px !important;
+    height: 335px !important;
+    top: 30px !important;
+  }
+
+  .hero-trophy-pro {
+    width: 255px !important;
+    max-height: 340px !important;
+    top: 52px !important;
+  }
+
+  .stat-participantes {
+    top: 8px !important;
+    right: 3% !important;
+  }
+
+  .stat-jugados {
+    top: 58px !important;
+    left: 2% !important;
+  }
+
+  .stat-maximo {
+    bottom: 18px !important;
+    left: 2% !important;
+  }
+
+  .stat-lider {
+    bottom: 18px !important;
+    right: 1% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-trophy-zone {
+    min-height: 345px !important;
+  }
+
+  .hero-trophy-zone::before {
+    width: 310px !important;
+    height: 310px !important;
+    top: 30px !important;
+  }
+
+  .hero-trophy-pro {
+    width: 235px !important;
+    max-height: 315px !important;
+    top: 54px !important;
+  }
+
+  .stat-participantes {
+    top: 8px !important;
+    right: 0 !important;
+  }
+
+  .stat-jugados {
+    top: 54px !important;
+    left: -1% !important;
+  }
+
+  .stat-maximo {
+    bottom: 14px !important;
+    left: -1% !important;
+  }
+
+  .stat-lider {
+    bottom: 14px !important;
+    right: -2% !important;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,

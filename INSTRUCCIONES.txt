@@ -1,14 +1,12 @@
 Sustituye tu app.py por este.
 
-Cambios:
+Cambio aplicado:
+- Solo se modifica CSS móvil.
+- La copa de la portada en móvil pasa a ser más grande y proporcionada respecto a las tarjetas.
 - Escritorio queda igual.
-- En móvil:
-  - se reduce la altura de la zona de la copa
-  - la copa sube un poco
-  - las tarjetas se acercan a la copa
-  - se reduce el tamaño de las tarjetas para evitar huecos grandes
+- No se toca la lógica de Google Sheets, clasificación, resultados ni puntuaciones.
 
 Subida:
 git add app.py
-git commit -m "Compactar composicion movil de portada"
+git commit -m "Aumentar copa en version movil"
 git push
