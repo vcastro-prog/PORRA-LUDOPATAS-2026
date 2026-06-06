@@ -1,14 +1,14 @@
 Sustituye tu app.py por este.
 
 Cambios:
-- Mantiene el diseño de escritorio como está.
-- En móvil compacta la zona de la copa:
-  - tarjetas en cuadrícula 2x2
-  - copa centrada
-  - mucho menos espacio vertical
-  - sin tarjetas dispersas por toda la cabecera
+- En escritorio no cambia nada.
+- En móvil la zona de la copa vuelve a parecerse al escritorio:
+  - copa más grande
+  - tarjetas flotantes alrededor
+  - rotaciones distintas
+  - menos rigidez que la cuadrícula anterior
 
 Subida:
 git add app.py
-git commit -m "Compactar tarjetas flotantes en movil"
+git commit -m "Ajustar portada movil tipo escritorio"
 git push
