@@ -1,12 +1,16 @@
-Sustituye tu app.py por este.
+Sustituye tu app.py por este y sube también:
+
+assets/banner_porra_2026.png
 
 Cambios:
-- En la home, la clasificación general muestra solo el Top 10.
-- La clasificación completa queda dentro del desplegable:
-  "Ver clasificación completa"
-- Se mantiene la descarga CSV.
+- Se mantiene la cabecera con título, texto y badges.
+- Se integra debajo el banner épico de la porra a ancho completo.
+- Si el banner no existe, la app usa worldcup_2026_clean.png como respaldo.
 
 Subida:
-git add app.py
-git commit -m "Mostrar top 10 y clasificacion completa desplegable"
+git add app.py assets/banner_porra_2026.png
+git commit -m "Integrar banner principal de la porra"
 git push
+
+Luego:
+- Reboot app en Streamlit Cloud si no se actualiza sola.

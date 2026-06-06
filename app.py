@@ -73,7 +73,7 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-right: 245px;
+  padding-right: 0;
 }
 .hero-title {
   white-space: nowrap;
@@ -115,7 +115,7 @@ h1, h2, h3 {font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 
 }
 @media (max-width: 1100px) {
   .hero-content {
-    padding-right: 240px;
+    padding-right: 0;
   }
   .hero-title {
     font-size: clamp(48px, 6.2vw, 82px);
@@ -217,7 +217,7 @@ button[kind="primary"] {border-radius: 999px;}
   }
 
   .hero-content {
-    padding-right: 210px;
+    padding-right: 0;
   }
 
   .hero-title {
@@ -477,6 +477,32 @@ button[kind="primary"] {border-radius: 999px;}
   }
   .prediction-table {
     font-size: .82rem;
+  }
+}
+
+
+/* Banner épico propio de la porra */
+.hero-epic-banner {
+  margin-top: 22px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.35),
+    0 0 44px rgba(31,228,255,.08);
+  background: rgba(255,255,255,.035);
+}
+
+.hero-epic-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .hero-epic-banner {
+    margin-top: 18px;
+    border-radius: 22px;
   }
 }
 
@@ -1738,7 +1764,7 @@ maximo_posible = lider_pts + puntos_pendientes
 # -----------------------------
 # Portada
 # -----------------------------
-worldcup_b64 = imagen_asset_base64("worldcup_2026_clean.png")
+worldcup_b64 = imagen_asset_base64("banner_porra_2026.png") or imagen_asset_base64("worldcup_2026_clean.png")
 
 hero_html = (
     f'<div class="hero">'
@@ -1753,8 +1779,8 @@ hero_html = (
     f'<div class="badge">⚡ 72 partidos</div>'
     f'</div>'
     f'</div>'
-    f'<div class="hero-right-logo">'
-    f'<img src="data:image/png;base64,{worldcup_b64}" alt="World Cup 2026">'
+    f'<div class="hero-epic-banner">'
+    f'<img src="data:image/png;base64,{worldcup_b64}" alt="Banner Porra Ludópatas 2026">'
     f'</div>'
     f'</div>'
 )
