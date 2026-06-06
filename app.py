@@ -481,245 +481,28 @@ button[kind="primary"] {border-radius: 999px;}
 }
 
 
-/* ===== PORTADA RESUMEN PREMIUM ===== */
-.hero-pro {
-  min-height: 520px;
-  padding: 38px 42px;
-  isolation: isolate;
-}
-
-.hero-pro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 72% 34%, rgba(31,228,255,.20), transparent 28%),
-    radial-gradient(circle at 82% 68%, rgba(255,209,102,.16), transparent 30%),
-    radial-gradient(circle at 12% 0%, rgba(255,78,205,.10), transparent 34%),
-    linear-gradient(115deg, rgba(5,10,27,.99), rgba(13,18,45,.95) 55%, rgba(25,16,50,.88));
-  z-index: 0;
-}
-
-.hero-pro::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(150deg, transparent 0 42%, rgba(31,228,255,.13) 43%, transparent 47%),
-    linear-gradient(25deg, transparent 0 58%, rgba(255,78,205,.10) 59%, transparent 63%);
-  opacity: .65;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-inner-pro {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, .95fr);
-  gap: 34px;
-  align-items: center;
-}
-
-.hero-main-pro {
-  position: relative;
-  z-index: 4;
-}
-
-.hero-title-pro {
-  font-family: 'Bebas Neue', 'Inter', sans-serif;
-  font-size: clamp(82px, 8vw, 132px);
-  line-height: .82;
-  letter-spacing: .018em;
-  margin: 8px 0 18px 0;
-  text-transform: uppercase;
-  text-shadow: 0 12px 34px rgba(0,0,0,.35);
-}
-
-.hero-title-pro .porra { color: #fff; }
-.hero-title-pro .ludo {
-  display: block;
-  background: linear-gradient(90deg, #FFD166, #fff4c2 35%, #22E6FF 82%);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.hero-title-pro .year {
-  display: block;
-  color: #fff;
-}
-
-.hero-sub-pro {
-  max-width: 710px;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.35vw, 1.18rem);
-  line-height: 1.45;
-}
-
-.hero-badges-pro {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+/* Banner épico propio de la porra */
+.hero-epic-banner {
   margin-top: 22px;
-}
-
-.hero-badges-pro .badge {
-  background: rgba(255,255,255,.105);
-  border: 1px solid rgba(255,255,255,.19);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-}
-
-.hero-visual-card {
-  position: relative;
-  min-height: 390px;
-  border-radius: 32px;
+  border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.16);
-  background:
-    radial-gradient(circle at 45% 36%, rgba(255,209,102,.22), transparent 32%),
-    linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
   box-shadow:
-    0 26px 80px rgba(0,0,0,.35),
-    0 0 54px rgba(31,228,255,.11);
+    0 22px 70px rgba(0,0,0,.35),
+    0 0 44px rgba(31,228,255,.08);
+  background: rgba(255,255,255,.035);
 }
 
-.hero-visual-card img {
-  position: absolute;
-  inset: 0;
+.hero-epic-banner img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 48% 50%;
-  opacity: .96;
-  transform: scale(1.02);
-}
-
-.hero-visual-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(5,10,27,.18), transparent 42%),
-    linear-gradient(0deg, rgba(5,10,27,.20), transparent 38%);
-  pointer-events: none;
-}
-
-.hero-visual-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 5;
-  transform: rotate(-5deg);
-  padding: 12px 18px 14px 18px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(31,228,255,.20), rgba(255,78,205,.22));
-  border: 1px solid rgba(255,255,255,.20);
-  box-shadow: 0 16px 44px rgba(0,0,0,.32);
-}
-
-.hero-visual-badge .num {
-  display: block;
-  font-family: 'Bebas Neue', 'Inter', sans-serif;
-  font-size: clamp(46px, 5.5vw, 76px);
-  line-height: .8;
-  color: var(--cyan);
-  text-shadow: 0 0 26px rgba(31,228,255,.45);
-}
-
-.hero-visual-badge .txt {
-  display: block;
-  font-weight: 900;
-  font-style: italic;
-  color: #fff;
-  letter-spacing: .04em;
-}
-
-.hero-summary-grid {
-  position: relative;
-  z-index: 4;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 26px;
-}
-
-.hero-summary-card {
-  border-radius: 24px;
-  padding: 18px 18px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.055));
-  border: 1px solid rgba(255,255,255,.17);
-  box-shadow:
-    0 16px 40px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.08);
-}
-
-.hero-summary-card .label {
-  color: var(--muted);
-  font-size: .74rem;
-  text-transform: uppercase;
-  letter-spacing:.14em;
-  font-weight: 900;
-}
-
-.hero-summary-card .value {
-  font-size: clamp(1.55rem, 2.4vw, 2.45rem);
-  line-height: 1.05;
-  font-weight: 900;
-  margin-top: 8px;
-}
-
-.hero-summary-card .note {
-  color: var(--muted);
-  font-size: .85rem;
-  margin-top: 6px;
-}
-
-.hero-summary-card.highlight {
-  background:
-    linear-gradient(135deg, rgba(255,209,102,.20), rgba(31,228,255,.10));
-}
-
-@media (max-width: 1100px) {
-  .hero-inner-pro { grid-template-columns: 1fr; }
-  .hero-visual-card { min-height: 340px; }
-  .hero-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  height: auto;
 }
 
 @media (max-width: 760px) {
-  .hero-pro {
-    padding: 24px 18px 26px 18px;
-    text-align: center;
-    min-height: auto;
-  }
-  .hero-title-pro {
-    font-size: clamp(60px, 16vw, 88px);
-  }
-  .hero-sub-pro {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-badges-pro {
-    justify-content: center;
-  }
-  .hero-visual-card {
-    min-height: 290px;
-    border-radius: 26px;
-  }
-  .hero-visual-card img {
-    object-position: 46% 50%;
-  }
-  .hero-visual-badge {
-    top: 12px;
-    right: 12px;
-    transform: rotate(-5deg) scale(.82);
-  }
-  .hero-summary-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .hero-summary-card {
-    text-align: left;
-    padding: 18px;
+  .hero-epic-banner {
+    margin-top: 18px;
+    border-radius: 22px;
   }
 }
 
@@ -1616,13 +1399,14 @@ def generar_excel_apuestas_transparencia(apuestas: pd.DataFrame, partidos: pd.Da
     return output.getvalue()
 
 
-def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int):
+def html_kpis(participantes: int, jugados: int, partidos_total: int, lider: str, lider_pts: int, maximo_posible: int):
     c1, c2, c3, c4 = st.columns(4)
+    partidos_pendientes = max(partidos_total - jugados, 0)
     items = [
         ("Participantes", participantes, "La grada de la porra"),
         ("Partidos jugados", f"{jugados}/{partidos_total}", "Se recalcula al instante"),
         ("Líder actual", lider, f"{lider_pts} puntos" if lider else "Sin líder todavía"),
-        ("Máximo posible", partidos_total * 3, "3 puntos por pleno"),
+        ("Máximo posible", maximo_posible, f"Líder + {partidos_pendientes * 3} pts pendientes"),
     ]
     for col, (label, value, note) in zip([c1,c2,c3,c4], items):
         col.markdown(f"<div class='card'><div class='stat-label'>{label}</div><div class='stat-value'>{value}</div><div class='stat-note'>{note}</div></div>", unsafe_allow_html=True)
@@ -1974,43 +1758,29 @@ stats = estadisticas_participantes(detalle)
 partidos_jugados = resultados_df.dropna(subset=["goles_local", "goles_visitante"]).shape[0]
 lider = tabla.iloc[0]["participante"] if not tabla.empty else ""
 lider_pts = int(tabla.iloc[0]["puntos"]) if not tabla.empty else 0
+puntos_pendientes = max(len(partidos) - partidos_jugados, 0) * 3
+maximo_posible = lider_pts + puntos_pendientes
 
 # -----------------------------
 # Portada
 # -----------------------------
-worldcup_b64 = imagen_asset_base64("hero_visual_porra_2026.jpg") or imagen_asset_base64("worldcup_2026_clean.png")
-
-participantes_total = apuestas_df["participante"].nunique() if not apuestas_df.empty else 0
-partidos_pendientes = max(len(partidos) - partidos_jugados, 0)
+worldcup_b64 = imagen_asset_base64("banner_porra_2026.png") or imagen_asset_base64("worldcup_2026_clean.png")
 
 hero_html = (
-    f'<div class="hero hero-pro">'
-    f'<div class="hero-inner-pro">'
-    f'<div class="hero-main-pro">'
-    f'<div class="kicker">Canadá · México · USA 2026</div>'
-    f'<div class="hero-title-pro">'
-    f'<span class="porra">PORRA</span>'
-    f'<span class="ludo">LUDÓPATAS</span>'
-    f'<span class="year">2026</span>'
-    f'</div>'
-    f'<div class="hero-sub-pro">La gran porra del Mundial 2026. Compite, apuesta y demuestra que sabes de fútbol.</div>'
-    f'<div class="hero-badges-pro">'
+    f'<div class="hero">'
+    f'<div class="hero-content">'
+    f'<div class="kicker">Canada · México · USA 2026</div>'
+    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
+    f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
+    f'<div class="hero-badges">'
     f'<div class="badge">🌎 48 selecciones</div>'
     f'<div class="badge">🏆 12 grupos</div>'
     f'<div class="badge">📅 11 junio – 28 junio</div>'
     f'<div class="badge">⚡ 72 partidos</div>'
     f'</div>'
     f'</div>'
-    f'<div class="hero-visual-card">'
-    f'<img src="data:image/jpeg;base64,{worldcup_b64}" alt="Copa, balón y estadio Porra Ludópatas 2026">'
-    f'<div class="hero-visual-badge"><span class="num">{participantes_total}</span><span class="txt">participantes</span></div>'
-    f'</div>'
-    f'</div>'
-    f'<div class="hero-summary-grid">'
-    f'<div class="hero-summary-card"><div class="label">Participantes</div><div class="value">{participantes_total}</div><div class="note">La grada de la porra</div></div>'
-    f'<div class="hero-summary-card"><div class="label">Partidos jugados</div><div class="value">{partidos_jugados}/{len(partidos)}</div><div class="note">Se recalcula al instante</div></div>'
-    f'<div class="hero-summary-card highlight"><div class="label">Líder actual</div><div class="value">{lider if lider else "—"}</div><div class="note">{lider_pts} puntos</div></div>'
-    f'<div class="hero-summary-card"><div class="label">Máximo posible</div><div class="value">{maximo_posible}</div><div class="note">Líder + {partidos_pendientes * 3} pts pendientes</div></div>'
+    f'<div class="hero-epic-banner">'
+    f'<img src="data:image/png;base64,{worldcup_b64}" alt="Banner Porra Ludópatas 2026">'
     f'</div>'
     f'</div>'
 )
@@ -2018,7 +1788,7 @@ hero_html = (
 st.markdown(hero_html, unsafe_allow_html=True)
 
 st.write("")
-html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts)
+html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts, maximo_posible)
 
 st.write("")
 left, right = st.columns([1.7, 1])
@@ -2030,21 +1800,67 @@ with right:
     proximo_partido(partidos, resultados_df)
 
 st.write("")
-a, b = st.columns([1.1, 1])
-with a:
-    st.markdown("### 🔥 La jornada")
-    if not detalle.empty and partidos_jugados > 0:
-        jornada = detalle.dropna(subset=["real_local", "real_visitante"]).groupby("participante", as_index=False).agg(puntos=("puntos", "sum"), plenos=("puntos", lambda s: int((s == 3).sum())))
-        if not jornada.empty:
-            best = jornada.sort_values(["puntos", "plenos"], ascending=False).iloc[0]
-            worst = jornada.sort_values(["puntos", "plenos"], ascending=True).iloc[0]
-            st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Cada partido puede mover el ranking.</p></div>", unsafe_allow_html=True)
-    else:
-        st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
-with b:
-    st.markdown("### 🧠 La comunidad opina")
-    bloque_comunidad(apuestas_df, partidos)
+st.markdown("### 🔥 La jornada")
+if not detalle.empty and partidos_jugados > 0:
+    jornada = detalle.dropna(subset=["real_local", "real_visitante"]).groupby("participante", as_index=False).agg(puntos=("puntos", "sum"), plenos=("puntos", lambda s: int((s == 3).sum())))
+    if not jornada.empty:
+        best = jornada.sort_values(["puntos", "plenos"], ascending=False).iloc[0]
+        worst = jornada.sort_values(["puntos", "plenos"], ascending=True).iloc[0]
+        st.markdown(f"<div class='big-cta'><span class='ribbon'>Mejor de la jornada</span><h2>{best['participante']} · +{int(best['puntos'])} pts</h2><p>Batacazo provisional: <strong>{worst['participante']}</strong> con {int(worst['puntos'])} puntos. Cada partido puede mover el ranking.</p></div>", unsafe_allow_html=True)
+else:
+    st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
 
+
+st.write("")
+st.markdown("## 🔥 Clasificación general")
+st.caption("Ranking completo actualizado con los resultados introducidos hasta ahora.")
+
+if tabla.empty:
+    st.info("Sube apuestas para ver la clasificación.")
+else:
+    tabla_home = tabla.copy()
+    tabla_home["estado"] = tabla_home["posición"].map({
+        1: "👑 líder",
+        2: "🥈 acechando",
+        3: "🥉 podio",
+    }).fillna("⚔️ en pelea")
+
+    columnas_clasificacion = ["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]
+
+    st.markdown("#### Top 10")
+    st.dataframe(
+        tabla_home[columnas_clasificacion].head(10),
+        hide_index=True,
+        use_container_width=True,
+        column_config={
+            "posición": st.column_config.NumberColumn("Pos."),
+            "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+        },
+    )
+
+    with st.expander("Ver clasificación completa", expanded=False):
+        st.dataframe(
+            tabla_home[columnas_clasificacion],
+            hide_index=True,
+            use_container_width=True,
+            column_config={
+                "posición": st.column_config.NumberColumn("Pos."),
+                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+            },
+        )
+
+    st.download_button(
+        "Descargar clasificación CSV",
+        tabla.to_csv(index=False).encode("utf-8"),
+        "clasificacion_porra_2026.csv",
+        "text/csv",
+        key="descarga_clasificacion_home",
+    )
+
+
+st.write("")
+st.markdown("### 🧠 La comunidad opina")
+bloque_comunidad(apuestas_df, partidos)
 
 
 st.markdown("## 🔮 La comunidad predice")
@@ -2056,27 +1872,9 @@ render_prediccion_grupos(pred_grupos_home)
 # -----------------------------
 # Tabs
 # -----------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
+tab1, tab2, tab3, tab4 = st.tabs(["⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
 
 with tab1:
-    st.markdown("### Clasificación general")
-    if tabla.empty:
-        st.info("Sube apuestas para ver la clasificación.")
-    else:
-        tabla_view = tabla.copy()
-        tabla_view["estado"] = tabla_view["posición"].map({1:"👑 líder", 2:"🥈 acechando", 3:"🥉 podio"}).fillna("⚔️ en pelea")
-        st.dataframe(
-            tabla_view[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
-            hide_index=True,
-            use_container_width=True,
-            column_config={
-                "posición": st.column_config.NumberColumn("Pos."),
-                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
-            },
-        )
-        st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
-
-with tab2:
     st.markdown("### Calendario de la fase de grupos")
     partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
         resultados_df, on="partido_id", how="left"
@@ -2122,7 +1920,7 @@ with tab2:
     )
 
 
-with tab3:
+with tab2:
     st.markdown("### Apuestas de los participantes")
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
@@ -2262,7 +2060,7 @@ with tab3:
                 mime="text/csv"
             )
 
-with tab4:
+with tab3:
     st.markdown("### Radiografía de la porra")
     if detalle.empty:
         st.info("Aún no hay puntos que mostrar.")
@@ -2277,7 +2075,7 @@ with tab4:
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
 
 
-with tab5:
+with tab4:
     st.markdown(
         """
 <div class='callout'>

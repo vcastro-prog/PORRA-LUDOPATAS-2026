@@ -1,16 +1,16 @@
 Sustituye tu app.py por este y sube también:
 
-assets/hero_visual_porra_2026.jpg
+assets/banner_porra_2026.png
 
 Cambios:
-- Portada con título + visual de copa, balón y estadio.
-- Tarjeta de participantes sobre la imagen.
-- Resumen integrado en la cabecera:
-  participantes, partidos jugados, líder y máximo posible.
-- Se eliminan las tarjetas KPI duplicadas debajo de la cabecera.
-- Después de la portada empieza Podio en directo.
+- Se mantiene la cabecera con título, texto y badges.
+- Se integra debajo el banner épico de la porra a ancho completo.
+- Si el banner no existe, la app usa worldcup_2026_clean.png como respaldo.
 
 Subida:
-git add app.py assets/hero_visual_porra_2026.jpg
-git commit -m "Integrar portada resumen con visual de estadio"
+git add app.py assets/banner_porra_2026.png
+git commit -m "Integrar banner principal de la porra"
 git push
+
+Luego:
+- Reboot app en Streamlit Cloud si no se actualiza sola.
