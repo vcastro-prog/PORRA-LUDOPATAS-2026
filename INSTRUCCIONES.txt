@@ -1,18 +1,16 @@
-Sustituye tu app.py por este.
+Sustituye tu app.py por este y sube también:
 
-Qué cambia:
-- Elimina la idea del banner duplicado.
-- Crea una cabecera premium limpia con:
-  - título único
-  - datos de la porra
-  - copa como elemento visual
-  - contador de participantes
-  - brillo suave animado con CSS
-- No necesitas subir el banner anterior.
-- Mantén en assets la imagen actual:
-  assets/worldcup_2026_clean.png
+assets/hero_visual_porra_2026.jpg
+
+Cambios:
+- Portada con título + visual de copa, balón y estadio.
+- Tarjeta de participantes sobre la imagen.
+- Resumen integrado en la cabecera:
+  participantes, partidos jugados, líder y máximo posible.
+- Se eliminan las tarjetas KPI duplicadas debajo de la cabecera.
+- Después de la portada empieza Podio en directo.
 
 Subida:
-git add app.py
-git commit -m "Redisenar cabecera premium sin duplicar banner"
+git add app.py assets/hero_visual_porra_2026.jpg
+git commit -m "Integrar portada resumen con visual de estadio"
 git push
