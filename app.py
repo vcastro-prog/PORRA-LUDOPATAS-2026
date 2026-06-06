@@ -732,6 +732,81 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+/* ===== TARJETAS RESUMEN DENTRO DE LA PORTADA ===== */
+.hero-summary-inline {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-summary-inline .summary-card {
+  border-radius: 22px;
+  padding: 15px 16px;
+  text-align: left;
+  background:
+    linear-gradient(135deg, rgba(31,228,255,.13), rgba(255,78,205,.10)),
+    rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.hero-summary-inline .summary-card.highlight {
+  background:
+    linear-gradient(135deg, rgba(255,209,102,.19), rgba(31,228,255,.10)),
+    rgba(255,255,255,.08);
+}
+
+.hero-summary-inline .summary-label {
+  color: var(--muted);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-weight: 900;
+}
+
+.hero-summary-inline .summary-value {
+  color: #fff;
+  font-size: clamp(1.35rem, 2.2vw, 2.05rem);
+  line-height: 1.08;
+  font-weight: 900;
+  margin-top: 7px;
+  word-break: break-word;
+}
+
+.hero-summary-inline .summary-note {
+  color: var(--muted);
+  font-size: .78rem;
+  margin-top: 5px;
+}
+
+@media (max-width: 1100px) {
+  .hero-summary-inline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-summary-inline {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .hero-summary-inline .summary-card {
+    padding: 16px 17px;
+  }
+
+  .hero-summary-inline .summary-value {
+    font-size: 1.85rem;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -1993,6 +2068,7 @@ maximo_posible = lider_pts + puntos_pendientes
 worldcup_b64 = imagen_asset_base64("worldcup_2026_clean.png")
 
 participantes_total = apuestas_df["participante"].nunique() if not apuestas_df.empty else 0
+partidos_pendientes = max(len(partidos) - partidos_jugados, 0)
 
 hero_html = (
     f'<div class="hero hero-pro">'
@@ -2015,16 +2091,18 @@ hero_html = (
     f'<div class="hero-trophy-zone">'
     f'<div class="participants-burst"><span class="num">{participantes_total}</span><span class="txt">participantes</span></div>'
     f'<img class="hero-trophy-pro" src="data:image/png;base64,{worldcup_b64}" alt="Copa Porra Ludópatas 2026">'
-    f'<div class="hero-slogan">UNA PORRA. <span class="gold">UNA PASIÓN.</span> <span class="cyan">UN CAMPEÓN.</span></div>'
     f'</div>'
+    f'</div>'
+    f'<div class="hero-summary-inline">'
+    f'<div class="summary-card"><div class="summary-label">Participantes</div><div class="summary-value">{participantes_total}</div><div class="summary-note">La grada de la porra</div></div>'
+    f'<div class="summary-card"><div class="summary-label">Partidos jugados</div><div class="summary-value">{partidos_jugados}/{len(partidos)}</div><div class="summary-note">Se recalcula al instante</div></div>'
+    f'<div class="summary-card highlight"><div class="summary-label">Líder actual</div><div class="summary-value">{lider if lider else "—"}</div><div class="summary-note">{lider_pts} puntos</div></div>'
+    f'<div class="summary-card"><div class="summary-label">Máximo posible</div><div class="summary-value">{maximo_posible}</div><div class="summary-note">Líder + {partidos_pendientes * 3} pts pendientes</div></div>'
     f'</div>'
     f'</div>'
 )
 
 st.markdown(hero_html, unsafe_allow_html=True)
-
-st.write("")
-html_kpis(apuestas_df["participante"].nunique() if not apuestas_df.empty else 0, partidos_jugados, len(partidos), lider, lider_pts, maximo_posible)
 
 st.write("")
 left, right = st.columns([1.7, 1])
