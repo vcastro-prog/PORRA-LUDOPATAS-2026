@@ -962,6 +962,121 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+/* ===== AJUSTE MÓVIL COMPACTO PARA TARJETAS FLOTANTES ===== */
+@media (max-width: 760px) {
+  .hero-trophy-zone {
+    min-height: 360px !important;
+    margin-top: 12px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "participantes jugados"
+      "copa copa"
+      "maximo lider";
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .hero-trophy-zone::before {
+    width: 230px !important;
+    height: 230px !important;
+    top: 84px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-trophy-pro {
+    grid-area: copa;
+    position: relative !important;
+    width: 145px !important;
+    max-height: 185px !important;
+    margin: 2px auto 0 auto;
+  }
+
+  .floating-stat,
+  .participants-burst {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    min-width: 0 !important;
+    width: 100%;
+    max-width: 172px;
+    padding: 9px 10px 10px 10px;
+    border-radius: 18px;
+  }
+
+  .stat-participantes {
+    grid-area: participantes;
+  }
+
+  .stat-jugados {
+    grid-area: jugados;
+  }
+
+  .stat-maximo {
+    grid-area: maximo;
+  }
+
+  .stat-lider {
+    grid-area: lider;
+    max-width: 190px;
+  }
+
+  .floating-stat .num,
+  .participants-burst .num {
+    font-size: 34px !important;
+    line-height: .86;
+  }
+
+  .stat-lider .num {
+    font-size: 25px !important;
+    white-space: nowrap;
+  }
+
+  .floating-stat .txt,
+  .participants-burst .txt {
+    font-size: .78rem !important;
+    margin-top: 2px;
+  }
+
+  .floating-stat .note {
+    font-size: .62rem !important;
+    margin-top: 1px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-trophy-zone {
+    min-height: 345px !important;
+    gap: 8px;
+  }
+
+  .hero-trophy-pro {
+    width: 132px !important;
+    max-height: 170px !important;
+  }
+
+  .floating-stat,
+  .participants-burst {
+    max-width: 154px;
+    padding: 8px 9px 9px 9px;
+  }
+
+  .floating-stat .num,
+  .participants-burst .num {
+    font-size: 31px !important;
+  }
+
+  .stat-lider .num {
+    font-size: 22px !important;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,

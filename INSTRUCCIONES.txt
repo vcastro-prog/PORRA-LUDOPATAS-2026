@@ -1,13 +1,14 @@
 Sustituye tu app.py por este.
 
 Cambios:
-- Se conserva la copa y su fondo.
-- La tarjeta de participantes junto a la copa se mantiene.
-- Se eliminan las tarjetas grandes duplicadas de abajo.
-- Partidos jugados, Líder actual y Máximo posible pasan a ser tarjetas flotantes con el mismo estilo que la tarjeta de participantes.
-- Se elimina definitivamente la frase "UNA PORRA. UNA PASIÓN. UN CAMPEÓN."
+- Mantiene el diseño de escritorio como está.
+- En móvil compacta la zona de la copa:
+  - tarjetas en cuadrícula 2x2
+  - copa centrada
+  - mucho menos espacio vertical
+  - sin tarjetas dispersas por toda la cabecera
 
 Subida:
 git add app.py
-git commit -m "Convertir resumen en tarjetas flotantes junto a la copa"
+git commit -m "Compactar tarjetas flotantes en movil"
 git push
