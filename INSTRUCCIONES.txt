@@ -1,13 +1,13 @@
 Sustituye tu app.py por este.
 
-Cambios aplicados:
-- Se mantiene la copa y su fondo tal como están.
-- Se elimina la frase "UNA PORRA. UNA PASIÓN. UN CAMPEÓN."
-- Se integran en la portada las tarjetas:
-  Participantes, Partidos jugados, Líder actual y Máximo posible.
-- Se eliminan las tarjetas KPI duplicadas que aparecían justo debajo de la portada.
+Cambios:
+- Se conserva la copa y su fondo.
+- La tarjeta de participantes junto a la copa se mantiene.
+- Se eliminan las tarjetas grandes duplicadas de abajo.
+- Partidos jugados, Líder actual y Máximo posible pasan a ser tarjetas flotantes con el mismo estilo que la tarjeta de participantes.
+- Se elimina definitivamente la frase "UNA PORRA. UNA PASIÓN. UN CAMPEÓN."
 
 Subida:
 git add app.py
-git commit -m "Integrar tarjetas resumen en portada"
+git commit -m "Convertir resumen en tarjetas flotantes junto a la copa"
 git push

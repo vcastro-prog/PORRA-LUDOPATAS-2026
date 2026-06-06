@@ -807,6 +807,161 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+/* ===== TARJETAS FLOTANTES JUNTO A LA COPA ===== */
+.hero-trophy-zone {
+  min-height: 390px;
+}
+
+.floating-stat {
+  position: absolute;
+  z-index: 5;
+  padding: 10px 16px 12px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(31,228,255,.18), rgba(255,78,205,.18));
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 14px 44px rgba(0,0,0,.26);
+  text-align: center;
+  min-width: 145px;
+  backdrop-filter: blur(6px);
+}
+
+.floating-stat .num {
+  display: block;
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(32px, 3.2vw, 52px);
+  line-height: .86;
+  color: var(--cyan);
+  text-shadow: 0 0 22px rgba(31,228,255,.42);
+}
+
+.floating-stat .txt {
+  display: block;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: .03em;
+  font-size: .92rem;
+  margin-top: 4px;
+}
+
+.floating-stat .note {
+  display: block;
+  color: var(--muted);
+  font-size: .72rem;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Conservamos la tarjeta de participantes pero usando la misma base */
+.participants-burst {
+  min-width: 150px;
+}
+
+/* Posiciones escritorio */
+.stat-participantes {
+  top: 18px;
+  right: 4px;
+  transform: rotate(-7deg);
+}
+
+.stat-jugados {
+  top: 88px;
+  left: -12px;
+  transform: rotate(5deg);
+}
+
+.stat-lider {
+  bottom: 34px;
+  right: -10px;
+  transform: rotate(4deg);
+  min-width: 190px;
+}
+
+.stat-maximo {
+  bottom: 18px;
+  left: 0;
+  transform: rotate(-5deg);
+}
+
+/* Ya no usamos las tarjetas resumen inferiores dentro del hero */
+.hero-summary-inline {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .hero-trophy-zone {
+    min-height: 430px;
+  }
+
+  .floating-stat {
+    min-width: 132px;
+    padding: 9px 13px 11px 13px;
+  }
+
+  .floating-stat .num {
+    font-size: 40px;
+  }
+
+  .floating-stat .txt {
+    font-size: .84rem;
+  }
+
+  .floating-stat .note {
+    font-size: .66rem;
+  }
+
+  .stat-participantes {
+    top: 0;
+    right: 8%;
+    transform: rotate(-5deg) scale(.86);
+  }
+
+  .stat-jugados {
+    top: 92px;
+    left: 3%;
+    transform: rotate(5deg) scale(.82);
+  }
+
+  .stat-lider {
+    bottom: 34px;
+    right: 1%;
+    transform: rotate(4deg) scale(.80);
+    min-width: 170px;
+  }
+
+  .stat-maximo {
+    bottom: 20px;
+    left: 3%;
+    transform: rotate(-5deg) scale(.82);
+  }
+
+  .hero-trophy-pro {
+    width: min(205px, 54%);
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-trophy-zone {
+    min-height: 455px;
+  }
+
+  .stat-jugados {
+    top: 88px;
+    left: -2%;
+  }
+
+  .stat-lider {
+    bottom: 42px;
+    right: -5%;
+  }
+
+  .stat-maximo {
+    bottom: 18px;
+    left: -1%;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -2089,15 +2244,12 @@ hero_html = (
     f'</div>'
     f'</div>'
     f'<div class="hero-trophy-zone">'
-    f'<div class="participants-burst"><span class="num">{participantes_total}</span><span class="txt">participantes</span></div>'
+    f'<div class="participants-burst floating-stat stat-participantes"><span class="num">{participantes_total}</span><span class="txt">participantes</span></div>'
+    f'<div class="floating-stat stat-jugados"><span class="num">{partidos_jugados}/{len(partidos)}</span><span class="txt">jugados</span><span class="note">al instante</span></div>'
+    f'<div class="floating-stat stat-lider"><span class="num">{lider if lider else "—"}</span><span class="txt">líder actual</span><span class="note">{lider_pts} puntos</span></div>'
+    f'<div class="floating-stat stat-maximo"><span class="num">{maximo_posible}</span><span class="txt">máximo posible</span><span class="note">+{partidos_pendientes * 3} pendientes</span></div>'
     f'<img class="hero-trophy-pro" src="data:image/png;base64,{worldcup_b64}" alt="Copa Porra Ludópatas 2026">'
     f'</div>'
-    f'</div>'
-    f'<div class="hero-summary-inline">'
-    f'<div class="summary-card"><div class="summary-label">Participantes</div><div class="summary-value">{participantes_total}</div><div class="summary-note">La grada de la porra</div></div>'
-    f'<div class="summary-card"><div class="summary-label">Partidos jugados</div><div class="summary-value">{partidos_jugados}/{len(partidos)}</div><div class="summary-note">Se recalcula al instante</div></div>'
-    f'<div class="summary-card highlight"><div class="summary-label">Líder actual</div><div class="summary-value">{lider if lider else "—"}</div><div class="summary-note">{lider_pts} puntos</div></div>'
-    f'<div class="summary-card"><div class="summary-label">Máximo posible</div><div class="summary-value">{maximo_posible}</div><div class="summary-note">Líder + {partidos_pendientes * 3} pts pendientes</div></div>'
     f'</div>'
     f'</div>'
 )
