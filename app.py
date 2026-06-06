@@ -1114,6 +1114,133 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+
+/* ===== MÓVIL MÁS COMPACTO: TARJETAS PEGADAS A LA COPA ===== */
+@media (max-width: 760px) {
+  .hero-trophy-zone {
+    min-height: 330px !important;
+    margin-top: 8px !important;
+  }
+
+  .hero-trophy-zone::before {
+    width: 270px !important;
+    height: 270px !important;
+    top: 58px !important;
+  }
+
+  .hero-trophy-pro {
+    width: 190px !important;
+    max-height: 250px !important;
+    top: 86px !important;
+  }
+
+  .floating-stat,
+  .participants-burst {
+    padding: 8px 11px 9px 11px !important;
+    border-radius: 18px !important;
+    min-width: 116px !important;
+    max-width: 172px !important;
+  }
+
+  .floating-stat .num,
+  .participants-burst .num {
+    font-size: 33px !important;
+  }
+
+  .floating-stat .txt,
+  .participants-burst .txt {
+    font-size: .75rem !important;
+  }
+
+  .floating-stat .note {
+    font-size: .60rem !important;
+  }
+
+  .stat-participantes {
+    top: 12px !important;
+    right: 6% !important;
+    transform: rotate(-7deg) !important;
+  }
+
+  .stat-jugados {
+    top: 58px !important;
+    left: 4% !important;
+    transform: rotate(6deg) !important;
+  }
+
+  .stat-maximo {
+    bottom: 18px !important;
+    left: 4% !important;
+    transform: rotate(-6deg) !important;
+  }
+
+  .stat-lider {
+    bottom: 18px !important;
+    right: 3% !important;
+    min-width: 158px !important;
+    max-width: 184px !important;
+    transform: rotate(5deg) !important;
+  }
+
+  .stat-lider .num {
+    font-size: 23px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-trophy-zone {
+    min-height: 315px !important;
+  }
+
+  .hero-trophy-zone::before {
+    width: 250px !important;
+    height: 250px !important;
+    top: 56px !important;
+  }
+
+  .hero-trophy-pro {
+    width: 176px !important;
+    max-height: 232px !important;
+    top: 84px !important;
+  }
+
+  .floating-stat,
+  .participants-burst {
+    min-width: 108px !important;
+    max-width: 160px !important;
+    padding: 7px 10px 8px 10px !important;
+  }
+
+  .floating-stat .num,
+  .participants-burst .num {
+    font-size: 30px !important;
+  }
+
+  .stat-lider .num {
+    font-size: 21px !important;
+  }
+
+  .stat-participantes {
+    top: 10px !important;
+    right: 2% !important;
+  }
+
+  .stat-jugados {
+    top: 54px !important;
+    left: 0 !important;
+  }
+
+  .stat-maximo {
+    bottom: 14px !important;
+    left: 0 !important;
+  }
+
+  .stat-lider {
+    bottom: 14px !important;
+    right: -1% !important;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
