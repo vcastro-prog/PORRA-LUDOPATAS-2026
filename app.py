@@ -481,28 +481,254 @@ button[kind="primary"] {border-radius: 999px;}
 }
 
 
-/* Banner épico propio de la porra */
-.hero-epic-banner {
-  margin-top: 22px;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow:
-    0 22px 70px rgba(0,0,0,.35),
-    0 0 44px rgba(31,228,255,.08);
-  background: rgba(255,255,255,.035);
+/* ===== HERO PREMIUM LIMPIO: sin banner duplicado ===== */
+.hero-pro {
+  min-height: 410px;
+  padding: 38px 42px;
+  isolation: isolate;
 }
 
-.hero-epic-banner img {
+.hero-pro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 72% 44%, rgba(255,209,102,.23), transparent 26%),
+    radial-gradient(circle at 88% 22%, rgba(31,228,255,.20), transparent 28%),
+    linear-gradient(115deg, rgba(5,10,27,.98), rgba(13,18,45,.94) 55%, rgba(25,16,50,.88));
+  z-index: 0;
+}
+
+.hero-pro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(150deg, transparent 0 42%, rgba(31,228,255,.13) 43%, transparent 46%),
+    linear-gradient(25deg, transparent 0 58%, rgba(255,78,205,.10) 59%, transparent 62%);
+  opacity: .65;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-inner-pro {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-main-pro {
+  position: relative;
+  z-index: 4;
+}
+
+.hero-title-pro {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(76px, 9vw, 138px);
+  line-height: .82;
+  letter-spacing: .018em;
+  margin: 8px 0 16px 0;
+  text-transform: uppercase;
+  text-shadow: 0 12px 34px rgba(0,0,0,.35);
+}
+
+.hero-title-pro .line1 {
+  color: #fff;
+}
+
+.hero-title-pro .line2 {
   display: block;
-  width: 100%;
-  height: auto;
 }
 
-@media (max-width: 760px) {
-  .hero-epic-banner {
-    margin-top: 18px;
-    border-radius: 22px;
+.hero-title-pro .gold {
+  background: linear-gradient(90deg, #FFD166, #fff4c2 45%, #22E6FF);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-title-pro .year {
+  color: #fff;
+  margin-left: 18px;
+}
+
+.hero-sub-pro {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.45;
+}
+
+.hero-badges-pro {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hero-badges-pro .badge {
+  background: rgba(255,255,255,.105);
+  border: 1px solid rgba(255,255,255,.19);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.hero-trophy-zone {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-trophy-zone::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255,209,102,.20), transparent 58%),
+    radial-gradient(circle, rgba(31,228,255,.10), transparent 72%);
+  filter: blur(2px);
+  animation: trophyAura 4.5s ease-in-out infinite;
+}
+
+.hero-trophy-pro {
+  position: relative;
+  z-index: 2;
+  width: min(285px, 72%);
+  max-height: 340px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 16px rgba(255,209,102,.34))
+    drop-shadow(0 0 36px rgba(31,228,255,.13));
+  animation: trophyGlow 4.2s ease-in-out infinite;
+}
+
+.participants-burst {
+  position: absolute;
+  top: 18px;
+  right: 4px;
+  z-index: 4;
+  transform: rotate(-7deg);
+  padding: 10px 16px 12px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(31,228,255,.18), rgba(255,78,205,.18));
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 14px 44px rgba(0,0,0,.26);
+}
+
+.participants-burst .num {
+  display: block;
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: .8;
+  color: var(--cyan);
+  text-shadow: 0 0 22px rgba(31,228,255,.42);
+}
+
+.participants-burst .txt {
+  display: block;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: .04em;
+}
+
+.hero-slogan {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  z-index: 4;
+  white-space: nowrap;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(7,10,19,.58);
+  border: 1px solid rgba(255,255,255,.14);
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.hero-slogan .cyan { color: var(--cyan); }
+.hero-slogan .gold { color: var(--gold); }
+
+@keyframes trophyGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 14px rgba(255,209,102,.28))
+      drop-shadow(0 0 28px rgba(31,228,255,.10));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 24px rgba(255,209,102,.46))
+      drop-shadow(0 0 42px rgba(31,228,255,.18));
+  }
+}
+
+@keyframes trophyAura {
+  0%, 100% { opacity: .72; transform: scale(.98); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@media (max-width: 900px) {
+  .hero-pro {
+    padding: 28px 22px 32px 22px;
+    text-align: center;
+  }
+
+  .hero-inner-pro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-title-pro {
+    font-size: clamp(58px, 16vw, 86px);
+  }
+
+  .hero-title-pro .year {
+    display: block;
+    margin-left: 0;
+  }
+
+  .hero-sub-pro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-badges-pro {
+    justify-content: center;
+  }
+
+  .hero-trophy-zone {
+    min-height: 270px;
+  }
+
+  .hero-trophy-zone::before {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero-trophy-pro {
+    width: min(210px, 58%);
+  }
+
+  .participants-burst {
+    top: 0;
+    right: 12%;
+    transform: rotate(-5deg) scale(.86);
+  }
+
+  .hero-slogan {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    display: inline-block;
+    margin-top: 12px;
+    white-space: normal;
   }
 }
 
@@ -1764,23 +1990,33 @@ maximo_posible = lider_pts + puntos_pendientes
 # -----------------------------
 # Portada
 # -----------------------------
-worldcup_b64 = imagen_asset_base64("banner_porra_2026.png") or imagen_asset_base64("worldcup_2026_clean.png")
+worldcup_b64 = imagen_asset_base64("worldcup_2026_clean.png")
+
+participantes_total = apuestas_df["participante"].nunique() if not apuestas_df.empty else 0
 
 hero_html = (
-    f'<div class="hero">'
-    f'<div class="hero-content">'
-    f'<div class="kicker">Canada · México · USA 2026</div>'
-    f'<div class="hero-title">PORRA <span>LUDÓPATAS</span> 2026</div>'
-    f'<div class="hero-sub">Clasificación, apuestas y resultados de la Porra Ludópatas durante el Mundial 2026.</div>'
-    f'<div class="hero-badges">'
+    f'<div class="hero hero-pro">'
+    f'<div class="hero-inner-pro">'
+    f'<div class="hero-main-pro">'
+    f'<div class="kicker">Canadá · México · USA 2026</div>'
+    f'<div class="hero-title-pro">'
+    f'<span class="line1">PORRA</span> '
+    f'<span class="gold">LUDÓPATAS</span>'
+    f'<span class="year">2026</span>'
+    f'</div>'
+    f'<div class="hero-sub-pro">La gran porra del Mundial 2026. Compite, apuesta y demuestra que sabes de fútbol.</div>'
+    f'<div class="hero-badges-pro">'
     f'<div class="badge">🌎 48 selecciones</div>'
     f'<div class="badge">🏆 12 grupos</div>'
     f'<div class="badge">📅 11 junio – 28 junio</div>'
     f'<div class="badge">⚡ 72 partidos</div>'
     f'</div>'
     f'</div>'
-    f'<div class="hero-epic-banner">'
-    f'<img src="data:image/png;base64,{worldcup_b64}" alt="Banner Porra Ludópatas 2026">'
+    f'<div class="hero-trophy-zone">'
+    f'<div class="participants-burst"><span class="num">{participantes_total}</span><span class="txt">participantes</span></div>'
+    f'<img class="hero-trophy-pro" src="data:image/png;base64,{worldcup_b64}" alt="Copa Porra Ludópatas 2026">'
+    f'<div class="hero-slogan">UNA PORRA. <span class="gold">UNA PASIÓN.</span> <span class="cyan">UN CAMPEÓN.</span></div>'
+    f'</div>'
     f'</div>'
     f'</div>'
 )
@@ -1825,11 +2061,8 @@ else:
         3: "🥉 podio",
     }).fillna("⚔️ en pelea")
 
-    columnas_clasificacion = ["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]
-
-    st.markdown("#### Top 10")
     st.dataframe(
-        tabla_home[columnas_clasificacion].head(10),
+        tabla_home[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
         hide_index=True,
         use_container_width=True,
         column_config={
@@ -1837,17 +2070,6 @@ else:
             "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
         },
     )
-
-    with st.expander("Ver clasificación completa", expanded=False):
-        st.dataframe(
-            tabla_home[columnas_clasificacion],
-            hide_index=True,
-            use_container_width=True,
-            column_config={
-                "posición": st.column_config.NumberColumn("Pos."),
-                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
-            },
-        )
 
     st.download_button(
         "Descargar clasificación CSV",
@@ -1872,9 +2094,27 @@ render_prediccion_grupos(pred_grupos_home)
 # -----------------------------
 # Tabs
 # -----------------------------
-tab1, tab2, tab3, tab4 = st.tabs(["⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
 
 with tab1:
+    st.markdown("### Clasificación general")
+    if tabla.empty:
+        st.info("Sube apuestas para ver la clasificación.")
+    else:
+        tabla_view = tabla.copy()
+        tabla_view["estado"] = tabla_view["posición"].map({1:"👑 líder", 2:"🥈 acechando", 3:"🥉 podio"}).fillna("⚔️ en pelea")
+        st.dataframe(
+            tabla_view[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
+            hide_index=True,
+            use_container_width=True,
+            column_config={
+                "posición": st.column_config.NumberColumn("Pos."),
+                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+            },
+        )
+        st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
+
+with tab2:
     st.markdown("### Calendario de la fase de grupos")
     partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
         resultados_df, on="partido_id", how="left"
@@ -1920,7 +2160,7 @@ with tab1:
     )
 
 
-with tab2:
+with tab3:
     st.markdown("### Apuestas de los participantes")
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
@@ -2060,7 +2300,7 @@ with tab2:
                 mime="text/csv"
             )
 
-with tab3:
+with tab4:
     st.markdown("### Radiografía de la porra")
     if detalle.empty:
         st.info("Aún no hay puntos que mostrar.")
@@ -2075,7 +2315,7 @@ with tab3:
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
 
 
-with tab4:
+with tab5:
     st.markdown(
         """
 <div class='callout'>
