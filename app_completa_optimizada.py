@@ -2649,62 +2649,31 @@ else:
     st.markdown("<div class='big-cta'><span class='ribbon'>Calienta motores</span><h2>La jornada explotará cuando metas el primer resultado</h2><p>La app detectará líderes, batacazos y plenos automáticamente.</p></div>", unsafe_allow_html=True)
 
 
-st.write("")
-st.markdown("## 🔥 Clasificación general")
-st.caption("Ranking completo actualizado con los resultados introducidos hasta ahora.")
-
-if tabla.empty:
-    st.info("Sube apuestas para ver la clasificación.")
-else:
-    tabla_home = tabla.copy()
-    tabla_home["estado"] = tabla_home["posición"].map({
-        1: "👑 líder",
-        2: "🥈 acechando",
-        3: "🥉 podio",
-    }).fillna("⚔️ en pelea")
-
-    st.dataframe(
-        tabla_home[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
-        hide_index=True,
-        use_container_width=True,
-        column_config={
-            "posición": st.column_config.NumberColumn("Pos."),
-            "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
-        },
-    )
-
-    st.download_button(
-        "Descargar clasificación CSV",
-        tabla.to_csv(index=False).encode("utf-8"),
-        "clasificacion_porra_2026.csv",
-        "text/csv",
-        key="descarga_clasificacion_home",
-    )
-
-
-st.write("")
-st.markdown("### 🧠 La comunidad opina")
-bloque_comunidad(apuestas_df, partidos)
-
-
-st.markdown("## 🔮 La comunidad predice")
-st.caption("Predicción de clasificados por grupo según la tendencia global de las apuestas de la porra.")
-
-pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos, resultados_df)
-render_prediccion_grupos(pred_grupos_home)
-
 # -----------------------------
 # Navegacion bajo demanda
 # -----------------------------
+st.write("")
 seccion = st.radio(
     "Sección",
-    ["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"],
+    [
+        "🏠 Inicio",
+        "🔥 Clasificación",
+        "🧠 Comunidad",
+        "🔮 Predicción",
+        "⚽ Partidos",
+        "👀 Apuestas",
+        "📊 Estadísticas",
+        "📣 Cómo participar",
+    ],
     horizontal=True,
     label_visibility="collapsed",
     key="navegacion_principal",
 )
 
-if seccion == "🔥 Clasificación":
+if seccion == "🏠 Inicio":
+    st.info("Elige una sección para consultar todos los datos de la porra.")
+
+elif seccion == "🔥 Clasificación":
     st.markdown("### Clasificación general")
     if tabla.empty:
         st.info("Sube apuestas para ver la clasificación.")
@@ -2721,6 +2690,16 @@ if seccion == "🔥 Clasificación":
             },
         )
         st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
+
+elif seccion == "🧠 Comunidad":
+    st.markdown("### 🧠 La comunidad opina")
+    bloque_comunidad(apuestas_df, partidos)
+
+elif seccion == "🔮 Predicción":
+    st.markdown("## 🔮 La comunidad predice")
+    st.caption("Predicción de clasificados por grupo según la tendencia global de las apuestas de la porra.")
+    pred_grupos = prediccion_clasificados_por_grupo(apuestas_df, partidos, resultados_df)
+    render_prediccion_grupos(pred_grupos)
 
 elif seccion == "⚽ Partidos":
     st.markdown("### Calendario de la fase de grupos")
