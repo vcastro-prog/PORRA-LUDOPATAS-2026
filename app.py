@@ -2614,7 +2614,6 @@ hero_html = (
 
 st.markdown(hero_html, unsafe_allow_html=True)
 
-st.info("🚦 MODO EMERGENCIA: para aguantar muchos usuarios simultáneos, se muestra solo portada, podio, próximos partidos y clasificación. Las secciones pesadas volverán cuando baje la carga.")
 
 st.write("")
 left, right = st.columns([1.7, 1])
@@ -2661,14 +2660,29 @@ else:
         },
     )
 
-    st.download_button(
-        "Descargar clasificación CSV",
-        tabla.to_csv(index=False).encode("utf-8"),
-        "clasificacion_porra_2026.csv",
-        "text/csv",
-        key="descarga_clasificacion_home",
-    )
+    col_descarga_1, col_descarga_2 = st.columns(2)
+
+    with col_descarga_1:
+        st.download_button(
+            "📥 Descargar clasificación CSV",
+            tabla.to_csv(index=False).encode("utf-8"),
+            "clasificacion_porra_2026.csv",
+            "text/csv",
+            key="descarga_clasificacion_home",
+            use_container_width=True,
+        )
+
+    with col_descarga_2:
+        excel_apuestas = generar_excel_apuestas_transparencia(apuestas_df, partidos)
+        st.download_button(
+            "📥 Descargar apuestas Excel",
+            data=excel_apuestas,
+            file_name="apuestas_porra_ludopatas.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            key="descarga_apuestas_home",
+            use_container_width=True,
+            help="Descarga todas las apuestas para comprobar la transparencia de la porra.",
+        )
 
 
 
-st.caption("Modo emergencia activo: se han desactivado temporalmente Comunidad opina, Comunidad predice, Apuestas, Estadísticas y descarga Excel para evitar saturación.")
