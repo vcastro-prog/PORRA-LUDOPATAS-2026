@@ -1,12 +1,15 @@
-Sustituye tu app.py por este.
+Sustituye app.py por este.
 
-Cambio aplicado:
-- Solo se modifica CSS móvil.
-- La copa de la portada en móvil pasa a ser más grande y proporcionada respecto a las tarjetas.
-- Escritorio queda igual.
-- No se toca la lógica de Google Sheets, clasificación, resultados ni puntuaciones.
+Cambios:
+- Mantiene la clasificación general.
+- Quita los textos visibles de modo emergencia.
+- Añade junto al botón de clasificación el botón para descargar apuestas Excel.
+- No recupera las secciones pesadas, para no volver a saturar la app.
 
 Subida:
 git add app.py
-git commit -m "Aumentar copa en version movil"
+git commit -m "Restaurar clasificacion y descarga apuestas"
 git push
+
+Después:
+Streamlit Cloud > Manage app > Reboot app
