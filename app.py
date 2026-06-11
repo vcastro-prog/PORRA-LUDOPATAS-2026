@@ -1320,6 +1320,69 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+/* ===== AJUSTE FINAL DE ESCRITORIO ===== */
+@media (min-width: 901px) {
+  .hero-inner-pro {
+    grid-template-columns: minmax(0, 1.35fr) minmax(470px, .85fr);
+    gap: 34px;
+  }
+
+  .hero-title-pro {
+    font-size: clamp(72px, 6.5vw, 104px);
+    line-height: .88;
+  }
+
+  .hero-title-pro .line1,
+  .hero-title-pro .line2 {
+    display: block;
+  }
+
+  .hero-title-pro .line2 {
+    white-space: nowrap;
+  }
+
+  .hero-title-pro .year {
+    margin-left: 16px;
+  }
+
+  .hero-trophy-zone {
+    min-height: 410px;
+  }
+
+  .hero-trophy-pro {
+    width: min(245px, 55%);
+    max-height: 320px;
+  }
+
+  .stat-participantes {
+    top: 8px;
+    right: 0;
+  }
+
+  .stat-jugados {
+    top: 78px;
+    left: 0;
+  }
+
+  .stat-maximo {
+    bottom: 6px;
+    left: 0;
+  }
+
+  .stat-lider {
+    right: 0;
+    bottom: 4px;
+    width: 245px;
+    min-width: 0;
+  }
+
+  .stat-lider .num {
+    font-size: clamp(27px, 2.2vw, 36px);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
@@ -2604,8 +2667,8 @@ hero_html = (
     f'<div class="kicker">Canadá · México · USA 2026</div>'
     f'<div class="hero-title-pro">'
     f'<span class="line1">PORRA</span> '
-    f'<span class="gold">LUDÓPATAS</span>'
-    f'<span class="year">2026</span>'
+    f'<span class="line2"><span class="gold">LUDÓPATAS</span>'
+    f'<span class="year">2026</span></span>'
     f'</div>'
     f'<div class="hero-sub-pro">La gran porra del Mundial 2026. Compite, apuesta y demuestra que sabes de fútbol.</div>'
     f'<div class="hero-badges-pro">'
