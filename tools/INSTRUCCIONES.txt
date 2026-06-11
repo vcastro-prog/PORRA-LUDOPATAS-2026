@@ -1,0 +1,18 @@
+Sustituye app.py por este.
+
+Cambios:
+- Corrige la portada en escritorio para que "2026" no se corte.
+- Mantiene la clasificación general visible.
+- Mantiene los dos botones:
+  - Descargar clasificación CSV
+  - Descargar apuestas Excel
+- Añade al final una tabla ligera de "Resultados jugados".
+- No recupera las secciones pesadas, para no saturar Streamlit.
+
+Subida:
+git add app.py
+git commit -m "Fix portada y añadir resultados jugados"
+git push
+
+Después:
+Streamlit Cloud > Manage app > Reboot app
