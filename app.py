@@ -1383,6 +1383,47 @@ button[kind="primary"] {border-radius: 999px;}
   }
 }
 
+/* ===== NAVEGACION PRINCIPAL EN MOVIL ===== */
+@media (max-width: 760px) {
+  div[data-testid="stRadio"][aria-label="Sección"] > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  div[data-testid="stRadio"][aria-label="Sección"] label {
+    width: 100% !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    padding: 9px 13px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: 14px !important;
+    background: rgba(255,255,255,.055) !important;
+    align-items: center !important;
+  }
+
+  div[data-testid="stRadio"][aria-label="Sección"] label:has(input:checked) {
+    border-color: rgba(255,209,102,.72) !important;
+    background:
+      linear-gradient(90deg, rgba(255,209,102,.16), rgba(31,228,255,.10)),
+      rgba(255,255,255,.075) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.20) !important;
+  }
+
+  div[data-testid="stRadio"][aria-label="Sección"] label > div:first-child {
+    flex: 0 0 auto !important;
+    margin-right: 10px !important;
+  }
+
+  div[data-testid="stRadio"][aria-label="Sección"] label p {
+    margin: 0 !important;
+    font-size: .98rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+  }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
