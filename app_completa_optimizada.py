@@ -2694,11 +2694,17 @@ pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos, resu
 render_prediccion_grupos(pred_grupos_home)
 
 # -----------------------------
-# Tabs
+# Navegacion bajo demanda
 # -----------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
+seccion = st.radio(
+    "Sección",
+    ["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"],
+    horizontal=True,
+    label_visibility="collapsed",
+    key="navegacion_principal",
+)
 
-with tab1:
+if seccion == "🔥 Clasificación":
     st.markdown("### Clasificación general")
     if tabla.empty:
         st.info("Sube apuestas para ver la clasificación.")
@@ -2716,7 +2722,7 @@ with tab1:
         )
         st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
 
-with tab2:
+elif seccion == "⚽ Partidos":
     st.markdown("### Calendario de la fase de grupos")
     partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
         resultados_df, on="partido_id", how="left"
@@ -2762,7 +2768,7 @@ with tab2:
     )
 
 
-with tab3:
+elif seccion == "👀 Apuestas":
     st.markdown("### Apuestas de los participantes")
     if apuestas_df.empty:
         st.info("Sube uno o varios Excel para ver las apuestas.")
@@ -2900,20 +2906,39 @@ with tab3:
         if filtrada.empty:
             st.info("No hay apuestas que coincidan con los filtros seleccionados.")
         else:
+            filtrada_ordenada = filtrada[columnas_vista].sort_values(ordenar_por)
+            filas_por_pagina = 200
+            total_paginas = max(
+                (len(filtrada_ordenada) + filas_por_pagina - 1) // filas_por_pagina,
+                1,
+            )
+            pagina = st.selectbox(
+                "Página de resultados",
+                options=list(range(1, total_paginas + 1)),
+                format_func=lambda p: f"Página {p} de {total_paginas}",
+                key="pagina_apuestas",
+            )
+            inicio = (pagina - 1) * filas_por_pagina
+            fin = inicio + filas_por_pagina
+
+            st.caption(
+                f"Mostrando filas {inicio + 1}-{min(fin, len(filtrada_ordenada))} "
+                f"de {len(filtrada_ordenada)}."
+            )
             st.dataframe(
-                filtrada[columnas_vista].sort_values(ordenar_por),
+                filtrada_ordenada.iloc[inicio:fin],
                 hide_index=True,
                 use_container_width=True
             )
 
             st.download_button(
                 "📥 Descargar apuestas filtradas CSV",
-                data=filtrada[columnas_vista].sort_values(ordenar_por).to_csv(index=False).encode("utf-8"),
+                data=filtrada_ordenada.to_csv(index=False).encode("utf-8"),
                 file_name="apuestas_filtradas.csv",
                 mime="text/csv"
             )
 
-with tab4:
+elif seccion == "📊 Estadísticas":
     st.markdown("### Radiografía de la porra")
     if detalle.empty:
         st.info("Aún no hay puntos que mostrar.")
@@ -2928,7 +2953,7 @@ with tab4:
             st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
 
 
-with tab5:
+elif seccion == "📣 Cómo participar":
     st.markdown(
         """
 <div class='callout'>
