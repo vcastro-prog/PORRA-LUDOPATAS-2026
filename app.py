@@ -2656,11 +2656,10 @@ st.write("")
 seccion = st.radio(
     "Sección",
     [
-        "🏠 Inicio",
         "🔥 Clasificación",
+        "⚽ Resultados",
         "🧠 Comunidad",
         "🔮 Predicción",
-        "⚽ Partidos",
         "👀 Apuestas",
         "📊 Estadísticas",
         "📣 Cómo participar",
@@ -2670,10 +2669,7 @@ seccion = st.radio(
     key="navegacion_principal",
 )
 
-if seccion == "🏠 Inicio":
-    st.info("Elige una sección para consultar todos los datos de la porra.")
-
-elif seccion == "🔥 Clasificación":
+if seccion == "🔥 Clasificación":
     st.markdown("### Clasificación general")
     if tabla.empty:
         st.info("Sube apuestas para ver la clasificación.")
@@ -2701,7 +2697,7 @@ elif seccion == "🔮 Predicción":
     pred_grupos = prediccion_clasificados_por_grupo(apuestas_df, partidos, resultados_df)
     render_prediccion_grupos(pred_grupos)
 
-elif seccion == "⚽ Partidos":
+elif seccion == "⚽ Resultados":
     st.markdown("### Calendario de la fase de grupos")
     partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
         resultados_df, on="partido_id", how="left"
