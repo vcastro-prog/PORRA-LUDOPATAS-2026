@@ -1242,81 +1242,28 @@ button[kind="primary"] {border-radius: 999px;}
 }
 
 
-/* ===== AJUSTE FINAL: COPA MÁS GRANDE EN MÓVIL ===== */
-@media (max-width: 760px) {
-  .hero-trophy-zone {
-    min-height: 360px !important;
-    margin-top: 6px !important;
+/* ===== FIX ESCRITORIO: EVITAR QUE 2026 SE CORTE ===== */
+@media (min-width: 901px) {
+  .hero-inner-pro {
+    grid-template-columns: minmax(0, 1.45fr) minmax(250px, .55fr) !important;
+    gap: 20px !important;
   }
 
-  .hero-trophy-zone::before {
-    width: 335px !important;
-    height: 335px !important;
-    top: 30px !important;
+  .hero-main-pro {
+    min-width: 0 !important;
   }
 
-  .hero-trophy-pro {
-    width: 255px !important;
-    max-height: 340px !important;
-    top: 52px !important;
+  .hero-title-pro {
+    font-size: clamp(72px, 7vw, 120px) !important;
   }
 
-  .stat-participantes {
-    top: 8px !important;
-    right: 3% !important;
+  .hero-title-pro .year {
+    white-space: nowrap !important;
   }
 
-  .stat-jugados {
-    top: 58px !important;
-    left: 2% !important;
-  }
-
-  .stat-maximo {
-    bottom: 18px !important;
-    left: 2% !important;
-  }
-
-  .stat-lider {
-    bottom: 18px !important;
-    right: 1% !important;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-trophy-zone {
-    min-height: 345px !important;
-  }
-
-  .hero-trophy-zone::before {
-    width: 310px !important;
-    height: 310px !important;
-    top: 30px !important;
-  }
-
-  .hero-trophy-pro {
-    width: 235px !important;
-    max-height: 315px !important;
-    top: 54px !important;
-  }
-
-  .stat-participantes {
-    top: 8px !important;
-    right: 0 !important;
-  }
-
-  .stat-jugados {
-    top: 54px !important;
-    left: -1% !important;
-  }
-
-  .stat-maximo {
-    bottom: 14px !important;
-    left: -1% !important;
-  }
-
-  .stat-lider {
-    bottom: 14px !important;
-    right: -2% !important;
+  .stat-lider .num {
+    font-size: clamp(22px, 2.2vw, 48px) !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -1584,7 +1531,7 @@ def bandera_html(nombre: str) -> str:
     )
 
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=30)
 def cargar_partidos() -> pd.DataFrame:
     """Carga el calendario y los grupos.
 
@@ -1722,7 +1669,7 @@ def obtener_google_sheet_id() -> str:
     return match.group(1) if match else valor.strip()
 
 
-@st.cache_data(ttl=300, show_spinner=False)
+@st.cache_data(ttl=30, show_spinner=False)
 def descargar_google_sheet_como_excel(sheet_id: str) -> bytes:
     """Descarga una Google Sheet pública como archivo XLSX.
 
@@ -2274,6 +2221,63 @@ def proximo_partido(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
 
 
 
+def render_resultados_jugados(partidos: pd.DataFrame, resultados_df: pd.DataFrame):
+    """Tabla ligera con resultados ya introducidos."""
+    if resultados_df.empty:
+        st.info("Aún no hay resultados cargados.")
+        return
+
+    jugados = resultados_df.dropna(subset=["goles_local", "goles_visitante"]).copy()
+
+    if jugados.empty:
+        st.info("Aún no hay partidos jugados.")
+        return
+
+    vista = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
+        jugados[["partido_id", "goles_local", "goles_visitante"]],
+        on="partido_id",
+        how="inner",
+    ).sort_values("partido_id")
+
+    rows_html = ""
+    for _, r in vista.iterrows():
+        local = str(r["local"])
+        visitante = str(r["visitante"])
+        resultado = f"{int(r['goles_local'])}-{int(r['goles_visitante'])}"
+        rows_html += (
+            "<tr>"
+            f"<td>{int(r['partido_id'])}</td>"
+            f"<td>{r['grupo']}</td>"
+            f"<td>{r['fecha']}</td>"
+            f"<td>{partido_html(local, visitante)}</td>"
+            f"<td><strong>{resultado}</strong></td>"
+            "</tr>"
+        )
+
+    st.markdown(
+        f"""
+        <div class="table-card">
+          <table class="pretty-table">
+            <thead>
+              <tr>
+                <th>Partido</th>
+                <th>Grupo</th>
+                <th>Fecha</th>
+                <th>Encuentro</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows_html}
+            </tbody>
+          </table>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+
 def bloque_comunidad(apuestas: pd.DataFrame, partidos: pd.DataFrame):
     """Muestra el pulso de la comunidad para un partido seleccionable."""
     if apuestas.empty:
@@ -2614,7 +2618,6 @@ hero_html = (
 
 st.markdown(hero_html, unsafe_allow_html=True)
 
-
 st.write("")
 left, right = st.columns([1.7, 1])
 with left:
@@ -2685,4 +2688,267 @@ else:
         )
 
 
+st.write("")
+st.markdown("### 🧠 La comunidad opina")
+bloque_comunidad(apuestas_df, partidos)
+
+
+st.markdown("## 🔮 La comunidad predice")
+st.caption("Predicción de clasificados por grupo según la tendencia global de las apuestas de la porra.")
+
+pred_grupos_home = prediccion_clasificados_por_grupo(apuestas_df, partidos, resultados_df)
+render_prediccion_grupos(pred_grupos_home)
+
+# -----------------------------
+# Tabs
+# -----------------------------
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Clasificación", "⚽ Partidos", "👀 Apuestas", "📊 Estadísticas", "📣 Cómo participar"])
+
+with tab1:
+    st.markdown("### Clasificación general")
+    if tabla.empty:
+        st.info("Sube apuestas para ver la clasificación.")
+    else:
+        tabla_view = tabla.copy()
+        tabla_view["estado"] = tabla_view["posición"].map({1:"👑 líder", 2:"🥈 acechando", 3:"🥉 podio"}).fillna("⚔️ en pelea")
+        st.dataframe(
+            tabla_view[["posición", "estado", "participante", "puntos", "plenos", "aciertos_1x2", "partidos_puntuados"]],
+            hide_index=True,
+            use_container_width=True,
+            column_config={
+                "posición": st.column_config.NumberColumn("Pos."),
+                "puntos": st.column_config.NumberColumn("Puntos", format="%d pts"),
+            },
+        )
+        st.download_button("Descargar clasificación CSV", tabla.to_csv(index=False).encode("utf-8"), "clasificacion_porra_2026.csv", "text/csv")
+
+with tab2:
+    st.markdown("### Calendario de la fase de grupos")
+    partidos_resultados = partidos[["partido_id", "grupo", "fecha", "local", "visitante"]].merge(
+        resultados_df, on="partido_id", how="left"
+    )
+
+    def resultado_texto(r):
+        if pd.isna(r["goles_local"]) or pd.isna(r["goles_visitante"]):
+            return "Pendiente"
+        return f"{int(r['goles_local'])}-{int(r['goles_visitante'])}"
+
+    rows_html = ""
+    for _, r in partidos_resultados.iterrows():
+        rows_html += (
+            "<tr>"
+            f"<td>{int(r['partido_id'])}</td>"
+            f"<td>{r['grupo']}</td>"
+            f"<td>{r['fecha']}</td>"
+            f"<td>{partido_html(str(r['local']), str(r['visitante']))}</td>"
+            f"<td><strong>{resultado_texto(r)}</strong></td>"
+            "</tr>"
+        )
+
+    st.markdown(
+        f"""
+        <div class="table-card">
+          <table class="pretty-table">
+            <thead>
+              <tr>
+                <th>Partido</th>
+                <th>Grupo</th>
+                <th>Fecha</th>
+                <th>Encuentro</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows_html}
+            </tbody>
+          </table>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+with tab3:
+    st.markdown("### Apuestas de los participantes")
+    if apuestas_df.empty:
+        st.info("Sube uno o varios Excel para ver las apuestas.")
+    else:
+        excel_apuestas = generar_excel_apuestas_transparencia(apuestas_df, partidos)
+        st.download_button(
+            "📥 Descargar todas las apuestas en Excel",
+            data=excel_apuestas,
+            file_name="apuestas_porra_ludopatas.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            help="Descarga todas las apuestas para comprobar la transparencia de la porra."
+        )
+
+        st.caption("El Excel incluye resumen, detalle completo, vista por participante y calendario.")
+
+        vista = apuestas_df.merge(
+            partidos[["partido_id", "grupo", "local_flag", "local", "visitante_flag", "visitante"]],
+            on="partido_id",
+            how="left"
+        )
+
+        vista["partido"] = vista.apply(
+            lambda r: partido_texto_con_banderas(str(r["local"]), str(r["visitante"])),
+            axis=1
+        )
+        vista["partido_selector"] = (
+            vista["partido_id"].astype(str)
+            + " · "
+            + vista["local"].astype(str)
+            + " vs "
+            + vista["visitante"].astype(str)
+        )
+        vista["apuesta"] = vista["goles_local"].astype(str) + " - " + vista["goles_visitante"].astype(str)
+
+        st.markdown("#### 🔎 Filtros de consulta")
+
+        f1, f2, f3 = st.columns([1.1, 1, 1.6])
+        with f1:
+            participante_sel = st.selectbox(
+                "Participante",
+                ["Todos"] + sorted(vista["participante"].dropna().unique().tolist()),
+                key="filtro_apuestas_participante"
+            )
+        with f2:
+            grupo_sel = st.selectbox(
+                "Grupo",
+                ["Todos"] + sorted(vista["grupo"].dropna().unique().tolist()),
+                key="filtro_apuestas_grupo"
+            )
+        with f3:
+            partidos_opciones = ["Todos"] + (
+                vista[["partido_id", "partido_selector"]]
+                .drop_duplicates()
+                .sort_values("partido_id")["partido_selector"]
+                .tolist()
+            )
+            partido_sel = st.selectbox(
+                "Partido",
+                partidos_opciones,
+                key="filtro_apuestas_partido"
+            )
+
+        f4, f5, f6 = st.columns([1, 1, 1])
+        with f4:
+            signo_sel = st.selectbox(
+                "Signo apostado",
+                ["Todos", "Gana local", "Empate", "Gana visitante"],
+                key="filtro_apuestas_signo"
+            )
+        with f5:
+            marcador_busqueda = st.text_input(
+                "Marcador exacto",
+                placeholder="Ej: 2-1",
+                key="filtro_apuestas_marcador"
+            )
+        with f6:
+            ordenar_por = st.selectbox(
+                "Ordenar por",
+                ["participante", "partido_id", "grupo", "apuesta"],
+                key="filtro_apuestas_orden"
+            )
+
+        filtrada = vista.copy()
+
+        if participante_sel != "Todos":
+            filtrada = filtrada[filtrada["participante"] == participante_sel]
+
+        if grupo_sel != "Todos":
+            filtrada = filtrada[filtrada["grupo"] == grupo_sel]
+
+        if partido_sel != "Todos":
+            partido_id_sel = int(str(partido_sel).split(" · ")[0])
+            filtrada = filtrada[filtrada["partido_id"] == partido_id_sel]
+
+        if signo_sel != "Todos":
+            if signo_sel == "Gana local":
+                filtrada = filtrada[filtrada["goles_local"] > filtrada["goles_visitante"]]
+            elif signo_sel == "Empate":
+                filtrada = filtrada[filtrada["goles_local"] == filtrada["goles_visitante"]]
+            elif signo_sel == "Gana visitante":
+                filtrada = filtrada[filtrada["goles_local"] < filtrada["goles_visitante"]]
+
+        marcador_limpio = marcador_busqueda.strip().replace(" ", "")
+        if marcador_limpio:
+            match = re.match(r"^(\d+)-(\d+)$", marcador_limpio)
+            if match:
+                gl_b, gv_b = int(match.group(1)), int(match.group(2))
+                filtrada = filtrada[
+                    (filtrada["goles_local"] == gl_b)
+                    & (filtrada["goles_visitante"] == gv_b)
+                ]
+            else:
+                st.warning("Formato de marcador no válido. Usa por ejemplo: 2-1")
+
+        st.markdown(
+            f"<div class='card'><div class='stat-label'>Apuestas encontradas</div>"
+            f"<div class='stat-value'>{len(filtrada)}</div>"
+            f"<div class='stat-note'>de {len(vista)} apuestas totales</div></div>",
+            unsafe_allow_html=True
+        )
+
+        columnas_vista = ["participante", "partido_id", "grupo", "partido", "apuesta"]
+
+        if filtrada.empty:
+            st.info("No hay apuestas que coincidan con los filtros seleccionados.")
+        else:
+            st.dataframe(
+                filtrada[columnas_vista].sort_values(ordenar_por),
+                hide_index=True,
+                use_container_width=True
+            )
+
+            st.download_button(
+                "📥 Descargar apuestas filtradas CSV",
+                data=filtrada[columnas_vista].sort_values(ordenar_por).to_csv(index=False).encode("utf-8"),
+                file_name="apuestas_filtradas.csv",
+                mime="text/csv"
+            )
+
+with tab4:
+    st.markdown("### Radiografía de la porra")
+    if detalle.empty:
+        st.info("Aún no hay puntos que mostrar.")
+    else:
+        col_a, col_b = st.columns(2)
+        with col_a:
+            st.markdown("#### Jugadores más finos")
+            st.dataframe(stats.sort_values(["media_puntos", "plenos"], ascending=False).head(10), hide_index=True, use_container_width=True)
+        with col_b:
+            st.markdown("#### Partido más discutido")
+            resumen = resumen_partido(apuestas_df, resultados_df, partidos)
+            st.dataframe(resumen.head(12), hide_index=True, use_container_width=True)
+
+
+with tab5:
+    st.markdown(
+        """
+<div class='callout'>
+<strong>Participa en la Porra Ludópatas 2026</strong><br>
+Rellena el Excel, envíalo al organizador y sigue aquí la clasificación durante todo el Mundial.
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+    st.markdown("""
+### Reglas ultra claras
+- 1 punto por acertar el signo: gana local, empate o gana visitante.
+- Solo si aciertas el signo: +1 por acertar goles del local y +1 por acertar goles del visitante.
+- Pleno exacto: 3 puntos.
+- Si fallas el signo: 0 puntos, aunque aciertes algún gol.
+
+### Frase para compartir
+**Rellena tu Excel y entra en la Porra Ludópatas 2026. Cada resultado actualizará la clasificación.**
+""")
+
+st.caption("Diseño inspirado en el ambiente del Mundial 2026. No usa logos oficiales ni material protegido de FIFA.")
+
+
+st.write("")
+st.markdown("## ⚽ Resultados jugados")
+st.caption("Partidos con resultado cargado en la hoja RESULTADOS.")
+render_resultados_jugados(partidos, resultados_df)
 
