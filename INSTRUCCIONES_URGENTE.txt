@@ -1,23 +1,15 @@
-VERSIÓN DE EMERGENCIA PARA QUE LA WEB VUELVA A CARGAR
+Sustituye tu app.py por este.
 
-Qué cambia:
-- Aumenta la caché de Google Sheets a 5 minutos.
-- Mantiene:
-  - portada
-  - podio
-  - próximos partidos
-  - jornada
-  - clasificación general
-  - descarga CSV de clasificación
-- Desactiva temporalmente:
-  - Comunidad opina
-  - Comunidad predice
-  - pestañas de Partidos / Apuestas / Estadísticas
-  - generación del Excel de apuestas
+Cambios sobre el modo emergencia:
+- Quita el texto visible de modo emergencia.
+- Mantiene la portada, podio, próximos partidos, jornada y clasificación.
+- Añade junto a la descarga de clasificación CSV el botón:
+  "Descargar apuestas Excel"
+- Mantiene desactivadas las secciones pesadas para evitar volver a saturar la app.
 
-Subida urgente:
+Subida:
 git add app.py
-git commit -m "Activar modo emergencia ligero"
+git commit -m "Añadir descarga de apuestas en modo ligero"
 git push
 
 Luego en Streamlit Cloud:
